@@ -2,6 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from scipy import integrate
+import matplotlib.font_manager as fm
+
+# 设置中文字体支持
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
+plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+# 启用LaTeX渲染数学符号
+plt.rcParams['mathtext.fontset'] = 'stix'
 
 
 # =============================================
@@ -60,7 +67,7 @@ def visualize_spherical_projection():
     ax1 = fig.add_subplot(221, projection='3d')
     surf = ax1.plot_surface(x, y, z, facecolors=cm.viridis(projection_efficiency),
                           rstride=1, cstride=1, alpha=0.8, linewidth=0)
-    ax1.set_title('球面上各方向的投影效率 (sinθ)')
+    ax1.set_title(r'球面上各方向的投影效率 ($\sin\theta$)')
     ax1.set_xlabel('X')
     ax1.set_ylabel('Y')
     ax1.set_zlabel('Z')
@@ -82,8 +89,8 @@ def visualize_spherical_projection():
     ax3 = fig.add_subplot(223)
     theta_samples = np.linspace(0, np.pi, 100)
     ax3.plot(theta_samples, np.sin(theta_samples), linewidth=3)
-    ax3.set_xlabel('极角 θ')
-    ax3.set_ylabel('投影效率 sinθ')
+    ax3.set_xlabel(r'极角 $\theta$')
+    ax3.set_ylabel(r'投影效率 $\sin\theta$')
     ax3.set_title('投影效率随极角的变化')
     ax3.grid(True)
     
@@ -91,10 +98,10 @@ def visualize_spherical_projection():
     ax4 = fig.add_subplot(224)
     theta_int = np.linspace(0, np.pi, 100)
     phi_int = np.linspace(0, 2*np.pi, 100)
-    ax4.plot(theta_int, np.sin(theta_int)**2, linewidth=3, label='sin²θ')
+    ax4.plot(theta_int, np.sin(theta_int)**2, linewidth=3, label=r'$\sin^2\theta$')
     ax4.fill_between(theta_int, 0, np.sin(theta_int)**2, alpha=0.3, label='积分区域')
-    ax4.set_xlabel('极角 θ')
-    ax4.set_ylabel('被积函数 sin²θ')
+    ax4.set_xlabel(r'极角 $\theta$')
+    ax4.set_ylabel(r'被积函数 $\sin^2\theta$')
     ax4.set_title('积分函数示意图')
     ax4.legend()
     ax4.grid(True)
