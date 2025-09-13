@@ -1,4 +1,16 @@
 [
   "editing-toolbar",
-  "markdown-table-editor"
+  "markdown-table-editor",
+  "obsidian-zotero-desktop-connector",
+  "table-editor-obsidian",
+  "obsidian-excel-to-markdown-table",
+  "obsidian-citation-plugin",
+  "templater-obsidian",
+  "obsidian-excalidraw-plugin",
+  "obsidian-mind-map",
+  "dataview",
+  "obsidian-pandoc",
+  "tars",
+  "obsidian-minimal-settings",
+  "obsidian-linter"
 ]

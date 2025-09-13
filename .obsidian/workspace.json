@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "083eac398dced1e4",
+        "id": "98f8aa6ac4aa69e2",
         "type": "tabs",
         "children": [
           {
-            "id": "e7e850f2c2623f47",
+            "id": "290ea327850620df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
-                "mode": "source",
-                "source": false
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
               "title": "基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程"
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#NewChat",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -150,13 +150,23 @@
               "icon": "lucide-list",
               "title": "基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程 的大纲"
             }
+          },
+          {
+            "id": "cc212266e8002a60",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 545.5
+    "width": 232.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,14 +177,29 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "markdown-table-editor:Open Markdown Table Editor": false
+      "markdown-table-editor:Open Markdown Table Editor": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "59dca15b9d787f7e",
+  "active": "290ea327850620df",
   "lastOpenFiles": [
-    "未命名.base",
+    "spherical_projection_visualization.png",
+    "utf/引力光速统一方程/code/几何因子.py",
+    "utf/引力光速统一方程/code",
+    "utf/引力光速统一方程/英文 Abstract.md",
     "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
-    "未命名.md",
+    "2025-09-11.md",
+    "未命名.canvas",
+    "未命名 1.canvas",
+    "utf/引力光速统一方程/Drawing 2025-09-11 21.37.40.excalidraw.md",
+    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.tex",
+    "未命名/README.md",
+    "未命名/未命名.md",
+    "未命名/未命名.base",
+    "未命名",
+    "utf/引力光速统一方程/未命名 1.md",
     "utf/引力光速统一方程",
     "utf"
   ]

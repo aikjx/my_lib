@@ -1,24 +1,25 @@
 
-# 标题：基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程
+# 标题：基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程  
+<br/>  
+
+**作者**：莫国子 张祥前    
+
+<br/>  
 
 
-**作者**：莫国子 张祥前  
-**创作日期**：2025-09-03
-
-
+**创作日期**：2025-09-03  
+<br/>
 ## 摘要
+<br/>  
 
 本文基于张祥前统一场论的完整公式体系，系统推导了引力常数 $G$ 的数学表达式，确立了 $G$ 与光速 $c$ 之间的定量关系。推导过程综合运用了该理论中的质量定义方程、时空几何模型及场相互作用理论，最终得到核心表达式：  
-$G = \frac{2Z}{c}$该公式被命名为引力光速统一方程（Gravitational Light Speed Unification Equation）。其中 $Z$ 为一理论常数，其量纲为 $[T^{-1} L^{-3}]$（对应于单位时间单位体积内空间位移条数的变化率，即空间发散的密度流）。本理论研究受惠于张祥前先生的统一场论，将该常数命名为张祥前常数（Zhang Xiangqian Constant）。当取张祥前常数 $Z = 0.01$ 时，理论计算所得引力常数为：$G_{\text{理论}} = 6.67128190396304 \times 10^{-11}  \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$与 CODATA 2018 推荐值：$G_{\text{CODATA}} = 6.67430 \times 10^{-11}  \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$高度吻合，相对误差仅为 0.045%。本文进一步通过将该关系代入统一场论中的电磁场方程与动力学方程进行交叉验证，证实其具有良好的理论自洽性。尤为重要的是，本研究证明该引力光速统一方程在广义相对论、量子引力及宇宙学等多个物理领域中具有普适性。该关系深刻揭示了引力与电磁作用的内在统一性，为构建统一场论提供了关键数学桥梁。本理论也为“人工场技术”奠定了数理基础，张祥前常数 $Z$ 有望在未来星际文明发展中发挥核心作用。
+$G = \frac{2Z}{c}$该公式被命名为引力光速统一方程（Gravitational Light Speed Unification Equation）。其中 $Z$ 为一理论常数，其量纲为 $\text{L}^4 \cdot \text{M}^{-1} \cdot \text{T}^{-3}$（对应于单位时间单位体积内空间位移条数的变化率，即空间发散的密度流）。本理论研究受惠于张祥前先生的统一场论，将该常数命名为张祥前常数（Zhang Xiangqian Constant）。当取张祥前常数 $Z = 0.01$ 时，理论计算所得引力常数为：$G_{\text{理论}} = 6.67128190396304 \times 10^{-11}  \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$与 CODATA 2018 推荐值：$G_{\text{CODATA}} = 6.67430 \times 10^{-11}  \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$高度吻合，相对误差仅为 0.045%。本文进一步通过将该关系代入统一场论中的电磁场方程与动力学方程进行交叉验证，证实其具有良好的理论自洽性。尤为重要的是，本研究证明该引力光速统一方程在广义相对论、量子引力及宇宙学等多个物理领域中具有普适性。该关系深刻揭示了引力与电磁作用的内在统一性，为构建统一场论提供了关键数学桥梁。本理论也为“人工场技术”奠定了数理基础，张祥前常数 $Z$ 有望在未来星际文明发展中发挥核心作用。
 
----
+<br/>
 
+---  
 
-## Abstract
-
-Based on the complete formula system of Zhang Xiangqian's Unified Field Theory, this paper systematically derives the mathematical expression of the gravitational constant $G$, and establishes a quantitative relationship between $G$ and the speed of light $c$. The derivation process comprehensively utilizes the mass definition equation, spacetime geometric model, and field interaction theory within this framework, ultimately arriving at the core expression:  $G = \frac{2Z}{c}$  This formula is designated as the Gravitational Light Speed Unification Equation. Here, $Z$ is a theoretical constant with the dimension of $[T^{-1} L^{-3}]$ (corresponding to the rate of change of spatial displacement lines per unit time per unit volume, i.e., the density flow of spatial divergence). Acknowledging the foundational contributions of Mr. Zhang Xiangqian's Unified Field Theory to this research, this constant is named the Zhang Xiangqian Constant. When assigning the Zhang Xiangqian Constant the value $Z = 0.01$, the theoretically calculated gravitational constant is:  $G_{\text{theory}} = 6.67128190396304 \times 10^{-11}  \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$ This result shows a high degree of agreement with the CODATA 2018 recommended value:  $G_{\text{CODATA}} = 6.67430 \times 10^{-11}  \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$ with a relative error of only 0.045%. Furthermore, this paper conducts cross-validation by incorporating this relationship into the electromagnetic field equations and dynamical equations within the unified field theory, confirming its strong theoretical self-consistency. Importantly, this study demonstrates that the Gravitational Light Speed Unification Equation possesses universality across multiple physical domains, including general relativity, quantum gravity, and cosmology. This relationship profoundly reveals the intrinsic unity between gravitational and electromagnetic interactions, providing a key mathematical bridge for constructing a Unified Field Theory. This theory also lays a mathematical and physical foundation for "Artificial field technology" and the Zhang Xiangqian Constant is anticipated to play a central role in the future development of interstellar civilization.
-
-**关键词**：张祥前统一场论；引力常数；光速；引力光速统一方程；张祥前常数；理论推导；公式对比；物理常数统一；广义相对论；量子引力；空间；物质
+**关键词**：张祥前统一场论；引力常数；光速；引力光速统一方程；张祥前常数；理论推导；公式对比；物理常数统一；广义相对论；量子引力；空间；物质  
 
 ---
 
@@ -57,12 +58,12 @@ $$\mathbf{R} = \mathbf{C}t$$
 
 此质量定义与传统物理学中将质量视为物体所含“物质”多少的内在属性观点截然不同。下表汇总了其主要区别：
 
-| 对比维度           | 传统质量观                                       | 张祥前的质量观                                                                 |
-|--------------------|--------------------------------------------------|--------------------------------------------------------------------------------|
-| 本质定义           | 物体所含“物质”的多少，或惯性、引力作用的度量       | 物体周围空间光速发散运动程度的度量，与空间位移矢量的条数成正比 ($M = k n$)      |
-| 空间角色           | 物质存在的“舞台”和容器，通常被认为是静态的         | 宇宙的基本构成之一，本身具有动态属性，以圆柱螺旋式光速运动                     |
-| 数学核心           | 标量，通常作为物理公式中的参数                     | $M = k n$，其中 $n$ 是单位立体角内空间位移矢量的条数密度                        |
-| 与运动关系         | 质量通常被视为内在属性，不随物体常规运动状态改变（相对论中质量随速度变化） | 质量直接源于空间的运动。若通过“人工场”等技术改变空间运动状态（如使其加速发散），可改变甚至消除质量（反引力效应） |
+| 对比维度  |                 传统质量观                 |                          张祥前的质量观                          |
+| :---: | :-----------------------------------: | :-------------------------------------------------------: |
+| 本质定义  |        物体所含“物质”的多少，或惯性、引力作用的度量        |        物体周围空间光速发散运动程度的度量，与空间位移矢量的条数成正比 ($M = k n$)        |
+| 空间角色  |        物质存在的“舞台”和容器，通常被认为是静态的         |               宇宙的基本构成之一，本身具有动态属性，以圆柱螺旋式光速运动               |
+| 数学核心  |            标量，通常作为物理公式中的参数            |            $M = k n$，其中 $n$ 是单位立体角内空间位移矢量的条数密度            |
+| 与运动关系 | 质量通常被视为内在属性，不随物体常规运动状态改变（相对论中质量随速度变化） | 质量直接源于空间的运动。若通过“人工场”等技术改变空间运动状态（如使其加速发散），可改变甚至消除质量（反引力效应） |
 
 将质量的概念与时空的几何性质直接联系起来，认为物体的质量效应（引力和惯性）源于其周围空间的运动状态和几何结构。
 
@@ -282,22 +283,71 @@ $E = m c^2$ 是物理学中最为著名的公式之一，它揭示了质量与�
 
 结论：质能方程 $E = m c^2$ 在量纲上是完全自洽和正确的。在张祥前统一场论中，该方程同样成立。光速 $c$ 在此方程中作为核心常数，凸显了其在统一时空、物质与能量中的根本地位。这也与引力光速统一方程 $G = 2Z/c$ 中光速 $c$ 所扮演的桥梁角色相呼应，共同支持了理论的基本框架。
 
-### 5.3通过 $Z = G \cdot c / 2$ 与核心物理公式的兼容性验证汇总
+\subsection{5.3 通过 $Z = G \cdot c / 2$ 与核心物理公式的兼容性验证汇总}
 
 以下表格汇总了 $Z = G \cdot c / 2$ 关系（其中 $Z$ 为强度的基本常数——张祥前常数）与物理学各领域核心公式的量纲兼容性验证结果，证明了该关系的普适性。
 
-**表3：$Z = G \cdot c / 2$ 与核心物理公式的兼容性验证汇总**
+\begin{table}[H]
+\centering
+\caption{$Z = G \cdot c / 2$ 与核心物理公式的兼容性验证汇总}
+\begin{tabular}{p{3cm} p{4cm} p{4cm} p{5cm} p{6cm}}
+\toprule
+公式名称 & 标准形式 (Standard Form) & 含 $Z$ 形式 (Form with $Z$) & 量纲验证 (Dimensional Analysis) & 验证结果与物理意义 (Physical Meaning) \\
+\midrule
+爱因斯坦场方程 & 
+$G_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}$ & 
+$G_{\mu\nu} = \dfrac{16\pi Z}{c^5} T_{\mu\nu}$ & 
+$[G_{\mu\nu}] = 1$, $[T_{\mu\nu}] = [M L^{-1} T^{-2}]$, $[16\pi Z / c^5] = [M^{-1} L T^2]$ & 
+$Z$ 揭示了时空弯曲与物质能量分布的耦合强度，其量纲组合替代了传统的 $G/c^4$。 \\
+\midrule
+史瓦西半径 & 
+$r_s = \dfrac{2 G M}{c^2}$ & 
+$r_s = \dfrac{4 Z M}{c^3}$ & 
+$[r_s] = [L]$, $[4 Z M / c^3] = [L]$ & 
+黑洞视界是质量 $M$ 与常数 $Z$ 的线性函数。$Z$ 的大小直接决定了给定质量黑洞的尺度。 \\
+\midrule
+引力时间膨胀 & 
+$\dfrac{\Delta f}{f} = \dfrac{G M}{c^2 r}$ & 
+$\dfrac{\Delta f}{f} = \dfrac{2 Z M}{c^3 r}$ & 
+无量纲 & 
+引力红移效应正比于 $Z M$。$Z$ 在此扮演了与 $G$ 类似的角色，但与光速 $c$ 的组合幂次发生了变化。 \\
+\midrule
+普朗克质量 & 
+$m_P = \sqrt{\dfrac{\hbar c}{G}}$ & 
+$m_P = \sqrt{\dfrac{\hbar c^3}{2 Z}}$ & 
+$[m_P] = [M]$, $[\hbar c^3 / (2Z)]^{1/2} = [M]$ & 
+将量子引力的特征质量尺度与 $Z$ 常数直接关联。$Z$ 的值决定了量子引力效应的显著程度。 \\
+\midrule
+弗里德曼方程 & 
+$H^2 = \dfrac{8\pi G}{3} \rho$ & 
+$H^2 = \dfrac{16\pi Z}{3 c} \rho$ & 
+$[H^2] = [T^{-2}]$, $[16\pi Z \rho / (3c)] = [T^{-2}]$ & 
+宇宙膨胀速率与物质密度 $\rho$ 和常数 $Z$ 相关。$Z$ 通过 $Z/c$ 的形式影响膨胀动力学。 \\
+\midrule
+引力波辐射功率 & 
+$P = \dfrac{32}{5} \dfrac{G}{c^5} \mu^2 a^4 \omega^6$ & 
+$P = \dfrac{64}{5} \dfrac{Z}{c^6} \mu^2 a^4 \omega^6$ & 
+$[P] = [M L^2 T^{-3}]$, $[64 Z \mu^2 a^4 \omega^6 / (5 c^6)] = [M L^2 T^{-3}]$ & 
+双星系统引力波辐射的强度由 $Z/c^6$ 调节。$Z$ 的引入保持了功率量纲的正确性。 \\
+\midrule
+霍金温度 & 
+$T_H = \dfrac{\hbar c^3}{8\pi G M k_B}$ & 
+$T_H = \dfrac{\hbar c^4}{16\pi Z M k_B}$ & 
+$[T_H] = [K]$, $[\hbar c^4 / (16\pi Z M k_B)] = [K]$ & 
+黑洞量子辐射温度与 $Z M$ 成反比。$Z$ 越大，同等质量黑洞的霍金温度越低。 \\
+\midrule
+牛顿引力势 & 
+$\phi = -\dfrac{G M}{r}$ & 
+$\phi = -\dfrac{2 Z M}{c r}$ & 
+$[\phi] = [L^2 T^{-2}]$, $[2 Z M / (c r)] = [L^2 T^{-2}]$ & 
+引力势公式是广义相对论弱场近似的基石。引入 $Z$ 后，表示为 $-2ZM/(cr)$，其量纲与能量每单位质量一致。 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-| 公式名称           | 标准形式                                                                 | 含 $Z$ 形式                                                              | 量纲验证 (含Z形式)                                                                 | 验证结果与物理意义                                                                                   |
-|--------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| 爱因斯坦场方程     | $G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$                             | $G_{\mu\nu} = \frac{16\pi Z}{c^5} T_{\mu\nu}$                            | $[G_{\mu\nu}] = 1, [T_{\mu\nu}] = [M L^{-1} T^{-2}], [16\pi Z / c^5] = [M^{-1} L T^2]$ | $Z$ 揭示了时空弯曲与物质能量分布的耦合强度，其量纲组合替代了传统的 $G/c^4$。                            |
-| 史瓦西半径         | $r_s = \frac{2 G M}{c^2}$                                                | $r_s = \frac{4 Z M}{c^3}$                                                | $[r_s] = [L], [4 Z M / c^3] = [L]$                                                 | 明确了黑洞视界是质量 $M$ 与常数 $Z$ 的线性函数。$Z$ 的大小直接决定了给定质量黑洞的尺度。                |
-| 引力时间膨胀       | $\frac{\Delta f}{f} = \frac{G M}{c^2 r}$                                 | $\frac{\Delta f}{f} = \frac{2 Z M}{c^3 r}$                               | (无量纲)                                                                           | 引力红移效应直接正比于 $Z M$。$Z$ 在此扮演了与 $G$ 类似的角色，但与光速 $c$ 的组合幂次发生了变化。     |
-| 普朗克质量         | $m_P = \sqrt{\frac{\hbar c}{G}}$                                         | $m_P = \sqrt{\frac{\hbar c^3}{2 Z}}$                                     | $[m_P] = [M], [\hbar c^3 / (2Z)]^{1/2} = [M]$                                      | 将量子引力的特征质量尺度与 $Z$ 常数直接关联。$Z$ 的值决定了量子引力效应的显著程度。                    |
-| 弗里德曼方程       | $H^2 = \frac{8\pi G}{3} \rho$                                            | $H^2 = \frac{16\pi Z}{3 c} \rho$                                         | $[H^2] = [T^{-2}], [16\pi Z \rho / (3c)] = [T^{-2}]$                              | 宇宙膨胀速率与物质密度 $\rho$ 和常数 $Z$ 相关。$Z$ 通过 $Z/c$ 的形式影响膨胀动力学。                    |
-| 引力波辐射功率     | $P = \frac{32}{5} \frac{G}{c^5} \mu^2 a^4 \omega^6$                      | $P = \frac{64}{5} \frac{Z}{c^6} \mu^2 a^4 \omega^6$                      | $[P] = [M L^2 T^{-3}], [64 Z \mu^2 a^4 \omega^6 / (5 c^6)] = [M L^2 T^{-3}]$       | 双星系统引力波辐射的强度由 $Z/c^6$ 调节。$Z$ 的引入保持了功率量纲的正确性（$[M L^2 T^{-3}]$）。        |
-| 霍金温度           | $T_H = \frac{\hbar c^3}{8\pi G M k_B}$                                   | $T_H = \frac{\hbar c^4}{16\pi Z M k_B}$                                  | $[T_H] = [K], [\hbar c^4 / (16\pi Z M k_B)] = [K]$                                | 黑洞量子辐射温度与 $Z M$ 成反比。$Z$ 越大，同等质量黑洞的霍金温度越低。                                |
-| 牛顿引力势         | $\phi = -\frac{G M}{r}$                                                  | $\phi = -\frac{2 Z M}{c r}$                                              | $[\phi] = [L^2 T^{-2}], [2 Z M / (c r)] = [L^2 T^{-2}]$                            | 经典的引力势公式是广义相对论弱场近似的基石。引入 $Z$ 后，引力势表示为 $-2ZM/(cr)$，其量纲（$[L^2 T^{-2}]$）与能量每单位质量一致。 |
+\noindent 注：表中“量纲验证”均以国际单位制 (SI) 为基础进行推导。
+
+> 注：表中“量纲验证”均以国际单位制 (SI) 为基础进行推导。
 
 ### 5.4 关键总结
 
@@ -421,6 +471,3 @@ $E = m c^2$ 是物理学中最为著名的公式之一，它揭示了质量与�
 25. X. Q. Zhang. Unified Field Theory： ExtraterrestrialTechnology -- Academic Edition（2nd）. 2024. Tongda Town, Lujiang County, China.
 
 **致谢**：本研究受惠于张祥前先生统一场论的理论贡献，特将此理论常数 $Z$ 命名为张祥前常数（Zhang Xiangqian Constant）。感谢所有为物理学发展做出贡献的研究者，正是站在巨人的肩膀上，我们才能看得更远。
-
-人民万岁！  
-long live the people!
