@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>离线版几何因子可视化 - 立体角积分演示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+        
+        #canvas {
+            display: block;
+            cursor: grab;
+            transition: cursor 0.2s;
+        }
+        
+        #canvas:active {
+            cursor: grabbing;
+        }
+        
+        .ui-panel {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        #info-panel {
+            top: 30px;
+            left: 30px;
+            width: 420px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        #controls-panel {
+            top: 30px;
+            right: 30px;
+            width: 320px;
+        }
+        
+        #math-panel {
+            bottom: 30px;
+            left: 30px;
+            width: 600px;
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+        
+        #stats-panel {
+            bottom: 30px;
+            right: 30px;
+            width: 280px;
+        }
+        
+        .panel-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .control-group {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .slider-container {
+            margin: 10px 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 8px 4px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .math-formula {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .math-formula.active {
+            background: rgba(102, 126, 234, 0.2);
+            border-left-color: #feca57;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2, #feca57);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 4px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .highlight {
+            color: #feca57;
+            font-weight: bold;
+        }
+        
+        .warning {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: #51cf66;
+            font-weight: bold;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        #fps-counter {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .pulsing {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="fps-counter">FPS: <span id="fps-value">60</span></div>
+    
+    <!-- 信息面板 -->
+    <div id="info-panel" class="ui-panel">
+        <div class="panel-title">🌌 几何因子推导可视化</div>
+        <div id="current-step-info">
+            <h4>当前步骤: <span id="current-step" class="highlight">初始化</span></h4>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <p id="step-description">正在设置三维空间中的球对称发散场和立体角积分可视化...</p>
+        </div>
+        
+        <div class="control-group">
+            <h4>📊 积分进度监控</h4>
+            <div class="stat-item">
+                <span>积分值:</span>
+                <span id="integral-value" class="highlight">0.000</span>
+            </div>
+            <div class="stat-item">
+                <span>理论值 π²:</span>
+                <span class="success">9.870</span>
+            </div>
+            <div class="stat-item">
+                <span>几何因子:</span>
+                <span id="geometric-factor" class="highlight">0.000</span>
+            </div>
+            <div class="stat-item">
+                <span>误差:</span>
+                <span id="error-value" class="warning">100%</span>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <h4>🎯 物理解释</h4>
+            <p id="physics-explanation">
+                立体角积分 ∫sin θ dΩ 表示球对称场在二维平面上的投影总和。
+                这个积分的结果决定了从三维到二维的几何修正因子。
+            </p>
+        </div>
+    </div>
+    
+    <!-- 控制面板 -->
+    <div id="controls-panel" class="ui-panel">
+        <div class="panel-title">🎮 交互控制</div>
+        
+        <div class="control-group">
+            <button class="button" onclick="startSimulation()">▶️ 开始模拟</button>
+            <button class="button" onclick="pauseSimulation()">⏸️ 暂停</button>
+            <button class="button" onclick="resetSimulation()">🔄 重置</button>
+        </div>
+        
+        <div class="control-group">
+            <h4>积分参数控制</h4>
+            <div class="slider-container">
+                <label>θ 积分上限: <span id="theta-limit">π</span></label>
+                <input type="range" class="slider" id="theta-slider" min="0" max="180" value="180" 
+                       oninput="updateThetaLimit(this.value)">
+            </div>
+            <div class="slider-container">
+                <label>φ 积分上限: <span id="phi-limit">2π</span></label>
+                <input type="range" class="slider" id="phi-slider" min="0" max="360" value="360" 
+                       oninput="updatePhiLimit(this.value)">
+            </div>
+            <div class="slider-container">
+                <label>积分精度: <span id="precision">100</span></label>
+                <input type="range" class="slider" id="precision-slider" min="10" max="500" value="100" 
+                       oninput="updatePrecision(this.value)">
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <h4>可视化选项</h4>
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-field-lines" checked onchange="toggleFieldLines()">
+                <label>显示场线</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-integration-region" checked onchange="toggleIntegrationRegion()">
+                <label>显示积分区域</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-projection-plane" checked onchange="toggleProjectionPlane()">
+                <label>显示投影平面</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-particles" checked onchange="toggleParticles()">
+                <label>显示粒子系统</label>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <h4>动画控制</h4>
+            <div class="slider-container">
+                <label>旋转速度: <span id="rotation-speed">1.0</span></label>
+                <input type="range" class="slider" id="rotation-slider" min="0" max="3" value="1" step="0.1" 
+                       oninput="updateRotationSpeed(this.value)">
+            </div>
+            <div class="slider-container">
+                <label>场强可视化: <span id="field-intensity">1.0</span></label>
+                <input type="range" class="slider" id="field-slider" min="0.1" max="3" value="1" step="0.1" 
+                       oninput="updateFieldIntensity(this.value)">
+            </div>
+        </div>
+    </div>
+    
+    <!-- 数学公式面板 -->
+    <div id="math-panel" class="ui-panel">
+        <div class="panel-title">📐 数学推导过程</div>
+        <div id="math-formulas">
+            <div class="math-formula" id="formula-1">
+                <strong>步骤1: 立体角积分设置</strong><br>
+                我们需要计算球对称场在二维平面上的投影：<br>
+                ∫ sin θ dΩ = ∫₀²π dφ ∫₀π sin θ · sin θ dθ
+            </div>
+            
+            <div class="math-formula" id="formula-2">
+                <strong>步骤2: 分离变量积分</strong><br>
+                将 φ 和 θ 积分分离：<br>
+                = ∫₀²π dφ ∫₀π sin²θ dθ = 2π ∫₀π sin²θ dθ
+            </div>
+            
+            <div class="math-formula" id="formula-3">
+                <strong>步骤3: 计算 sin²θ 积分</strong><br>
+                使用积分公式 ∫₀π sin²θ dθ = π/2：<br>
+                2π ∫₀π sin²θ dθ = 2π · π/2 = π²
+            </div>
+            
+            <div class="math-formula" id="formula-4">
+                <strong>步骤4: 几何因子推导</strong><br>
+                将积分结果转换为几何因子：<br>
+                几何因子 = (π²/2π) · (4π/π²) = (π² · 4π)/(2π · π²) = 4π/2π = 2
+            </div>
+            
+            <div class="math-formula warning" id="formula-5">
+                <strong>⚠️ 问题分析</strong><br>
+                这个推导存在概念问题：<br>
+                • 积分结果 π² 有特定的物理意义，不应随意进行量纲转换<br>
+                • 几何因子应该是无量纲数，且有明确的物理来源<br>
+                • 标准物理中的几何因子通常来自立体角比值或对称性考虑
+            </div>
+        </div>
+    </div>
+    
+    <!-- 统计面板 -->
+    <div id="stats-panel" class="ui-panel">
+        <div class="panel-title">📈 实时统计</div>
+        <div id="performance-stats">
+            <div class="stat-item">
+                <span>渲染对象:</span>
+                <span id="object-count" class="highlight">0</span>
+            </div>
+            <div class="stat-item">
+                <span>粒子数:</span>
+                <span id="particle-count" class="highlight">1000</span>
+            </div>
+            <div class="stat-item">
+                <span>场线数:</span>
+                <span id="field-line-count" class="highlight">50</span>
+            </div>
+            <div class="stat-item">
+                <span>帧时间:</span>
+                <span id="frame-time" class="highlight">16ms</span>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <h4>🔬 数值验证</h4>
+            <div class="stat-item">
+                <span>数值积分:</span>
+                <span id="numerical-integral" class="highlight">0.000</span>
+            </div>
+            <div class="stat-item">
+                <span>解析解:</span>
+                <span class="success">9.870</span>
+            </div>
+            <div class="stat-item">
+                <span>相对误差:</span>
+                <span id="relative-error" class="warning">100%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内嵌Three.js简化版本 -->
+    <script>
+        // 简化的Three.js核心功能
+        const THREE = {
+            Scene: function() {
+                this.children = [];
+                this.background = null;
+                this.fog = null;
+                this.add = function(object) { this.children.push(object); };
+                this.remove = function(object) { 
+                    const index = this.children.indexOf(object);
+                    if (index > -1) this.children.splice(index, 1);
+                };
+            },
+            
+            PerspectiveCamera: function(fov, aspect, near, far) {
+                this.fov = fov;
+                this.aspect = aspect;
+                this.near = near;
+                this.far = far;
+                this.position = { x: 0, y: 0, z: 0, set: function(x, y, z) { this.x = x; this.y = y; this.z = z; } };
+                this.lookAt = function(target) { /* 简化实现 */ };
+                this.updateProjectionMatrix = function() { /* 简化实现 */ };
+            },
+            
+            WebGLRenderer: function(params) {
+                this.domElement = params.canvas;
+                this.shadowMap = { enabled: false, type: null };
+                this.outputEncoding = null;
+                this.toneMapping = null;
+                this.toneMappingExposure = 1;
+                
+                this.setSize = function(width, height) {
+                    this.domElement.width = width;
+                    this.domElement.height = height;
+                };
+                
+                this.render = function(scene, camera) {
+                    // 简化的渲染实现
+                    const ctx = this.domElement.getContext('2d');
+                    if (ctx) {
+                        ctx.fillStyle = '#0a0a1a';
+                        ctx.fillRect(0, 0, this.domElement.width, this.domElement.height);
+                        
+                        // 绘制简化的3D场景
+                        this.renderSimplified(ctx, scene, camera);
+                    }
+                };
+                
+                this.renderSimplified = function(ctx, scene, camera) {
+                    // 绘制中心的质量点
+                    ctx.fillStyle = '#ff4444';
+                    ctx.beginPath();
+                    ctx.arc(200, 300, 20, 0, 2 * Math.PI);
+                    ctx.fill();
+                    
+                    ctx.fillStyle = '#4444ff';
+                    ctx.beginPath();
+                    ctx.arc(600, 300, 15, 0, 2 * Math.PI);
+                    ctx.fill();
+                    
+                    // 绘制场线
+                    if (window.showFieldLines) {
+                        ctx.strokeStyle = '#ffaa00';
+                        ctx.lineWidth = 2;
+                        for (let i = 0; i < 20; i++) {
+                            const angle = (i / 20) * 2 * Math.PI;
+                            const startX = 200 + Math.cos(angle) * 25;
+                            const startY = 300 + Math.sin(angle) * 25;
+                            const endX = 200 + Math.cos(angle) * 100;
+                            const endY = 300 + Math.sin(angle) * 100;
+                            
+                            ctx.beginPath();
+                            ctx.moveTo(startX, startY);
+                            ctx.lineTo(endX, endY);
+                            ctx.stroke();
+                        }
+                    }
+                    
+                    // 绘制投影平面
+                    if (window.showProjectionPlane) {
+                        ctx.strokeStyle = '#44ff44';
+                        ctx.lineWidth = 3;
+                        ctx.setLineDash([5, 5]);
+                        ctx.beginPath();
+                        ctx.moveTo(100, 300);
+                        ctx.lineTo(700, 300);
+                        ctx.stroke();
+                        ctx.setLineDash([]);
+                    }
+                    
+                    // 绘制积分区域
+                    if (window.showIntegrationRegion && window.integralProgress > 0) {
+                        ctx.fillStyle = 'rgba(255, 170, 0, 0.3)';
+                        const radius = (window.integralProgress / 100) * 80;
+                        ctx.beginPath();
+                        ctx.arc(200, 300, radius, 0, 2 * Math.PI);
+                        ctx.fill();
+                    }
+                };
+                
+                this.dispose = function() { /* 清理资源 */ };
+            },
+            
+            Color: function(color) {
+                this.r = 0; this.g = 0; this.b = 0;
+                if (typeof color === 'number') {
+                    this.setHex(color);
+                }
+                this.setHex = function(hex) {
+                    this.r = ((hex >> 16) & 255) / 255;
+                    this.g = ((hex >> 8) & 255) / 255;
+                    this.b = (hex & 255) / 255;
+                };
+            },
+            
+            Vector3: function(x, y, z) {
+                this.x = x || 0;
+                this.y = y || 0;
+                this.z = z || 0;
+                this.set = function(x, y, z) { this.x = x; this.y = y; this.z = z; return this; };
+                this.clone = function() { return new THREE.Vector3(this.x, this.y, this.z); };
+                this.add = function(v) { this.x += v.x; this.y += v.y; this.z += v.z; return this; };
+                this.multiplyScalar = function(s) { this.x *= s; this.y *= s; this.z *= s; return this; };
+                this.normalize = function() {
+                    const length = Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+                    if (length > 0) {
+                        this.x /= length; this.y /= length; this.z /= length;
+                    }
+                    return this;
+                };
+            },
+            
+            Group: function() {
+                this.children = [];
+                this.position = new THREE.Vector3();
+                this.rotation = { x: 0, y: 0, z: 0 };
+                this.visible = true;
+                this.add = function(object) { this.children.push(object); };
+            },
+            
+            // 简化的材质和几何体
+            SphereGeometry: function(radius, widthSegments, heightSegments) {
+                this.radius = radius;
+                this.widthSegments = widthSegments;
+                this.heightSegments = heightSegments;
+            },
+            
+            MeshBasicMaterial: function(params) {
+                this.color = params.color || 0xffffff;
+                this.transparent = params.transparent || false;
+                this.opacity = params.opacity || 1;
+                this.wireframe = params.wireframe || false;
+            },
+            
+            Mesh: function(geometry, material) {
+                this.geometry = geometry;
+                this.material = material;
+                this.position = new THREE.Vector3();
+                this.rotation = { x: 0, y: 0, z: 0 };
+                this.visible = true;
+            }
+        };
+        
+        // 全局变量
+        let scene, camera, renderer;
+        let animationId, isSimulating = false;
+        let integralProgress = 0, rotationSpeed = 1, fieldIntensity = 1;
+        let thetaLimit = Math.PI, phiLimit = 2 * Math.PI, precision = 100;
+        let frameCount = 0, lastTime = Date.now();
+        
+        // 显示控制变量
+        window.showFieldLines = true;
+        window.showProjectionPlane = true;
+        window.showIntegrationRegion = true;
+        window.showParticles = true;
+        window.integralProgress = 0;
+        
+        // 初始化场景
+        function initScene() {
+            // 创建场景
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0a1a);
+            
+            // 创建相机
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(12, 8, 12);
+            
+            // 创建渲染器
+            const canvas = document.getElementById('canvas');
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            // 开始渲染循环
+            animate();
+            
+            updateStepInfo(0, "初始化完成", "三维球对称发散场和立体角积分可视化已准备就绪");
+        }
+        
+        function animate() {
+            animationId = requestAnimationFrame(animate);
+            
+            // 计算FPS
+            frameCount++;
+            const currentTime = Date.now();
+            if (currentTime - lastTime >= 1000) {
+                const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+                document.getElementById('fps-value').textContent = fps;
+                document.getElementById('frame-time').textContent = Math.round(1000/fps) + 'ms';
+                frameCount = 0;
+                lastTime = currentTime;
+            }
+            
+            if (isSimulating) {
+                // 更新积分可视化
+                updateIntegrationVisualization();
+                
+                // 更新积分计算
+                updateIntegralCalculation();
+            }
+            
+            renderer.render(scene, camera);
+            
+            // 更新统计信息
+            updatePerformanceStats();
+        }
+        
+        function updateIntegrationVisualization() {
+            // 简化的积分可视化更新
+            window.integralProgress = integralProgress;
+        }
+        
+        function updateIntegralCalculation() {
+            // 数值积分计算
+            const thetaSteps = Math.floor(precision);
+            const phiSteps = Math.floor(precision);
+            let numericalIntegral = 0;
+            
+            for (let i = 0; i < thetaSteps; i++) {
+                for (let j = 0; j < phiSteps; j++) {
+                    const theta = (i / thetaSteps) * thetaLimit;
+                    const phi = (j / phiSteps) * phiLimit;
+                    
+                    const dTheta = thetaLimit / thetaSteps;
+                    const dPhi = phiLimit / phiSteps;
+                    
+                    numericalIntegral += Math.sin(theta) * Math.sin(theta) * dTheta * dPhi;
+                }
+            }
+            
+            // 更新显示
+            document.getElementById('integral-value').textContent = numericalIntegral.toFixed(3);
+            document.getElementById('numerical-integral').textContent = numericalIntegral.toFixed(3);
+            
+            const theoreticalValue = Math.PI * Math.PI;
+            const error = Math.abs(numericalIntegral - theoreticalValue) / theoreticalValue * 100;
+            document.getElementById('error-value').textContent = error.toFixed(1) + '%';
+            document.getElementById('relative-error').textContent = error.toFixed(1) + '%';
+            
+            // 计算几何因子
+            const geometricFactor = numericalIntegral > 0 ? (numericalIntegral / (2 * Math.PI)) * (4 * Math.PI / numericalIntegral) : 0;
+            document.getElementById('geometric-factor').textContent = geometricFactor.toFixed(3);
+        }
+        
+        function updatePerformanceStats() {
+            document.getElementById('object-count').textContent = scene.children.length;
+            document.getElementById('particle-count').textContent = '1000';
+            document.getElementById('field-line-count').textContent = '50';
+        }
+        
+        // 控制函数
+        function startSimulation() {
+            isSimulating = true;
+            updateStepInfo(25, "开始积分计算", "正在执行立体角积分 ∫sin θ dΩ 的数值计算");
+            highlightFormula(1);
+        }
+        
+        function pauseSimulation() {
+            isSimulating = false;
+            updateStepInfo(50, "模拟已暂停", "可以调节参数观察不同条件下的积分结果");
+        }
+        
+        function resetSimulation() {
+            isSimulating = false;
+            integralProgress = 0;
+            
+            // 重置所有滑块
+            document.getElementById('theta-slider').value = 180;
+            document.getElementById('phi-slider').value = 360;
+            document.getElementById('precision-slider').value = 100;
+            
+            updateThetaLimit(180);
+            updatePhiLimit(360);
+            updatePrecision(100);
+            
+            updateStepInfo(0, "重置完成", "所有参数已重置到初始状态");
+            highlightFormula(0);
+        }
+        
+        function updateThetaLimit(value) {
+            thetaLimit = (parseFloat(value) / 180) * Math.PI;
+            document.getElementById('theta-limit').textContent = value + '°';
+            integralProgress = (parseFloat(value) / 180) * 100;
+            updateProgressBar();
+        }
+        
+        function updatePhiLimit(value) {
+            phiLimit = (parseFloat(value) / 180) * Math.PI;
+            document.getElementById('phi-limit').textContent = value + '°';
+        }
+        
+        function updatePrecision(value) {
+            precision = parseFloat(value);
+            document.getElementById('precision').textContent = value;
+        }
+        
+        function updateRotationSpeed(value) {
+            rotationSpeed = parseFloat(value);
+            document.getElementById('rotation-speed').textContent = value;
+        }
+        
+        function updateFieldIntensity(value) {
+            fieldIntensity = parseFloat(value);
+            document.getElementById('field-intensity').textContent = value;
+        }
+        
+        function toggleFieldLines() {
+            window.showFieldLines = document.getElementById('show-field-lines').checked;
+        }
+        
+        function toggleIntegrationRegion() {
+            window.showIntegrationRegion = document.getElementById('show-integration-region').checked;
+        }
+        
+        function toggleProjectionPlane() {
+            window.showProjectionPlane = document.getElementById('show-projection-plane').checked;
+        }
+        
+        function toggleParticles() {
+            window.showParticles = document.getElementById('show-particles').checked;
+        }
+        
+        function updateStepInfo(progress, step, description) {
+            document.getElementById('current-step').textContent = step;
+            document.getElementById('step-description').textContent = description;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            
+            // 更新物理解释
+            const explanations = [
+                "立体角积分 ∫sin θ dΩ 表示球对称场在二维平面上的投影总和。这个积分的结果决定了从三维到二维的几何修正因子。",
+                "正在计算 φ 方向的积分。φ 从 0 到 2π 的积分结果为 2π，这反映了球对称性。",
+                "正在计算 θ 方向的积分。∫₀^π sin²θ dθ = π/2，这是关键的几何积分。",
+                "积分计算完成。结果 π² ≈ 9.87，但将其转换为几何因子 2 的过程存在概念问题。",
+                "几何因子推导完成，但需要注意这种推导方法的局限性和概念问题。"
+            ];
+            
+            const explanationIndex = Math.floor(progress / 20);
+            if (explanations[explanationIndex]) {
+                document.getElementById('physics-explanation').textContent = explanations[explanationIndex];
+            }
+        }
+        
+        function updateProgressBar() {
+            document.getElementById('progress-fill').style.width = integralProgress + '%';
+        }
+        
+        function highlightFormula(index) {
+            const formulas = document.querySelectorAll('.math-formula');
+            formulas.forEach((formula, i) => {
+                formula.classList.remove('active');
+                if (i === index) {
+                    formula.classList.add('active');
+                }
+            });
+        }
+        
+        // 鼠标控制
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+        
+        const canvas = document.getElementById('canvas');
+        
+        canvas.addEventListener('mousedown', (event) => {
+            isDragging = true;
+            previousMousePosition = { x: event.clientX, y: event.clientY };
+        });
+        
+        canvas.addEventListener('mousemove', (event) => {
+            if (isDragging) {
+                const deltaMove = {
+                    x: event.clientX - previousMousePosition.x,
+                    y: event.clientY - previousMousePosition.y
+                };
+                
+                // 简化的相机控制
+                console.log('Camera rotation:', deltaMove);
+                
+                previousMousePosition = { x: event.clientX, y: event.clientY };
+            }
+        });
+        
+        canvas.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        // 键盘控制
+        document.addEventListener('keydown', (event) => {
+            switch(event.code) {
+                case 'Space':
+                    event.preventDefault();
+                    isSimulating ? pauseSimulation() : startSimulation();
+                    break;
+                case 'KeyR':
+                    resetSimulation();
+                    break;
+            }
+        });
+        
+        // 窗口大小调整
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // 页面加载完成后初始化
+        window.addEventListener('load', () => {
+            initScene();
+        });
+        
+        // 页面卸载时清理资源
+        window.addEventListener('beforeunload', () => {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+            }
+            if (renderer) {
+                renderer.dispose();
+            }
+        });
+    </script>
+</body>
+</html>
