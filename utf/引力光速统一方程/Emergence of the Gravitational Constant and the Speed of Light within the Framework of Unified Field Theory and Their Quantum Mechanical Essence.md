@@ -4,7 +4,7 @@
 
 ## Authors
 
-**Mo Guozi**, **Zhang Xiangqian**
+**Guozi Mo**, **Xiangqian Zhang**
 <br/>
 
 ## Abstract

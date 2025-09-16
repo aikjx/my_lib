@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "资料与说明/全球最强论文发布平台指南：兼顾速度与声誉.md",
+                "file": "utf/引力光速统一方程/Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "全球最强论文发布平台指南：兼顾速度与声誉"
+              "title": "Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence"
             }
           }
         ],
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 531.5
   },
   "right": {
     "id": "16158ab9e45ddd91",
@@ -214,27 +214,34 @@
   },
   "active": "0e1fa04569907b25",
   "lastOpenFiles": [
-    "资料与说明/未命名.md",
+    "geometric_factor_summary.png",
+    "utf/引力光速统一方程/code/无乱码几何因子动画.py",
+    "utf/引力光速统一方程/code/英文版几何因子动画.py",
+    "几何因子推导总结.png",
+    "utf/引力光速统一方程/code/兼容版几何因子动画.py",
+    "几何因子数学总结.png",
+    "utf/引力光速统一方程/code/简化版几何因子动画.py",
+    "utf/引力光速统一方程/code/几何因子3D到2D动画可视化.py",
+    "utf/引力光速统一方程/code/geometric_factor_derivation.py",
+    "张祥前统一场论_几何因子推导.png",
+    "utf/引力光速统一方程/code/几何因子三维二维论文内容推导.py",
+    "utf/引力光速统一方程/code/几何因子三维二维 copy.py",
+    "solid_angle_geometry.png",
+    "立体角几何关系.png",
+    "utf/引力光速统一方程/code/几何因子三维二维.py",
     "资料与说明/全球最强论文发布平台指南：兼顾速度与声誉.md",
     "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
-    "资料与说明",
-    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
     "utf/引力光速统一方程/Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence.md",
-    "utf/引力光速统一方程/code/几何因子动画.py",
+    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
+    "资料与说明/未命名.md",
+    "资料与说明",
     "spherical_projection_visualization.png",
-    "utf/引力光速统一方程/code/几何因子.py",
-    "utf/引力光速统一方程/code",
     "2025-09-11.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "utf/引力光速统一方程/Drawing 2025-09-11 21.37.40.excalidraw.md",
-    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.tex",
     "未命名/README.md",
     "未命名/未命名.md",
-    "未命名/未命名.base",
-    "未命名",
-    "utf/引力光速统一方程/未命名 1.md",
-    "utf/引力光速统一方程",
-    "utf"
+    "utf/引力光速统一方程/未命名 1.md"
   ]
 }
