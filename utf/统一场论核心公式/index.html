@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张祥前统一场论核心公式可视化</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white; padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .formula-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .formula-card {
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border-radius: 15px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .formula-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        .formula-title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
+        .formula-description { font-size: 0.9em; opacity: 0.9; margin-bottom: 15px; }
+        .formula-link {
+            display: inline-block; background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px;
+            font-size: 0.9em; transition: all 0.3s ease;
+        }
+        .formula-link:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌌 张祥前统一场论</h1>
+            <h2>核心公式交互式可视化</h2>
+            <p>探索宇宙的统一本质，理解时空、质量、引力的几何化描述</p>
+        </div>
+        
+        <div class="formula-grid">
+            <div class="formula-card">
+                <div class="formula-title">🌌 时空同一化方程</div>
+                <div class="formula-description">揭示时间与空间的统一关系，时间是空间位移的度量</div>
+                <a href="01-时空同一化方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🌀 三维螺旋时空方程</div>
+                <div class="formula-description">描述空间中螺旋运动的轨迹，圆周运动与直线运动的叠加</div>
+                <a href="02-三维螺旋时空方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">⚖️ 质量定义方程</div>
+                <div class="formula-description">质量是空间位移矢量条数密度的几何化度量</div>
+                <a href="03-质量定义方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🌍 引力场定义方程</div>
+                <div class="formula-description">引力场是空间几何属性的梯度表现</div>
+                <a href="04-引力场定义方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">⚡ 静止动量方程</div>
+                <div class="formula-description">静止状态下的动量定义</div>
+                <a href="05-静止动量方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🚀 运动动量方程</div>
+                <div class="formula-description">运动状态下的动量表达</div>
+                <a href="06-运动动量方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🌟 宇宙大统一方程</div>
+                <div class="formula-description">统一的力学方程，描述宇宙中所有力的本质</div>
+                <a href="07-宇宙大统一方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🌊 空间波动方程</div>
+                <div class="formula-description">描述空间的波动性质</div>
+                <a href="08-空间波动方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">⚡ 电荷定义方程</div>
+                <div class="formula-description">电荷的几何化定义</div>
+                <a href="09-电荷定义方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🔌 电场定义方程</div>
+                <div class="formula-description">电场的统一场论表达</div>
+                <a href="10-电场定义方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🧲 磁场定义方程</div>
+                <div class="formula-description">磁场的统一场论表达</div>
+                <a href="11-磁场定义方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🔄 变化引力场产生电磁场</div>
+                <div class="formula-description">引力场变化产生电磁场的机制</div>
+                <a href="12-变化引力场产生电磁场/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🎯 磁矢势方程</div>
+                <div class="formula-description">磁矢势与磁场的关系</div>
+                <a href="13-磁矢势方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">⚡ 变化引力场产生电场</div>
+                <div class="formula-description">引力场变化产生电场</div>
+                <a href="14-变化引力场产生电场/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🔀 变化磁场产生引力场和电场</div>
+                <div class="formula-description">磁场变化产生引力场和电场</div>
+                <a href="15-变化磁场产生引力场和电场/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">💫 统一场论能量方程</div>
+                <div class="formula-description">能量的统一场论表达</div>
+                <a href="16-统一场论能量方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🛸 光速飞行器动力学方程</div>
+                <div class="formula-description">光速飞行器的动力学原理</div>
+                <a href="17-光速飞行器动力学方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">〰️ 空间波动通解</div>
+                <div class="formula-description">空间波动方程的通解</div>
+                <a href="18-空间波动通解/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+            <div class="formula-card">
+                <div class="formula-title">🌌 引力光速统一方程</div>
+                <div class="formula-description">引力常数与光速的统一关系</div>
+                <a href="19-引力光速统一方程/visualization.html" class="formula-link">🚀 启动可视化</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

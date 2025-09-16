@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>统一场论能量方程 - 交互式3D可视化</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; color: white;
+        }
+        #canvas { display: block; cursor: grab; }
+        .ui-panel {
+            position: absolute; background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+        #info-panel { top: 20px; left: 20px; width: 380px; }
+        #controls-panel { top: 20px; right: 20px; width: 300px; }
+        .panel-title {
+            font-size: 1.3em; font-weight: bold; margin-bottom: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .button {
+            background: linear-gradient(45deg, #667eea, #764ba2); color: white; border: none;
+            padding: 10px 20px; border-radius: 20px; cursor: pointer; margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .button:hover { transform: translateY(-2px); }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div id="info-panel" class="ui-panel">
+        <div class="panel-title">💫 统一场论能量方程</div>
+        <p><strong>公式：</strong> $e = m_0 c^2 = mc^2\sqrt{1 - \frac{v^2}{c^2}}$</p>
+        <p><strong>描述：</strong> 能量的统一场论表达</p>
+    </div>
+    
+    <div id="controls-panel" class="ui-panel">
+        <div class="panel-title">🎮 控制面板</div>
+        <button class="button" onclick="startVisualization()">▶️ 开始</button>
+        <button class="button" onclick="pauseVisualization()">⏸️ 暂停</button>
+        <button class="button" onclick="resetVisualization()">🔄 重置</button>
+    </div>
+
+    <script>
+        let scene, camera, renderer;
+        let animationId, isAnimating = false;
+        
+        function initScene() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0a0a);
+            
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(10, 10, 10);
+            camera.lookAt(0, 0, 0);
+            
+            renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            // 添加基础光照
+            const ambientLight = new THREE.AmbientLight(0x404080, 0.4);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(10, 10, 5);
+            scene.add(directionalLight);
+            
+            // 添加坐标轴
+            const axesHelper = new THREE.AxesHelper(5);
+            scene.add(axesHelper);
+            
+            // TODO: 添加具体的可视化内容
+            
+            animate();
+        }
+        
+        function animate() {
+            animationId = requestAnimationFrame(animate);
+            
+            if (isAnimating) {
+                // TODO: 添加动画逻辑
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        function startVisualization() { isAnimating = true; }
+        function pauseVisualization() { isAnimating = false; }
+        function resetVisualization() { isAnimating = false; /* TODO: 重置逻辑 */ }
+        
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        window.addEventListener('load', () => {
+            initScene();
+            if (window.MathJax) setTimeout(() => MathJax.typesetPromise(), 1000);
+        });
+    </script>
+</body>
+</html>

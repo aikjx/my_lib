@@ -1,0 +1,87 @@
+{
+  "formulas": [
+    {
+      "id": "01",
+      "name": "时空同一化方程",
+      "formula_latex": "\\vec{r}(t) = \\vec{C}t = x\\vec{i} + y\\vec{j} + z\\vec{k}",
+      "formula_unicode": "r⃗(t) = C⃗t = xi⃗ + yj⃗ + zk⃗",
+      "description": "揭示时间与空间的统一关系，时间是空间位移的度量",
+      "icon": "🌌",
+      "category": "spacetime",
+      "difficulty": 2,
+      "physics_concepts": ["时空统一", "空间运动", "光速不变"],
+      "math_concepts": ["矢量", "参数方程", "线性代数"],
+      "visualization_type": "3d_vector_field",
+      "parameters": [
+        {"name": "C", "type": "vector3", "default": [1, 0, 0], "range": [-1, 1]},
+        {"name": "t", "type": "float", "default": 0, "range": [0, 10]},
+        {"name": "theta", "type": "float", "default": 45, "range": [0, 180]},
+        {"name": "phi", "type": "float", "default": 45, "range": [0, 360]}
+      ],
+      "dependencies": [],
+      "applications": ["时空理论", "相对论", "宇宙学"]
+    },
+    {
+      "id": "02", 
+      "name": "三维螺旋时空方程",
+      "formula_latex": "\\vec{r}(t) = r\\cos\\omega t \\cdot \\vec{i} + r\\sin\\omega t \\cdot \\vec{j} + ht \\cdot \\vec{k}",
+      "formula_unicode": "r⃗(t) = r cos ωt · i⃗ + r sin ωt · j⃗ + ht · k⃗",
+      "description": "描述空间中螺旋运动的轨迹，圆周运动与直线运动的叠加",
+      "icon": "🌀",
+      "category": "spacetime",
+      "difficulty": 3,
+      "physics_concepts": ["螺旋运动", "复合运动", "周期性"],
+      "math_concepts": ["参数方程", "三角函数", "螺旋线"],
+      "visualization_type": "3d_helix_trajectory",
+      "parameters": [
+        {"name": "r", "type": "float", "default": 5, "range": [1, 10]},
+        {"name": "omega", "type": "float", "default": 1, "range": [0.1, 3]},
+        {"name": "h", "type": "float", "default": 2, "range": [0.5, 5]},
+        {"name": "t", "type": "float", "default": 0, "range": [0, 20]}
+      ],
+      "dependencies": ["01"],
+      "applications": ["粒子轨迹", "波动传播", "分子结构"]
+    },
+    {
+      "id": "03",
+      "name": "质量定义方程",
+      "formula_latex": "m = k \\cdot \\frac{dn}{d\\Omega}",
+      "formula_unicode": "m = k · dn/dΩ",
+      "description": "质量是空间位移矢量条数密度的几何化度量",
+      "icon": "⚖️",
+      "category": "mass",
+      "difficulty": 4,
+      "physics_concepts": ["质量重定义", "几何化度量", "立体角"],
+      "math_concepts": ["微分", "立体角", "密度函数"],
+      "visualization_type": "solid_angle_density",
+      "parameters": [
+        {"name": "k", "type": "float", "default": 1, "range": [0.1, 5]},
+        {"name": "n", "type": "integer", "default": 100, "range": [10, 1000]},
+        {"name": "theta_max", "type": "float", "default": 180, "range": [0, 180]},
+        {"name": "phi_max", "type": "float", "default": 360, "range": [0, 360]}
+      ],
+      "dependencies": ["01"],
+      "applications": ["引力理论", "场论", "几何物理"]
+    }
+  ],
+  "visualization_templates": {
+    "3d_vector_field": {
+      "renderer": "webgl",
+      "features": ["vector_arrows", "grid", "trajectory", "controls"],
+      "shaders": ["vertex_displacement", "fragment_color"],
+      "interactions": ["rotate", "zoom", "parameter_sliders"]
+    },
+    "3d_helix_trajectory": {
+      "renderer": "webgl", 
+      "features": ["curve_path", "moving_particle", "projections"],
+      "shaders": ["curve_geometry", "particle_glow"],
+      "interactions": ["rotate", "zoom", "time_control"]
+    },
+    "solid_angle_density": {
+      "renderer": "webgl",
+      "features": ["sphere_surface", "density_heatmap", "angle_cones"],
+      "shaders": ["density_visualization", "transparency_blend"],
+      "interactions": ["rotate", "zoom", "density_threshold"]
+    }
+  }
+}
