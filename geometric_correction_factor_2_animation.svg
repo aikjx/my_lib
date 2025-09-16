@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- 定义渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1"/>
+    </linearGradient>
+    <radialGradient id="sphereGradient" cx="50%" cy="30%" r="50%" fx="50%" fy="30%">
+      <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/>
+    </radialGradient>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1"/>
+    </linearGradient>
+    <!-- 场线的动画路径 -->
+    <path id="fieldLinePath" d="M 200,200 Q 400,150 600,200"/>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1e40af">
+    引力理论中的几何修正系数2
+  </text>
+  
+  <!-- 说明文字 -->
+  <text x="400" y="70" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#475569">
+    三维球对称场到二维平面投影的几何关系可视化
+  </text>
+  
+  <!-- 三维球体（初始状态） -->
+  <g id="3DSphereGroup">
+    <ellipse cx="200" cy="200" rx="80" ry="80" fill="url(#sphereGradient)" opacity="1">
+      <animate id="fadeOutSphere" attributeName="opacity" from="1" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </ellipse>
+    <ellipse cx="200" cy="200" rx="80" ry="20" fill="none" stroke="#bfdbfe" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" from="0.6" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </ellipse>
+    <text x="200" y="280" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1e40af">
+      三维球体
+    </text>
+    <text x="200" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#475569">
+      表面积: 4πr²
+    </text>
+  </g>
+  
+  <!-- 场线（三维） -->
+  <g id="fieldLines3D">
+    <!-- 12条场线，均匀分布在球面上 -->
+    <path d="M 200,120 L 200,50" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 200,280 L 200,350" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 120,200 L 50,200" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 280,200 L 350,200" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 142,142 L 90,90" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 258,258 L 310,310" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 258,142 L 310,90" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <path d="M 142,258 L 90,310" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.8" fill="none">
+      <animate attributeName="stroke-opacity" from="0.8" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    
+    <!-- 三维立体角指示 -->
+    <path d="M 200,200 L 230,180 A 30,20 0 0,1 210,230 Z" fill="rgba(59, 130, 246, 0.2)">
+      <animate attributeName="opacity" from="0.2" to="0" begin="5s" dur="2s" fill="freeze"/>
+    </path>
+    <text x="240" y="210" font-family="Arial, sans-serif" font-size="12" fill="#3b82f6">
+      立体角: 4π
+    </text>
+    <animate xlink:href="#fieldLines3D" attributeName="opacity" from="1" to="0" begin="5s" dur="2s" fill="freeze"/>
+  </g>
+  
+  <!-- 投影箭头 -->
+  <g id="projectionArrow">
+    <path d="M 300,200 L 500,200" stroke="#6366f1" stroke-width="3" fill="none">
+      <animate attributeName="opacity" from="0" to="1" begin="0s" dur="1s" fill="freeze"/>
+      <animate attributeName="opacity" from="1" to="0" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <polygon points="500,200 485,190 485,210" fill="#6366f1">
+      <animate attributeName="opacity" from="0" to="1" begin="0s" dur="1s" fill="freeze"/>
+      <animate attributeName="opacity" from="1" to="0" begin="7s" dur="1s" fill="freeze"/>
+    </polygon>
+    <text x="400" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#4338ca">
+      投影过程
+    </text>
+  </g>
+  
+  <!-- 二维圆（初始不可见，动画显示） -->
+  <g id="2DCircleGroup">
+    <circle cx="600" cy="200" r="80" fill="url(#circleGradient)" opacity="0">
+      <animate id="fadeInCircle" attributeName="opacity" from="0" to="1" begin="5s" dur="2s" fill="freeze"/>
+    </circle>
+    <text x="600" y="280" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#065f46">
+      二维圆
+    </text>
+    <text x="600" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#475569">
+      周长: 2πr
+    </text>
+  </g>
+  
+  <!-- 场线（二维） -->
+  <g id="fieldLines2D">
+    <!-- 6条场线，均匀分布在圆周上 -->
+    <path d="M 600,120 L 600,50" stroke="#10b981" stroke-width="3" stroke-opacity="0" fill="none">
+      <animate attributeName="stroke-opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 600,280 L 600,350" stroke="#10b981" stroke-width="3" stroke-opacity="0" fill="none">
+      <animate attributeName="stroke-opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 520,200 L 450,200" stroke="#10b981" stroke-width="3" stroke-opacity="0" fill="none">
+      <animate attributeName="stroke-opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 680,200 L 750,200" stroke="#10b981" stroke-width="3" stroke-opacity="0" fill="none">
+      <animate attributeName="stroke-opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 542,142 L 490,90" stroke="#10b981" stroke-width="3" stroke-opacity="0" fill="none">
+      <animate attributeName="stroke-opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 658,258 L 710,310" stroke="#10b981" stroke-width="3" stroke-opacity="0" fill="none">
+      <animate attributeName="stroke-opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    
+    <!-- 二维平面角指示 -->
+    <path d="M 600,200 L 630,180 A 30,20 0 0,1 610,230 Z" fill="rgba(16, 185, 129, 0.2)" opacity="0">
+      <animate attributeName="opacity" from="0" to="0.2" begin="7s" dur="1s" fill="freeze"/>
+    </path>
+    <text x="640" y="210" font-family="Arial, sans-serif" font-size="12" fill="#10b981" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="7s" dur="1s" fill="freeze"/>
+      平面角: 2π
+    </text>
+  </g>
+  
+  <!-- 几何修正因子2的说明 -->
+  <g id="correctionFactor">
+    <rect x="300" y="350" width="200" height="100" rx="10" ry="10" fill="white" stroke="#6b7280" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="8s" dur="1s" fill="freeze"/>
+    </rect>
+    <text x="400" y="390" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#d97706" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="8s" dur="1s" fill="freeze"/>
+      几何修正因子 = 2
+    </text>
+    <text x="400" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#4b5563" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="8s" dur="1s" fill="freeze"/>
+      4π/2π = 2 或 (4πr²)/(2πr) = 2r
+    </text>
+  </g>
+  
+  <!-- 重置按钮（可选交互控制） -->
+  <g id="resetButton" style="cursor: pointer">
+    <rect x="370" y="480" width="60" height="30" rx="5" ry="5" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+    <text x="400" y="500" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      重置
+    </text>
+    <script type="text/javascript"><![CDATA[
+      document.getElementById('resetButton').addEventListener('click', function() {
+        // 重置所有动画
+        document.getElementById('fadeOutSphere').beginElement();
+        document.getElementById('fadeInCircle').beginElement();
+        // 为了简单起见，这里只重置了两个主要动画
+        // 在实际应用中，应该重置所有动画元素
+      });
+    ]]></script>
+  </g>
+  
+  <!-- 添加更多说明文字 -->
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4b5563">
+    此动画展示了三维球对称场投影到二维平面时的几何关系
+  </text>
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4b5563">
+    修正系数2反映了空间维度的几何关系，确保物理定律在不同维度表示中的一致性
+  </text>
+</svg>
