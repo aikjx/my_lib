@@ -62,6 +62,316 @@
       ],
       "dependencies": ["01"],
       "applications": ["引力理论", "场论", "几何物理"]
+    },
+    {
+      "id": "04",
+      "name": "引力场定义方程",
+      "formula_latex": "\\vec{A} = -Gk\\frac{\\Delta n}{\\Delta s}\\frac{\\vec{r}}{r}",
+      "formula_unicode": "A⃗ = -Gk(Δn/Δs)(r⃗/r)",
+      "description": "引力场是空间几何属性的梯度表现",
+      "icon": "🌍",
+      "category": "gravity",
+      "difficulty": 4,
+      "physics_concepts": ["引力场", "几何化引力", "场强"],
+      "math_concepts": ["梯度", "矢量场", "微分几何"],
+      "visualization_type": "gravity_field_lines",
+      "parameters": [
+        {"name": "G", "type": "float", "default": 6.67e-11, "range": [1e-12, 1e-10]},
+        {"name": "k", "type": "float", "default": 1, "range": [0.1, 5]},
+        {"name": "mass", "type": "float", "default": 1, "range": [0.1, 10]}
+      ],
+      "dependencies": ["01", "03"],
+      "applications": ["万有引力", "天体力学", "广义相对论"]
+    },
+    {
+      "id": "05",
+      "name": "静止动量方程",
+      "formula_latex": "\\vec{p_0} = m_0\\vec{C_0}",
+      "formula_unicode": "p⃗₀ = m₀C⃗₀",
+      "description": "静止状态下的动量定义",
+      "icon": "⚡",
+      "category": "momentum",
+      "difficulty": 2,
+      "physics_concepts": ["静止动量", "本征动量", "光速运动"],
+      "math_concepts": ["矢量乘法", "标量乘法"],
+      "visualization_type": "momentum_vector",
+      "parameters": [
+        {"name": "m0", "type": "float", "default": 1, "range": [0.1, 10]},
+        {"name": "C0", "type": "vector3", "default": [1, 0, 0], "range": [-1, 1]}
+      ],
+      "dependencies": ["01", "03"],
+      "applications": ["粒子物理", "量子力学", "相对论"]
+    },
+    {
+      "id": "06",
+      "name": "运动动量方程",
+      "formula_latex": "\\vec{P} = m(\\vec{C} - \\vec{V})",
+      "formula_unicode": "P⃗ = m(C⃗ - V⃗)",
+      "description": "运动状态下的动量表达",
+      "icon": "🚀",
+      "category": "momentum",
+      "difficulty": 3,
+      "physics_concepts": ["运动动量", "相对运动", "动量守恒"],
+      "math_concepts": ["矢量减法", "相对速度"],
+      "visualization_type": "relative_motion",
+      "parameters": [
+        {"name": "m", "type": "float", "default": 1, "range": [0.1, 10]},
+        {"name": "C", "type": "vector3", "default": [1, 0, 0], "range": [-1, 1]},
+        {"name": "V", "type": "vector3", "default": [0.5, 0, 0], "range": [-1, 1]}
+      ],
+      "dependencies": ["01", "03", "05"],
+      "applications": ["经典力学", "相对论力学", "航天动力学"]
+    },
+    {
+      "id": "07",
+      "name": "宇宙大统一方程",
+      "formula_latex": "\\vec{F} = \\frac{d\\vec{P}}{dt} = \\vec{C}\\frac{dm}{dt} - \\vec{V}\\frac{dm}{dt} + m\\frac{d\\vec{C}}{dt} - m\\frac{d\\vec{V}}{dt}",
+      "formula_unicode": "F⃗ = dP⃗/dt = C⃗(dm/dt) - V⃗(dm/dt) + m(dC⃗/dt) - m(dV⃗/dt)",
+      "description": "统一的力学方程，描述宇宙中所有力的本质",
+      "icon": "🌟",
+      "category": "unified_force",
+      "difficulty": 5,
+      "physics_concepts": ["四种基本力统一", "力的本质", "时空动力学"],
+      "math_concepts": ["微分", "矢量微分", "复合函数求导"],
+      "visualization_type": "unified_force_field",
+      "parameters": [
+        {"name": "dmdt", "type": "float", "default": 0.1, "range": [-1, 1]},
+        {"name": "dCdt", "type": "vector3", "default": [0.1, 0, 0], "range": [-1, 1]},
+        {"name": "dVdt", "type": "vector3", "default": [0.05, 0, 0], "range": [-1, 1]}
+      ],
+      "dependencies": ["01", "03", "05", "06"],
+      "applications": ["统一场论", "基本力统一", "宇宙动力学"]
+    },
+    {
+      "id": "08",
+      "name": "空间波动方程",
+      "formula_latex": "\\nabla^2 L = \\frac{1}{c^2}\\frac{\\partial^2 L}{\\partial t^2}",
+      "formula_unicode": "∇²L = (1/c²)(∂²L/∂t²)",
+      "description": "描述空间的波动性质",
+      "icon": "🌊",
+      "category": "wave",
+      "difficulty": 4,
+      "physics_concepts": ["空间波动", "引力波", "时空涟漪"],
+      "math_concepts": ["拉普拉斯算子", "偏微分方程", "波动方程"],
+      "visualization_type": "space_wave",
+      "parameters": [
+        {"name": "c", "type": "float", "default": 1, "range": [0.1, 3]},
+        {"name": "frequency", "type": "float", "default": 1, "range": [0.1, 5]},
+        {"name": "amplitude", "type": "float", "default": 1, "range": [0.1, 3]}
+      ],
+      "dependencies": ["01"],
+      "applications": ["引力波探测", "时空物理", "波动光学"]
+    },
+    {
+      "id": "09",
+      "name": "电荷定义方程",
+      "formula_latex": "q = k'k\\frac{1}{\\Omega^2}\\frac{d\\Omega}{dt}",
+      "formula_unicode": "q = k'k(1/Ω²)(dΩ/dt)",
+      "description": "电荷的几何化定义",
+      "icon": "⚡",
+      "category": "charge",
+      "difficulty": 4,
+      "physics_concepts": ["电荷几何化", "立体角变化", "电荷本质"],
+      "math_concepts": ["立体角", "时间导数", "几何微分"],
+      "visualization_type": "charge_geometry",
+      "parameters": [
+        {"name": "k_prime", "type": "float", "default": 1, "range": [0.1, 5]},
+        {"name": "k", "type": "float", "default": 1, "range": [0.1, 5]},
+        {"name": "omega_rate", "type": "float", "default": 1, "range": [0.1, 10]}
+      ],
+      "dependencies": ["01", "03"],
+      "applications": ["电动力学", "量子电动力学", "粒子物理"]
+    },
+    {
+      "id": "10",
+      "name": "电场定义方程",
+      "formula_latex": "\\vec{E} = -\\frac{kk'}{4\\pi\\varepsilon_0\\Omega^2}\\frac{d\\Omega}{dt}\\frac{\\vec{r}}{r^3}",
+      "formula_unicode": "E⃗ = -[kk'/(4πε₀Ω²)](dΩ/dt)(r⃗/r³)",
+      "description": "电场的统一场论表达",
+      "icon": "🔌",
+      "category": "electric",
+      "difficulty": 4,
+      "physics_concepts": ["电场", "库仑定律", "电场强度"],
+      "math_concepts": ["矢量场", "反平方定律", "立体角微分"],
+      "visualization_type": "electric_field",
+      "parameters": [
+        {"name": "charge", "type": "float", "default": 1, "range": [-5, 5]},
+        {"name": "epsilon0", "type": "float", "default": 8.85e-12, "range": [1e-13, 1e-11]}
+      ],
+      "dependencies": ["01", "03", "09"],
+      "applications": ["静电学", "电容器", "电场分析"]
+    },
+    {
+      "id": "11",
+      "name": "磁场定义方程",
+      "formula_latex": "\\vec{B} = \\frac{\\mu_0}{4\\pi}\\frac{q\\vec{v} \\times \\vec{r}}{r^3}",
+      "formula_unicode": "B⃗ = (μ₀/4π)[q(v⃗ × r⃗)/r³]",
+      "description": "磁场的统一场论表达",
+      "icon": "🧲",
+      "category": "magnetic",
+      "difficulty": 4,
+      "physics_concepts": ["磁场", "毕奥-萨伐尔定律", "磁感应强度"],
+      "math_concepts": ["矢量叉积", "磁场分布", "电流磁效应"],
+      "visualization_type": "magnetic_field",
+      "parameters": [
+        {"name": "mu0", "type": "float", "default": 4e-7, "range": [1e-8, 1e-6]},
+        {"name": "current", "type": "float", "default": 1, "range": [0.1, 10]},
+        {"name": "velocity", "type": "vector3", "default": [1, 0, 0], "range": [-3, 3]}
+      ],
+      "dependencies": ["01", "09", "10"],
+      "applications": ["磁学", "电机", "磁共振"]
+    },
+    {
+      "id": "12",
+      "name": "变化引力场产生电磁场",
+      "formula_latex": "\\frac{\\partial^2\\vec{A}}{\\partial t^2} = \\frac{\\vec{V}}{f}(\\nabla \\cdot \\vec{E}) - \\frac{C^2}{f}(\\nabla \\times \\vec{B})",
+      "formula_unicode": "∂²A⃗/∂t² = (V⃗/f)(∇·E⃗) - (C²/f)(∇×B⃗)",
+      "description": "引力场变化产生电磁场的机制",
+      "icon": "🔄",
+      "category": "field_coupling",
+      "difficulty": 5,
+      "physics_concepts": ["场的相互转化", "引力电磁耦合", "统一场"],
+      "math_concepts": ["二阶偏导", "散度", "旋度"],
+      "visualization_type": "field_transformation",
+      "parameters": [
+        {"name": "f", "type": "float", "default": 1, "range": [0.1, 10]},
+        {"name": "coupling_strength", "type": "float", "default": 1, "range": [0.1, 5]}
+      ],
+      "dependencies": ["04", "10", "11"],
+      "applications": ["统一场理论", "场耦合", "新物理预言"]
+    },
+    {
+      "id": "13",
+      "name": "磁矢势方程",
+      "formula_latex": "\\nabla \\times \\vec{A} = \\frac{\\vec{B}}{f}",
+      "formula_unicode": "∇×A⃗ = B⃗/f",
+      "description": "磁矢势与磁场的关系",
+      "icon": "🎯",
+      "category": "vector_potential",
+      "difficulty": 3,
+      "physics_concepts": ["磁矢势", "矢势与场", "规范变换"],
+      "math_concepts": ["旋度", "矢量势", "微分算子"],
+      "visualization_type": "vector_potential",
+      "parameters": [
+        {"name": "f", "type": "float", "default": 1, "range": [0.1, 10]}
+      ],
+      "dependencies": ["04", "11"],
+      "applications": ["电磁学", "量子力学", "规范理论"]
+    },
+    {
+      "id": "14",
+      "name": "变化引力场产生电场",
+      "formula_latex": "\\vec{E} = -f\\frac{d\\vec{A}}{dt}",
+      "formula_unicode": "E⃗ = -f(dA⃗/dt)",
+      "description": "引力场变化产生电场",
+      "icon": "⚡",
+      "category": "field_coupling",
+      "difficulty": 3,
+      "physics_concepts": ["引力电场耦合", "场的时变", "感应电场"],
+      "math_concepts": ["时间导数", "矢量微分"],
+      "visualization_type": "gravity_to_electric",
+      "parameters": [
+        {"name": "f", "type": "float", "default": 1, "range": [0.1, 10]},
+        {"name": "dAdt", "type": "vector3", "default": [0.1, 0, 0], "range": [-1, 1]}
+      ],
+      "dependencies": ["04", "10"],
+      "applications": ["引力波探测", "场耦合效应", "新能源"]
+    },
+    {
+      "id": "15",
+      "name": "变化磁场产生引力场和电场",
+      "formula_latex": "\\frac{d\\vec{B}}{dt} = -\\frac{\\vec{A} \\times \\vec{E}}{c^2} - \\nabla \\times \\vec{E}",
+      "formula_unicode": "dB⃗/dt = -(A⃗×E⃗)/c² - ∇×E⃗",
+      "description": "磁场变化产生引力场和电场",
+      "icon": "🔀",
+      "category": "field_coupling",
+      "difficulty": 5,
+      "physics_concepts": ["磁场引力耦合", "场的相互作用", "统一场效应"],
+      "math_concepts": ["矢量叉积", "旋度", "复合场变换"],
+      "visualization_type": "magnetic_to_gravity",
+      "parameters": [
+        {"name": "c", "type": "float", "default": 1, "range": [0.1, 3]}
+      ],
+      "dependencies": ["04", "10", "11"],
+      "applications": ["反重力技术", "场操控", "新物理效应"]
+    },
+    {
+      "id": "16",
+      "name": "统一场论能量方程",
+      "formula_latex": "E = m_0c^2 = mc^2\\sqrt{1-\\frac{v^2}{c^2}}",
+      "formula_unicode": "E = m₀c² = mc²√(1-v²/c²)",
+      "description": "能量的统一场论表达",
+      "icon": "💫",
+      "category": "energy",
+      "difficulty": 3,
+      "physics_concepts": ["质能关系", "相对论能量", "静止能量"],
+      "math_concepts": ["平方根", "洛伦兹因子"],
+      "visualization_type": "energy_mass_relation",
+      "parameters": [
+        {"name": "m0", "type": "float", "default": 1, "range": [0.1, 10]},
+        {"name": "v", "type": "float", "default": 0.5, "range": [0, 0.99]},
+        {"name": "c", "type": "float", "default": 1, "range": [0.1, 3]}
+      ],
+      "dependencies": ["01", "03", "06"],
+      "applications": ["核物理", "粒子加速器", "能源技术"]
+    },
+    {
+      "id": "17",
+      "name": "光速飞行器动力学方程",
+      "formula_latex": "\\vec{F} = (\\vec{C} - \\vec{V})\\frac{dm}{dt}",
+      "formula_unicode": "F⃗ = (C⃗ - V⃗)(dm/dt)",
+      "description": "光速飞行器的动力学原理",
+      "icon": "🛸",
+      "category": "propulsion",
+      "difficulty": 4,
+      "physics_concepts": ["光速推进", "质量变化推进", "反重力"],
+      "math_concepts": ["矢量减法", "质量流率"],
+      "visualization_type": "lightspeed_propulsion",
+      "parameters": [
+        {"name": "dmdt", "type": "float", "default": 0.1, "range": [0.01, 1]},
+        {"name": "C", "type": "vector3", "default": [1, 0, 0], "range": [-1, 1]},
+        {"name": "V", "type": "vector3", "default": [0.5, 0, 0], "range": [-1, 1]}
+      ],
+      "dependencies": ["01", "06", "07"],
+      "applications": ["航天推进", "反重力技术", "星际旅行"]
+    },
+    {
+      "id": "18",
+      "name": "空间波动通解",
+      "formula_latex": "L(\\vec{r},t) = f(t-\\frac{r}{c}) + g(t+\\frac{r}{c})",
+      "formula_unicode": "L(r⃗,t) = f(t-r/c) + g(t+r/c)",
+      "description": "空间波动方程的通解",
+      "icon": "〰️",
+      "category": "wave",
+      "difficulty": 4,
+      "physics_concepts": ["波动解", "前进波", "后退波"],
+      "math_concepts": ["达朗贝尔解", "波函数", "传播解"],
+      "visualization_type": "wave_solution",
+      "parameters": [
+        {"name": "c", "type": "float", "default": 1, "range": [0.1, 3]},
+        {"name": "wave_type", "type": "string", "default": "sine", "options": ["sine", "gaussian", "square"]}
+      ],
+      "dependencies": ["08"],
+      "applications": ["波动分析", "信号传播", "引力波"]
+    },
+    {
+      "id": "19",
+      "name": "引力光速统一方程",
+      "formula_latex": "Z = \\frac{G \\cdot c}{2}",
+      "formula_unicode": "Z = G·c/2",
+      "description": "引力常数与光速的统一关系",
+      "icon": "🌌",
+      "category": "fundamental_constants",
+      "difficulty": 5,
+      "physics_concepts": ["基本常数统一", "引力光速关系", "宇宙常数"],
+      "math_concepts": ["物理常数", "量纲分析"],
+      "visualization_type": "constant_unification",
+      "parameters": [
+        {"name": "G", "type": "float", "default": 6.67e-11, "range": [1e-12, 1e-10]},
+        {"name": "c", "type": "float", "default": 3e8, "range": [1e8, 1e9]}
+      ],
+      "dependencies": ["01", "04"],
+      "applications": ["基础物理", "宇宙学", "理论验证"]
     }
   ],
   "visualization_templates": {

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时空同一化方程 R⃗ = C⃗t - 张祥前统一场论可视化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(ellipse at center, #0a0a2e 0%, #1a1a3e 50%, #2a2a4e 100%);
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+        
+        #canvas {
+            display: block;
+            cursor: grab;
+        }
+        
+        #canvas:active {
+            cursor: grabbing;
+        }
+        
+        .ui-panel {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+        
+        #formula-panel {
+            top: 20px;
+            left: 20px;
+            width: 400px;
+        }
+        
+        #controls-panel {
+            top: 20px;
+            right: 20px;
+            width: 300px;
+        }
+        
+        #info-panel {
+            bottom: 20px;
+            left: 20px;
+            width: 500px;
+        }
+        
+        .panel-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4CAF50;
+            text-align: center;
+        }
+        
+        .formula-display {
+            font-size: 2em;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 10px;
+            border: 2px solid #4CAF50;
+        }
+        
+        .control-group {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .control-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .info-text {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .vector-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <!-- 公式面板 -->
+    <div id="formula-panel" class="ui-panel">
+        <div class="panel-title">🌌 时空同一化方程</div>
+        <div class="formula-display">
+            $$\vec{R} = \vec{C}t$$
+        </div>
+        <div class="info-text">
+            <strong>物理意义：</strong><br>
+            • 时间与空间的统一本质<br>
+            • 时间是空间位移的度量<br>
+            • $\vec{C}$为矢量光速，$|\vec{C}| = c$<br>
+            • 揭示了时空的几何本质
+        </div>
+    </div>
+    
+    <!-- 控制面板 -->
+    <div id="controls-panel" class="ui-panel">
+        <div class="panel-title">🎮 参数控制</div>
+        
+        <div class="control-group">
+            <label class="control-label">时间 t: <span id="time-value">1.0</span> 秒</label>
+            <input type="range" class="slider" id="time-slider" min="0" max="5" value="1" step="0.1">
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">光速方向 θ: <span id="theta-value">0</span>°</label>
+            <input type="range" class="slider" id="theta-slider" min="0" max="360" value="0" step="5">
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">光速方向 φ: <span id="phi-value">0</span>°</label>
+            <input type="range" class="slider" id="phi-slider" min="0" max="180" value="90" step="5">
+        </div>
+        
+        <div class="control-group">
+            <button class="button" onclick="resetAnimation()">🔄 重置</button>
+            <button class="button" onclick="toggleAnimation()">⏯️ 播放/暂停</button>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">显示选项:</label>
+            <label><input type="checkbox" id="show-vectors" checked> 显示矢量</label><br>
+            <label><input type="checkbox" id="show-trajectory" checked> 显示轨迹</label><br>
+            <label><input type="checkbox" id="show-grid" checked> 显示网格</label>
+        </div>
+    </div>
+    
+    <!-- 信息面板 -->
+    <div id="info-panel" class="ui-panel">
+        <div class="panel-title">📊 实时数据</div>
+        
+        <div class="vector-info">
+            <span>空间位移矢量 R⃗:</span>
+            <span id="r-vector" class="highlight">(0, 0, 0)</span>
+        </div>
+        
+        <div class="vector-info">
+            <span>光速矢量 C⃗:</span>
+            <span id="c-vector" class="highlight">(0, 0, 299792458)</span>
+        </div>
+        
+        <div class="vector-info">
+            <span>位移大小 |R⃗|:</span>
+            <span id="r-magnitude" class="highlight">0 m</span>
+        </div>
+        
+        <div class="vector-info">
+            <span>光速大小 |C⃗|:</span>
+            <span id="c-magnitude" class="highlight">299792458 m/s</span>
+        </div>
+        
+        <div class="info-text">
+            <strong>核心概念：</strong><br>
+            时空同一化方程表明时间不是独立的物理维度，而是空间位移的度量。
+            当时间流逝时，空间位移矢量按照光速矢量的方向线性增长。
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let scene, camera, renderer;
+        let spaceVector, lightVector, trajectory;
+        let animationId, isAnimating = true;
+        let time = 1.0, theta = 0, phi = Math.PI/2;
+        
+        // 物理常数
+        const LIGHT_SPEED = 299792458; // m/s
+        const SCALE_FACTOR = 1e-7; // 缩放因子用于可视化
+        
+        // 初始化场景
+        function initScene() {
+            // 创建场景
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0a2e);
+            
+            // 创建相机
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(10, 10, 10);
+            camera.lookAt(0, 0, 0);
+            
+            // 创建渲染器
+            const canvas = document.getElementById('canvas');
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            
+            // 添加光照
+            setupLighting();
+            
+            // 创建坐标系
+            createCoordinateSystem();
+            
+            // 创建矢量
+            createVectors();
+            
+            // 创建轨迹
+            createTrajectory();
+            
+            // 设置控制
+            setupControls();
+            
+            // 开始动画循环
+            animate();
+            
+            // 初始更新
+            updateVisualization();
+        }
+        
+        function setupLighting() {
+            // 环境光
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            scene.add(ambientLight);
+            
+            // 方向光
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(10, 10, 5);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+            
+            // 点光源
+            const pointLight = new THREE.PointLight(0x4CAF50, 1, 50);
+            pointLight.position.set(0, 0, 0);
+            scene.add(pointLight);
+        }
+        
+        function createCoordinateSystem() {
+            // 创建坐标轴
+            const axesHelper = new THREE.AxesHelper(15);
+            scene.add(axesHelper);
+            
+            // 创建网格
+            const gridHelper = new THREE.GridHelper(20, 20, 0x444444, 0x444444);
+            scene.add(gridHelper);
+            window.gridHelper = gridHelper;
+            
+            // 添加坐标轴标签
+            createAxisLabels();
+        }
+        
+        function createAxisLabels() {
+            const loader = new THREE.FontLoader();
+            // 这里简化处理，实际项目中会加载字体文件
+            
+            // 创建文本精灵
+            function createTextSprite(text, position, color = 0xffffff) {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = 128;
+                canvas.height = 64;
+                
+                context.fillStyle = `#${color.toString(16).padStart(6, '0')}`;
+                context.font = 'Bold 20px Arial';
+                context.textAlign = 'center';
+                context.fillText(text, 64, 40);
+                
+                const texture = new THREE.CanvasTexture(canvas);
+                const material = new THREE.SpriteMaterial({ map: texture });
+                const sprite = new THREE.Sprite(material);
+                sprite.position.copy(position);
+                sprite.scale.set(2, 1, 1);
+                
+                return sprite;
+            }
+            
+            scene.add(createTextSprite('X', new THREE.Vector3(16, 0, 0), 0xff0000));
+            scene.add(createTextSprite('Y', new THREE.Vector3(0, 16, 0), 0x00ff00));
+            scene.add(createTextSprite('Z', new THREE.Vector3(0, 0, 16), 0x0000ff));
+        }
+        
+        function createVectors() {
+            // 创建空间位移矢量 R⃗
+            const spaceGeometry = new THREE.ConeGeometry(0.3, 1, 8);
+            const spaceMaterial = new THREE.MeshPhongMaterial({ color: 0x4CAF50 });
+            spaceVector = new THREE.Mesh(spaceGeometry, spaceMaterial);
+            scene.add(spaceVector);
+            
+            // 创建光速矢量 C⃗
+            const lightGeometry = new THREE.ConeGeometry(0.2, 0.8, 8);
+            const lightMaterial = new THREE.MeshPhongMaterial({ color: 0xFFD700 });
+            lightVector = new THREE.Mesh(lightGeometry, lightMaterial);
+            scene.add(lightVector);
+            
+            // 创建矢量线条
+            createVectorLines();
+        }
+        
+        function createVectorLines() {
+            // 空间位移矢量线条
+            const spaceLineGeometry = new THREE.BufferGeometry();
+            const spaceLinePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 0)];
+            spaceLineGeometry.setFromPoints(spaceLinePoints);
+            const spaceLineMaterial = new THREE.LineBasicMaterial({ color: 0x4CAF50, linewidth: 3 });
+            window.spaceLine = new THREE.Line(spaceLineGeometry, spaceLineMaterial);
+            scene.add(window.spaceLine);
+            
+            // 光速矢量线条
+            const lightLineGeometry = new THREE.BufferGeometry();
+            const lightLinePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 0)];
+            lightLineGeometry.setFromPoints(lightLinePoints);
+            const lightLineMaterial = new THREE.LineBasicMaterial({ color: 0xFFD700, linewidth: 2 });
+            window.lightLine = new THREE.Line(lightLineGeometry, lightLineMaterial);
+            scene.add(window.lightLine);
+        }
+        
+        function createTrajectory() {
+            const trajectoryGeometry = new THREE.BufferGeometry();
+            const trajectoryMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x4CAF50, 
+                transparent: true, 
+                opacity: 0.6 
+            });
+            trajectory = new THREE.Line(trajectoryGeometry, trajectoryMaterial);
+            scene.add(trajectory);
+            
+            window.trajectoryPoints = [];
+        }
+        
+        function setupControls() {
+            // 时间滑块
+            document.getElementById('time-slider').addEventListener('input', (e) => {
+                time = parseFloat(e.target.value);
+                document.getElementById('time-value').textContent = time.toFixed(1);
+                updateVisualization();
+            });
+            
+            // 角度滑块
+            document.getElementById('theta-slider').addEventListener('input', (e) => {
+                theta = parseFloat(e.target.value) * Math.PI / 180;
+                document.getElementById('theta-value').textContent = e.target.value;
+                updateVisualization();
+            });
+            
+            document.getElementById('phi-slider').addEventListener('input', (e) => {
+                phi = parseFloat(e.target.value) * Math.PI / 180;
+                document.getElementById('phi-value').textContent = e.target.value;
+                updateVisualization();
+            });
+            
+            // 显示选项
+            document.getElementById('show-vectors').addEventListener('change', (e) => {
+                spaceVector.visible = e.target.checked;
+                lightVector.visible = e.target.checked;
+                window.spaceLine.visible = e.target.checked;
+                window.lightLine.visible = e.target.checked;
+            });
+            
+            document.getElementById('show-trajectory').addEventListener('change', (e) => {
+                trajectory.visible = e.target.checked;
+            });
+            
+            document.getElementById('show-grid').addEventListener('change', (e) => {
+                window.gridHelper.visible = e.target.checked;
+            });
+            
+            // 鼠标控制
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+            
+            renderer.domElement.addEventListener('mousedown', (event) => {
+                isDragging = true;
+                previousMousePosition = { x: event.clientX, y: event.clientY };
+            });
+            
+            renderer.domElement.addEventListener('mousemove', (event) => {
+                if (isDragging) {
+                    const deltaMove = {
+                        x: event.clientX - previousMousePosition.x,
+                        y: event.clientY - previousMousePosition.y
+                    };
+                    
+                    const spherical = new THREE.Spherical();
+                    spherical.setFromVector3(camera.position);
+                    spherical.theta -= deltaMove.x * 0.01;
+                    spherical.phi += deltaMove.y * 0.01;
+                    spherical.phi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi));
+                    
+                    camera.position.setFromSpherical(spherical);
+                    camera.lookAt(0, 0, 0);
+                    
+                    previousMousePosition = { x: event.clientX, y: event.clientY };
+                }
+            });
+            
+            renderer.domElement.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+            
+            // 滚轮缩放
+            renderer.domElement.addEventListener('wheel', (event) => {
+                const scale = event.deltaY > 0 ? 1.1 : 0.9;
+                camera.position.multiplyScalar(scale);
+                camera.position.clampLength(5, 100);
+            });
+        }
+        
+        function updateVisualization() {
+            // 计算光速矢量
+            const lightSpeedVector = new THREE.Vector3(
+                Math.sin(phi) * Math.cos(theta),
+                Math.cos(phi),
+                Math.sin(phi) * Math.sin(theta)
+            ).multiplyScalar(LIGHT_SPEED);
+            
+            // 计算空间位移矢量 R⃗ = C⃗t
+            const spaceDisplacement = lightSpeedVector.clone().multiplyScalar(time);
+            
+            // 缩放用于可视化
+            const visualSpaceDisplacement = spaceDisplacement.clone().multiplyScalar(SCALE_FACTOR);
+            const visualLightVector = lightSpeedVector.clone().multiplyScalar(SCALE_FACTOR * 0.1);
+            
+            // 更新空间位移矢量
+            spaceVector.position.copy(visualSpaceDisplacement);
+            spaceVector.lookAt(visualSpaceDisplacement.clone().multiplyScalar(1.1));
+            
+            // 更新光速矢量
+            lightVector.position.copy(visualLightVector);
+            lightVector.lookAt(visualLightVector.clone().multiplyScalar(1.1));
+            
+            // 更新矢量线条
+            const spaceLinePoints = [new THREE.Vector3(0, 0, 0), visualSpaceDisplacement];
+            window.spaceLine.geometry.setFromPoints(spaceLinePoints);
+            
+            const lightLinePoints = [new THREE.Vector3(0, 0, 0), visualLightVector];
+            window.lightLine.geometry.setFromPoints(lightLinePoints);
+            
+            // 更新轨迹
+            if (window.trajectoryPoints.length > 100) {
+                window.trajectoryPoints.shift();
+            }
+            window.trajectoryPoints.push(visualSpaceDisplacement.clone());
+            trajectory.geometry.setFromPoints(window.trajectoryPoints);
+            
+            // 更新UI显示
+            updateUI(spaceDisplacement, lightSpeedVector);
+        }
+        
+        function updateUI(spaceDisplacement, lightSpeedVector) {
+            // 更新矢量显示
+            document.getElementById('r-vector').textContent = 
+                `(${spaceDisplacement.x.toExponential(2)}, ${spaceDisplacement.y.toExponential(2)}, ${spaceDisplacement.z.toExponential(2)})`;
+            
+            document.getElementById('c-vector').textContent = 
+                `(${lightSpeedVector.x.toFixed(0)}, ${lightSpeedVector.y.toFixed(0)}, ${lightSpeedVector.z.toFixed(0)})`;
+            
+            document.getElementById('r-magnitude').textContent = 
+                `${spaceDisplacement.length().toExponential(2)} m`;
+            
+            document.getElementById('c-magnitude').textContent = 
+                `${lightSpeedVector.length().toFixed(0)} m/s`;
+        }
+        
+        function animate() {
+            animationId = requestAnimationFrame(animate);
+            
+            if (isAnimating) {
+                // 可以添加自动动画效果
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        function resetAnimation() {
+            time = 1.0;
+            theta = 0;
+            phi = Math.PI/2;
+            
+            document.getElementById('time-slider').value = time;
+            document.getElementById('theta-slider').value = theta * 180 / Math.PI;
+            document.getElementById('phi-slider').value = phi * 180 / Math.PI;
+            
+            document.getElementById('time-value').textContent = time.toFixed(1);
+            document.getElementById('theta-value').textContent = '0';
+            document.getElementById('phi-value').textContent = '90';
+            
+            window.trajectoryPoints = [];
+            updateVisualization();
+        }
+        
+        function toggleAnimation() {
+            isAnimating = !isAnimating;
+        }
+        
+        // 窗口大小调整
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // 页面加载完成后初始化
+        window.addEventListener('load', () => {
+            initScene();
+            
+            // 等待MathJax加载完成
+            setTimeout(() => {
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

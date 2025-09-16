@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宇宙整体结构 - 空间几何下的宇宙可视化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(ellipse at center, #000011 0%, #001122 50%, #002244 100%);
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+        
+        #canvas {
+            display: block;
+            cursor: grab;
+        }
+        
+        .ui-panel {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+        
+        #universe-info {
+            top: 20px;
+            left: 20px;
+            width: 400px;
+        }
+        
+        #controls {
+            top: 20px;
+            right: 20px;
+            width: 300px;
+        }
+        
+        .panel-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #FFD700;
+            text-align: center;
+        }
+        
+        .universe-scale {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #FFD700;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div id="universe-info" class="ui-panel">
+        <div class="panel-title">🌌 宇宙几何结构</div>
+        <div class="universe-scale">
+            <strong>张祥前统一场论下的宇宙：</strong><br>
+            • 空间以光速c向所有方向发散<br>
+            • 质量是空间运动的几何度量<br>
+            • 时空具有螺旋几何结构<br>
+            • 引力是空间几何的梯度效应
+        </div>
+    </div>
+    
+    <div id="controls" class="ui-panel">
+        <div class="panel-title">🎮 宇宙参数</div>
+        <label>时间尺度: <span id="time-scale">1</span></label>
+        <input type="range" id="time-slider" min="0.1" max="10" value="1" step="0.1">
+        
+        <label>空间尺度: <span id="space-scale">1</span></label>
+        <input type="range" id="space-slider" min="0.1" max="5" value="1" step="0.1">
+    </div>
+
+    <script>
+        let scene, camera, renderer;
+        let universeStructure, spaceField;
+        
+        function initUniverse() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x000011);
+            
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+            camera.position.set(100, 100, 100);
+            camera.lookAt(0, 0, 0);
+            
+            renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            createUniverseStructure();
+            animate();
+        }
+        
+        function createUniverseStructure() {
+            // 创建宇宙的空间几何结构
+            universeStructure = new THREE.Group();
+            
+            // 多层次的空间发散场
+            for (let scale = 1; scale <= 10; scale++) {
+                const geometry = new THREE.SphereGeometry(scale * 10, 32, 16);
+                const material = new THREE.MeshBasicMaterial({
+                    color: new THREE.Color().setHSL(0.6 + scale * 0.05, 0.8, 0.5),
+                    transparent: true,
+                    opacity: 0.1 - scale * 0.008,
+                    wireframe: true
+                });
+                
+                const sphere = new THREE.Mesh(geometry, material);
+                universeStructure.add(sphere);
+            }
+            
+            scene.add(universeStructure);
+        }
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            if (universeStructure) {
+                universeStructure.rotation.y += 0.005;
+                universeStructure.rotation.x += 0.002;
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        window.addEventListener('load', initUniverse);
+        
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

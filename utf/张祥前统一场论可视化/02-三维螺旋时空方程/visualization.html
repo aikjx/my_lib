@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三维螺旋时空方程 ∇×C⃗=S⃗ - 张祥前统一场论可视化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(ellipse at center, #1a0a2e 0%, #2a1a3e 50%, #3a2a4e 100%);
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+        
+        #canvas {
+            display: block;
+            cursor: grab;
+        }
+        
+        #canvas:active {
+            cursor: grabbing;
+        }
+        
+        .ui-panel {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+        
+        #formula-panel {
+            top: 20px;
+            left: 20px;
+            width: 420px;
+        }
+        
+        #controls-panel {
+            top: 20px;
+            right: 20px;
+            width: 320px;
+        }
+        
+        #info-panel {
+            bottom: 20px;
+            left: 20px;
+            width: 500px;
+        }
+        
+        .panel-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #9C27B0;
+            text-align: center;
+        }
+        
+        .formula-display {
+            font-size: 2em;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 10px;
+            border: 2px solid #9C27B0;
+        }
+        
+        .control-group {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .control-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #9C27B0;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .button {
+            background: linear-gradient(45deg, #9C27B0, #8E24AA);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+        }
+        
+        .info-text {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        
+        .highlight {
+            color: #9C27B0;
+            font-weight: bold;
+        }
+        
+        .vector-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <!-- 公式面板 -->
+    <div id="formula-panel" class="ui-panel">
+        <div class="panel-title">🌀 三维螺旋时空方程</div>
+        <div class="formula-display">
+            $$\nabla \times \vec{C} = \vec{S}$$
+        </div>
+        <div class="info-text">
+            <strong>物理意义：</strong><br>
+            • 描述空间的圆柱螺旋式运动<br>
+            • $\vec{S}$决定空间波动性质<br>
+            • 空间本身具有内在旋转动力学<br>
+            • 揭示了时空的螺旋几何结构
+        </div>
+    </div>
+    
+    <!-- 控制面板 -->
+    <div id="controls-panel" class="ui-panel">
+        <div class="panel-title">🎮 螺旋参数控制</div>
+        
+        <div class="control-group">
+            <label class="control-label">螺旋半径: <span id="radius-value">2.0</span></label>
+            <input type="range" class="slider" id="radius-slider" min="0.5" max="5" value="2" step="0.1">
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">螺旋间距: <span id="pitch-value">1.0</span></label>
+            <input type="range" class="slider" id="pitch-slider" min="0.2" max="3" value="1" step="0.1">
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">旋转速度: <span id="omega-value">1.0</span> rad/s</label>
+            <input type="range" class="slider" id="omega-slider" min="0.1" max="5" value="1" step="0.1">
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">螺旋圈数: <span id="turns-value">3</span></label>
+            <input type="range" class="slider" id="turns-slider" min="1" max="10" value="3" step="1">
+        </div>
+        
+        <div class="control-group">
+            <button class="button" onclick="resetAnimation()">🔄 重置</button>
+            <button class="button" onclick="toggleAnimation()">⏯️ 播放/暂停</button>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">显示选项:</label>
+            <label><input type="checkbox" id="show-spiral" checked> 显示螺旋线</label><br>
+            <label><input type="checkbox" id="show-curl-field" checked> 显示旋度场</label><br>
+            <label><input type="checkbox" id="show-particles" checked> 显示粒子流</label>
+        </div>
+    </div>
+    
+    <!-- 信息面板 -->
+    <div id="info-panel" class="ui-panel">
+        <div class="panel-title">📊 螺旋时空数据</div>
+        
+        <div class="vector-info">
+            <span>旋度大小 |∇×C⃗|:</span>
+            <span id="curl-magnitude" class="highlight">0</span>
+        </div>
+        
+        <div class="vector-info">
+            <span>螺旋参数 S⃗:</span>
+            <span id="s-vector" class="highlight">(0, 0, 0)</span>
+        </div>
+        
+        <div class="vector-info">
+            <span>角速度 ω:</span>
+            <span id="angular-velocity" class="highlight">1.0 rad/s</span>
+        </div>
+        
+        <div class="vector-info">
+            <span>螺旋周期 T:</span>
+            <span id="period" class="highlight">6.28 s</span>
+        </div>
+        
+        <div class="info-text">
+            <strong>螺旋时空概念：</strong><br>
+            三维螺旋时空方程描述了空间本身的圆柱螺旋式运动。
+            旋度∇×C⃗表示光速矢量场的旋转强度，S⃗矢量决定了空间波动的性质和方向。
+            这种螺旋运动是时空几何的基本特征。
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let scene, camera, renderer;
+        let spiralCurve, curlField, particleSystem;
+        let animationId, isAnimating = true;
+        let time = 0;
+        
+        // 螺旋参数
+        let spiralRadius = 2.0;
+        let spiralPitch = 1.0;
+        let angularVelocity = 1.0;
+        let spiralTurns = 3;
+        
+        // 物理常数
+        const LIGHT_SPEED = 299792458;
+        
+        // 初始化场景
+        function initScene() {
+            // 创建场景
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a0a2e);
+            scene.fog = new THREE.Fog(0x1a0a2e, 10, 50);
+            
+            // 创建相机
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(15, 10, 15);
+            camera.lookAt(0, 0, 0);
+            
+            // 创建渲染器
+            const canvas = document.getElementById('canvas');
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            
+            // 添加光照
+            setupLighting();
+            
+            // 创建坐标系
+            createCoordinateSystem();
+            
+            // 创建螺旋结构
+            createSpiralStructure();
+            
+            // 创建旋度场可视化
+            createCurlField();
+            
+            // 创建粒子系统
+            createParticleSystem();
+            
+            // 设置控制
+            setupControls();
+            
+            // 开始动画循环
+            animate();
+            
+            // 初始更新
+            updateVisualization();
+        }
+        
+        function setupLighting() {
+            // 环境光
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+            scene.add(ambientLight);
+            
+            // 方向光
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(10, 10, 5);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+            
+            // 螺旋中心点光源
+            const pointLight = new THREE.PointLight(0x9C27B0, 2, 30);
+            pointLight.position.set(0, 0, 0);
+            scene.add(pointLight);
+        }
+        
+        function createCoordinateSystem() {
+            // 创建坐标轴
+            const axesHelper = new THREE.AxesHelper(10);
+            scene.add(axesHelper);
+            
+            // 创建网格
+            const gridHelper = new THREE.GridHelper(20, 20, 0x444444, 0x444444);
+            scene.add(gridHelper);
+            window.gridHelper = gridHelper;
+        }
+        
+        function createSpiralStructure() {
+            // 创建螺旋曲线
+            const spiralPoints = [];
+            const numPoints = 200;
+            
+            for (let i = 0; i <= numPoints; i++) {
+                const t = (i / numPoints) * spiralTurns * 2 * Math.PI;
+                const x = spiralRadius * Math.cos(t);
+                const y = spiralPitch * t / (2 * Math.PI);
+                const z = spiralRadius * Math.sin(t);
+                spiralPoints.push(new THREE.Vector3(x, y, z));
+            }
+            
+            const spiralGeometry = new THREE.BufferGeometry().setFromPoints(spiralPoints);
+            const spiralMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x9C27B0, 
+                linewidth: 3 
+            });
+            spiralCurve = new THREE.Line(spiralGeometry, spiralMaterial);
+            scene.add(spiralCurve);
+            
+            // 创建螺旋管道
+            createSpiralTube(spiralPoints);
+        }
+        
+        function createSpiralTube(points) {
+            const curve = new THREE.CatmullRomCurve3(points);
+            const tubeGeometry = new THREE.TubeGeometry(curve, 200, 0.1, 8, false);
+            const tubeMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x9C27B0, 
+                transparent: true, 
+                opacity: 0.6 
+            });
+            const spiralTube = new THREE.Mesh(tubeGeometry, tubeMaterial);
+            scene.add(spiralTube);
+            window.spiralTube = spiralTube;
+        }
+        
+        function createCurlField() {
+            curlField = new THREE.Group();
+            
+            // 创建旋度矢量场
+            const gridSize = 8;
+            const spacing = 2;
+            
+            for (let i = -gridSize/2; i <= gridSize/2; i++) {
+                for (let j = -gridSize/2; j <= gridSize/2; j++) {
+                    for (let k = -gridSize/2; k <= gridSize/2; k++) {
+                        const x = i * spacing;
+                        const y = j * spacing;
+                        const z = k * spacing;
+                        
+                        // 计算该点的旋度矢量
+                        const curlVector = calculateCurl(x, y, z);
+                        
+                        if (curlVector.length() > 0.1) {
+                            const arrowHelper = new THREE.ArrowHelper(
+                                curlVector.normalize(),
+                                new THREE.Vector3(x, y, z),
+                                curlVector.length() * 0.5,
+                                0xFF6B6B,
+                                0.3,
+                                0.2
+                            );
+                            curlField.add(arrowHelper);
+                        }
+                    }
+                }
+            }
+            
+            scene.add(curlField);
+        }
+        
+        function calculateCurl(x, y, z) {
+            // 简化的旋度计算，基于螺旋几何
+            const r = Math.sqrt(x*x + z*z);
+            if (r < 0.1) return new THREE.Vector3(0, 0, 0);
+            
+            // 螺旋场的旋度
+            const curlX = -z / r * angularVelocity;
+            const curlY = spiralPitch / (2 * Math.PI);
+            const curlZ = x / r * angularVelocity;
+            
+            return new THREE.Vector3(curlX, curlY, curlZ);
+        }
+        
+        function createParticleSystem() {
+            const particleCount = 1000;
+            const particles = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            const velocities = new Float32Array(particleCount * 3);
+            
+            for (let i = 0; i < particleCount; i++) {
+                // 在螺旋周围随机分布粒子
+                const t = Math.random() * spiralTurns * 2 * Math.PI;
+                const r = spiralRadius + (Math.random() - 0.5) * 2;
+                const y = spiralPitch * t / (2 * Math.PI) + (Math.random() - 0.5) * 2;
+                
+                positions[i * 3] = r * Math.cos(t);
+                positions[i * 3 + 1] = y;
+                positions[i * 3 + 2] = r * Math.sin(t);
+                
+                // 设置颜色
+                const color = new THREE.Color().setHSL(0.8 + Math.random() * 0.2, 0.8, 0.6);
+                colors[i * 3] = color.r;
+                colors[i * 3 + 1] = color.g;
+                colors[i * 3 + 2] = color.b;
+                
+                // 设置初始速度
+                velocities[i * 3] = (Math.random() - 0.5) * 0.1;
+                velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.1;
+                velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.1;
+            }
+            
+            particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            particles.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
+            
+            const particleMaterial = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending
+            });
+            
+            particleSystem = new THREE.Points(particles, particleMaterial);
+            scene.add(particleSystem);
+        }
+        
+        function setupControls() {
+            // 螺旋参数控制
+            document.getElementById('radius-slider').addEventListener('input', (e) => {
+                spiralRadius = parseFloat(e.target.value);
+                document.getElementById('radius-value').textContent = spiralRadius.toFixed(1);
+                updateSpiralGeometry();
+            });
+            
+            document.getElementById('pitch-slider').addEventListener('input', (e) => {
+                spiralPitch = parseFloat(e.target.value);
+                document.getElementById('pitch-value').textContent = spiralPitch.toFixed(1);
+                updateSpiralGeometry();
+            });
+            
+            document.getElementById('omega-slider').addEventListener('input', (e) => {
+                angularVelocity = parseFloat(e.target.value);
+                document.getElementById('omega-value').textContent = angularVelocity.toFixed(1);
+                updateVisualization();
+            });
+            
+            document.getElementById('turns-slider').addEventListener('input', (e) => {
+                spiralTurns = parseInt(e.target.value);
+                document.getElementById('turns-value').textContent = spiralTurns;
+                updateSpiralGeometry();
+            });
+            
+            // 显示选项
+            document.getElementById('show-spiral').addEventListener('change', (e) => {
+                spiralCurve.visible = e.target.checked;
+                if (window.spiralTube) window.spiralTube.visible = e.target.checked;
+            });
+            
+            document.getElementById('show-curl-field').addEventListener('change', (e) => {
+                curlField.visible = e.target.checked;
+            });
+            
+            document.getElementById('show-particles').addEventListener('change', (e) => {
+                particleSystem.visible = e.target.checked;
+            });
+            
+            // 鼠标控制
+            setupMouseControls();
+        }
+        
+        function setupMouseControls() {
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+            
+            renderer.domElement.addEventListener('mousedown', (event) => {
+                isDragging = true;
+                previousMousePosition = { x: event.clientX, y: event.clientY };
+            });
+            
+            renderer.domElement.addEventListener('mousemove', (event) => {
+                if (isDragging) {
+                    const deltaMove = {
+                        x: event.clientX - previousMousePosition.x,
+                        y: event.clientY - previousMousePosition.y
+                    };
+                    
+                    const spherical = new THREE.Spherical();
+                    spherical.setFromVector3(camera.position);
+                    spherical.theta -= deltaMove.x * 0.01;
+                    spherical.phi += deltaMove.y * 0.01;
+                    spherical.phi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi));
+                    
+                    camera.position.setFromSpherical(spherical);
+                    camera.lookAt(0, 0, 0);
+                    
+                    previousMousePosition = { x: event.clientX, y: event.clientY };
+                }
+            });
+            
+            renderer.domElement.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+            
+            renderer.domElement.addEventListener('wheel', (event) => {
+                const scale = event.deltaY > 0 ? 1.1 : 0.9;
+                camera.position.multiplyScalar(scale);
+                camera.position.clampLength(8, 100);
+            });
+        }
+        
+        function updateSpiralGeometry() {
+            // 重新创建螺旋几何
+            scene.remove(spiralCurve);
+            if (window.spiralTube) scene.remove(window.spiralTube);
+            
+            createSpiralStructure();
+            
+            // 更新旋度场
+            scene.remove(curlField);
+            createCurlField();
+        }
+        
+        function updateVisualization() {
+            // 更新粒子系统
+            if (particleSystem) {
+                updateParticles();
+            }
+            
+            // 更新UI显示
+            updateUI();
+        }
+        
+        function updateParticles() {
+            const positions = particleSystem.geometry.attributes.position.array;
+            const velocities = particleSystem.geometry.attributes.velocity.array;
+            
+            for (let i = 0; i < positions.length; i += 3) {
+                const x = positions[i];
+                const y = positions[i + 1];
+                const z = positions[i + 2];
+                
+                // 计算螺旋力场
+                const r = Math.sqrt(x*x + z*z);
+                if (r > 0.1) {
+                    const spiralForceX = -z / r * angularVelocity * 0.01;
+                    const spiralForceZ = x / r * angularVelocity * 0.01;
+                    const spiralForceY = spiralPitch * 0.001;
+                    
+                    velocities[i] += spiralForceX;
+                    velocities[i + 1] += spiralForceY;
+                    velocities[i + 2] += spiralForceZ;
+                    
+                    // 应用阻尼
+                    velocities[i] *= 0.99;
+                    velocities[i + 1] *= 0.99;
+                    velocities[i + 2] *= 0.99;
+                    
+                    // 更新位置
+                    positions[i] += velocities[i];
+                    positions[i + 1] += velocities[i + 1];
+                    positions[i + 2] += velocities[i + 2];
+                }
+            }
+            
+            particleSystem.geometry.attributes.position.needsUpdate = true;
+        }
+        
+        function updateUI() {
+            // 计算旋度大小
+            const curlMagnitude = Math.sqrt(angularVelocity * angularVelocity + (spiralPitch / (2 * Math.PI)) * (spiralPitch / (2 * Math.PI)));
+            document.getElementById('curl-magnitude').textContent = curlMagnitude.toFixed(3);
+            
+            // 更新S矢量
+            const sVector = `(${(angularVelocity * spiralRadius).toFixed(2)}, ${spiralPitch.toFixed(2)}, ${(angularVelocity * spiralRadius).toFixed(2)})`;
+            document.getElementById('s-vector').textContent = sVector;
+            
+            // 更新角速度
+            document.getElementById('angular-velocity').textContent = `${angularVelocity.toFixed(1)} rad/s`;
+            
+            // 更新周期
+            const period = 2 * Math.PI / angularVelocity;
+            document.getElementById('period').textContent = `${period.toFixed(2)} s`;
+        }
+        
+        function animate() {
+            animationId = requestAnimationFrame(animate);
+            
+            if (isAnimating) {
+                time += 0.016; // 约60fps
+                
+                // 旋转螺旋结构
+                if (spiralCurve) {
+                    spiralCurve.rotation.y += angularVelocity * 0.01;
+                }
+                if (window.spiralTube) {
+                    window.spiralTube.rotation.y += angularVelocity * 0.01;
+                }
+                
+                updateVisualization();
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        function resetAnimation() {
+            time = 0;
+            spiralRadius = 2.0;
+            spiralPitch = 1.0;
+            angularVelocity = 1.0;
+            spiralTurns = 3;
+            
+            // 重置滑块
+            document.getElementById('radius-slider').value = spiralRadius;
+            document.getElementById('pitch-slider').value = spiralPitch;
+            document.getElementById('omega-slider').value = angularVelocity;
+            document.getElementById('turns-slider').value = spiralTurns;
+            
+            // 重置显示
+            document.getElementById('radius-value').textContent = spiralRadius.toFixed(1);
+            document.getElementById('pitch-value').textContent = spiralPitch.toFixed(1);
+            document.getElementById('omega-value').textContent = angularVelocity.toFixed(1);
+            document.getElementById('turns-value').textContent = spiralTurns;
+            
+            updateSpiralGeometry();
+        }
+        
+        function toggleAnimation() {
+            isAnimating = !isAnimating;
+        }
+        
+        // 窗口大小调整
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // 页面加载完成后初始化
+        window.addEventListener('load', () => {
+            initScene();
+            
+            // 等待MathJax加载完成
+            setTimeout(() => {
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
