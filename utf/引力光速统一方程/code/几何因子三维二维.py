@@ -46,7 +46,7 @@ class SolidAngleVisualizer:
         Mathematical Derivation of Solid Angles:
         
         1. Solid Angle Definition:
-           dΩ = dA/r² where dA is surface element, r is radius
+           dΩ = dA/r^2 where dA is surface element, r is radius
            
         2. For unit sphere (r=1):
            dΩ = dA = sin(θ)dθdφ
@@ -54,7 +54,7 @@ class SolidAngleVisualizer:
         3. Total solid angle (full sphere):
            Ω_total = ∫∫ sin(θ)dθdφ 
            θ: [0,π], φ: [0,2π]
-           = ∫₀²π dφ ∫₀π sin(θ)dθ
+           = ∫₀^2π dφ ∫₀π sin(θ)dθ
            = 2π × [-cos(θ)]₀π
            = 2π × [1-(-1)] = 4π
            

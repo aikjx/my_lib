@@ -319,14 +319,14 @@ class GeometricFactorAnimator:
         theta_values = np.linspace(0, np.pi, 100)
         phi_values = np.linspace(0, 2 * np.pi, 100)
         
-        # sin²(θ) 函数
+        # sin^2(θ) 函数
         sin_squared = np.sin(theta_values) ** 2
         
         # 动态显示积分区域
         theta_max_idx = int(len(theta_values) * self.integration_progress)
         
         if theta_max_idx > 0:
-            # 绘制 sin²(θ) 曲线
+            # 绘制 sin^2(θ) 曲线
             self.ax_integration.plot(theta_values[:theta_max_idx], 
                                    sin_squared[:theta_max_idx],
                                    color=self.colors['integration'], 

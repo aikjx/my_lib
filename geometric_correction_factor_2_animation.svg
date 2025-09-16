@@ -43,7 +43,7 @@
       三维球体
     </text>
     <text x="200" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#475569">
-      表面积: 4πr²
+      表面积: 4πr^2
     </text>
   </g>
   
@@ -156,7 +156,7 @@
     </text>
     <text x="400" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#4b5563" opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="8s" dur="1s" fill="freeze"/>
-      4π/2π = 2 或 (4πr²)/(2πr) = 2r
+      4π/2π = 2 或 (4πr^2)/(2πr) = 2r
     </text>
   </g>
   

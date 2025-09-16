@@ -247,9 +247,9 @@ class ScriptTester:
             
             # 量纲分析
             print("\n3. Testing dimensional analysis...")
-            print("   [Sphere area] = L²")
+            print("   [Sphere area] = L^2")
             print("   [Circle perimeter] = L¹")
-            print("   [Ratio] = L²/L¹ = L¹ (still has dimension!)")
+            print("   [Ratio] = L^2/L¹ = L¹ (still has dimension!)")
             
             print("\n✓ All mathematical tests completed successfully")
             return True
@@ -276,7 +276,7 @@ class ScriptTester:
             
             # 子图1：正弦函数
             ax1.plot(x, np.sin(x), 'b-', label='sin(x)')
-            ax1.plot(x, np.sin(x)**2, 'r--', label='sin²(x)')
+            ax1.plot(x, np.sin(x)**2, 'r--', label='sin^2(x)')
             ax1.set_title('Trigonometric Functions')
             ax1.legend()
             ax1.grid(True, alpha=0.3)

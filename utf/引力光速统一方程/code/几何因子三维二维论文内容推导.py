@@ -89,12 +89,12 @@ class ZhangXiangqianGeometricFactor:
         print("-" * 50)
         print("几何因子 ∝ ∫sin(θ)dΩ")
         print("在球坐标系中：dΩ = sin(θ)dθdφ")
-        print("∫sin(θ)dΩ = ∫₀²π dφ ∫₀π sin(θ)(sin(θ)dθ)")
-        print("         = 2π ∫₀π sin²(θ)dθ")
+        print("∫sin(θ)dΩ = ∫₀^2π dφ ∫₀π sin(θ)(sin(θ)dθ)")
+        print("         = 2π ∫₀π sin^2(θ)dθ")
         
-        # 计算积分 ∫₀π sin²(θ)dθ = π/2
+        # 计算积分 ∫₀π sin^2(θ)dθ = π/2
         integral_result = np.pi / 2
-        print(f"         = 2π × (π/2) = π²")
+        print(f"         = 2π × (π/2) = π^2")
         
         print("\n步骤五：几何因子的确定")
         print("-" * 50)
@@ -119,18 +119,18 @@ class ZhangXiangqianGeometricFactor:
         integrand = sp.sin(theta)
         solid_angle_element = sp.sin(theta)  # dΩ = sin(θ)dθdφ中的sin(θ)
         
-        # 完整的被积函数：sin(θ) * sin(θ) = sin²(θ)
+        # 完整的被积函数：sin(θ) * sin(θ) = sin^2(θ)
         full_integrand = integrand * solid_angle_element
         
-        print(f"被积函数：sin(θ) × sin(θ) = sin²(θ)")
+        print(f"被积函数：sin(θ) × sin(θ) = sin^2(θ)")
         
         # 对θ积分
         theta_integral = sp.integrate(full_integrand, (theta, 0, sp.pi))
-        print(f"∫₀π sin²(θ)dθ = {theta_integral}")
+        print(f"∫₀π sin^2(θ)dθ = {theta_integral}")
         
         # 对φ积分
         full_integral = sp.integrate(theta_integral, (phi, 0, 2*sp.pi))
-        print(f"∫₀²π dφ ∫₀π sin²(θ)dθ = {full_integral}")
+        print(f"∫₀^2π dφ ∫₀π sin^2(θ)dθ = {full_integral}")
         
         # 几何因子
         total_solid_angle = 4 * sp.pi
@@ -153,7 +153,7 @@ class ZhangXiangqianGeometricFactor:
         
         # 定义被积函数
         def integrand(theta, phi):
-            return np.sin(theta) * np.sin(theta)  # sin²(θ)
+            return np.sin(theta) * np.sin(theta)  # sin^2(θ)
         
         # 数值积分
         result, error = integrate.dblquad(
@@ -162,12 +162,12 @@ class ZhangXiangqianGeometricFactor:
             lambda phi: 0, lambda phi: np.pi  # θ的积分范围
         )
         
-        print(f"数值积分结果：∫∫ sin²(θ) sin(θ) dθdφ = {result:.6f}")
+        print(f"数值积分结果：∫∫ sin^2(θ) sin(θ) dθdφ = {result:.6f}")
         print(f"积分误差：±{error:.2e}")
         
         # 理论值
         theoretical = np.pi**2
-        print(f"理论值：π² = {theoretical:.6f}")
+        print(f"理论值：π^2 = {theoretical:.6f}")
         print(f"相对误差：{abs(result - theoretical)/theoretical * 100:.6f}%")
         
         # 几何因子
@@ -368,8 +368,8 @@ class ZhangXiangqianGeometricFactor:
             '3. 几何因子G=2：三维→二维投影的缩放因子',
             '4. 统一场论：空间发散运动的几何效应',
             '',
-            '结论：F ∝ 2 × (m₁m₂)/(R²c)',
-            '引入张祥前常数Z后：F = Z × 2m₁m₂/(R²c)'
+            '结论：F ∝ 2 × (m₁m₂)/(R^2c)',
+            '引入张祥前常数Z后：F = Z × 2m₁m₂/(R^2c)'
         ]
         
         y_positions = np.linspace(0.95, 0.05, len(meanings))
@@ -406,20 +406,20 @@ class ZhangXiangqianGeometricFactor:
         
         print("\n从几何因子到引力常数：")
         print("-" * 50)
-        print("1. 引力相互作用力：F ∝ m₁m₂/(R²c²) × c = m₁m₂/(R²c)")
-        print("2. 各向同性修正：F ∝ 2 × m₁m₂/(R²c)")
-        print("3. 引入张祥前常数Z：F = Z × 2m₁m₂/(R²c)")
-        print("4. 对比万有引力定律：F = G × m₁m₂/R²")
+        print("1. 引力相互作用力：F ∝ m₁m₂/(R^2c^2) × c = m₁m₂/(R^2c)")
+        print("2. 各向同性修正：F ∝ 2 × m₁m₂/(R^2c)")
+        print("3. 引入张祥前常数Z：F = Z × 2m₁m₂/(R^2c)")
+        print("4. 对比万有引力定律：F = G × m₁m₂/R^2")
         print("5. 得到关系：G = 2Z/c")
         print("6. 即：Z = G·c/2")
         
         # 数值验证
-        G_codata = 6.67430e-11  # m³kg⁻¹s⁻²
+        G_codata = 6.67430e-11  # m³kg⁻¹s⁻^2
         c_light = 299792458     # m/s
         
         Z_calculated = G_codata * c_light / 2
         print(f"\n数值计算：")
-        print(f"G (CODATA 2018) = {G_codata:.5e} m³kg⁻¹s⁻²")
+        print(f"G (CODATA 2018) = {G_codata:.5e} m³kg⁻¹s⁻^2")
         print(f"c (定义值) = {c_light:,} m/s")
         print(f"Z = G·c/2 = {Z_calculated:.5e} m⁴kg⁻¹s⁻³")
         print(f"Z ≈ {Z_calculated:.2e} ≈ 0.01 m⁴kg⁻¹s⁻³")
@@ -431,7 +431,7 @@ class ZhangXiangqianGeometricFactor:
         
         print(f"\n反向验证：")
         print(f"假设 Z = 0.01 m⁴kg⁻¹s⁻³")
-        print(f"预测 G = 2Z/c = {G_predicted:.5e} m³kg⁻¹s⁻²")
+        print(f"预测 G = 2Z/c = {G_predicted:.5e} m³kg⁻¹s⁻^2")
         print(f"相对误差 = {relative_error:.3f}%")
         
         return Z_calculated, G_predicted, relative_error

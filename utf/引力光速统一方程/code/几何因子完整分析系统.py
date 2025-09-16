@@ -163,9 +163,9 @@ class GeometricFactorAnalysisSystem:
         ax.axis('off')
         
         steps = [
-            "Step 1: Sphere Area = 4πr²",
+            "Step 1: Sphere Area = 4πr^2",
             "Step 2: Circle Perimeter = 2πr",
-            "Step 3: Ratio = 4πr² / 2πr = 2r",
+            "Step 3: Ratio = 4πr^2 / 2πr = 2r",
             "Step 4: At unit radius r=1",
             "Step 5: Geometric Factor = 2×1 = 2"
         ]
@@ -187,9 +187,9 @@ class GeometricFactorAnalysisSystem:
         analysis_text = [
             "Dimensional Analysis:",
             "",
-            "Sphere Area: [L²]",
+            "Sphere Area: [L^2]",
             "Circle Perimeter: [L¹]",
-            "Ratio: [L²]/[L¹] = [L¹]",
+            "Ratio: [L^2]/[L¹] = [L¹]",
             "",
             "Problem: Still has dimension!",
             "Not dimensionless number",
@@ -296,7 +296,7 @@ class GeometricFactorAnalysisSystem:
         sin_squared = np.sin(theta)**2
         
         ax.plot(theta, sin_theta, 'g-', linewidth=3, label='Correct: sin(θ)')
-        ax.plot(theta, sin_squared, 'r--', linewidth=3, label='Paper: sin²(θ)')
+        ax.plot(theta, sin_squared, 'r--', linewidth=3, label='Paper: sin^2(θ)')
         
         ax.fill_between(theta, 0, sin_theta, alpha=0.3, color='green')
         ax.fill_between(theta, 0, sin_squared, alpha=0.3, color='red')
@@ -305,7 +305,7 @@ class GeometricFactorAnalysisSystem:
         ax.text(0.6, 0.8, '∫sin(θ)dθ = 2', 
                 transform=ax.transAxes, fontsize=10,
                 bbox=dict(boxstyle="round", facecolor='lightgreen'))
-        ax.text(0.6, 0.7, '∫sin²(θ)dθ = π/2', 
+        ax.text(0.6, 0.7, '∫sin^2(θ)dθ = π/2', 
                 transform=ax.transAxes, fontsize=10,
                 bbox=dict(boxstyle="round", facecolor='lightcoral'))
         
@@ -448,7 +448,7 @@ class GeometricFactorAnalysisSystem:
             n_points = int(len(theta) * progress)
             if n_points > 0:
                 ax3.plot(theta[:n_points], sin_theta[:n_points], 'g-', linewidth=3, label='sin(θ)')
-                ax3.plot(theta[:n_points], sin_squared[:n_points], 'r--', linewidth=3, label='sin²(θ)')
+                ax3.plot(theta[:n_points], sin_squared[:n_points], 'r--', linewidth=3, label='sin^2(θ)')
             
             ax3.set_xlabel('θ (radians)')
             ax3.set_ylabel('Function Value')
@@ -495,15 +495,15 @@ class GeometricFactorAnalysisSystem:
         print("=" * 80)
         
         print("\n1. MATHEMATICAL ANALYSIS:")
-        print("   • Sphere surface area: 4πr²")
+        print("   • Sphere surface area: 4πr^2")
         print("   • Circle perimeter: 2πr")
-        print("   • Ratio: 4πr²/(2πr) = 2r")
+        print("   • Ratio: 4πr^2/(2πr) = 2r")
         print("   • Problem: Result has dimension [L], not dimensionless")
         
         print("\n2. DIMENSIONAL ANALYSIS:")
-        print("   • [Sphere area] = L²")
+        print("   • [Sphere area] = L^2")
         print("   • [Circle perimeter] = L¹")
-        print("   • [Ratio] = L²/L¹ = L¹ ≠ dimensionless")
+        print("   • [Ratio] = L^2/L¹ = L¹ ≠ dimensionless")
         print("   • Forcing r=1 is arbitrary and lacks generality")
         
         print("\n3. PHYSICAL ISSUES:")

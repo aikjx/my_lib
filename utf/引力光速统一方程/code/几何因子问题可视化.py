@@ -88,7 +88,7 @@ class GeometricFactorProblemVisualizer:
         ax.plot(circle_x, circle_y, circle_z, color=self.colors['warning'], linewidth=4)
         
         # 添加标注
-        ax.text(0, 0, 1.5, '球面积 = 4πr²', fontsize=12, ha='center', 
+        ax.text(0, 0, 1.5, '球面积 = 4πr^2', fontsize=12, ha='center', 
                color=self.colors['info'], fontweight='bold')
         ax.text(1.2, 0, 0, '圆周长 = 2πr', fontsize=12, ha='center',
                color=self.colors['warning'], fontweight='bold')
@@ -113,7 +113,7 @@ class GeometricFactorProblemVisualizer:
         ax.add_patch(circle_filled)
         
         # 标注
-        ax.text(0, 0, '面积 = πr²', ha='center', va='center', fontsize=12, 
+        ax.text(0, 0, '面积 = πr^2', ha='center', va='center', fontsize=12, 
                fontweight='bold', color=self.colors['neutral'])
         ax.text(0, -1.3, '周长 = 2πr', ha='center', fontsize=12,
                fontweight='bold', color=self.colors['warning'])
@@ -140,12 +140,12 @@ class GeometricFactorProblemVisualizer:
         
         # 分析步骤
         steps = [
-            ('球面积:', '4πr²', '[长度]²', self.colors['correct']),
-            ('圆周长:', '2πr', '[长度]¹', self.colors['correct']),
-            ('比值:', '4πr²/2πr = 2r', '[长度]¹', self.colors['incorrect']),
+            ('球面积:', '4πr^2', '[长度]^2', self.colors['correct']),
+            ('圆周长:', '2πr', '[长度]^1', self.colors['correct']),
+            ('比值:', '4πr^2/2πr = 2r', '[长度]^1', self.colors['incorrect']),
             ('问题:', '结果仍有长度量纲!', '不是无量纲数', self.colors['incorrect']),
-            ('强行修正:', '2r × r = 2r²', '依赖r的选择', self.colors['warning']),
-            ('当r=1:', '2r² = 2', '缺乏普遍性', self.colors['incorrect'])
+            ('强行修正:', '2r × r = 2r^2', '依赖r的选择', self.colors['warning']),
+            ('当r=1:', '2r^2 = 2', '缺乏普遍性', self.colors['incorrect'])
         ]
         
         y_positions = np.linspace(0.8, 0.1, len(steps))

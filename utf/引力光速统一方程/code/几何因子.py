@@ -21,7 +21,7 @@ def integrand(theta, phi):
     """
     return np.sin(theta) * np.sin(theta)  # 第一个sinθ是投影效率，第二个sinθ来自dΩ
 
-# 数值计算积分 ∫∫ sin²θ dθ dφ
+# 数值计算积分 ∫∫ sin^2θ dθ dφ
 def calculate_geometric_factor():
     # 使用scipy的dblquad进行二重积分
     # θ范围: [0, π], φ范围: [0, 2π]
@@ -148,7 +148,7 @@ def visualize_spherical_projection():
 
 def monte_carlo_integration(n_samples=100000):
     """
-    使用蒙特卡洛方法计算积分 ∫∫ sin²θ dθ dφ
+    使用蒙特卡洛方法计算积分 ∫∫ sin^2θ dθ dφ
     """
     # 在球面上均匀采样
     u = np.random.uniform(0, 1, n_samples)

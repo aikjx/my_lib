@@ -61,21 +61,21 @@ class GeometricFactorVerification:
         # 2. 论文中声称的积分
         print("\n2. 论文中的积分声称:")
         print("   声称: ∫ sin(θ)dΩ 其中 dΩ = sin(θ)dθdφ")
-        print("   即: ∫∫ sin²(θ)dθdφ")
+        print("   即: ∫∫ sin^2(θ)dθdφ")
         
         integrand_paper = sp.sin(theta)**2
         theta_integral_paper = sp.integrate(integrand_paper, (theta, 0, sp.pi))
-        print(f"   ∫₀^π sin²(θ)dθ = {theta_integral_paper}")
+        print(f"   ∫₀^π sin^2(θ)dθ = {theta_integral_paper}")
         
         full_integral_paper = sp.integrate(theta_integral_paper, (phi, 0, 2*sp.pi))
-        print(f"   ∫₀^{2*sp.pi} dφ ∫₀^π sin²(θ)dθ = {full_integral_paper}")
-        print(f"   结果: {float(full_integral_paper)} = π² ≈ {float(full_integral_paper):.6f}")
+        print(f"   ∫₀^{2*sp.pi} dφ ∫₀^π sin^2(θ)dθ = {full_integral_paper}")
+        print(f"   结果: {float(full_integral_paper)} = π^2 ≈ {float(full_integral_paper):.6f}")
         
         # 3. 关键问题分析
         print("\n3. 关键问题分析:")
         print("   论文混淆了两个不同的积分:")
         print("   - 标准立体角: ∫ dΩ = ∫ sin(θ)dθdφ = 4π")
-        print("   - 论文积分: ∫ sin(θ)dΩ = ∫ sin²(θ)dθdφ = π²")
+        print("   - 论文积分: ∫ sin(θ)dΩ = ∫ sin^2(θ)dθdφ = π^2")
         print("   这两个积分的物理意义完全不同！")
         
         return float(full_integral), float(full_integral_paper)
@@ -108,8 +108,8 @@ class GeometricFactorVerification:
         # 立体投影示例
         print("\n4. 立体投影示例:")
         print("   北极立体投影: (θ,φ) → (r,φ) 其中 r = 2tan(θ/2)")
-        print("   雅可比: |J| = 4/(1+r²)²")
-        print("   面积元素: dA = |J|drdφ = 4drdφ/(1+r²)²")
+        print("   雅可比: |J| = 4/(1+r^2)^2")
+        print("   面积元素: dA = |J|drdφ = 4drdφ/(1+r^2)^2")
         
         return True
     
@@ -124,31 +124,31 @@ class GeometricFactorVerification:
         
         # G的标准量纲
         print("\n2. 标准量纲:")
-        print("   [G] = L³M⁻¹T⁻²")
+        print("   [G] = L³M⁻¹T⁻^2")
         print("   [c] = LT⁻¹")
         
         # 检查量纲一致性
         print("\n3. 量纲检查:")
         print("   [2Z/c] = [Z]/[c] = (L⁴M⁻¹T⁻³)/(LT⁻¹)")
-        print("   = L⁴M⁻¹T⁻³ × LT = L³M⁻¹T⁻²")
+        print("   = L⁴M⁻¹T⁻³ × LT = L³M⁻¹T⁻^2")
         print("   = [G] ✓")
         
         print("\n   量纲形式上一致，但Z的物理意义存疑")
         
         # 检查Z的数值和量纲
-        G_codata = 6.67430e-11  # m³kg⁻¹s⁻²
+        G_codata = 6.67430e-11  # m³kg⁻¹s⁻^2
         c_light = 299792458     # m/s
         
         Z_calculated = G_codata * c_light / 2
         print(f"\n4. 数值计算:")
-        print(f"   G = {G_codata:.5e} m³kg⁻¹s⁻²")
+        print(f"   G = {G_codata:.5e} m³kg⁻¹s⁻^2")
         print(f"   c = {c_light} m/s")
         print(f"   Z = G×c/2 = {Z_calculated:.5e}")
         print(f"   Z的量纲: m⁴kg⁻¹s⁻³")
         
         # 问题分析
         print(f"\n5. 问题分析:")
-        print(f"   Z ≈ 1.00×10⁻² 看似简单，但这可能是巧合")
+        print(f"   Z ≈ 1.00×10⁻^2 看似简单，但这可能是巧合")
         print(f"   没有从第一性原理推导出Z的值")
         print(f"   Z的物理意义'空间位移条数密度流'缺乏实验验证")
         
@@ -209,7 +209,7 @@ class GeometricFactorVerification:
         
         print(f"\n数值验证:")
         print(f"标准立体角积分: {result_standard:.6f} ≈ {4*np.pi:.6f} (4π)")
-        print(f"论文积分: {result_paper:.6f} ≈ {np.pi**2:.6f} (π²)")
+        print(f"论文积分: {result_paper:.6f} ≈ {np.pi**2:.6f} (π^2)")
         print(f"比值: {result_paper/result_standard:.6f}")
         
         # 半球积分
@@ -222,7 +222,7 @@ class GeometricFactorVerification:
         
         print(f"\n结论:")
         print(f"- 4π/2π = 2 是正确的立体角比值")
-        print(f"- 但论文中使用的积分 ∫sin²(θ)dΩ 不是标准立体角")
+        print(f"- 但论文中使用的积分 ∫sin^2(θ)dΩ 不是标准立体角")
         print(f"- 几何因子的推导基础有误")
         
         return result_standard, result_paper, result_hemisphere
@@ -239,7 +239,7 @@ class GeometricFactorVerification:
         sin_squared_theta = np.sin(theta)**2
         
         ax1.plot(theta, sin_theta, 'b-', linewidth=2, label='sin(θ) - Standard')
-        ax1.plot(theta, sin_squared_theta, 'r-', linewidth=2, label='sin²(θ) - Paper')
+        ax1.plot(theta, sin_squared_theta, 'r-', linewidth=2, label='sin^2(θ) - Paper')
         ax1.fill_between(theta, 0, sin_theta, alpha=0.3, color='blue')
         ax1.fill_between(theta, 0, sin_squared_theta, alpha=0.3, color='red')
         
@@ -251,15 +251,15 @@ class GeometricFactorVerification:
         
         # 添加积分值标注
         standard_integral = 2  # ∫₀^π sin(θ)dθ = 2
-        paper_integral = np.pi/2  # ∫₀^π sin²(θ)dθ = π/2
+        paper_integral = np.pi/2  # ∫₀^π sin^2(θ)dθ = π/2
         ax1.text(0.6, 0.8, f'∫sin(θ)dθ = {standard_integral}', 
                 transform=ax1.transAxes, bbox=dict(boxstyle="round", facecolor='lightblue'))
-        ax1.text(0.6, 0.7, f'∫sin²(θ)dθ = {paper_integral:.3f}', 
+        ax1.text(0.6, 0.7, f'∫sin^2(θ)dθ = {paper_integral:.3f}', 
                 transform=ax1.transAxes, bbox=dict(boxstyle="round", facecolor='lightcoral'))
         
         # 2. 几何因子错误分析
         ax2 = axes[0, 1]
-        categories = ['Full Sphere\n4π sr', 'Hemisphere\n2π sr', 'Paper Integral\nπ² ≈ 9.87']
+        categories = ['Full Sphere\n4π sr', 'Hemisphere\n2π sr', 'Paper Integral\nπ^2 ≈ 9.87']
         values = [4*np.pi, 2*np.pi, np.pi**2]
         colors = ['blue', 'green', 'red']
         
@@ -281,14 +281,14 @@ class GeometricFactorVerification:
         
         dim_text = [
             'Standard dimensions:',
-            '[G] = L³M⁻¹T⁻²',
+            '[G] = L³M⁻¹T⁻^2',
             '[c] = LT⁻¹',
             '',
             'Paper claims:',
             '[Z] = L⁴M⁻¹T⁻³',
             'G = 2Z/c',
             '',
-            'Check: [2Z/c] = L³M⁻¹T⁻² ✓',
+            'Check: [2Z/c] = L³M⁻¹T⁻^2 ✓',
             'But Z lacks physical basis ✗'
         ]
         
@@ -309,7 +309,7 @@ class GeometricFactorVerification:
         
         issues = [
             '1. Wrong integrand:',
-            '   Uses sin²(θ) instead of sin(θ)',
+            '   Uses sin^2(θ) instead of sin(θ)',
             '',
             '2. Meaningless ratio:',
             '   4π/2π compares different quantities',
@@ -360,7 +360,7 @@ class GeometricFactorVerification:
         print("=" * 80)
         
         print("\n✗ 几何因子推导存在根本性错误:")
-        print("  1. 数学错误: 使用了错误的积分 ∫sin²(θ)dΩ 而非标准立体角积分")
+        print("  1. 数学错误: 使用了错误的积分 ∫sin^2(θ)dΩ 而非标准立体角积分")
         print("  2. 概念混淆: 将不同量纲的量进行比较 (4π立体角 vs 2π平面角)")
         print("  3. 物理基础缺失: '空间位移条数'没有实验定义")
         print("  4. 逻辑跳跃: 从几何投影直接得出引力常数关系")

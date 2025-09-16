@@ -246,7 +246,7 @@ def create_mathematical_summary():
     ax1 = axes[0, 0]
     ax1.text(0.5, 0.7, '3D球面立体角', fontsize=14, ha='center', fontweight='bold')
     ax1.text(0.5, 0.5, r'$\Omega_{3D} = 4\pi$ 立体弧度', fontsize=12, ha='center')
-    ax1.text(0.5, 0.3, '球面总面积 = 4πr²\n单位球面积 = 4π', fontsize=10, ha='center')
+    ax1.text(0.5, 0.3, '球面总面积 = 4πr^2\n单位球面积 = 4π', fontsize=10, ha='center')
     ax1.set_xlim([0, 1])
     ax1.set_ylim([0, 1])
     ax1.axis('off')

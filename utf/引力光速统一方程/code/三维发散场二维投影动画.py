@@ -272,7 +272,7 @@ class SpaceFieldInteractionAnimator:
         y = np.linspace(-3, 3, 50)
         X, Y = np.meshgrid(x, y)
         
-        # M的场强 (1/r²分布)
+        # M的场强 (1/r^2分布)
         r_M = np.sqrt((X + 2)**2 + Y**2) + 0.1
         field_M = 1 / r_M**2
         
@@ -333,9 +333,9 @@ class SpaceFieldInteractionAnimator:
             "   • 需要几何修正因子",
             "",
             "4. 几何因子的来源:",
-            "   • 球面积: 4πr² (三维总量)",
-            "   • 平面截面: πr² (二维有效量)",
-            "   • 比值: 4πr²/πr² = 4",
+            "   • 球面积: 4πr^2 (三维总量)",
+            "   • 平面截面: πr^2 (二维有效量)",
+            "   • 比值: 4πr^2/πr^2 = 4",
             "",
             "5. 考虑对称性和投影效应",
             "   • 实际几何因子 ≈ 2",

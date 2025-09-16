@@ -212,7 +212,7 @@ class GeometricFactorVisualizer:
             'dF ∝ sin(θ)dΩ',
             '',
             '3. 积分:',
-            '∫sin(θ)dΩ = π²',
+            '∫sin(θ)dΩ = π^2',
             '',
             '4. 几何因子:',
             'G = 4π/2π = 2'
@@ -255,7 +255,7 @@ class GeometricFactorVisualizer:
         theta_full = np.linspace(0, self.pi, 200)
         theta_partial = theta_full[:int(len(theta_full) * integral_progress)]
         
-        # sin²(θ)函数
+        # sin^2(θ)函数
         sin_squared_full = np.sin(theta_full) ** 2
         sin_squared_partial = sin_squared_full[:len(theta_partial)]
         
@@ -274,8 +274,8 @@ class GeometricFactorVisualizer:
         self.ax_integral.set_xlim([0, self.pi])
         self.ax_integral.set_ylim([0, 1.1])
         self.ax_integral.set_xlabel('θ (弧度)', fontsize=10)
-        self.ax_integral.set_ylabel('sin²(θ)', fontsize=10)
-        self.ax_integral.set_title('积分: ∫sin²(θ)dθ = π/2', fontweight='bold', fontsize=11)
+        self.ax_integral.set_ylabel('sin^2(θ)', fontsize=10)
+        self.ax_integral.set_title('积分: ∫sin^2(θ)dθ = π/2', fontweight='bold', fontsize=11)
         self.ax_integral.grid(True, alpha=0.3)
         
         # 显示当前积分值
@@ -420,11 +420,11 @@ def create_static_summary():
     ax3 = axes[1, 0]
     theta = np.linspace(0, np.pi, 200)
     sin_squared = np.sin(theta) ** 2
-    ax3.plot(theta, sin_squared, 'r-', linewidth=2, label='sin²(θ)')
+    ax3.plot(theta, sin_squared, 'r-', linewidth=2, label='sin^2(θ)')
     ax3.fill_between(theta, 0, sin_squared, alpha=0.3, color='red')
     ax3.set_xlabel('θ (弧度)')
-    ax3.set_ylabel('sin²(θ)')
-    ax3.set_title('积分：∫₀^π sin²(θ)dθ = π/2')
+    ax3.set_ylabel('sin^2(θ)')
+    ax3.set_title('积分：∫₀^π sin^2(θ)dθ = π/2')
     ax3.grid(True, alpha=0.3)
     ax3.legend()
     

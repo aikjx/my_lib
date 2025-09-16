@@ -84,7 +84,7 @@ class GeometricFactorAnalysis:
             '• 表示球面的总面积',
             '• 在电磁学中: 电通量的载体',
             '• 在引力中: 引力场线穿过的面积',
-            '• 量纲: 面积 [L²]',
+            '• 量纲: 面积 [L^2]',
             '• 物理清晰: ✓'
         ]
         for i, text in enumerate(meanings1):
@@ -259,7 +259,7 @@ class GeometricFactorAnalysis:
         ax.text(0.05, 0.85, '主要问题:', fontsize=16, fontweight='bold', color=self.colors['incorrect'])
         
         problems = [
-            '1. 量纲不一致: 球面积(L²) / 圆周长(L¹) = 长度(L¹), 不是无量纲数',
+            '1. 量纲不一致: 球面积(L^2) / 圆周长(L¹) = 长度(L¹), 不是无量纲数',
             '2. 物理意义不明: 为什么要计算面积与周长的比值?',
             '3. 任意性: 依赖于r=1的特殊选择, 缺乏普遍性',
             '4. 逻辑跳跃: 从几何比值到物理相互作用缺乏连接',

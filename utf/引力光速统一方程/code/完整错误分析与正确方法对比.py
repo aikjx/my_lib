@@ -65,10 +65,10 @@ class ComprehensiveErrorAnalysis:
             },
             {
                 "step": "步骤3：立体角积分",
-                "claim": "∫sin(θ)dΩ = π²，其中dΩ = sin(θ)dθdφ",
+                "claim": "∫sin(θ)dΩ = π^2，其中dΩ = sin(θ)dθdφ",
                 "error": "数学计算错误",
                 "details": [
-                    "• 实际计算的是∫sin²(θ)dθdφ",
+                    "• 实际计算的是∫sin^2(θ)dθdφ",
                     "• 标准立体角积分是∫sin(θ)dθdφ = 4π",
                     "• 混淆了不同的积分表达式"
                 ]
@@ -85,7 +85,7 @@ class ComprehensiveErrorAnalysis:
             },
             {
                 "step": "步骤5：引力推导",
-                "claim": "F = Z·2m₁m₂/(R²c)，然后G = 2Z/c",
+                "claim": "F = Z·2m₁m₂/(R^2c)，然后G = 2Z/c",
                 "error": "逻辑跳跃，缺乏物理依据",
                 "details": [
                     "• 从几何因子直接跳到引力公式",
@@ -112,7 +112,7 @@ class ComprehensiveErrorAnalysis:
         print("=" * 90)
         
         print("\n1. 立体角的标准定义:")
-        print("   立体角Ω定义为：Ω = A/r²")
+        print("   立体角Ω定义为：Ω = A/r^2")
         print("   其中A是球面上的面积，r是球半径")
         
         print("\n2. 球坐标系中的立体角元素:")
@@ -126,11 +126,11 @@ class ComprehensiveErrorAnalysis:
         
         # 完整球面
         full_sphere = sp.integrate(sp.integrate(sp.sin(theta), (theta, 0, sp.pi)), (phi, 0, 2*sp.pi))
-        print(f"   完整球面: ∫₀²π dφ ∫₀π sin(θ)dθ = {full_sphere} = 4π")
+        print(f"   完整球面: ∫₀^2π dφ ∫₀π sin(θ)dθ = {full_sphere} = 4π")
         
         # 上半球
         upper_hemisphere = sp.integrate(sp.integrate(sp.sin(theta), (theta, 0, sp.pi/2)), (phi, 0, 2*sp.pi))
-        print(f"   上半球: ∫₀²π dφ ∫₀^(π/2) sin(θ)dθ = {upper_hemisphere} = 2π")
+        print(f"   上半球: ∫₀^2π dφ ∫₀^(π/2) sin(θ)dθ = {upper_hemisphere} = 2π")
         
         # 比值
         ratio = full_sphere / upper_hemisphere
@@ -158,7 +158,7 @@ class ComprehensiveErrorAnalysis:
         print("\n2. 立体投影示例:")
         print("   从北极点投影到赤道平面：")
         print("   • 变换：(θ,φ) → (r,φ)，其中 r = 2tan(θ/2)")
-        print("   • 雅可比：|J| = 4/(1+r²)²")
+        print("   • 雅可比：|J| = 4/(1+r^2)^2")
         print("   • 面积元素：dA = |J|dr dφ")
         
         print("\n3. 为什么不能简单使用4π/2π:")
@@ -198,10 +198,10 @@ class ComprehensiveErrorAnalysis:
         
         print("\n1. 基本物理常数的量纲:")
         dimensions = {
-            "G": "L³M⁻¹T⁻²",
+            "G": "L³M⁻¹T⁻^2",
             "c": "LT⁻¹", 
-            "ℏ": "ML²T⁻¹",
-            "k_B": "ML²T⁻²K⁻¹"
+            "ℏ": "ML^2T⁻¹",
+            "k_B": "ML^2T⁻^2K⁻¹"
         }
         
         for const, dim in dimensions.items():
@@ -210,7 +210,7 @@ class ComprehensiveErrorAnalysis:
         print("\n2. 论文中Z常数的量纲检查:")
         print("   声称：[Z] = L⁴M⁻¹T⁻³")
         print("   关系：G = 2Z/c")
-        print("   检查：[2Z/c] = [Z]/[c] = (L⁴M⁻¹T⁻³)/(LT⁻¹) = L³M⁻¹T⁻²")
+        print("   检查：[2Z/c] = [Z]/[c] = (L⁴M⁻¹T⁻³)/(LT⁻¹) = L³M⁻¹T⁻^2")
         print("   结果：与[G]一致 ✓")
         
         print("\n3. 但是，量纲一致不等于物理正确:")
@@ -231,7 +231,7 @@ class ComprehensiveErrorAnalysis:
         print(f"   设 X = G·c³/ℏ = {X:.3e}")
         print(f"   则 G = X·ℏ/c³")
         print(f"   量纲检查：[X·ℏ/c³] = [X][ℏ]/[c³]")
-        print(f"   如果[X] = M⁻¹T²，则结果 = (M⁻¹T²)(ML²T⁻¹)/(L³T⁻³) = L³M⁻¹T⁻² = [G] ✓")
+        print(f"   如果[X] = M⁻¹T^2，则结果 = (M⁻¹T^2)(ML^2T⁻¹)/(L³T⁻³) = L³M⁻¹T⁻^2 = [G] ✓")
         print("   但这个关系没有物理意义！")
         
         return dimensions
@@ -243,9 +243,9 @@ class ComprehensiveErrorAnalysis:
         print("=" * 90)
         
         print("\n1. 牛顿引力理论:")
-        print("   • 万有引力定律：F = Gm₁m₂/r²")
-        print("   • 引力场：g⃗ = -GM/r² r̂")
-        print("   • 泊松方程：∇²φ = 4πGρ")
+        print("   • 万有引力定律：F = Gm₁m₂/r^2")
+        print("   • 引力场：g⃗ = -GM/r^2 r̂")
+        print("   • 泊松方程：∇^2φ = 4πGρ")
         print("   • G是实验测定的基本常数")
         
         print("\n2. 广义相对论:")
@@ -340,19 +340,19 @@ class ComprehensiveErrorAnalysis:
         sin_squared = np.sin(theta)**2
         
         ax.plot(theta, sin_theta, 'g-', linewidth=3, label='Correct: sin(θ)')
-        ax.plot(theta, sin_squared, 'r--', linewidth=3, label='Paper: sin²(θ)')
+        ax.plot(theta, sin_squared, 'r--', linewidth=3, label='Paper: sin^2(θ)')
         
         ax.fill_between(theta, 0, sin_theta, alpha=0.3, color='green')
         ax.fill_between(theta, 0, sin_squared, alpha=0.3, color='red')
         
         # 添加积分值
         correct_integral = 2  # ∫₀^π sin(θ)dθ
-        wrong_integral = np.pi/2  # ∫₀^π sin²(θ)dθ
+        wrong_integral = np.pi/2  # ∫₀^π sin^2(θ)dθ
         
         ax.text(0.6, 0.8, f'∫sin(θ)dθ = {correct_integral}', 
                 transform=ax.transAxes, fontsize=9,
                 bbox=dict(boxstyle="round", facecolor='lightgreen'))
-        ax.text(0.6, 0.7, f'∫sin²(θ)dθ = {wrong_integral:.3f}', 
+        ax.text(0.6, 0.7, f'∫sin^2(θ)dθ = {wrong_integral:.3f}', 
                 transform=ax.transAxes, fontsize=9,
                 bbox=dict(boxstyle="round", facecolor='lightcoral'))
         
@@ -416,14 +416,14 @@ class ComprehensiveErrorAnalysis:
         dimensions_text = [
             'Dimensional Analysis:',
             '',
-            '[G] = L³M⁻¹T⁻²',
+            '[G] = L³M⁻¹T⁻^2',
             '[c] = LT⁻¹',
             '[Z] = L⁴M⁻¹T⁻³ (claimed)',
             '',
             'Check: G = 2Z/c',
             '[2Z/c] = [Z]/[c]',
             '= L⁴M⁻¹T⁻³ / LT⁻¹',
-            '= L³M⁻¹T⁻² ✓',
+            '= L³M⁻¹T⁻^2 ✓',
             '',
             'BUT: Dimensional consistency',
             '≠ Physical correctness!'
@@ -452,7 +452,7 @@ class ComprehensiveErrorAnalysis:
         # 错误步骤
         steps = [
             (1, 5, "Undefined\n'Space Count'", 'red'),
-            (3, 5, "Wrong Integral\n∫sin²(θ)dΩ", 'red'),
+            (3, 5, "Wrong Integral\n∫sin^2(θ)dΩ", 'red'),
             (5, 5, "Meaningless Ratio\n4π/2π", 'red'),
             (7, 5, "Unjustified Jump\nto Gravity", 'red'),
             (9, 5, "Final Formula\nG = 2Z/c", 'orange')

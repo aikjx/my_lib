@@ -114,7 +114,7 @@ class GeometricFactorAnimator:
             x_circle = np.cos(theta)
             y_circle = np.sin(theta)
             self.ax_projection.fill(x_circle, y_circle, alpha=0.3, 
-                                  color=self.colors['plane'], label='圆面积: πr²')
+                                  color=self.colors['plane'], label='圆面积: πr^2')
         
         self.ax_projection.set_xlim(-1.5, 1.5)
         self.ax_projection.set_ylim(-1.5, 1.5)
@@ -130,9 +130,9 @@ class GeometricFactorAnimator:
         
         # 计算步骤文本
         steps = [
-            "步骤1: 球面积 = 4πr²",
+            "步骤1: 球面积 = 4πr^2",
             "步骤2: 圆周长 = 2πr", 
-            "步骤3: 比值 = 4πr² / 2πr = 2r",
+            "步骤3: 比值 = 4πr^2 / 2πr = 2r",
             "步骤4: 单位半径时 r=1",
             "步骤5: 几何因子 = 2×1 = 2"
         ]
@@ -224,7 +224,7 @@ class GeometricFactorAnimator:
             "• 连接了几何形状与物理相互作用",
             "",
             "数学验证:",
-            "几何因子 = 4πr² / (2πr) = 2r = 2 (当r=1)"
+            "几何因子 = 4πr^2 / (2πr) = 2r = 2 (当r=1)"
         ]
         
         progress = frame / self.total_frames

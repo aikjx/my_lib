@@ -51,7 +51,7 @@ class GeometricFactorAnimator:
             'title_3d': '3D Spherical Field\n4π steradians',
             'title_2d': '2D Projection\n2π radians', 
             'title_math': 'Mathematical Derivation',
-            'title_integral': 'Integration: ∫sin²(θ)dθ = π/2',
+            'title_integral': 'Integration: ∫sin^2(θ)dθ = π/2',
             'title_comparison': 'Value Comparison',
             'title_result': 'Geometric Factor',
             'geometric_factor': 'G = 4π/2π = 2',
@@ -265,7 +265,7 @@ class GeometricFactorAnimator:
             '   ∫ sin(θ)dΩ',
             '',
             '4. Calculate integral:',
-            '   = 2π × π/2 = π²',
+            '   = 2π × π/2 = π^2',
             '',
             '5. Geometric factor:',
             '   G = 4π/2π = 2'
@@ -314,7 +314,7 @@ class GeometricFactorAnimator:
         theta_full = np.linspace(0, self.pi, 300)
         theta_partial = theta_full[:int(len(theta_full) * integral_progress)]
         
-        # sin²(θ)函数
+        # sin^2(θ)函数
         sin_squared_full = np.sin(theta_full) ** 2
         sin_squared_partial = sin_squared_full[:len(theta_partial)]
         
@@ -340,7 +340,7 @@ class GeometricFactorAnimator:
         self.ax_integral.set_xlim([0, self.pi])
         self.ax_integral.set_ylim([0, 1.1])
         self.ax_integral.set_xlabel('θ (radians)', fontsize=10)
-        self.ax_integral.set_ylabel('sin²(θ)', fontsize=10)
+        self.ax_integral.set_ylabel('sin^2(θ)', fontsize=10)
         self.ax_integral.set_title(self.labels['title_integral'], fontweight='bold', fontsize=11)
         self.ax_integral.grid(True, alpha=0.3)
         
@@ -534,11 +534,11 @@ def create_static_summary():
     ax3 = axes[1, 0]
     theta = np.linspace(0, np.pi, 300)
     sin_squared = np.sin(theta) ** 2
-    ax3.plot(theta, sin_squared, 'r-', linewidth=3, label='sin²(θ)')
+    ax3.plot(theta, sin_squared, 'r-', linewidth=3, label='sin^2(θ)')
     ax3.fill_between(theta, 0, sin_squared, alpha=0.3, color='red')
     ax3.set_xlabel('θ (radians)', fontsize=12)
-    ax3.set_ylabel('sin²(θ)', fontsize=12)
-    ax3.set_title('Integration: ∫₀^π sin²(θ)dθ = π/2', fontsize=12, fontweight='bold')
+    ax3.set_ylabel('sin^2(θ)', fontsize=12)
+    ax3.set_title('Integration: ∫₀^π sin^2(θ)dθ = π/2', fontsize=12, fontweight='bold')
     ax3.grid(True, alpha=0.3)
     ax3.legend(fontsize=11)
     
