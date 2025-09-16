@@ -279,10 +279,11 @@
         </div>
         
         <div class="control-group">
-            <h4>🎯 物理解释</h4>
+            <h4>🎯 张祥前统一场论的双重效应</h4>
             <p id="physics-explanation">
-                立体角积分 ∫sin θ dΩ 表示球对称场在二维平面上的投影总和。
-                这个积分的结果决定了从三维到二维的几何修正因子。
+                质量的几何定义：m = k·(dn/dΩ)，其中n是空间位移矢量r⃗(t)=C⃗t的条数。
+                空间运动产生发散效应（淡色线），其梯度产生引力场A⃗=-Gk(Δn/Δs)(r⃗/r)指向质量中心（亮色线）。
+                立体角积分∫sin θ dΩ计算空间几何属性的投影，得到几何因子2。
             </p>
         </div>
     </div>
@@ -379,12 +380,14 @@
                 $$\text{几何因子} = \frac{\pi^2}{2\pi} \cdot \frac{4\pi}{\pi^2} = \frac{\pi^2 \cdot 4\pi}{2\pi \cdot \pi^2} = \frac{4\pi}{2\pi} = 2$$
             </div>
             
-            <div class="math-formula warning" id="formula-5">
-                <strong>⚠️ 问题分析</strong><br>
-                这个推导存在概念问题：<br>
-                • 积分结果 π² 有特定的物理意义，不应随意进行量纲转换<br>
-                • 几何因子应该是无量纲数，且有明确的物理来源<br>
-                • 标准物理中的几何因子通常来自立体角比值或对称性考虑
+            <div class="math-formula success" id="formula-5">
+                <strong>✅ 张祥前统一场论的完整物理图像</strong><br>
+                核心方程组：<br>
+                • 空间运动：$\vec{r}(t) = \vec{C}t$（光速发散）<br>
+                • 质量定义：$m = k \cdot \frac{dn}{d\Omega}$（几何化度量）<br>
+                • 引力场：$\vec{A} = -Gk\frac{\Delta n}{\Delta s}\frac{\vec{r}}{r}$（梯度效应）<br>
+                • 几何因子2来自立体角积分的三维→二维投影<br>
+                • 统一关系：$G = \frac{2Z}{c}$
             </div>
         </div>
     </div>
@@ -701,22 +704,25 @@
         function createFieldLines() {
             fieldLines = [];
             
-            // 创建质量M的引力场线（红色，向内收敛）
-            createGravityFieldLines(MASS_M_POS, 30, 0xff4444, 'M');
+            // 根据张祥前统一场论：同时显示空间运动和引力场
+            // 质量M：空间位移矢量r⃗(t)=C⃗t + 引力场A⃗=-Gk(Δn/Δs)(r⃗/r)
+            createSpaceMotionAndGravityField(MASS_M_POS, 35, 0xff4444, 'M');
             
-            // 创建质量m的引力场线（蓝色，向内收敛）
-            createGravityFieldLines(MASS_m_POS, 20, 0x4444ff, 'm');
+            // 质量m：同样的双重效应
+            createSpaceMotionAndGravityField(MASS_m_POS, 25, 0x4444ff, 'm');
             
-            // 创建相互作用场线（黄色，连接两个质量）
-            createInteractionFieldLines();
+            // 创建二维平面上的相互作用效应
+            createPlaneInteractionLines();
         }
         
-        function createGravityFieldLines(centerPos, lineCount, color, massType) {
-            for (let i = 0; i < lineCount; i++) {
+        function createSpaceMotionAndGravityField(centerPos, lineCount, color, massType) {
+            // 根据张祥前统一场论：同时显示空间运动和引力场
+            
+            // 1. 创建空间位移矢量r⃗(t) = C⃗t（发散运动）
+            for (let i = 0; i < Math.floor(lineCount * 0.6); i++) {
                 const theta = Math.random() * Math.PI;
                 const phi = Math.random() * Math.PI * 2;
                 
-                // 引力场线应该向质量中心收敛，而不是发散
                 const direction = new THREE.Vector3(
                     Math.sin(theta) * Math.cos(phi),
                     Math.sin(theta) * Math.sin(phi),
@@ -724,83 +730,154 @@
                 );
                 
                 const points = [];
-                const maxRadius = massType === 'M' ? 6 : 4;
+                const maxRadius = massType === 'M' ? 5 : 3.5;
                 
-                // 从外向内创建收敛的引力场线
-                for (let j = 0; j <= 50; j++) {
-                    const t = j / 50;
-                    const radius = maxRadius * (1 - t * 0.9); // 向内收敛
-                    const curvature = 0.1 * Math.sin(t * Math.PI * 3); // 添加轻微弯曲
+                // 空间位移矢量：从中心向外发散
+                for (let j = 0; j <= 40; j++) {
+                    const t = j / 40;
+                    const radius = 0.3 + t * maxRadius;
                     
                     const point = centerPos.clone().add(
-                        direction.clone().multiplyScalar(radius + curvature)
+                        direction.clone().multiplyScalar(radius)
                     );
                     points.push(point);
                 }
                 
                 const curve = new THREE.CatmullRomCurve3(points);
-                const tubeGeometry = new THREE.TubeGeometry(curve, 50, 0.015, 6, false);
+                const tubeGeometry = new THREE.TubeGeometry(curve, 40, 0.015, 6, false);
                 const tubeMaterial = new THREE.MeshBasicMaterial({
                     color: color,
                     transparent: true,
-                    opacity: 0.6
+                    opacity: 0.4
                 });
                 
-                const fieldLine = new THREE.Mesh(tubeGeometry, tubeMaterial);
-                fieldLine.userData = { 
-                    originalOpacity: 0.6, 
+                const spaceLine = new THREE.Mesh(tubeGeometry, tubeMaterial);
+                spaceLine.userData = { 
+                    originalOpacity: 0.4, 
                     theta: theta, 
                     phi: phi, 
                     massType: massType,
-                    color: color
+                    lineType: 'space_motion'
                 };
-                fieldLines.push(fieldLine);
-                scene.add(fieldLine);
+                fieldLines.push(spaceLine);
+                scene.add(spaceLine);
                 
-                // 添加箭头指示引力方向（向内）
-                const arrowGeometry = new THREE.ConeGeometry(0.05, 0.2, 8);
+                // 箭头指示空间运动方向（向外）
+                const arrowGeometry = new THREE.ConeGeometry(0.04, 0.15, 6);
                 const arrowMaterial = new THREE.MeshBasicMaterial({ color: color });
                 const arrow = new THREE.Mesh(arrowGeometry, arrowMaterial);
                 
-                // 箭头位置在场线中点，指向质量中心
-                const midPoint = points[Math.floor(points.length / 2)];
-                arrow.position.copy(midPoint);
-                arrow.lookAt(centerPos);
-                arrow.userData = { isArrow: true, massType: massType };
+                const arrowPoint = points[Math.floor(points.length * 0.8)];
+                arrow.position.copy(arrowPoint);
+                arrow.lookAt(arrowPoint.clone().add(direction));
+                arrow.userData = { isArrow: true, massType: massType, lineType: 'space_motion' };
+                
+                fieldLines.push(arrow);
+                scene.add(arrow);
+            }
+            
+            // 2. 创建引力场A⃗ = -Gk(Δn/Δs)(r⃗/r)（指向质量中心）
+            for (let i = 0; i < Math.floor(lineCount * 0.4); i++) {
+                const theta = Math.random() * Math.PI;
+                const phi = Math.random() * Math.PI * 2;
+                
+                const direction = new THREE.Vector3(
+                    Math.sin(theta) * Math.cos(phi),
+                    Math.sin(theta) * Math.sin(phi),
+                    Math.cos(theta)
+                );
+                
+                const points = [];
+                const maxRadius = massType === 'M' ? 4 : 3;
+                
+                // 引力场：从外向质量中心收敛（负号效应）
+                for (let j = 0; j <= 30; j++) {
+                    const t = j / 30;
+                    const radius = maxRadius * (1 - t * 0.85); // 向内收敛
+                    
+                    const point = centerPos.clone().add(
+                        direction.clone().multiplyScalar(radius)
+                    );
+                    points.push(point);
+                }
+                
+                const curve = new THREE.CatmullRomCurve3(points);
+                const tubeGeometry = new THREE.TubeGeometry(curve, 30, 0.02, 6, false);
+                
+                // 使用更亮的颜色表示引力场
+                const brightColor = new THREE.Color(color).multiplyScalar(1.5);
+                const tubeMaterial = new THREE.MeshBasicMaterial({
+                    color: brightColor,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                
+                const gravityLine = new THREE.Mesh(tubeGeometry, tubeMaterial);
+                gravityLine.userData = { 
+                    originalOpacity: 0.8, 
+                    theta: theta, 
+                    phi: phi, 
+                    massType: massType,
+                    lineType: 'gravity_field'
+                };
+                fieldLines.push(gravityLine);
+                scene.add(gravityLine);
+                
+                // 箭头指示引力场方向（向内）
+                const arrowGeometry = new THREE.ConeGeometry(0.06, 0.2, 8);
+                const arrowMaterial = new THREE.MeshBasicMaterial({ color: brightColor });
+                const arrow = new THREE.Mesh(arrowGeometry, arrowMaterial);
+                
+                const arrowPoint = points[Math.floor(points.length * 0.6)];
+                arrow.position.copy(arrowPoint);
+                arrow.lookAt(centerPos); // 指向质量中心
+                arrow.userData = { isArrow: true, massType: massType, lineType: 'gravity_field' };
                 
                 fieldLines.push(arrow);
                 scene.add(arrow);
             }
         }
         
-        function createInteractionFieldLines() {
-            // 创建连接两个质量的相互作用场线
-            const interactionLines = 8;
+        function createPlaneInteractionLines() {
+            // 根据张祥前统一场论：两个发散场在二维平面上的相互作用
+            const interactionLines = 12;
             
             for (let i = 0; i < interactionLines; i++) {
+                const angle = (i / interactionLines) * Math.PI * 2;
                 const points = [];
-                const t_offset = (i / interactionLines) * Math.PI * 2;
                 
-                // 创建从M到m的弯曲路径
-                for (let j = 0; j <= 30; j++) {
-                    const t = j / 30;
-                    const basePoint = MASS_M_POS.clone().lerp(MASS_m_POS, t);
+                // 在z=0平面上创建相互作用模式
+                for (let j = 0; j <= 40; j++) {
+                    const t = j / 40;
+                    const radius = 0.5 + t * 2.5;
                     
-                    // 添加正弦波动
-                    const amplitude = 0.5 * Math.sin(Math.PI * t);
-                    const offset = new THREE.Vector3(
-                        amplitude * Math.cos(t_offset + t * Math.PI * 2),
-                        amplitude * Math.sin(t_offset + t * Math.PI * 2),
-                        amplitude * 0.5 * Math.cos(t_offset + t * Math.PI * 4)
-                    );
+                    // 从M的发散场在平面上的投影
+                    const x_M = MASS_M_POS.x + radius * Math.cos(angle + t * 0.5);
+                    const y_M = MASS_M_POS.y + radius * Math.sin(angle + t * 0.5);
                     
-                    points.push(basePoint.add(offset));
+                    // 从m的发散场在平面上的投影
+                    const x_m = MASS_m_POS.x - radius * Math.cos(angle + t * 0.5);
+                    const y_m = MASS_m_POS.y - radius * Math.sin(angle + t * 0.5);
+                    
+                    // 相互作用点：两个发散场的"接触"
+                    const interaction_x = (x_M + x_m) / 2;
+                    const interaction_y = (y_M + y_m) / 2;
+                    const interaction_z = 0; // 在z=0平面上
+                    
+                    // 添加波动效果表示光速运动
+                    const wave = 0.2 * Math.sin(t * Math.PI * 3 + Date.now() * 0.01);
+                    
+                    points.push(new THREE.Vector3(
+                        interaction_x,
+                        interaction_y + wave,
+                        interaction_z
+                    ));
                 }
                 
                 const curve = new THREE.CatmullRomCurve3(points);
-                const tubeGeometry = new THREE.TubeGeometry(curve, 30, 0.02, 6, false);
+                const tubeGeometry = new THREE.TubeGeometry(curve, 40, 0.025, 8, false);
                 const tubeMaterial = new THREE.MeshBasicMaterial({
-                    color: 0xffaa00,
+                    color: 0x44ff44, // 绿色表示平面相互作用
                     transparent: true,
                     opacity: 0.8
                 });
@@ -808,58 +885,202 @@
                 const interactionLine = new THREE.Mesh(tubeGeometry, tubeMaterial);
                 interactionLine.userData = { 
                     originalOpacity: 0.8, 
-                    massType: 'interaction',
+                    massType: 'plane_interaction',
                     isInteraction: true
                 };
                 fieldLines.push(interactionLine);
                 scene.add(interactionLine);
-                
-                // 添加双向箭头表示相互作用
-                const arrowGeometry = new THREE.ConeGeometry(0.06, 0.25, 8);
-                
-                // 指向m的箭头
-                const arrow1 = new THREE.Mesh(arrowGeometry, new THREE.MeshBasicMaterial({ color: 0xffaa00 }));
-                arrow1.position.copy(points[Math.floor(points.length * 0.7)]);
-                arrow1.lookAt(MASS_m_POS);
-                arrow1.userData = { isArrow: true, massType: 'interaction' };
-                fieldLines.push(arrow1);
-                scene.add(arrow1);
-                
-                // 指向M的箭头
-                const arrow2 = new THREE.Mesh(arrowGeometry, new THREE.MeshBasicMaterial({ color: 0xffaa00 }));
-                arrow2.position.copy(points[Math.floor(points.length * 0.3)]);
-                arrow2.lookAt(MASS_M_POS);
-                arrow2.userData = { isArrow: true, massType: 'interaction' };
-                fieldLines.push(arrow2);
-                scene.add(arrow2);
+            }
+            
+            // 创建立体角积分的可视化元素
+            createSolidAngleElements();
+        }
+        
+        function createSolidAngleElements() {
+            // 创建立体角积分的几何元素
+            const solidAngleElements = 16;
+            
+            for (let i = 0; i < solidAngleElements; i++) {
+                for (let j = 0; j < solidAngleElements; j++) {
+                    const theta = (i / solidAngleElements) * Math.PI;
+                    const phi = (j / solidAngleElements) * Math.PI * 2;
+                    
+                    // 从质量M发出的立体角元素
+                    const direction = new THREE.Vector3(
+                        Math.sin(theta) * Math.cos(phi),
+                        Math.sin(theta) * Math.sin(phi),
+                        Math.cos(theta)
+                    );
+                    
+                    // 创建小的圆锥表示立体角元素
+                    const coneGeometry = new THREE.ConeGeometry(0.08, 0.4, 6);
+                    const coneMaterial = new THREE.MeshBasicMaterial({
+                        color: new THREE.Color().setHSL(phi / (Math.PI * 2), 0.8, 0.6),
+                        transparent: true,
+                        opacity: 0.5
+                    });
+                    
+                    const cone = new THREE.Mesh(coneGeometry, coneMaterial);
+                    cone.position.copy(MASS_M_POS.clone().add(direction.multiplyScalar(1.5)));
+                    cone.lookAt(MASS_M_POS.clone().add(direction.multiplyScalar(3)));
+                    
+                    cone.userData = { 
+                        theta: theta, 
+                        phi: phi, 
+                        massType: 'solid_angle',
+                        originalOpacity: 0.5
+                    };
+                    
+                    fieldLines.push(cone);
+                    scene.add(cone);
+                }
             }
         }
         
         function createParticleSystem() {
             particles = [];
-            const particleCount = 1000;
             
+            // 创建质量M周围的粒子系统（红色）
+            createMassParticleSystem(MASS_M_POS, 600, 0xff4444, 'M');
+            
+            // 创建质量m周围的粒子系统（蓝色）
+            createMassParticleSystem(MASS_m_POS, 400, 0x4444ff, 'm');
+            
+            // 创建相互作用区域的粒子（黄色）
+            createInteractionParticles();
+        }
+        
+        function createMassParticleSystem(centerPos, particleCount, baseColor, massType) {
+            const particleGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            const sizes = new Float32Array(particleCount);
+            const velocities = new Float32Array(particleCount * 3);
+            
+            const maxRadius = massType === 'M' ? 5 : 3.5;
+            
+            for (let i = 0; i < particleCount; i++) {
+                // 在球面上随机分布粒子
+                const theta = Math.random() * Math.PI;
+                const phi = Math.random() * Math.PI * 2;
+                const radius = 1 + Math.random() * maxRadius;
+                
+                positions[i * 3] = centerPos.x + radius * Math.sin(theta) * Math.cos(phi);
+                positions[i * 3 + 1] = centerPos.y + radius * Math.sin(theta) * Math.sin(phi);
+                positions[i * 3 + 2] = centerPos.z + radius * Math.cos(theta);
+                
+                // 设置颜色（带随机变化）
+                const color = new THREE.Color(baseColor);
+                const hsl = {};
+                color.getHSL(hsl);
+                color.setHSL(hsl.h + (Math.random() - 0.5) * 0.1, hsl.s, hsl.l + (Math.random() - 0.5) * 0.3);
+                
+                colors[i * 3] = color.r;
+                colors[i * 3 + 1] = color.g;
+                colors[i * 3 + 2] = color.b;
+                
+                sizes[i] = Math.random() * 2 + 1;
+                
+                // 设置向心速度（模拟引力吸引）
+                const direction = new THREE.Vector3(
+                    centerPos.x - positions[i * 3],
+                    centerPos.y - positions[i * 3 + 1],
+                    centerPos.z - positions[i * 3 + 2]
+                ).normalize();
+                
+                const speed = 0.01 + Math.random() * 0.02;
+                velocities[i * 3] = direction.x * speed;
+                velocities[i * 3 + 1] = direction.y * speed;
+                velocities[i * 3 + 2] = direction.z * speed;
+            }
+            
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            particleGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            particleGeometry.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
+            
+            const particleMaterial = new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0 },
+                    centerPos: { value: centerPos }
+                },
+                vertexShader: `
+                    attribute float size;
+                    attribute vec3 color;
+                    attribute vec3 velocity;
+                    varying vec3 vColor;
+                    uniform float time;
+                    uniform vec3 centerPos;
+                    
+                    void main() {
+                        vColor = color;
+                        
+                        // 计算引力运动
+                        vec3 toCenter = centerPos - position;
+                        float distance = length(toCenter);
+                        vec3 gravityDir = normalize(toCenter);
+                        
+                        // 螺旋运动效果
+                        vec3 newPos = position + velocity * time * 10.0;
+                        newPos += gravityDir * sin(time * 2.0 + distance) * 0.1;
+                        
+                        vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0);
+                        gl_PointSize = size * (300.0 / -mvPosition.z) * (1.0 + 0.3 * sin(time * 3.0 + distance));
+                        gl_Position = projectionMatrix * mvPosition;
+                    }
+                `,
+                fragmentShader: `
+                    varying vec3 vColor;
+                    
+                    void main() {
+                        float r = distance(gl_PointCoord, vec2(0.5, 0.5));
+                        if (r > 0.5) discard;
+                        float alpha = 1.0 - smoothstep(0.0, 0.5, r);
+                        gl_FragColor = vec4(vColor, alpha * 0.8);
+                    }
+                `,
+                transparent: true,
+                vertexColors: true,
+                blending: THREE.AdditiveBlending
+            });
+            
+            const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+            particleSystem.userData = { massType: massType, centerPos: centerPos };
+            particles.push(particleSystem);
+            scene.add(particleSystem);
+        }
+        
+        function createInteractionParticles() {
+            const particleCount = 200;
             const particleGeometry = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
             const colors = new Float32Array(particleCount * 3);
             const sizes = new Float32Array(particleCount);
             
             for (let i = 0; i < particleCount; i++) {
-                // 在球面上随机分布粒子
-                const theta = Math.random() * Math.PI;
-                const phi = Math.random() * Math.PI * 2;
-                const radius = 2 + Math.random() * 4;
+                // 在两个质量之间的区域分布粒子
+                const t = Math.random();
+                const basePos = MASS_M_POS.clone().lerp(MASS_m_POS, t);
                 
-                positions[i * 3] = MASS_M_POS.x + radius * Math.sin(theta) * Math.cos(phi);
-                positions[i * 3 + 1] = MASS_M_POS.y + radius * Math.sin(theta) * Math.sin(phi);
-                positions[i * 3 + 2] = MASS_M_POS.z + radius * Math.cos(theta);
+                // 添加随机偏移
+                const offset = new THREE.Vector3(
+                    (Math.random() - 0.5) * 2,
+                    (Math.random() - 0.5) * 2,
+                    (Math.random() - 0.5) * 1
+                );
                 
-                const color = new THREE.Color().setHSL(0.1 + Math.random() * 0.1, 0.8, 0.6);
+                const finalPos = basePos.add(offset);
+                positions[i * 3] = finalPos.x;
+                positions[i * 3 + 1] = finalPos.y;
+                positions[i * 3 + 2] = finalPos.z;
+                
+                // 黄色到橙色的渐变
+                const color = new THREE.Color().setHSL(0.1 + Math.random() * 0.05, 0.9, 0.6);
                 colors[i * 3] = color.r;
                 colors[i * 3 + 1] = color.g;
                 colors[i * 3 + 2] = color.b;
                 
-                sizes[i] = Math.random() * 3 + 1;
+                sizes[i] = Math.random() * 1.5 + 0.5;
             }
             
             particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -878,8 +1099,14 @@
                     
                     void main() {
                         vColor = color;
-                        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-                        gl_PointSize = size * (300.0 / -mvPosition.z) * (1.0 + 0.5 * sin(time + position.x));
+                        
+                        // 波动效果
+                        vec3 newPos = position;
+                        newPos.y += sin(time * 4.0 + position.x * 2.0) * 0.1;
+                        newPos.z += cos(time * 3.0 + position.y * 2.0) * 0.05;
+                        
+                        vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0);
+                        gl_PointSize = size * (200.0 / -mvPosition.z) * (1.0 + 0.5 * sin(time * 5.0 + position.z));
                         gl_Position = projectionMatrix * mvPosition;
                     }
                 `,
@@ -890,7 +1117,7 @@
                         float r = distance(gl_PointCoord, vec2(0.5, 0.5));
                         if (r > 0.5) discard;
                         float alpha = 1.0 - smoothstep(0.0, 0.5, r);
-                        gl_FragColor = vec4(vColor, alpha);
+                        gl_FragColor = vec4(vColor, alpha * 0.9);
                     }
                 `,
                 transparent: true,
@@ -898,9 +1125,10 @@
                 blending: THREE.AdditiveBlending
             });
             
-            const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
-            particles.push(particleSystem);
-            scene.add(particleSystem);
+            const interactionParticles = new THREE.Points(particleGeometry, particleMaterial);
+            interactionParticles.userData = { massType: 'interaction' };
+            particles.push(interactionParticles);
+            scene.add(interactionParticles);
         }
         
         function createIntegrationRegion() {
@@ -1035,27 +1263,109 @@
         function updateFieldLinesAnimation(time) {
             fieldLines.forEach((line, index) => {
                 const userData = line.userData;
+                
+                if (!userData) return;
+                
                 const phase = (index / fieldLines.length) * Math.PI * 2;
                 const intensity = (Math.sin(time * 2 + phase) + 1) * 0.5;
                 
-                line.material.opacity = userData.originalOpacity * (0.3 + intensity * 0.7) * fieldIntensity;
+                // 不同类型的场线有不同的动画效果
+                if (userData.massType === 'M') {
+                    // 质量M的场线：红色脉动
+                    const redIntensity = (Math.sin(time * 3 + phase) + 1) * 0.5;
+                    line.material.opacity = userData.originalOpacity * (0.4 + redIntensity * 0.6) * fieldIntensity;
+                    
+                    if (userData.isArrow) {
+                        line.material.color.setHex(0xff4444);
+                        line.scale.setScalar(1 + redIntensity * 0.3);
+                    }
+                    
+                } else if (userData.massType === 'm') {
+                    // 质量m的场线：蓝色脉动
+                    const blueIntensity = (Math.sin(time * 2.5 + phase) + 1) * 0.5;
+                    line.material.opacity = userData.originalOpacity * (0.4 + blueIntensity * 0.6) * fieldIntensity;
+                    
+                    if (userData.isArrow) {
+                        line.material.color.setHex(0x4444ff);
+                        line.scale.setScalar(1 + blueIntensity * 0.3);
+                    }
+                    
+                } else if (userData.massType === 'interaction') {
+                    // 相互作用场线：黄色流动效果
+                    const flowIntensity = (Math.sin(time * 4 + phase) + 1) * 0.5;
+                    line.material.opacity = userData.originalOpacity * (0.5 + flowIntensity * 0.5) * fieldIntensity;
+                    
+                    if (userData.isArrow) {
+                        line.material.color.setHex(0xffaa00);
+                        line.scale.setScalar(1 + flowIntensity * 0.4);
+                    }
+                }
                 
-                // 根据积分进度显示场线
-                const shouldShow = (userData.theta / Math.PI) <= (integralProgress / 100);
-                line.visible = shouldShow && document.getElementById('show-field-lines').checked;
+                // 根据积分进度和用户设置显示场线
+                let shouldShow = document.getElementById('show-field-lines').checked;
+                
+                if (userData.theta !== undefined) {
+                    shouldShow = shouldShow && (userData.theta / Math.PI) <= (integralProgress / 100);
+                }
+                
+                line.visible = shouldShow;
             });
         }
         
         function updateParticleSystem(time) {
             particles.forEach(system => {
+                const userData = system.userData;
                 system.material.uniforms.time.value = time;
                 
-                const positions = system.geometry.attributes.position.array;
-                for (let i = 0; i < positions.length; i += 3) {
-                    // 添加轻微的波动效果
-                    positions[i + 1] += Math.sin(time + i * 0.01) * 0.01;
+                if (userData && userData.centerPos) {
+                    // 更新质量粒子系统的中心位置
+                    system.material.uniforms.centerPos.value = userData.centerPos;
+                    
+                    // 模拟引力吸引效果
+                    const positions = system.geometry.attributes.position.array;
+                    const velocities = system.geometry.attributes.velocity.array;
+                    
+                    for (let i = 0; i < positions.length; i += 3) {
+                        const particlePos = new THREE.Vector3(positions[i], positions[i + 1], positions[i + 2]);
+                        const centerPos = userData.centerPos;
+                        
+                        // 计算到质量中心的距离
+                        const distance = particlePos.distanceTo(centerPos);
+                        
+                        // 如果粒子太接近中心，重新生成位置
+                        if (distance < 0.5) {
+                            const theta = Math.random() * Math.PI;
+                            const phi = Math.random() * Math.PI * 2;
+                            const radius = 2 + Math.random() * 3;
+                            
+                            positions[i] = centerPos.x + radius * Math.sin(theta) * Math.cos(phi);
+                            positions[i + 1] = centerPos.y + radius * Math.sin(theta) * Math.sin(phi);
+                            positions[i + 2] = centerPos.z + radius * Math.cos(theta);
+                        } else {
+                            // 添加轻微的引力运动
+                            const gravityStrength = 0.001;
+                            const direction = centerPos.clone().sub(particlePos).normalize();
+                            
+                            positions[i] += direction.x * gravityStrength + Math.sin(time + i * 0.01) * 0.005;
+                            positions[i + 1] += direction.y * gravityStrength + Math.cos(time + i * 0.01) * 0.005;
+                            positions[i + 2] += direction.z * gravityStrength + Math.sin(time * 0.5 + i * 0.01) * 0.003;
+                        }
+                    }
+                    
+                    system.geometry.attributes.position.needsUpdate = true;
+                } else if (userData && userData.massType === 'interaction') {
+                    // 相互作用粒子的特殊动画
+                    const positions = system.geometry.attributes.position.array;
+                    
+                    for (let i = 0; i < positions.length; i += 3) {
+                        // 在两个质量之间振荡
+                        const oscillation = Math.sin(time * 2 + i * 0.1) * 0.2;
+                        positions[i + 1] += oscillation * 0.01;
+                        positions[i + 2] += Math.cos(time * 1.5 + i * 0.1) * 0.005;
+                    }
+                    
+                    system.geometry.attributes.position.needsUpdate = true;
                 }
-                system.geometry.attributes.position.needsUpdate = true;
             });
         }
         
@@ -1205,13 +1515,13 @@
             document.getElementById('step-description').textContent = description;
             document.getElementById('progress-fill').style.width = progress + '%';
             
-            // 更新物理解释
+            // 更新物理解释 - 基于张祥前统一场论的正确理解
             const explanations = [
-                "立体角积分 ∫sin θ dΩ 表示球对称场在二维平面上的投影总和。这个积分的结果决定了从三维到二维的几何修正因子。",
-                "正在计算 φ 方向的积分。φ 从 0 到 2π 的积分结果为 2π，这反映了球对称性。",
-                "正在计算 θ 方向的积分。∫₀^π sin²θ dθ = π/2，这是关键的几何积分。",
-                "积分计算完成。结果 π² ≈ 9.87，但将其转换为几何因子 2 的过程存在概念问题。",
-                "几何因子推导完成，但需要注意这种推导方法的局限性和概念问题。"
+                "张祥前统一场论双重效应：淡色线表示空间位移矢量r⃗(t)=C⃗t的发散运动；亮色线表示引力场A⃗=-Gk(Δn/Δs)(r⃗/r)指向质量中心。质量是空间运动的几何化度量m=k(dn/dΩ)。",
+                "φ方向积分进行中：空间运动是球对称发散的，但引力场A⃗是其梯度表现，方向指向源质量中心。两种效应同时存在，体现了空间几何属性的复杂性。",
+                "θ方向积分：∫₀^π sin²θ dΩ = π/2。空间位移矢量条数密度dn/dΩ的变化产生引力场梯度。观察发散的空间运动如何产生收敛的引力场效应。",
+                "几何投影效应：立体角积分计算三维空间几何属性在二维平面上的投影。绿色相互作用线显示两个质量的空间几何属性如何在平面上产生相互作用。",
+                "几何因子物理意义：积分结果π²表示空间几何属性的总量，几何因子2来自三维到二维的投影约化，建立了G=2Z/c的统一关系。"
             ];
             
             const explanationIndex = Math.floor(progress / 20);
