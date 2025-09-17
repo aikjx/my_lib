@@ -123,15 +123,15 @@ class GeometricFactorVerification:
         print("   其中 Z 声称的量纲: [Z] = L⁴M⁻¹T⁻³")
         
         # G的标准量纲
-        print("\n2. 标准量纲:")
-        print("   [G] = L³M⁻¹T⁻^2")
-        print("   [c] = LT⁻¹")
-        
-        # 检查量纲一致性
-        print("\n3. 量纲检查:")
+        # 验证Z的量纲
+        print("\n2. 量纲验证")
+        print("   其中 Z 声称的量纲: [Z] = L⁴M⁻¹T⁻³")
+        print("   光速c的量纲: [c] = LT⁻¹")
+        print("   因此 G = 2Z/c 的量纲:")
         print("   [2Z/c] = [Z]/[c] = (L⁴M⁻¹T⁻³)/(LT⁻¹)")
         print("   = L⁴M⁻¹T⁻³ × LT = L³M⁻¹T⁻^2")
-        print("   = [G] ✓")
+        print("   而引力常数G的标准量纲是 [G] = L³M⁻¹T⁻^2")
+        print("   量纲一致，验证通过 ✓")
         
         print("\n   量纲形式上一致，但Z的物理意义存疑")
         
@@ -144,7 +144,7 @@ class GeometricFactorVerification:
         print(f"   G = {G_codata:.5e} m³kg⁻¹s⁻^2")
         print(f"   c = {c_light} m/s")
         print(f"   Z = G×c/2 = {Z_calculated:.5e}")
-        print(f"   Z的量纲: m⁴kg⁻¹s⁻³")
+        print(f"   Z的量纲: [M]⁻¹[L]⁴[T]⁻³（单位：kg⁻¹·m⁴·s⁻³）")
         
         # 问题分析
         print(f"\n5. 问题分析:")
@@ -280,16 +280,16 @@ class GeometricFactorVerification:
         ax3.text(0.5, 0.9, 'Dimensional Analysis', fontsize=14, ha='center', fontweight='bold')
         
         dim_text = [
-            'Standard dimensions:',
+            '标准量纲:',
             '[G] = L³M⁻¹T⁻^2',
             '[c] = LT⁻¹',
             '',
-            'Paper claims:',
+            '论文声称:',
             '[Z] = L⁴M⁻¹T⁻³',
             'G = 2Z/c',
             '',
-            'Check: [2Z/c] = L³M⁻¹T⁻^2 ✓',
-            'But Z lacks physical basis ✗'
+            '验证: [2Z/c] = L³M⁻¹T⁻^2 ✓',
+            '但Z缺乏物理基础 ✗'
         ]
         
         y_pos = 0.8
@@ -379,7 +379,7 @@ class GeometricFactorVerification:
         print(f"  - 标准立体角积分: {std_integral:.6f}")
         print(f"  - 论文积分结果: {paper_integral:.6f}")
         print(f"  - 半球立体角: {hemi_integral:.6f}")
-        print(f"  - 计算的Z值: {Z_value:.5e} m⁴kg⁻¹s⁻³")
+        print(f"  - 计算的Z值: {Z_value:.5e} [M]⁻¹[L]⁴[T]⁻³（单位：kg⁻¹·m⁴·s⁻³）")
         
         return fig
 

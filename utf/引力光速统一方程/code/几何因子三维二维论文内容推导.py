@@ -421,8 +421,8 @@ class ZhangXiangqianGeometricFactor:
         print(f"\n数值计算：")
         print(f"G (CODATA 2018) = {G_codata:.5e} m³kg⁻¹s⁻^2")
         print(f"c (定义值) = {c_light:,} m/s")
-        print(f"Z = G·c/2 = {Z_calculated:.5e} m⁴kg⁻¹s⁻³")
-        print(f"Z ≈ {Z_calculated:.2e} ≈ 0.01 m⁴kg⁻¹s⁻³")
+        print(f"Z = G·c/2 = {Z_calculated:.5e} [M]⁻¹[L]⁴[T]⁻³（单位：kg⁻¹·m⁴·s⁻³）")
+        print(f"Z ≈ {Z_calculated:.2e} ≈ 0.01 [M]⁻¹[L]⁴[T]⁻³（单位：kg⁻¹·m⁴·s⁻³）")
         
         # 反向验证
         Z_assumed = 0.01
@@ -430,7 +430,7 @@ class ZhangXiangqianGeometricFactor:
         relative_error = abs(G_predicted - G_codata) / G_codata * 100
         
         print(f"\n反向验证：")
-        print(f"假设 Z = 0.01 m⁴kg⁻¹s⁻³")
+        print(f"假设 Z = 0.01 [M]⁻¹[L]⁴[T]⁻³（单位：kg⁻¹·m⁴·s⁻³）")
         print(f"预测 G = 2Z/c = {G_predicted:.5e} m³kg⁻¹s⁻^2")
         print(f"相对误差 = {relative_error:.3f}%")
         
