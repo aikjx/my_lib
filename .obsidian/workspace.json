@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "98f8aa6ac4aa69e2",
+        "id": "e79db71309b546a9",
         "type": "tabs",
         "children": [
           {
-            "id": "290ea327850620df",
+            "id": "72b2d7db1a9f7f75",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "统一场论框架下万有引力常数与光速的涌现性及其量子力学本质"
-            }
-          },
-          {
-            "id": "0af08167190ba0e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "资料与说明/未命名.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "未命名"
-            }
-          },
-          {
-            "id": "0e1fa04569907b25",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
+                "file": "utf/引力光速统一方程/优化后的引力光速统一方程论文.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程"
+              "title": "优化后的引力光速统一方程论文"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,8 +183,11 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "0e1fa04569907b25",
+  "active": "72b2d7db1a9f7f75",
   "lastOpenFiles": [
+    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
+    "资料与说明/未命名.md",
+    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
     "utf/张祥前统一场论可视化/19-引力光速统一方程/visualization.html",
     "utf/张祥前统一场论可视化/19-引力光速统一方程",
     "utf/张祥前统一场论可视化/18-空间波动通解/visualization.html",
@@ -224,11 +198,9 @@
     "utf/张祥前统一场论可视化/16-统一场论能量方程",
     "utf/张祥前统一场论可视化/15-变化磁场产生引力场和电场/visualization.html",
     "utf/张祥前统一场论可视化/15-变化磁场产生引力场和电场",
-    "utf/张祥前统一场论可视化/14-变化引力场产生电场/visualization.html",
     "utf/引力光速统一方程/优化后的引力光速统一方程论文.md",
     "utf/引力光速统一方程/整合后的引力光速统一方程论文.md",
     "utf/统一场论核心公式/项目完成总结.md",
-    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
     "utf/引力光速统一方程/分析与修复/引力光速统一方程论文_综合优化版.md",
     "utf/引力光速统一方程/分析与修复/优化后的引力光速统一方程论文_修订版.md",
     "utf/引力光速统一方程/分析与修复/优化后的引力光速统一方程论文_终极版.md",
@@ -249,7 +221,6 @@
     "utf/引力光速统一方程/code/README.md",
     "utf/引力光速统一方程/引力光速的关系/引力光速统一方程的理论推导_最终版.md",
     "README.md",
-    "utf/引力光速统一方程/引力光速的关系/引力光速统一方程的理论推导_优化版.md",
     "几何因子问题全面分析.png",
     "geometric_correction_factor_2_animation.svg",
     "complete_error_analysis.png",
