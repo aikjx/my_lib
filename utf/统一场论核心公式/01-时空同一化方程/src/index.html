@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="description" content="张祥前统一场论时空同一化方程3D可视化系统">
+    <meta name="keywords" content="统一场论,时空同一化,物理可视化,Three.js">
+    <!-- Three.js 将通过 webpack 打包，不需要 CDN 引用 -->
+</head>
+<body>
+    <div id="app">
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-spinner"></div>
+            <h2>正在加载时空同一化方程可视化系统...</h2>
+            <p>张祥前统一场论 - 高级3D可视化平台</p>
+        </div>
+        
+        <canvas id="main-canvas"></canvas>
+        
+        <div id="ui-container">
+            <div id="info-panel" class="ui-panel">
+                <div class="panel-title">🌌 时空同一化方程</div>
+                <div id="equation-display"></div>
+                <div id="physics-insights"></div>
+            </div>
+            
+            <div id="controls-panel" class="ui-panel">
+                <div class="panel-title">🎮 交互控制</div>
+                <div id="animation-controls"></div>
+                <div id="parameter-controls"></div>
+            </div>
+            
+            <div id="data-panel" class="ui-panel">
+                <div class="panel-title">📊 实时数据</div>
+                <div id="real-time-data"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

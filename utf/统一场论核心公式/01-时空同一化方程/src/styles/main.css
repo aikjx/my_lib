@@ -1,0 +1,335 @@
+/**
+ * 时空同一化方程可视化系统主样式
+ */
+
+/* 重置和基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 主画布样式 */
+#main-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0c0c0c 100%);
+}
+
+#main-canvas:active {
+  cursor: grabbing;
+}
+
+/* UI容器 */
+#ui-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* UI面板基础样式 */
+.ui-panel {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.ui-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* 面板标题 */
+.panel-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* 信息面板 */
+#info-panel {
+  top: 20px;
+  left: 20px;
+  width: 420px;
+}
+
+/* 控制面板 */
+#controls-panel {
+  top: 20px;
+  right: 20px;
+  width: 320px;
+}
+
+/* 数据面板 */
+#data-panel {
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+}
+
+/* 公式显示 */
+.formula-display {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  border-left: 4px solid #667eea;
+  font-family: 'Times New Roman', serif;
+}
+
+/* 物理洞察 */
+.physics-insight {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.physics-insight h4 {
+  margin-bottom: 10px;
+  color: #667eea;
+}
+
+/* 参数控制 */
+.parameter-control {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.parameter-control label {
+  min-width: 80px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.parameter-control input[type="range"] {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.parameter-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.parameter-control input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.parameter-value {
+  min-width: 60px;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* 控制按钮 */
+.control-button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 加载屏幕 */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-screen h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.loading-screen p {
+  color: #ccc;
+  text-align: center;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 错误消息 */
+.error-message {
+  text-align: center;
+  color: #ff6b6b;
+}
+
+.error-message h2 {
+  margin-bottom: 20px;
+}
+
+.error-message p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.retry-button {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .ui-panel {
+    width: calc(100% - 20px) !important;
+    max-width: 400px;
+    margin: 10px;
+  }
+  
+  #info-panel {
+    top: 10px;
+    left: 10px;
+  }
+  
+  #controls-panel {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  #data-panel {
+    display: none; /* 在小屏幕上隐藏数据面板 */
+  }
+}
+
+/* 滚动条样式 */
+.ui-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ui-panel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.ui-panel::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.6);
+  border-radius: 3px;
+}
+
+.ui-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.8);
+}
