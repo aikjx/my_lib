@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张祥前统一场论 - 高级可视化系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #00ffff;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .formula-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visualization-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: radial-gradient(circle at center, #001122 0%, #000000 100%);
+        }
+
+        .canvas-3d {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>张祥前统一场论高级可视化</h1>
+    </div>   
+ <div class="formula-grid">
+        <!-- 宇宙整体结构 -->
+        <div class="formula-card">
+            <h2>宇宙统一场整体结构</h2>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="universe-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 时空同一化方程 -->
+        <div class="formula-card">
+            <h2>1. 时空同一化方程</h2>
+            <div class="formula-equation">r⃗(t) = C⃗t</div>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="spacetime-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 三维螺旋时空方程 -->
+        <div class="formula-card">
+            <h2>2. 三维螺旋时空方程</h2>
+            <div class="formula-equation">r⃗(t) = r cos(ωt)i⃗ + r sin(ωt)j⃗ + htk⃗</div>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="helix-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 质量定义方程 -->
+        <div class="formula-card">
+            <h2>3. 质量定义方程</h2>
+            <div class="formula-equation">m = k · (dn/dΩ)</div>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="mass-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 引力场定义方程 -->
+        <div class="formula-card">
+            <h2>4. 引力场定义方程</h2>
+            <div class="formula-equation">A⃗ = -Gk(Δn/Δs)(r⃗/r)</div>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="gravity-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 宇宙大统一方程 -->
+        <div class="formula-card">
+            <h2>7. 宇宙大统一方程</h2>
+            <div class="formula-equation">F⃗ = C⃗(dm/dt) - V⃗(dm/dt) + m(dC⃗/dt) - m(dV⃗/dt)</div>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="unified-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 空间波动方程 -->
+        <div class="formula-card">
+            <h2>8. 空间波动方程</h2>
+            <div class="formula-equation">∇²L = (1/c²)(∂²L/∂t²)</div>
+            <div class="visualization-container">
+                <canvas class="canvas-3d" id="wave-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // 全局变量
+        let scenes = {};
+        let renderers = {};
+        let cameras = {};
+        let animationIds = {};
+
+        // 初始化宇宙整体结构
+        function initUniverseVisualization() {
+            const canvas = document.getElementById('universe-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x000011, 1);
+            
+            // 创建宇宙中心核心
+            const coreGeometry = new THREE.SphereGeometry(3, 32, 32);
+            const coreMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0x00ffff, 
+                transparent: true, 
+                opacity: 0.8
+            });
+            const core = new THREE.Mesh(coreGeometry, coreMaterial);
+            scene.add(core);
+
+            // 创建场层结构
+            const layers = [];
+            const layerColors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 0xff00ff];
+            for (let i = 0; i < 5; i++) {
+                const layerGeometry = new THREE.SphereGeometry(6 + i * 4, 32, 32);
+                const layerMaterial = new THREE.MeshBasicMaterial({ 
+                    color: layerColors[i], 
+                    transparent: true, 
+                    opacity: 0.2,
+                    wireframe: true
+                });
+                const layer = new THREE.Mesh(layerGeometry, layerMaterial);
+                layers.push(layer);
+                scene.add(layer);
+            }
+
+            camera.position.set(0, 0, 50);
+            
+            scenes['universe'] = scene;
+            renderers['universe'] = renderer;
+            cameras['universe'] = camera;
+
+            function animate() {
+                const time = Date.now() * 0.001;
+                
+                core.rotation.x = time * 0.5;
+                core.rotation.y = time * 0.3;
+                
+                layers.forEach((layer, index) => {
+                    layer.rotation.x = time * (0.2 + index * 0.1);
+                    layer.rotation.y = time * (0.3 + index * 0.05);
+                });
+                
+                camera.position.x = Math.cos(time * 0.1) * 50;
+                camera.position.z = Math.sin(time * 0.1) * 50;
+                camera.lookAt(0, 0, 0);
+                
+                renderer.render(scene, camera);
+                animationIds['universe'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 初始化时空同一化方程
+        function initSpacetimeVisualization() {
+            const canvas = document.getElementById('spacetime-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x000022, 1);
+            
+            // 创建坐标轴
+            const axesHelper = new THREE.AxesHelper(15);
+            scene.add(axesHelper);
+            
+            // 创建时空运动轨迹
+            const trajectories = [];
+            const colors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 0xff00ff, 0x00ffff];
+            
+            for (let i = 0; i < 6; i++) {
+                const geometry = new THREE.BufferGeometry();
+                const material = new THREE.LineBasicMaterial({ color: colors[i] });
+                const points = [];
+                
+                for (let t = 0; t <= 8; t += 0.1) {
+                    const C = 2;
+                    const direction = new THREE.Vector3(
+                        Math.cos(i * Math.PI / 3),
+                        Math.sin(i * Math.PI / 3),
+                        Math.cos(i * Math.PI / 6)
+                    ).normalize();
+                    
+                    const position = direction.multiplyScalar(C * t);
+                    points.push(position);
+                }
+                
+                geometry.setFromPoints(points);
+                const trajectory = new THREE.Line(geometry, material);
+                trajectories.push(trajectory);
+                scene.add(trajectory);
+                
+                // 添加运动点
+                const pointGeometry = new THREE.SphereGeometry(0.2, 8, 8);
+                const pointMaterial = new THREE.MeshBasicMaterial({ color: colors[i] });
+                const point = new THREE.Mesh(pointGeometry, pointMaterial);
+                trajectories.push(point);
+                scene.add(point);
+            }
+            
+            camera.position.set(12, 12, 12);
+            camera.lookAt(0, 0, 0);
+            
+            scenes['spacetime'] = scene;
+            renderers['spacetime'] = renderer;
+            cameras['spacetime'] = camera;
+            
+            function animate() {
+                const time = Date.now() * 0.001;
+                const C = 2;
+                
+                for (let i = 0; i < 6; i++) {
+                    const point = trajectories[i * 2 + 1];
+                    const t = (time % 8);
+                    const direction = new THREE.Vector3(
+                        Math.cos(i * Math.PI / 3),
+                        Math.sin(i * Math.PI / 3),
+                        Math.cos(i * Math.PI / 6)
+                    ).normalize();
+                    
+                    point.position.copy(direction.multiplyScalar(C * t));
+                }
+                
+                camera.position.x = 12 * Math.cos(time * 0.2);
+                camera.position.z = 12 * Math.sin(time * 0.2);
+                camera.lookAt(0, 0, 0);
+                
+                renderer.render(scene, camera);
+                animationIds['spacetime'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 初始化螺旋时空方程
+        function initHelixVisualization() {
+            const canvas = document.getElementById('helix-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x001122, 1);
+            
+            // 创建螺旋轨迹
+            const helixGeometry = new THREE.BufferGeometry();
+            const helixMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x00ffff, 
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            const helixPoints = [];
+            const r = 4;
+            const h = 0.3;
+            const omega = 1;
+            
+            for (let t = 0; t <= 15 * Math.PI; t += 0.1) {
+                const x = r * Math.cos(omega * t);
+                const y = r * Math.sin(omega * t);
+                const z = h * t;
+                helixPoints.push(new THREE.Vector3(x, y, z));
+            }
+            
+            helixGeometry.setFromPoints(helixPoints);
+            const helix = new THREE.Line(helixGeometry, helixMaterial);
+            scene.add(helix);
+            
+            // 创建运动点
+            const pointGeometry = new THREE.SphereGeometry(0.3, 16, 16);
+            const pointMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0xffff00,
+                transparent: true,
+                opacity: 0.9
+            });
+            const movingPoint = new THREE.Mesh(pointGeometry, pointMaterial);
+            scene.add(movingPoint);
+            
+            camera.position.set(15, 15, 20);
+            camera.lookAt(0, 0, 10);
+            
+            scenes['helix'] = scene;
+            renderers['helix'] = renderer;
+            cameras['helix'] = camera;
+            
+            function animate() {
+                const time = Date.now() * 0.001;
+                
+                const t = time * 2;
+                movingPoint.position.set(
+                    r * Math.cos(omega * t),
+                    r * Math.sin(omega * t),
+                    (h * t) % 40 - 20
+                );
+                
+                helix.rotation.z += 0.005;
+                
+                camera.position.x = 15 * Math.cos(time * 0.1);
+                camera.position.y = 15 * Math.sin(time * 0.1);
+                camera.lookAt(0, 0, 10);
+                
+                renderer.render(scene, camera);
+                animationIds['helix'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 初始化质量场可视化
+        function initMassVisualization() {
+            const canvas = document.getElementById('mass-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x000011, 1);
+            
+            // 创建质量中心
+            const massGeometry = new THREE.SphereGeometry(2, 32, 32);
+            const massMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0x00ff00,
+                transparent: true,
+                opacity: 0.8
+            });
+            const mass = new THREE.Mesh(massGeometry, massMaterial);
+            scene.add(mass);
+            
+            // 创建立体角网格
+            const solidAngles = [];
+            for (let i = 0; i < 20; i++) {
+                for (let j = 0; j < 20; j++) {
+                    const phi = (i / 20) * Math.PI;
+                    const theta = (j / 20) * 2 * Math.PI;
+                    
+                    const geometry = new THREE.ConeGeometry(0.1, 1, 4);
+                    const material = new THREE.MeshBasicMaterial({ 
+                        color: 0x00ff00,
+                        transparent: true,
+                        opacity: 0.6
+                    });
+                    const cone = new THREE.Mesh(geometry, material);
+                    
+                    const radius = 5 + Math.sin(phi * 3) * 2;
+                    cone.position.set(
+                        radius * Math.sin(phi) * Math.cos(theta),
+                        radius * Math.sin(phi) * Math.sin(theta),
+                        radius * Math.cos(phi)
+                    );
+                    
+                    cone.lookAt(0, 0, 0);
+                    solidAngles.push(cone);
+                    scene.add(cone);
+                }
+            }
+            
+            camera.position.set(15, 15, 15);
+            camera.lookAt(0, 0, 0);
+            
+            scenes['mass'] = scene;
+            renderers['mass'] = renderer;
+            cameras['mass'] = camera;
+            
+            function animate() {
+                const time = Date.now() * 0.001;
+                
+                mass.rotation.x = time * 0.3;
+                mass.rotation.y = time * 0.5;
+                
+                solidAngles.forEach((cone, index) => {
+                    const scale = 1 + 0.3 * Math.sin(time * 2 + index * 0.1);
+                    cone.scale.set(scale, scale, scale);
+                });
+                
+                camera.position.x = 15 * Math.cos(time * 0.1);
+                camera.position.z = 15 * Math.sin(time * 0.1);
+                camera.lookAt(0, 0, 0);
+                
+                renderer.render(scene, camera);
+                animationIds['mass'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 初始化引力场可视化
+        function initGravityVisualization() {
+            const canvas = document.getElementById('gravity-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x110000, 1);
+            
+            // 创建引力源
+            const sourceGeometry = new THREE.SphereGeometry(1.5, 32, 32);
+            const sourceMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0xff0000,
+                transparent: true,
+                opacity: 0.9
+            });
+            const source = new THREE.Mesh(sourceGeometry, sourceMaterial);
+            scene.add(source);
+            
+            // 创建引力场线
+            const fieldLines = [];
+            for (let i = 0; i < 50; i++) {
+                const geometry = new THREE.BufferGeometry();
+                const material = new THREE.LineBasicMaterial({ 
+                    color: 0xff4444,
+                    transparent: true,
+                    opacity: 0.7
+                });
+                
+                const points = [];
+                const theta = (i / 50) * 2 * Math.PI;
+                const phi = Math.acos(2 * Math.random() - 1);
+                
+                for (let r = 2; r <= 20; r += 0.5) {
+                    points.push(new THREE.Vector3(
+                        r * Math.sin(phi) * Math.cos(theta),
+                        r * Math.sin(phi) * Math.sin(theta),
+                        r * Math.cos(phi)
+                    ));
+                }
+                
+                geometry.setFromPoints(points);
+                const line = new THREE.Line(geometry, material);
+                fieldLines.push(line);
+                scene.add(line);
+            }
+            
+            camera.position.set(25, 25, 25);
+            camera.lookAt(0, 0, 0);
+            
+            scenes['gravity'] = scene;
+            renderers['gravity'] = renderer;
+            cameras['gravity'] = camera;
+            
+            function animate() {
+                const time = Date.now() * 0.001;
+                
+                source.rotation.x = time * 0.4;
+                source.rotation.y = time * 0.6;
+                
+                fieldLines.forEach((line, index) => {
+                    const opacity = 0.4 + 0.3 * Math.sin(time * 2 + index * 0.2);
+                    line.material.opacity = opacity;
+                });
+                
+                camera.position.x = 25 * Math.cos(time * 0.08);
+                camera.position.z = 25 * Math.sin(time * 0.08);
+                camera.lookAt(0, 0, 0);
+                
+                renderer.render(scene, camera);
+                animationIds['gravity'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 初始化统一场方程可视化
+        function initUnifiedVisualization() {
+            const canvas = document.getElementById('unified-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x001100, 1);
+            
+            // 创建四种力的表示
+            const forces = [];
+            const forceColors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00]; // 电场力、磁场力、核力、万有引力
+            const forceNames = ['电场力', '磁场力', '核力', '万有引力'];
+            
+            for (let i = 0; i < 4; i++) {
+                const geometry = new THREE.ConeGeometry(1, 4, 8);
+                const material = new THREE.MeshBasicMaterial({ 
+                    color: forceColors[i],
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const force = new THREE.Mesh(geometry, material);
+                
+                const angle = (i / 4) * 2 * Math.PI;
+                force.position.set(
+                    6 * Math.cos(angle),
+                    0,
+                    6 * Math.sin(angle)
+                );
+                force.lookAt(0, 0, 0);
+                
+                forces.push(force);
+                scene.add(force);
+            }
+            
+            // 创建中心统一点
+            const centerGeometry = new THREE.SphereGeometry(1, 32, 32);
+            const centerMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.9
+            });
+            const center = new THREE.Mesh(centerGeometry, centerMaterial);
+            scene.add(center);
+            
+            // 创建连接线
+            const connections = [];
+            forces.forEach((force, index) => {
+                const geometry = new THREE.BufferGeometry();
+                const material = new THREE.LineBasicMaterial({ 
+                    color: forceColors[index],
+                    transparent: true,
+                    opacity: 0.6
+                });
+                
+                const points = [new THREE.Vector3(0, 0, 0), force.position.clone()];
+                geometry.setFromPoints(points);
+                const line = new THREE.Line(geometry, material);
+                connections.push(line);
+                scene.add(line);
+            });
+            
+            camera.position.set(15, 15, 15);
+            camera.lookAt(0, 0, 0);
+            
+            scenes['unified'] = scene;
+            renderers['unified'] = renderer;
+            cameras['unified'] = camera;
+            
+            function animate() {
+                const time = Date.now() * 0.001;
+                
+                center.rotation.x = time * 0.5;
+                center.rotation.y = time * 0.7;
+                
+                forces.forEach((force, index) => {
+                    const angle = (index / 4) * 2 * Math.PI + time * 0.3;
+                    const radius = 6 + 2 * Math.sin(time * 2 + index);
+                    
+                    force.position.set(
+                        radius * Math.cos(angle),
+                        2 * Math.sin(time * 1.5 + index),
+                        radius * Math.sin(angle)
+                    );
+                    force.lookAt(0, 0, 0);
+                    
+                    // 更新连接线
+                    const points = [new THREE.Vector3(0, 0, 0), force.position.clone()];
+                    connections[index].geometry.setFromPoints(points);
+                });
+                
+                camera.position.x = 15 * Math.cos(time * 0.1);
+                camera.position.z = 15 * Math.sin(time * 0.1);
+                camera.lookAt(0, 0, 0);
+                
+                renderer.render(scene, camera);
+                animationIds['unified'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 初始化空间波动可视化
+        function initWaveVisualization() {
+            const canvas = document.getElementById('wave-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setClearColor(0x000033, 1);
+            
+            // 创建波动网格
+            const waveGeometry = new THREE.PlaneGeometry(30, 30, 50, 50);
+            const waveMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0x0088ff,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.8
+            });
+            const wave = new THREE.Mesh(waveGeometry, waveMaterial);
+            scene.add(wave);
+            
+            // 创建第二个波面
+            const wave2 = wave.clone();
+            wave2.rotation.x = Math.PI / 2;
+            wave2.material = waveMaterial.clone();
+            wave2.material.color.setHex(0xff8800);
+            scene.add(wave2);
+            
+            // 创建第三个波面
+            const wave3 = wave.clone();
+            wave3.rotation.y = Math.PI / 2;
+            wave3.material = waveMaterial.clone();
+            wave3.material.color.setHex(0x88ff00);
+            scene.add(wave3);
+            
+            camera.position.set(25, 25, 25);
+            camera.lookAt(0, 0, 0);
+            
+            scenes['wave'] = scene;
+            renderers['wave'] = renderer;
+            cameras['wave'] = camera;
+            
+            function animate() {
+                const time = Date.now() * 0.001;
+                
+                // 更新波动
+                const position = wave.geometry.attributes.position;
+                const position2 = wave2.geometry.attributes.position;
+                const position3 = wave3.geometry.attributes.position;
+                
+                for (let i = 0; i < position.count; i++) {
+                    const x = position.getX(i);
+                    const y = position.getY(i);
+                    const z = position.getZ(i);
+                    
+                    const distance = Math.sqrt(x * x + y * y);
+                    const waveHeight = 2 * Math.sin(distance * 0.3 - time * 3);
+                    
+                    position.setZ(i, waveHeight);
+                    position2.setX(i, waveHeight);
+                    position3.setY(i, waveHeight);
+                }
+                
+                position.needsUpdate = true;
+                position2.needsUpdate = true;
+                position3.needsUpdate = true;
+                
+                camera.position.x = 25 * Math.cos(time * 0.1);
+                camera.position.z = 25 * Math.sin(time * 0.1);
+                camera.lookAt(0, 0, 0);
+                
+                renderer.render(scene, camera);
+                animationIds['wave'] = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // 响应式处理
+        window.addEventListener('resize', () => {
+            Object.keys(renderers).forEach(key => {
+                const canvas = renderers[key].domElement;
+                const camera = cameras[key];
+                const renderer = renderers[key];
+                
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            });
+        });
+
+        // 页面加载完成后初始化
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                initUniverseVisualization();
+                initSpacetimeVisualization();
+                initHelixVisualization();
+                initMassVisualization();
+                initGravityVisualization();
+                initUnifiedVisualization();
+                initWaveVisualization();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

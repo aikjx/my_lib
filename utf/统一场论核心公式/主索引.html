@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张祥前统一场论 - 19个核心公式可视化系统</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            color: white; min-height: 100vh; padding: 20px;
+        }
+        
+        .header {
+            text-align: center; margin-bottom: 40px; padding: 40px 0;
+            background: rgba(255, 255, 255, 0.05); border-radius: 20px;
+            backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em; margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+            background-clip: text; -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-size: 1.2em; opacity: 0.8;
+        }
+        
+        .formula-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px; max-width: 1400px; margin: 0 auto;
+        }
+        
+        .formula-card {
+            background: rgba(255, 255, 255, 0.08); border-radius: 15px;
+            padding: 25px; border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px); transition: all 0.3s ease;
+            cursor: pointer; position: relative; overflow: hidden;
+        }
+        
+        .formula-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        
+        .formula-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+        
+        .formula-header {
+            display: flex; align-items: center; margin-bottom: 15px;
+        }
+        
+        .formula-icon {
+            font-size: 2em; margin-right: 15px;
+        }
+        
+        .formula-title {
+            font-size: 1.3em; font-weight: bold;
+            color: #667eea;
+        }
+        
+        .formula-id {
+            background: rgba(102, 126, 234, 0.2); color: #667eea;
+            padding: 4px 12px; border-radius: 20px; font-size: 0.9em;
+            margin-left: auto; font-weight: bold;
+        }
+        
+        .formula-latex {
+            background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 8px;
+            margin: 15px 0; font-family: 'Times New Roman', serif;
+            font-size: 1.1em; text-align: center; border-left: 3px solid #667eea;
+        }
+        
+        .formula-description {
+            color: #ccc; line-height: 1.6; margin-bottom: 20px;
+        }
+        
+        .action-buttons {
+            display: flex; gap: 10px; flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white; border: none; padding: 10px 20px;
+            border-radius: 25px; cursor: pointer; font-size: 0.9em;
+            transition: all 0.3s ease; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, #764ba2, #f093fb);
+        }
+        
+        .stats {
+            display: flex; justify-content: center; gap: 40px;
+            margin: 40px 0; flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center; padding: 20px;
+            background: rgba(255, 255, 255, 0.05); border-radius: 15px;
+            backdrop-filter: blur(20px); min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5em; font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            background-clip: text; -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            color: #ccc; margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .formula-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2em; }
+            .stats { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌌 张祥前统一场论</h1>
+        <p>19个核心公式高级3D可视化系统</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">19</div>
+                <div class="stat-label">核心公式</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3D</div>
+                <div class="stat-label">可视化</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">WebGL</div>
+                <div class="stat-label">高性能</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="formula-grid" id="formulaGrid">
+        <!-- 公式卡片将通过JavaScript动态生成 -->
+    </div>
+
+    <script>
+        const formulas = [
+            {
+                id: "01", name: "时空同一化方程", icon: "🌌",
+                latex: "\\vec{r}(t)=\\vec{C}t=x\\vec{i}+y\\vec{j}+z\\vec{k}",
+                description: "描述时空的统一性，空间位置矢量与时间的线性关系，是统一场论的基础方程。"
+            },
+            {
+                id: "02", name: "三维螺旋时空方程", icon: "🌀",
+                latex: "\\vec{r}(t) = r\\cos\\omega t \\cdot \\vec{i} + r\\sin\\omega t \\cdot \\vec{j} + ht \\cdot \\vec{k}",
+                description: "描述螺旋形时空轨迹，结合圆周运动和直线运动，展现时空的螺旋结构。"
+            },
+            {
+                id: "03", name: "质量定义方程", icon: "⚖️",
+                latex: "m = k \\cdot \\frac{dn}{d\\Omega}",
+                description: "通过立体角中的矢量条数密度定义质量，揭示质量的几何本质。"
+            },
+            {
+                id: "04", name: "引力场定义方程", icon: "🌍",
+                latex: "\\overrightarrow{A}=-Gk\\frac{\\Delta n}{\\Delta s}\\frac{\\overrightarrow{r}}{r}",
+                description: "定义引力场强度与空间矢量条数梯度的关系，统一引力的几何描述。"
+            },
+            {
+                id: "05", name: "静止动量方程", icon: "⚡",
+                latex: "\\overrightarrow{p}_{0}=m_{0}\\overrightarrow{C}_{0}",
+                description: "静止物体的动量定义，揭示静止状态下的动量本质。"
+            },
+            {
+                id: "06", name: "运动动量方程", icon: "🚀",
+                latex: "\\overrightarrow{P}=m(\\overrightarrow{C}-\\overrightarrow{V})",
+                description: "运动物体的动量修正公式，描述运动状态下的动量变化。"
+            },
+            {
+                id: "07", name: "宇宙大统一方程", icon: "🌌",
+                latex: "F = \\frac{d\\vec{P}}{dt} = \\vec{C}\\frac{dm}{dt} - \\vec{V}\\frac{dm}{dt} + m\\frac{d\\vec{C}}{dt} - m\\frac{d\\vec{V}}{dt}",
+                description: "统一描述宇宙中所有力的基本方程，是统一场论的核心。"
+            },
+            {
+                id: "08", name: "空间波动方程", icon: "〰️",
+                latex: "\\frac{\\partial^2 L}{\\partial x^2} + \\frac{\\partial^2 L}{\\partial y^2} + \\frac{\\partial^2 L}{\\partial z^2} = \\frac{1}{c^2} \\frac{\\partial^2 L}{\\partial t^2}",
+                description: "描述空间中波动现象的基本方程，揭示空间的波动性质。"
+            },
+            {
+                id: "09", name: "电荷定义方程", icon: "⚡",
+                latex: "q=k^{\\prime}k\\frac{1}{\\Omega^{2}}\\frac{d\\Omega}{dt}",
+                description: "通过立体角变化率定义电荷，建立电荷的几何基础。"
+            },
+            {
+                id: "10", name: "电场定义方程", icon: "🔌",
+                latex: "\\vec{E}=-\\frac{kk^{\\prime}}{4\\pi\\epsilon_0\\Omega^2}\\frac{d\\Omega}{dt}\\frac{\\vec{r}}{r^3}",
+                description: "电场强度与立体角变化的关系，统一电场的几何描述。"
+            },
+            {
+                id: "11", name: "磁场定义方程", icon: "🧲",
+                latex: "\\vec{B}=\\frac{\\mu_{0} \\gamma k k^{\\prime}}{4 \\pi \\Omega^{2}} \\frac{d \\Omega}{d t} \\frac{[(x-v t) \\vec{i}+y \\vec{j}+z \\vec{k}]}{[\\gamma^{2}(x-v t)^{2}+y^{2}+z^{2}]^{\\frac{3}{2}}}",
+                description: "磁场与运动电荷的相对论性关系，描述磁场的几何本质。"
+            },
+            {
+                id: "12", name: "变化引力场产生电磁场", icon: "🔄",
+                latex: "\\frac{\\partial^{2}\\overline{A}}{\\partial t^{2}}=\\frac{\\overline{V}}{f}(\\overline{\\nabla}\\cdot\\overline{E})-\\frac{C^{2}}{f}(\\overline{\\nabla}\\times\\overline{B})",
+                description: "变化的引力场如何产生电磁场，揭示引力与电磁的统一。"
+            },
+            {
+                id: "13", name: "磁矢势方程", icon: "🌀",
+                latex: "\\vec{\\nabla} \\times \\vec{A} = \\frac{\\vec{B}}{f}",
+                description: "磁矢势与磁场的关系，建立磁场的矢势描述。"
+            },
+            {
+                id: "14", name: "变化引力场产生电场", icon: "⚡",
+                latex: "\\vec{E}=-f\\frac{d\\vec{A}}{dt}",
+                description: "变化的引力场产生电场的机制，展现引力电场耦合。"
+            },
+            {
+                id: "15", name: "变化磁场产生引力场和电场", icon: "🔄",
+                latex: "\\frac{d\\overrightarrow{B}}{dt}=\\frac{-\\overrightarrow{A}\\times\\overrightarrow{E}}{c^2}-\\frac{\\overrightarrow{V}}{c^{2}}\\times\\frac{d\\overrightarrow{E}}{dt}",
+                description: "变化磁场产生引力场和电场的耦合关系，统一场的动态描述。"
+            },
+            {
+                id: "16", name: "统一场论能量方程", icon: "💫",
+                latex: "e = m_0 c^2 = mc^2\\sqrt{1 - \\frac{v^2}{c^2}}",
+                description: "能量与质量的统一关系，扩展爱因斯坦质能方程。"
+            },
+            {
+                id: "17", name: "光速飞行器动力学方程", icon: "🛸",
+                latex: "\\vec{F} = (\\vec{C} - \\vec{V})\\frac{dm}{dt}",
+                description: "光速飞行器的推进动力学原理，未来航天技术的理论基础。"
+            },
+            {
+                id: "18", name: "空间波动通解", icon: "〰️",
+                latex: "L(r,t) = f(t-r/c) + g(t+r/c)",
+                description: "空间波动方程的通解形式，描述波在空间中的传播。"
+            },
+            {
+                id: "19", name: "引力光速统一方程", icon: "🌟",
+                latex: "Z = \\frac{Gc}{2}",
+                description: "引力常数与光速的统一关系，揭示宇宙基本常数的内在联系。"
+            }
+        ];
+
+        function createFormulaCard(formula) {
+            return `
+                <div class="formula-card" onclick="openVisualization('${formula.id}', '${formula.name}')">
+                    <div class="formula-header">
+                        <span class="formula-icon">${formula.icon}</span>
+                        <span class="formula-title">${formula.name}</span>
+                        <span class="formula-id">${formula.id}</span>
+                    </div>
+                    
+                    <div class="formula-latex">$${formula.latex}$</div>
+                    
+                    <div class="formula-description">${formula.description}</div>
+                    
+                    <div class="action-buttons">
+                        <a href="${formula.id}-${formula.name}/visualization.html" class="btn" target="_blank">
+                            🚀 启动可视化
+                        </a>
+                        <a href="${formula.id}-${formula.name}/README.md" class="btn btn-secondary" target="_blank">
+                            📖 理论说明
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function openVisualization(id, name) {
+            const url = `${id}-${name}/visualization.html`;
+            window.open(url, '_blank');
+        }
+
+        // 生成所有公式卡片
+        document.getElementById('formulaGrid').innerHTML = 
+            formulas.map(createFormulaCard).join('');
+
+        // 加载MathJax
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+
+        // 动态加载MathJax
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+
+        // 添加页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.formula-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

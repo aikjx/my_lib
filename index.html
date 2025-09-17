@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张祥前统一场论可视化系统 - 主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            margin-bottom: 50px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .main-title {
+            font-size: 4em;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.3); }
+        }
+
+        .subtitle {
+            font-size: 1.6em;
+            color: #cccccc;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #e0e0e0;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .system-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            padding: 40px;
+            border: 2px solid rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .system-card:hover::before {
+            opacity: 1;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .system-card:hover {
+            transform: translateY(-10px);
+            border-color: #00ffff;
+            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.4);
+        }
+
+        .system-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-title {
+            font-size: 1.8em;
+            color: #00ffff;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-description {
+            font-size: 1.1em;
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-features {
+            list-style: none;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-features li {
+            padding: 5px 0;
+            color: #e0e0e0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .system-features li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00ffff;
+        }
+
+        .launch-btn {
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .launch-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.6);
+            background: linear-gradient(45deg, #ff00ff, #ff0080);
+        }
+
+        .theory-overview {
+            background: rgba(0, 100, 0, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 50px 0;
+            border: 2px solid #00ff00;
+        }
+
+        .theory-title {
+            font-size: 2em;
+            color: #00ff00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .formula-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .formula-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #00ff00;
+        }
+
+        .formula-number {
+            color: #ffff00;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .formula-name {
+            color: #ffffff;
+            margin: 5px 0;
+        }
+
+        .formula-equation {
+            color: #cccccc;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 2px solid rgba(0, 255, 255, 0.3);
+            color: #888888;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">张祥前统一场论</h1>
+            <div class="subtitle">完整可视化系统集合</div>
+            <div class="description">
+                基于HTML5和WebGL技术，为张祥前统一场论的19个核心公式创建的专业级3D可视化系统。
+                通过交互式动画和数学仿真，深入理解四种基本力统一的几何本质。
+            </div>
+        </div>
+
+        <div class="systems-grid">
+            <!-- 完整可视化系统 -->
+            <div class="system-card" onclick="window.open('张祥前统一场论完整可视化系统.html', '_blank')">
+                <div class="system-icon">🌌</div>
+                <div class="system-title">完整可视化系统</div>
+                <div class="system-description">
+                    展示所有19个核心公式的基础可视化，适合初学者和教学使用。
+                </div>
+                <ul class="system-features">
+                    <li>19个核心公式完整覆盖</li>
+                    <li>Three.js 3D渲染引擎</li>
+                    <li>实时动画效果</li>
+                    <li>响应式设计</li>
+                    <li>交互式参数控制</li>
+                </ul>
+                <button class="launch-btn">启动系统</button>
+            </div>
+
+            <!-- 高级可视化系统 -->
+            <div class="system-card" onclick="window.open('张祥前统一场论高级可视化系统.html', '_blank')">
+                <div class="system-icon">⚡</div>
+                <div class="system-title">高级可视化系统</div>
+                <div class="system-description">
+                    重点公式的高质量3D可视化，专注于核心理论的深度展示。
+                </div>
+                <ul class="system-features">
+                    <li>精选核心公式深度展示</li>
+                    <li>高质量渲染效果</li>
+                    <li>优化的性能表现</li>
+                    <li>专业的视觉设计</li>
+                    <li>流畅的动画体验</li>
+                </ul>
+                <button class="launch-btn">启动系统</button>
+            </div>
+
+            <!-- 数学物理仿真系统 -->
+            <div class="system-card" onclick="window.open('张祥前统一场论数学物理仿真系统.html', '_blank')">
+                <div class="system-icon">📐</div>
+                <div class="system-title">数学物理仿真系统</div>
+                <div class="system-description">
+                    数学公式渲染和物理参数仿真，适合深入研究和学术应用。
+                </div>
+                <ul class="system-features">
+                    <li>MathJax数学公式渲染</li>
+                    <li>实时参数调节</li>
+                    <li>物理意义详细解释</li>
+                    <li>数学推导过程</li>
+                    <li>交互式演示</li>
+                </ul>
+                <button class="launch-btn">启动系统</button>
+            </div>
+
+            <!-- WebGL高性能可视化 -->
+            <div class="system-card" onclick="window.open('张祥前统一场论WebGL高性能可视化.html', '_blank')">
+                <div class="system-icon">🚀</div>
+                <div class="system-title">WebGL高性能可视化</div>
+                <div class="system-description">
+                    基于原生WebGL的高性能3D渲染系统，提供专业级可视化体验。
+                </div>
+                <ul class="system-features">
+                    <li>原生WebGL硬件加速</li>
+                    <li>高帧率实时渲染</li>
+                    <li>复杂几何体支持</li>
+                    <li>实时性能监控</li>
+                    <li>专业级视觉效果</li>
+                </ul>
+                <button class="launch-btn">启动系统</button>
+            </div>
+        </div>
+
+        <div class="theory-overview">
+            <div class="theory-title">统一场论核心公式概览</div>
+            <div class="description" style="text-align: center; margin-bottom: 30px;">
+                张祥前统一场论通过19个核心公式，从时空几何基础出发，
+                重新定义了质量、电荷等基本概念，最终实现了四种基本力的统一。
+            </div>
+            
+            <div class="formula-list">
+                <div class="formula-item">
+                    <div class="formula-number">1-2. 时空基础</div>
+                    <div class="formula-name">时空同一化 & 螺旋时空</div>
+                    <div class="formula-equation">r⃗(t) = C⃗t</div>
+                </div>
+                
+                <div class="formula-item">
+                    <div class="formula-number">3-4. 物质定义</div>
+                    <div class="formula-name">质量定义 & 引力场定义</div>
+                    <div class="formula-equation">m = k·(dn/dΩ)</div>
+                </div>
+                
+                <div class="formula-item">
+                    <div class="formula-number">5-7. 动力学</div>
+                    <div class="formula-name">动量方程 & 统一力方程</div>
+                    <div class="formula-equation">F⃗ = C⃗(dm/dt) - V⃗(dm/dt) + ...</div>
+                </div>
+                
+                <div class="formula-item">
+                    <div class="formula-number">8. 波动性</div>
+                    <div class="formula-name">空间波动方程</div>
+                    <div class="formula-equation">∇²L = (1/c²)(∂²L/∂t²)</div>
+                </div>
+                
+                <div class="formula-item">
+                    <div class="formula-number">9-15. 电磁场</div>
+                    <div class="formula-name">电荷、电场、磁场定义</div>
+                    <div class="formula-equation">q = k'k(1/Ω²)(dΩ/dt)</div>
+                </div>
+                
+                <div class="formula-item">
+                    <div class="formula-number">16-19. 应用</div>
+                    <div class="formula-name">能量、飞行器、统一常数</div>
+                    <div class="formula-equation">Z = Gc/2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>基于现代Web技术构建的专业级物理可视化系统</div>
+            <div class="tech-stack">
+                <div class="tech-item">HTML5</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">JavaScript ES6+</div>
+                <div class="tech-item">Three.js</div>
+                <div class="tech-item">WebGL</div>
+                <div class="tech-item">MathJax</div>
+            </div>
+            <div style="margin-top: 20px; font-size: 0.9em;">
+                © 2024 张祥前统一场论可视化项目 | 为科学教育和研究服务
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 添加页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // 添加卡片悬停效果增强
+        document.querySelectorAll('.system-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // 添加平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 添加键盘快捷键
+        document.addEventListener('keydown', function(e) {
+            if (e.key >= '1' && e.key <= '4') {
+                const cardIndex = parseInt(e.key) - 1;
+                const cards = document.querySelectorAll('.system-card');
+                if (cards[cardIndex]) {
+                    cards[cardIndex].click();
+                }
+            }
+        });
+
+        // 显示加载提示
+        console.log('张祥前统一场论可视化系统已加载');
+        console.log('快捷键: 1-4 数字键快速启动对应系统');
+    </script>
+</body>
+</html>

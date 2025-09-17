@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时空同一化方程 - 高级3D可视化</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: radial-gradient(ellipse at center, #0f0f23 0%, #000000 100%);
+            font-family: 'Consolas', 'Monaco', monospace;
+            overflow: hidden; color: #ffffff; height: 100vh;
+        }
+        
+        #canvas { 
+            display: block; width: 100%; height: 100%;
+            background: linear-gradient(45deg, #000428 0%, #004e92 100%);
+        }
+        
+        .ui-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1000;
+        }
+        
+        .info-panel {
+            position: absolute; top: 20px; left: 20px; width: 400px;
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(15px);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 12px; padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 100, 255, 0.2);
+            pointer-events: auto;
+        }
+        
+        .controls-panel {
+            position: absolute; top: 20px; right: 20px; width: 300px;
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(15px);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 12px; padding: 20px;
+            pointer-events: auto;
+        }
+        
+        .formula-title {
+            font-size: 1.5em; font-weight: bold; margin-bottom: 15px;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            background-clip: text; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        
+        .formula-display {
+            background: rgba(0, 100, 255, 0.1); padding: 15px;
+            border-radius: 8px; margin: 15px 0;
+            border-left: 3px solid #00d4ff;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em; text-align: center;
+        }
+        
+        .control-group {
+            margin: 15px 0; padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .control-label {
+            display: block; margin-bottom: 5px;
+            color: #00d4ff; font-weight: bold;
+        }
+        
+        .control-input {
+            width: 100%; padding: 8px; border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white; border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .stats-display {
+            margin-top: 15px; padding: 10px;
+            background: rgba(0, 255, 100, 0.1);
+            border-radius: 8px; font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div class="ui-overlay">
+        <div class="info-panel">
+            <div class="formula-title">时空同一化方程</div>
+            <div class="formula-display">
+                r⃗(t) = C⃗t = xi⃗ + yj⃗ + zk⃗
+            </div>
+            <div style="font-size: 0.9em; line-height: 1.6;">
+                <strong>物理意义：</strong><br>
+                • 时间与空间的统一描述<br>
+                • 光速C⃗作为时空转换因子<br>
+                • 三维空间中的线性时空关系<br>
+                • 宇宙中物质运动的基础方程
+            </div>
+            <div class="stats-display" id="stats">
+                时间: 0.00s<br>
+                位置: (0, 0, 0)<br>
+                速度: (0, 0, 0)
+            </div>
+        </div>
+        
+        <div class="controls-panel">
+            <div class="control-group">
+                <label class="control-label">光速分量 Cx</label>
+                <input type="range" class="control-input" id="cx" min="-3" max="3" step="0.1" value="1">
+                <span id="cx-value">1.0</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label">光速分量 Cy</label>
+                <input type="range" class="control-input" id="cy" min="-3" max="3" step="0.1" value="0.5">
+                <span id="cy-value">0.5</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label">光速分量 Cz</label>
+                <input type="range" class="control-input" id="cz" min="-3" max="3" step="0.1" value="0.8">
+                <span id="cz-value">0.8</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label">时间缩放</label>
+                <input type="range" class="control-input" id="timeScale" min="0.1" max="5" step="0.1" value="1">
+                <span id="timeScale-value">1.0</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label">轨迹长度</label>
+                <input type="range" class="control-input" id="trailLength" min="50" max="500" step="10" value="200">
+                <span id="trailLength-value">200</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // 场景初始化
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000428);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+        // 参数
+        let params = {
+            cx: 1.0, cy: 0.5, cz: 0.8,
+            timeScale: 1.0, trailLength: 200
+        };
+
+        // 粒子系统
+        const particleCount = 1000;
+        const particles = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const velocities = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 20;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+            
+            colors[i * 3] = Math.random();
+            colors[i * 3 + 1] = Math.random() * 0.5 + 0.5;
+            colors[i * 3 + 2] = 1.0;
+            
+            velocities.push(new THREE.Vector3(
+                (Math.random() - 0.5) * 0.02,
+                (Math.random() - 0.5) * 0.02,
+                (Math.random() - 0.5) * 0.02
+            ));
+        }
+
+        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.1, vertexColors: true, transparent: true, opacity: 0.8
+        });
+        const particleSystem = new THREE.Points(particles, particleMaterial);
+        scene.add(particleSystem);
+
+        // 主轨迹
+        const trailGeometry = new THREE.BufferGeometry();
+        const trailPositions = [];
+        const trailColors = [];
+        
+        const trailMaterial = new THREE.LineBasicMaterial({ 
+            vertexColors: true, transparent: true, opacity: 0.8 
+        });
+        const trailLine = new THREE.Line(trailGeometry, trailMaterial);
+        scene.add(trailLine);
+
+        // 坐标系
+        const axesHelper = new THREE.AxesHelper(10);
+        scene.add(axesHelper);
+
+        // 网格
+        const gridHelper = new THREE.GridHelper(20, 20, 0x404040, 0x202020);
+        scene.add(gridHelper);
+
+        // 主粒子
+        const mainParticleGeometry = new THREE.SphereGeometry(0.2, 16, 16);
+        const mainParticleMaterial = new THREE.MeshBasicMaterial({ 
+            color: 0x00ffff, transparent: true, opacity: 0.9 
+        });
+        const mainParticle = new THREE.Mesh(mainParticleGeometry, mainParticleMaterial);
+        scene.add(mainParticle);
+
+        // 时间和动画
+        let time = 0;
+        const clock = new THREE.Clock();
+
+        // 控制器事件
+        function setupControls() {
+            ['cx', 'cy', 'cz', 'timeScale', 'trailLength'].forEach(param => {
+                const slider = document.getElementById(param);
+                const display = document.getElementById(param + '-value');
+                
+                slider.addEventListener('input', (e) => {
+                    params[param] = parseFloat(e.target.value);
+                    display.textContent = params[param].toFixed(1);
+                });
+            });
+        }
+
+        // 更新轨迹
+        function updateTrail(position) {
+            trailPositions.push(position.x, position.y, position.z);
+            
+            const intensity = Math.min(trailPositions.length / (params.trailLength * 3), 1);
+            trailColors.push(intensity, intensity * 0.5 + 0.5, 1.0);
+            
+            if (trailPositions.length > params.trailLength * 3) {
+                trailPositions.splice(0, 3);
+                trailColors.splice(0, 3);
+            }
+            
+            trailGeometry.setAttribute('position', new THREE.Float32BufferAttribute(trailPositions, 3));
+            trailGeometry.setAttribute('color', new THREE.Float32BufferAttribute(trailColors, 3));
+        }
+
+        // 动画循环
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            const deltaTime = clock.getDelta();
+            time += deltaTime * params.timeScale;
+            
+            // 时空同一化方程: r⃗(t) = C⃗t
+            const position = new THREE.Vector3(
+                params.cx * time,
+                params.cy * time,
+                params.cz * time
+            );
+            
+            mainParticle.position.copy(position);
+            updateTrail(position);
+            
+            // 更新粒子系统
+            const positions = particleSystem.geometry.attributes.position.array;
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                positions[i3] += velocities[i].x;
+                positions[i3 + 1] += velocities[i].y;
+                positions[i3 + 2] += velocities[i].z;
+                
+                // 边界检查
+                if (Math.abs(positions[i3]) > 10) velocities[i].x *= -1;
+                if (Math.abs(positions[i3 + 1]) > 10) velocities[i].y *= -1;
+                if (Math.abs(positions[i3 + 2]) > 10) velocities[i].z *= -1;
+            }
+            particleSystem.geometry.attributes.position.needsUpdate = true;
+            
+            // 更新统计信息
+            document.getElementById('stats').innerHTML = `
+                时间: ${time.toFixed(2)}s<br>
+                位置: (${position.x.toFixed(2)}, ${position.y.toFixed(2)}, ${position.z.toFixed(2)})<br>
+                速度: (${params.cx.toFixed(2)}, ${params.cy.toFixed(2)}, ${params.cz.toFixed(2)})
+            `;
+            
+            // 相机跟随
+            camera.position.x = position.x + 10;
+            camera.position.y = position.y + 8;
+            camera.position.z = position.z + 12;
+            camera.lookAt(position);
+            
+            renderer.render(scene, camera);
+        }
+
+        // 初始化
+        camera.position.set(10, 8, 12);
+        setupControls();
+        animate();
+
+        // 响应式
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
