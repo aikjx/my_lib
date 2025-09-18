@@ -667,45 +667,89 @@ To obtain the geometric factor 2 from this ratio, we need to determine the stand
 Starting from the definition of the geometric factor:
 $$\text{Geometric Factor} = \frac{π}{4} * \text{Standardization Constant}$$
 
-## 10. Introduction of Zhang Xiangqian Constant and Derivation of Gravitational Light Speed Unification Equation
+## 10. Zhang Xiangqian Constant and Gravitational Light Speed Unification Equation
 
-### 10.1 Introduction of Zhang Xiangqian Constant
+### 10.1 Physical Foundation of Constant Introduction
+To transform the proportional relationship of gravitational interaction into a mathematical equation, we introduce a theoretically significant constant $Z$ with clear physical meaning. This constant serves as the core theoretical bridge connecting gravity and electromagnetic interaction. Its physical significance lies in quantifying the intrinsic connection between fundamental spatial properties (spatial divergence) and macroscopic gravitational phenomena, representing a basic parameter of spatial quantum geometry.
 
-Based on the geometric factor 2 we derived earlier and the definition of mass in spatial dynamics theory, we now introduce a new fundamental constant—Zhang Xiangqian Constant $Z$. This constant reflects the intrinsic relationship between gravitational interactions and the speed of light, with the following definition:
+The introduction of this constant constitutes an important development and mathematical formalization of the spatial dynamics theory system, providing it with more precise quantitative descriptive capabilities.
 
-$$Z = \frac{G c}{2}$$
+### 10.2 Complete Expression of Gravitational Interaction Force
+Based on the geometric contact model of spatial motion, we can systematically derive the gravitational interaction force expression, where the geometric factor 2 plays a crucial role:
 
-Where $G$ is the gravitational constant, $c$ is the speed of light, and the factor of 2 comes from the geometric factor we derived earlier.
+1. **Mass intensity contribution**: Gravity is proportional to the intensity of the two masses, i.e., $F \propto m_1 m_2$
 
-### 10.2 Derivation Process of Gravitational Light Speed Unification Equation
+2. **Inverse square law of distance**: In three-dimensional space, due to the divergent nature of field lines, field strength decays with the square of distance, i.e., $F \propto 1/R^2$
 
-To derive the gravitational light speed unification equation, we start from the definition of mass in spatial dynamics theory and combine it with the geometric factor 2.
+3. **Influence of light speed**: Space moves at the speed of light, and this motion property directly affects the effective transfer speed of gravitational interaction, i.e., $F \propto 1/c$
 
-According to the geometric contact model, the gravitational force between two objects can be expressed as:
+4. **Physical necessity of geometric factor 2**: As proven in Chapter 9 through the field line crossing model and double solid angle integration, during the mapping process from three-dimensional space to two-dimensional contact interface, due to the isotropy and symmetry of space, the geometric factor 2 must be introduced, which is an intrinsic property of three-dimensional geometric space, i.e., $F \propto 2$
 
-$$F = k \cdot \frac{m_1 m_2}{r^2}$$
+Integrating these physical factors, the complete proportional relationship of gravitational interaction force can be expressed as:
+$$F \propto \frac{2 m_1 m_2}{R^2 c}$$
 
-Where $k$ is the proportionality constant, which we need to determine.
+To convert this proportional relationship into a precise mathematical equation, we introduce the **Zhang Xiangqian Constant** $Z$, which serves as a quantitative representation of fundamental spatial properties and establishes an essential connection between microscopic spatial dynamics and macroscopic gravitational phenomena:
+$$F = Z \cdot \frac{2 m_1 m_2}{R^2 c} \tag{10-1}$$
 
-Comparing with Newton's law of universal gravitation:
+This expression clearly demonstrates the four core elements of gravitational interaction: mass product ($m_1 m_2$), inverse square relationship of distance ($1/R^2$), inverse of light speed ($1/c$), and geometric factor 2, which together form the complete mathematical description of gravitational interaction force. Among these, the introduction of geometric factor 2 is an inevitable result of the geometric properties of three-dimensional space and has profound physical significance.
 
-$$F = \frac{G m_1 m_2}{r^2}$$
+### 10.3 Establishment of Gravitational Light Speed Unification Equation: A Leap from Experience to Theory
+Through the previous derivations, we have obtained the gravitational interaction force expression based on geometric factors from the first principles of spatial dynamics:
+$$F = Z \cdot \frac{2 m_1 m_2}{R^2 c} \tag{10-1}$$
 
-We can see that $k = G$. However, according to the double solid angle integration calculation, we know that due to the geometric properties of spatial displacement lines, there is a geometric factor 2 involved in this process.
+Now, we need to compare this theoretical expression with Newton's law of universal gravitation, which has been widely verified by experiments. The mathematical form of Newton's law of universal gravitation is:
+$$F = G \frac{m_1 m_2}{R^2}$$
 
-At the same time, according to Postulate 6 of spatial dynamics theory, the speed of light $c$ is the maximum speed at which space itself can move, and it is a fundamental constant in the universe. Combining these considerations, we arrive at the gravitational light speed unification equation:
+These two expressions describe the same physical phenomenon—the gravitational interaction between two masses—so they must be mathematically equivalent. Based on this physical equivalence, we can set up the two expressions together:
+$$G \frac{m_1 m_2}{R^2} = Z \cdot \frac{2 m_1 m_2}{R^2 c} \tag{10-2}$$
 
-$$Z = \frac{G c}{2}$$
+Next, we perform mathematical derivations to establish the unified relationship between gravitational constant and light speed:
 
-### 10.3 Comparison with Newton's Law of Universal Gravitation
+1. **Common factor identification and elimination**: 
+Observing both sides of the equation, we can identify the common factor $\frac{m_1 m_2}{R^2}$. Since the masses $m_1$, $m_2$ and distance $R$ are all non-zero physical quantities, we can divide both sides of the equation by this common factor:
+$$G = Z \cdot \frac{2}{c}$$
 
-The gravitational light speed unification equation reveals a profound quantitative relationship between the gravitational constant $G$ and the speed of light $c$, which was not recognized in Newton's law of universal gravitation. This relationship shows that gravity and the properties of light are not independent but have a deep intrinsic connection.
+2. **Rearranging to obtain the unified equation**: 
+Through simple algebraic rearrangement, we arrive at the milestone gravitational light speed unification equation:
+$$G = \frac{2 Z}{c} \tag{10-3}$$
 
-In Newton's law of universal gravitation, the gravitational constant $G$ is treated as a basic empirical constant that cannot be derived. However, in Unified Field Theory, through the gravitational light speed unification equation, we can express $G$ in terms of the Zhang Xiangqian Constant $Z$ and the speed of light $c$:
+The derivation of this equation represents a revolutionary leap from empirical constants to theoretically derived quantities, with profound physical significance and theoretical value:
 
-$$G = \frac{2Z}{c}$$
+1. **Subverting the theoretical status of gravitational constant**: 
+The unification equation for the first time reveals that the gravitational constant $G$ is not a fundamental constant of nature, but a derived quantity determined by more fundamental space-time properties. Specifically, it is jointly determined by the Zhang Xiangqian constant $Z$ (describing fundamental spatial properties) and the speed of light $c$ (describing space-time motion characteristics), thus breaking the traditional perception that "G can only be measured but not calculated."
 
-This marks a fundamental change in our understanding of the gravitational constant: from a basic empirical constant to a derived constant that can be expressed in terms of more fundamental constants.
+2. **Central position of geometric factor**: 
+The geometric factor 2 occupies a key position in the unification equation, serving as the mathematical bridge between three-dimensional spatial field distribution and two-dimensional planar interaction. The existence of this factor directly reflects the profound influence of spatial geometric properties on gravitational phenomena.
+
+3. **Mathematical foundation for unification of gravity and electromagnetism**: 
+This equation establishes, for the first time, a direct mathematical connection between gravity and the speed of light, providing a solid mathematical foundation for unifying gravity and electromagnetism. The speed of light $c$ is the core constant of electromagnetic theory, while the gravitational constant $G$ is the core constant of gravitational theory, and they are connected through the geometric factor 2 and the spatial constant $Z$.
+
+4. **Verification of spatial dynamics theory**: 
+The derivation process of the unification equation represents an important leap of spatial dynamics theory from qualitative description to quantitative calculation, verifying the mathematical self-consistency and physical rationality of this theory.
+
+5. **Theoretical foundation for experimental verification**: 
+This equation provides clear theoretical predictions for subsequent experimental verifications. It allows us to calculate the theoretical value of Zhang Xiangqian constant $Z$ using known values of gravitational constant and speed of light, and compare it with experimental observations.
+
+In summary, the establishment of the gravitational light speed unification equation is not only an important achievement of spatial dynamics theory but also a key step on the road to unification in physics. Through mathematical derivation, gravitational phenomena are closely linked with fundamental properties of space-time, providing a new perspective for understanding the basic structure of the universe.
+
+### 10.4 Explicit Expression of Zhang Xiangqian Constant: Quantification of Fundamental Spatial Properties
+From the gravitational light speed unification equation, we can derive the explicit expression of Zhang Xiangqian constant $Z$ through algebraic transformation:
+$$Z = \frac{G c}{2} \tag{10-4}$$
+
+As a quantitative representation of fundamental spatial properties, the numerical value of Zhang Xiangqian constant $Z$ can be precisely determined through experimentally measured values. Using the high-precision values recommended by CODATA 2018:
+$$G = 6.67430 \times 10^{-11} \text{ m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2} \tag{10-5}$$
+$$c = 299792458 \text{ m} \cdot \text{s}^{-1} \tag{10-6}$$
+
+Substituting into formula (10-4) for precise calculation:
+$$Z = \frac{(6.67430 \times 10^{-11}) \times (299792458)}{2} \approx 0.0100065 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{10-7}$$
+
+**Physical significance of Zhang Xiangqian constant**: 
+1. As the core fundamental constant of unified field theory, $Z$ builds a mathematical bridge between gravitational and electromagnetic interactions
+2. Its physical essence is the flux density of "spatial displacement lines" within a unit four-dimensional space-time volume, revealing the quantization property of space-time geometry
+3. The dimension $[M]^{-1}[L]^4[T]^{-3}$ precisely corresponds to "the change rate of spatial displacement lines per unit time per unit volume"
+4. It is particularly noteworthy that the value of $Z$ is very close to 0.01 (with a difference of only about 0.065%). This concise numerical value strongly suggests that it may represent some basic quantum unit of space-time, with profound significance for quantum gravity theory
+
+The discovery of Zhang Xiangqian constant $Z$ marks a major leap in human understanding of the essence of space-time and provides a solid mathematical foundation for the eventual establishment of unified field theory.
 
 ## 11. Numerical Calculation of Zhang Xiangqian Constant and Theoretical Status of Gravitational Constant
 
