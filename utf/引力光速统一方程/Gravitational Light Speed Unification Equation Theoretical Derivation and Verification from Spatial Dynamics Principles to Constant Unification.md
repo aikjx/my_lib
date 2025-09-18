@@ -1,5 +1,7 @@
 # Gravitational Light Speed Unification Equation: Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification
 
+Authors: Guozi Mo, Xiangqian Zhang
+
 ## Abstract
 
 Based on the first principles of Zhang Xiangqian's Unified Field Theory, this paper rigorously mathematically derives and physically models, for the first time, a profound quantitative relationship between the gravitational constant $G$ and the speed of light $c$, establishing the landmark Gravitational Light Speed Unification Equation:
@@ -15,6 +17,8 @@ Here, the gravitational-light speed unification constant $Z$ is the Zhang Xiangq
 
 **Scientific Significance and Innovative Value**: 
 This research breaks through the traditional cognition since Newton that "the gravitational constant $G$ is a basic empirical constant that cannot be derived," and for the first time reveals the physical origin of the gravitational constant from first principles, constructing a mathematical bridge for the unification of gravity and electromagnetic force. By defining mass as a measure of the number of spatial displacement lines and revealing that gravity originates from the geometric effect of spatial light-speed divergent motion, this theory provides a revolutionary geometric perspective for understanding the essence of spacetime, matter, and forces, which is expected to trigger profound changes in the basic physics framework. At the same time, the Zhang Xiangqian Constant $Z$, as a key constant connecting gravitational and electromagnetic interactions, also provides a solid mathematical and physical foundation for "artificial field technology," with far-reaching significance for the future development of interstellar civilizations.
+
+**Keywords**: Gravitational Light Speed Unification Equation; Zhang Xiangqian's Unified Field Theory; Spatial Dynamics; Gravitational Constant; Speed of Light; Zhang Xiangqian Constant; General Relativity; Quantum Gravity; Space; Matter; Constant Unification
 
 ## Table of Contents
 

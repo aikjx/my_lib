@@ -415,18 +415,32 @@ We thank Professor Zhang Xiangqian for proposing the unified field theory which 
 ## References
 
 [1] Zhang, X. Q. (2025). _ Unified Field Theory (Academic Edition) : Extraterrestrial Technology_. Tongda Town, Lujiang County, Hefei City, Anhui Province, China. 
-[2] Planck, M. (1899). Über irreversible Strahlungsvorgänge. _Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin_, **5**, 440–480. 
-[3] Tiesinga, E., Mohr, P. J., Newell, D. B., & Taylor, B. N. (2021). The 2018 CODATA Recommended Values of the Fundamental Physical Constants. _National Institute of Standards and Technology_. 
-[4] Rovelli, C. (2004). _Quantum Gravity_. Cambridge University Press. 
-[5] Smolin, L. (2001). _Three Roads to Quantum Gravity_. Basic Books. 
-[6] Wheeler, J. A. (1990). _A Journey into Gravity and Spacetime_. Scientific American Library. 
-[7] Ashtekar, A., & Lewandowski, J. (2004). Background Independent Quantum Gravity: A Status Report. _Classical and Quantum Gravity_, **21**(15), R53. 
-[8] Susskind, L. (1995). The World as a Hologram. _Journal of Mathematical Physics_, **36**(11), 6377-6396. 
-[9] Weinberg, S. (1989). The cosmological constant problem. _Reviews of Modern Physics_, **61**(1), 1-23. 
-[10] Penrose, R. (2004). _The Road to Reality: A Complete Guide to the Laws of the Universe_. Jonathan Cape, London. 
-[11] Dirac, P. A. M. (1938). A new basis for cosmology. _Proceedings of the Royal Society A_, **165**(921), 199-208. 
-[12] 't Hooft, G. (1993). Dimensional reduction in quantum gravity. _Conference on Highlights of Particle and Condensed Matter Physics (Salamfest)_. 
-[13] Witten, E. (1996). Reflections on the fate of spacetime. _Physics Today_, **49**(4), 24-30. 
-[14] Ambjørn, J., Jurkiewicz, J., & Loll, R. (极05). Reconstructing the universe. _Physical Review D_, **72**(6), 064014. 
+
+[2] Planck, M. (1899). Über irreversible Strahlungsvorgänge. _Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin_, **5**, 440–480.
+
+[3] Tiesinga, E., Mohr, P. J., Newell, D. B., & Taylor, B. N. (2021). The 2018 CODATA Recommended Values of the Fundamental Physical Constants. _National Institute of Standards and Technology_.
+
+[4] Rovelli, C. (2004). _Quantum Gravity_. Cambridge University Press.
+
+[5] Smolin, L. (极01). _Three Roads to Quantum Gravity_. Basic Books.
+
+[6] Wheeler, J. A. (1990). _A Journey into Gravity and Spacetime_. Scientific American Library.
+
+[7] Ashtekar, A., & Lewandowski, J. (2004). Background Independent Quantum Gravity: A Status Report. _Classical and Quantum Gravity_, **21**(15), R53.
+
+[8] Susskind, L. (1995). The World as a Hologram. _Journal of Mathematical Physics_, **36**(11), 6377-6396.
+
+[9] Weinberg, S. (1989). The cosmological constant problem. _Reviews of Modern Physics_, **61**(1), 1-23.
+
+[10] Penrose, R. (2004). _The Road to Reality: A Complete Guide to the Laws of the Universe_. Jonathan Cape, London.
+
+[11] Dirac, P. A. M. (1938). A new basis for cosmology. _Proceedings of the Royal Society A_, **165**(921), 199-208.
+
+[12] 't Hooft, G. (1993). Dimensional reduction in quantum gravity. _Conference on Highlights of Particle and Condensed Matter Physics (Salamfest)_.
+
+[13] Witten, E. (1996). Reflections on the fate of spacetime. _Physics Today_, **49**(4), 24-30.
+
+[14] Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005). Reconstructing the universe. _Physical Review D_, **72**(6), 064014.
+
 [15] Verlinde, E. P. (2011). On the origin of gravity and the laws of Newton. _Journal of High Energy Physics_, **2011**(4), 29.
 
