@@ -194,115 +194,111 @@ The four terms of this equation correspond to different types of forces:
 
 This decomposition method provides a clear mathematical framework for understanding the unification of the four fundamental interactions.
 
-## 3. Spacetime Identity and Geometric Definition of Mass
+## 3 Spacetime Identity and Geometric Definition of Mass
 
-Spacetime identity and geometric definition of mass are the core contents of spatial dynamics theory and the foundation for deriving the gravitational-light speed unification equation. This section systematically expounds the mathematical description of spatial motion, the geometric essence of mass, and the profound connotation of spacetime identity.
+Spacetime identity and geometric definition of mass are core components of spatial dynamics theory and foundational elements for deriving the gravitational-light speed unification equation. This section systematically elaborates on the mathematical description of spatial motion, the geometric essence of mass, and the profound implications of spacetime identity.
 
 ### 3.1 Mathematical Description of Spatial Motion
 
-The core innovation of spatial dynamics theory lies in breaking through the limitation of traditional physics viewing space as a static background and proposing that space itself is a dynamic, movable physical form whose basic motion form can be precisely described by vector light speed $\mathbf{C}$. This perspective provides a new mathematical framework for understanding fundamental interactions such as gravity and electromagnetic force.
+The core innovation of spatial dynamics theory lies in transcending the limitation of traditional physics that regards space as a static background. It proposes that space itself is a dynamic, movable physical entity whose fundamental motion can be precisely characterized by vector light speed $\mathbf{C}$. This perspective provides a new mathematical framework for understanding fundamental interactions such as gravity and electromagnetism.
 
 #### 3.1.1 Mathematical Expression of Vector Light Speed
-In Cartesian coordinates, vector light speed $\mathbf{C}$ can be expressed as a three-dimensional vector form:
+In Cartesian coordinates, vector light speed $\mathbf{C}$ can be expressed in three-dimensional vector form:
 $$\mathbf{C} = C_x \mathbf{i} + C_y \mathbf{j} + C_z \mathbf{k} \tag{3-1}$$
-where, $C_x$, $C_y$, and $C_z$ are the components of vector light speed in the x, y, and z directions, respectively, which satisfy the constant modulus condition:
+where $C_x$, $C_y$, and $C_z$ are the components of vector light speed in the x, y, and z directions, respectively, satisfying the constant modulus condition:
 $$|\mathbf{C}| = \sqrt{C_x^2 + C_y^2 + C_z^2} = c \tag{3-2}$$
-Here, $c$ is the scalar speed of light constant, approximately $2.99792458 \times 10^8 \text{m/s}$. This property of vector light speed indicates that the motion of space has isotropic characteristics, and its rate remains constant in all directions.
+Here, $c$ is the scalar speed of light constant, approximately $2.99792458 \times 10^8 \text{m/s}$. This property of vector light speed indicates that spatial motion exhibits isotropic characteristics, with its rate remaining constant in all directions.
 
 #### 3.1.2 Three-dimensional Helical Spacetime Equation
-The background motion of space has cylindrical helical characteristics, which can be described by the three-dimensional helical spacetime equation:
+The background motion of space possesses cylindrical helical properties, which can be described by the three-dimensional helical spacetime equation:
 $$\vec{r}(t) = r\cos\omega t \cdot \vec{i} + r\sin\omega t \cdot \vec{j} + ht \cdot \vec{k} \tag{3-3}$$
-where, $\omega$ is the angular frequency, $h$ is the pitch parameter, and these two parameters jointly determine the properties of spatial waves. This equation has profound physical significance:
+where $\omega$ is the angular frequency and $h$ is the pitch parameter. These two parameters jointly determine the properties of spatial waves. This equation carries profound physical significance:
 - The first two terms describe the rotational component of spatial motion (corresponding to the electromagnetic field)
 - The third term describes the radial component of spatial motion (corresponding to the gravitational field)
 
-This helical motion mode provides a mathematical basis for the unification of gravity and electromagnetic force, revealing that the two fundamental interactions may have a common origin.
+This helical motion pattern provides a mathematical foundation for the unification of gravity and electromagnetism, revealing that these two fundamental interactions may share a common origin.
 
 #### 3.1.3 Divergence Equation of Spatial Motion
-For the space around a mass body, its motion satisfies the gravitational field divergence equation:
+For the space surrounding a massive body, its motion satisfies the gravitational field divergence equation:
 $$\nabla \cdot \vec{A} = -4\pi G \rho \tag{3-4}$$
-where, $\vec{A}$ is the gravitational field, $G$ is the universal gravitational constant, and $\rho$ is the mass density. This equation reveals the intrinsic connection between spatial motion and mass distribution, indicating that:
+where $\vec{A}$ is the gravitational field, $G$ is the universal gravitational constant, and $\rho$ is the mass density. This equation reveals the intrinsic connection between spatial motion and mass distribution, indicating that:
 - The presence of mass affects the motion state of its surrounding space
 - The divergence of spatial motion is proportional to the mass density
 
-This relationship is the basis for subsequent derivation of Newton's law of universal gravitation and an important theoretical support for the gravitational-light speed unification equation.
+This relationship forms the basis for subsequent derivations of Newton's law of universal gravitation and provides important theoretical support for the gravitational-light speed unification equation.
 
 ### 3.2 Relationship Between Mass and Spatial Motion
 
-The geometric definition of mass is an important innovation of spatial dynamics theory. It breaks through the limitations of the concept of mass in traditional physics and redefines mass from the traditional concept of "amount of matter" to the geometric property of spatial motion. This definition provides a new perspective for understanding the nature of gravity and achieving the unification of physical theories.
+The geometric definition of mass represents a significant innovation in spatial dynamics theory. It transcends the limitations of mass concepts in traditional physics, redefining mass from the classical notion of "amount of matter" to a geometric property of spatial motion. This redefinition provides a new perspective for understanding the nature of gravity and achieving the unification of physical theories.
 
 #### 3.2.1 Surface Integral Definition of Mass
-According to the postulate of geometric definition of mass, there is the following surface integral relationship between the mass M of an object and the light-speed divergent motion of its surrounding space:
+According to the postulate of geometric mass definition, the following surface integral relationship exists between the mass $M$ of an object and the light-speed divergent motion of its surrounding space:
 $$M = k \oint_S n \cdot dS \tag{3-5}$$
 where:
-- $k$ is the proportionality constant with the dimension of $\text{kg} \cdot \text{m}^{-2}$
+- $k$ is the proportionality constant with dimensions $\text{kg} \cdot \text{m}^{-2}$
 - $n$ is the density vector of spatial displacement lines
 - $S$ is any closed surface enclosing the object
-- $dS$ is the area element vector of the surface
+- $dS$ is the surface area element vector
 
-This definition has distinct geometric characteristics, indicating that mass is essentially a geometric measure of the state of spatial motion rather than an "intrinsic property" inherent to the object. This perspective shift is of great significance for understanding the geometric origin of gravity.
+This definition exhibits distinct geometric characteristics, indicating that mass is essentially a geometric measure of spatial motion state rather than an "intrinsic property" inherent to the object. This conceptual shift holds great significance for understanding the geometric origin of gravity.
 
 #### 3.2.2 Simplified Formula for Mass in Spherically Symmetric Cases
-For mass bodies with spherically symmetric distribution (such as stars, planets, and other celestial bodies), due to symmetry, Equation (3-5) can be simplified to a more intuitive form:
+For objects with spherically symmetric mass distributions (such as stars, planets, and other celestial bodies), due to symmetry, Equation (3-5) can be simplified to a more intuitive form:
 $$M = k \cdot 4\pi r^2 \cdot n_r \tag{3-6}$$
-where, $n_r$ is the density of spatial displacement lines per unit solid angle in the radial direction, and $r$ is the radius of the enclosing surface. This simplified form more clearly shows the quantitative relationship between mass and spatial divergent motion, indicating that mass is proportional to the area of the enclosing surface and the density of spatial displacement lines.
+where $n_r$ is the density of spatial displacement lines per unit solid angle in the radial direction, and $r$ is the radius of the enclosing surface. This simplified form more clearly demonstrates the quantitative relationship between mass and spatial divergent motion, indicating that mass is proportional to both the area of the enclosing surface and the density of spatial displacement lines.
 
 #### 3.2.3 Physical Significance of Mass Definition
-The geometric definition of mass has important physical significance, which expands our understanding of the nature of matter from multiple dimensions:
-1. **Unification of matter and space**: Reveals the essential connection between mass and space, achieving the conceptual unification of matter and space
-2. **Geometric origin of gravity**: Provides a theoretical basis for understanding the geometric nature of gravity, gravity is no longer action at a distance
-3. **Variability of mass**: Implies that mass may have variability, which has been confirmed by the mass-energy relationship of relativity
-4. **Mathematical framework of unified field theory**: Provides a new mathematical language and physical image for unified field theory
+The geometric definition of mass holds important physical significance, expanding our understanding of the nature of matter across multiple dimensions:
+1. **Unification of matter and space**: Reveals the essential connection between mass and space, achieving conceptual unification of matter and space
+2. **Geometric origin of gravity**: Provides a theoretical basis for understanding the geometric nature of gravity, which is no longer considered action at a distance
+3. **Variability of mass**: Implies that mass may be variable, a concept consistent with the mass-energy relationship in relativity
+4. **Mathematical framework for unified field theory**: Offers a new mathematical language and physical imagery for unified field theory
 
-This definition lays the conceptual foundation for the subsequent derivation of the gravitational-light speed unification equation.
+This definition lays the conceptual groundwork for the subsequent derivation of the gravitational-light speed unification equation.
 
 ### 3.3 Geometric Effects of Spacetime Identity
 
-The postulate of spacetime identity is another core assumption of spatial dynamics theory. It establishes the intrinsic connection between space and time, further expanding the concept of spacetime in Einstein's relativity and providing a new theoretical framework for understanding the nature of time.
+The postulate of spacetime identity represents another core assumption of spatial dynamics theory. It establishes an intrinsic connection between space and time, further expanding Einstein's concept of spacetime and providing a new theoretical framework for understanding the nature of time.
 
 #### 3.3.1 Mathematical Form of Spacetime Identity Equation
 According to the postulate of spacetime identity, the relationship between spatial displacement vector and time can be expressed as:
 $$\mathbf{R} = \mathbf{C}t \tag{3-7}$$
-where, $\mathbf{R}$ is the spatial displacement vector, and $t$ is time. This equation indicates that space and time are an inseparable unity, and the motion of space produces the passage of time.
+where $\mathbf{R}$ is the spatial displacement vector and $t$ is time. This equation indicates that space and time form an inseparable unity, with the motion of space giving rise to the passage of time.
 
 #### 3.3.2 Physical Nature of Time
-From the spacetime identity equation, it can be seen that time is not an independently existing physical quantity but a manifestation of spatial motion. Specifically, time is a measurement effect produced by the motion of space at the speed of light. This view is inherently consistent with the spacetime view in Einstein's relativity but provides a more explicit physical mechanism explanation.
+From the spacetime identity equation, it becomes evident that time is not an independently existing physical quantity but rather a manifestation of spatial motion. Specifically, time is a measurement effect produced by the motion of space at the speed of light. This perspective is inherently consistent with Einstein's view of spacetime while providing a more explicit explanation of the underlying physical mechanism.
 
 #### 3.3.3 Geometric Inferences of Spacetime Identity
-Spacetime identity leads to a series of important geometric inferences:
-1. Space has fluid-like properties and can undergo deformation and motion
-2. The rate of time passage may be affected by the state of spatial motion
-3. The motion of matter can affect the structure of spacetime around it
-4. Gravitational field is essentially the bending of spacetime structure or the change of motion state
+Spacetime identity leads to several important geometric inferences:
+1. Space possesses fluid-like properties and can undergo deformation and motion
+2. The rate of time passage may be influenced by the state of spatial motion
+3. The motion of matter can affect the structure of surrounding spacetime
+4. Gravitational fields are essentially manifestations of spacetime curvature or changes in motion state
 
 ### 3.4 Physical Verification of the Geometric Definition of Mass
 
-Although the geometric definition of mass breaks through the concepts of traditional physics, its rationality can be verified through comparison with known physical phenomena.
+Although the geometric definition of mass transcends traditional physics concepts, its validity can be verified through comparisons with known physical phenomena.
 
-#### 3.4.1 Compatibility with Classical Mass Concept
-In macroscopic and low-speed cases, the geometric definition of mass is completely compatible with the mass concept in classical physics. By appropriately choosing the constant $k$, the mass defined geometrically can be numerically consistent with the results of classical mass measurement.
+#### 3.4.1 Compatibility with Classical Mass Concepts
+The geometric definition of mass maintains compatibility with classical mass concepts within the scope of low-speed macroscopic motion. When we consider the relationship between mass and gravitational force, substituting the geometric definition of mass into Newton's law of universal gravitation yields results consistent with experimental observations. This indicates that the geometric definition of mass is not a complete negation of classical mass concepts but rather a deeper-level theoretical generalization.
 
 #### 3.4.2 Connection with Relativistic Mass-Energy Relationship
-The geometric definition of mass has a profound connection with Einstein's mass-energy equation $E = mc^2$. According to spatial dynamics theory, mass is a measure of spatial motion, while energy is the dynamic manifestation of this motion. The two are connected through the speed of light $c$, which is highly consistent with the relativistic mass-energy relationship.
+The geometric definition of mass establishes an important connection with Einstein's mass-energy relationship ($E = mc^2$). From the perspective of spatial dynamics theory, the mass-energy relationship can be interpreted as the energy equivalence of spatial motion. This interpretation provides a more intuitive physical understanding for the profound formula of relativity.
 
 #### 3.4.3 Explanation of Gravitational Phenomena
-The geometric definition of mass provides a new perspective for explaining gravitational phenomena: gravity is not the action at a distance between objects but the geometric effect caused by the difference in the motion state of space around objects. This explanation is consistent with the geometric gravity view of Einstein's general relativity while providing a more specific physical mechanism.
+The geometric definition of mass offers a new explanation for gravitational phenomena. According to this definition, gravity is not an action-at-a-distance force between objects but rather a manifestation of the interaction between the motion of objects and the motion of space. This explanation is similar in spirit to Einstein's general relativity but provides a more specific physical mechanism.
 
 ### 3.5 Relationship Between Vector Light Speed and Time
 
-Vector light speed occupies a central position in spatial dynamics theory. It not only describes the motion state of space but also reflects the characteristics of time passage.
+The relationship between vector light speed and time is a key link in spatial dynamics theory, serving as a bridge connecting the theory with experimental observations.
 
 #### 3.5.1 Time Derivative of Vector Light Speed
-The time derivative of vector light speed reflects the rate of change of spatial motion state:
-$$\frac{d\mathbf{C}}{dt} = \mathbf{a}_s \tag{3-8}$$
-where, $\mathbf{a}_s$ is the spatial acceleration vector. This derivative plays an important role in the geometric definition of force, corresponding to the nuclear force term.
+In spatial dynamics theory, the time derivative of vector light speed $\frac{d\mathbf{C}}{dt}$ has important physical significance. It describes the rate of change of spatial motion state, which is closely related to the nuclear force term in the unified force equation.
 
-#### 3.5.2 Spatial Measurement of Time
-According to the spacetime identity equation, we can express time as a function of space:
-$$t = \frac{\mathbf{R} \cdot \hat{\mathbf{C}}}{c} \tag{3-9}$$
-where, $\hat{\mathbf{C}}$ is the unit vector of vector light speed. This expression indicates that time is essentially a measurement attribute of space, providing a new perspective for understanding the directionality and irreversibility of time.
+#### 3.5.2 Time-Space Measurement and Their Relationship
+Based on the spacetime identity equation, we can establish a unified measurement system for time and space. In this system, time and space are not independent measurement dimensions but different manifestations of the same physical entity. This unified measurement perspective provides new insights for resolving the incompatibility between quantum mechanics and general relativity.
 
-Through the detailed exposition in this chapter, we have established the basic framework of spatial dynamics theory, including the mathematical description of spatial motion, the geometric definition of mass, and the connotation of spacetime identity. These theoretical foundations lay the mathematical and physical basis for the subsequent derivation of the gravitational-light speed unification equation.
+Through the above analysis, we have established a complete theoretical system for spatial dynamics, providing solid theoretical foundations for the subsequent derivation and verification of the gravitational-light speed unification equation.
 
 ## 4. Geometric Description of Gravitational Field
 
