@@ -4,49 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3a0c5114fcec2af9",
+        "id": "814d1a696523ebfc",
         "type": "tabs",
         "children": [
           {
-            "id": "394730b022b12e64",
+            "id": "10b14f4d21f8a6af",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
+                "file": "utf/引力光速统一方程/Gravity-Light Speed Unification Equation - Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证"
-            }
-          },
-          {
-            "id": "7307dd9df03582a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "utf/引力光速统一方程/Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence"
-            }
-          },
-          {
-            "id": "2bece8b0d10c9518",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程"
+              "title": "Gravity-Light Speed Unification Equation - Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification"
             }
           }
         ]
@@ -211,8 +183,15 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "394730b022b12e64",
+  "active": "10b14f4d21f8a6af",
   "lastOpenFiles": [
+    "utf/引力光速统一方程/Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence.md",
+    "utf/引力光速统一方程/Gravity-Light Speed Unification Equation - Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification.md",
+    "utf/引力光速统一方程/README.md",
+    "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
+    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
+    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
+    "utf/引力光速统一方程/Gravity-Light Speed Unification Equation",
     "utf/统一场论核心公式/01-时空同一化方程/_tmp_30952_7dd91cc79324ee88e8f83f22f6c24906",
     "utf/引力光速统一方程/引力光速的关系/论文分析与修复报告.md",
     "utf/引力光速统一方程/引力光速的关系/分析与修复/论文分析与修复报告.md",
@@ -234,21 +213,14 @@
     "utf/引力光速统一方程/优化版本/引力光速统一方程论文.tex",
     "utf/引力光速统一方程/Drawing 2025-09-11 21.37.40.excalidraw.md",
     "utf/引力光速统一方程/优化版本/整合后的引力光速统一方程论文.md",
-    "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
     "utf/引力光速统一方程/引力与光速的统一：基于空间动力学的常数关系推导与验证.md",
-    "utf/引力光速统一方程/Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence.md",
     "utf/引力光速统一方程/Unified Equation of Gravity and Light Speed",
-    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
     "utf/引力光速统一方程/优化版本/引力光速统一方程：基于空间动力学的理论推导与实验验证.md",
     "utf/引力光速统一方程/分析与修复/引力光速统一方程论文_综合优化版.md",
     "utf/引力光速统一方程/分析与修复/优化后的引力光速统一方程论文_修订版.md",
-    "utf/引力光速统一方程/分析与修复/优化后的引力光速统一方程论文_终极版.md",
-    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
     "几何因子动态演示.html",
     "utf/引力光速统一方程/优化版本",
     "几何因子最强可视化页面.html",
-    "几何因子验证可视化.html",
-    "utf/统一场论核心公式/01-时空同一化方程/src/simple.ts",
     "几何因子问题全面分析.png",
     "geometric_correction_factor_2_animation.svg",
     "complete_error_analysis.png",
