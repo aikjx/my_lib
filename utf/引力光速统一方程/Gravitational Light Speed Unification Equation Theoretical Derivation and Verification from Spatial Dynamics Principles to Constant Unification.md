@@ -94,47 +94,97 @@ This research not only provides a new perspective for understanding the nature o
 
 ## 2. Basic Postulates of Spatial Dynamics Theory
 
-The spatial dynamics theory in Unified Field Theory is built on the following six core postulates, which are the logical starting points for our theoretical derivation:
+Spatial dynamics theory is the core framework of Zhang Xiangqian's Unified Field Theory, aiming to unify fundamental interactions such as gravity and electromagnetic force, and reveal the essential connections between spacetime, matter, and forces. This theory breaks through the limitation of traditional physics viewing space as a static background, and for the first time elevates space to a physical entity with intrinsic dynamic properties, providing a new perspective for understanding the basic laws of the universe.
 
-**Postulate 1: Spacetime Identity Principle**
-Space and time are essentially the same physical entity, and time is the movement of space. For any object, the time it experiences is proportional to the amount of space it displaces. Mathematically expressed as:
+The entire system of spatial dynamics theory is built upon the following six **logically self-consistent core postulates**, which together form a conceptually clear theoretical framework, providing a solid foundation for subsequent mathematical derivations and physical verifications:
 
-$$\Delta t = k \cdot \Delta r$$
+### 2.1 Postulate of Universal Composition: The Most Fundamental Elements of the Physical World
 
-Where $\Delta t$ represents time change, $\Delta r$ represents spatial displacement, and $k$ is the proportionality constant. This principle reveals that time is not an independent dimension but a manifestation of spatial motion.
+**Postulate Content**: The universe is composed of only two basic entities: objects and space. There is no third entity that coexists with them. Apart from objects and space, everything else is a description or measurement by observers of the motion of objects and the motion of space itself.
 
-**Postulate 2: Three-dimensional Helical Motion of Space**
-Space itself is in a three-dimensional helical motion, which is the fundamental reason for the existence of all matter and energy. The helical motion of space has two components: a circular motion around the object's center and a linear motion along the helical axis. Mathematically described as:
+**Physical Significance**: This postulate establishes the ontological foundation of spatial dynamics theory, clearly distinguishing the essential differences between physical entities (objects and space) and physical phenomena (motion, fields, energy, etc.). It negates the necessity of hypotheses such as "ether" and reduces the complex physical world to its most basic constituent elements, laying a concise and solid philosophical foundation for unified field theory.
 
-$$\vec{r}(t) = r_0 \cos(\omega t) \vec{i} + r_0 \sin(\omega t) \vec{j} + v t \vec{k}$$
+**Mathematical Expression**: From an ontological perspective, we can represent the universe as a binary tuple:
 
-Where $r_0$ is the helical radius, $\omega$ is the angular velocity, $v$ is the linear velocity, and $\vec{i}$, $\vec{j}$, $\vec{k}$ are unit vectors in three-dimensional space.
+$$\text{Universe} = \{\text{Objects}, \text{Space}\} \tag{2-1}$$
 
-**Postulate 3: Definition of Mass Based on Spatial Displacement Lines**
-Mass is a measure of the number of spatial displacement lines. For any object, its mass is proportional to the number of spatial displacement lines passing through it per unit time. Mathematically expressed as:
+This expression clearly indicates that space and objects are two independent yet interrelated basic elements constituting the physical world, and all physical phenomena originate from the interaction between them.
 
-$$m = \rho \cdot N$$
+### 2.2 Postulate of Spacetime Identity: The Essential Connection Between Time and Space
 
-Where $m$ is the mass of the object, $\rho$ is the density of spatial displacement lines, and $N$ is the number of spatial displacement lines.
+**Postulate Content**: Time and space are different manifestations of the same physical entity, and they satisfy the mathematical relationship—the spacetime identity equation:
 
-**Postulate 4: Gravitational Field as Spatial Divergence**
-The gravitational field is a manifestation of the divergence of spatial motion. The strength of the gravitational field at any point in space is proportional to the divergence of the spatial velocity at that point. Mathematically described as:
+$$\vec{r}(t)=\vec{C}t=x\vec{i}+y\vec{j}+z\vec{k} \tag{2-2}$$
 
-$$\vec{g} = -k \cdot \nabla \cdot \vec{v}$$
+Where $\vec{r}$ is the spatial displacement vector, $\vec{C}$ is the vector speed of light (whose magnitude is the scalar speed of light $c$), $t$ is time, $x$, $y$, $z$ are spatial coordinate components, and $\vec{i}$, $\vec{j}$, $\vec{k}$ are unit vectors of the three-dimensional Cartesian coordinate system.
 
-Where $\vec{g}$ is the gravitational field strength, $\vec{v}$ is the spatial velocity, and $k$ is the proportionality constant.
+**Physical Significance**: This postulate reveals the essence of time—time is not an independent physical dimension but a measure of spatial displacement. It explains the physical mechanism of the principle of constancy of light speed—the speed of light is essentially the motion speed of space itself, rather than the motion speed of objects in the traditional sense. This explanation transforms the basic assumption of relativity into a natural result of spatial properties, providing a new theoretical framework for understanding the unity of spacetime, while also laying a conceptual foundation for the subsequent derivation of the gravitational-light speed unification equation.
 
-**Postulate 5: Conservation of Spatial Motion**
-The total amount of spatial motion in the universe is conserved. This conservation law is the root of all conservation laws in physics (such as conservation of energy, conservation of momentum, conservation of angular momentum, etc.). Mathematically expressed as:
+**Mathematical Properties**: From the spacetime identity equation, we can derive the dimensional relationship between time and space:
 
-$$\frac{d}{dt}\int_V \rho \vec{v} \cdot dV = 0$$
+$$[t] = \frac{[L]}{[LT^{-1}]} = [T] \tag{2-3}$$
 
-Where $V$ is any closed volume, and $\rho$ is the density of spatial displacement lines.
+This relationship verifies the physical rationality of time as a measure of spatial displacement.
 
-**Postulate 6: Speed of Light as the Maximum Speed of Spatial Motion**
-The speed of light $c$ is the maximum speed at which space itself can move, and it is a fundamental constant in the universe. Any matter or information cannot exceed this speed limit.
+### 2.3 Postulate of Spatial Motion: The Dynamic Nature of Space
 
-These six postulates together form the theoretical framework of spatial dynamics, providing a solid foundation for our derivation of the gravitational-light speed unification equation.
+**Postulate Content**: For any object in the universe, the surrounding space is always diverging in a cylindrical helical motion at the speed of light $c$. This motion is absolute and independent of the physical state of the object.
+
+**Physical Significance**: This is the core postulate of spatial dynamics theory, which breaks through the concept of traditional physics viewing space as a static background and elevates space to a physical entity with intrinsic dynamic properties. This postulate provides a new physical image for understanding the nature of gravity and electromagnetic force—gravity and electromagnetic force are essentially manifestations of the interaction of spatial motion and direct results of spatial geometric properties.
+
+**Mathematical Expression**: The cylindrical helical motion of space can be described by the three-dimensional helical spacetime equation:
+
+$$\vec{r}(t) = r\cos\omega t \cdot \vec{i} + r\sin\omega t \cdot \vec{j} + ht \cdot \vec{k} \tag{2-4}$$
+
+Where $\omega$ is the angular frequency, $h$ is the pitch parameter, and these two parameters jointly determine the properties of spatial waves. This equation shows that the motion of space has not only a radial component (corresponding to the gravitational field) but also a rotational component (corresponding to the electromagnetic field), thus providing a mathematical foundation for the unification of gravity and electromagnetic force.
+
+### 2.4 Postulate of Geometric Definition of Mass: The Spatial Origin of Mass
+
+**Postulate Content**: The mass of an object is a geometric measure of the degree of light-speed divergent motion of its surrounding space, satisfying the mass definition equation:
+
+$$m = k \cdot \frac{dn}{d\Omega} \tag{2-5}$$
+
+Where $k$ is the proportionality constant, $\frac{dn}{d\Omega}$ is the density of spatial displacement lines per unit solid angle, and $d\Omega$ is the solid angle element.
+
+**Physical Significance**: This postulate revolutionizes physics' understanding of the essence of mass—mass is no longer viewed as the "amount of matter contained in an object" but is redefined as a geometric measure of the degree of light-speed divergent motion of its surrounding space. This definition reveals the essential connection between mass and spatial motion, unifying matter and space within the same physical framework, and providing a core theoretical foundation for deriving the gravitational-light speed unification equation.
+
+**Mathematical Properties**: For spherically symmetric cases, the mass definition equation can be simplified to:
+
+$$M = k \cdot 4\pi r^2 \cdot n_r \tag{2-6}$$
+
+Where $n_r$ is the density of spatial displacement lines per unit solid angle in the radial direction. This simplified form more clearly demonstrates the quantitative relationship between mass and spatial divergent motion.
+
+### 2.5 Postulate of Field Unity: The Common Origin of Force Fields
+
+**Postulate Content**: Gravitational field, electromagnetic field, and nuclear force field are not independent entities but manifestations of the same spacetime motion (cylindrical helical motion) under different conditions. The four fundamental interactions have a common geometric origin and are essentially manifestations of the same physical mechanism at different scales and dimensions.
+
+**Physical Significance**: This postulate provides a new approach to solving the long-standing problem of field unification in physics. It points out that the four seemingly different fundamental interactions in nature (gravity, electromagnetic force, strong nuclear force, weak nuclear force) are actually macroscopic manifestations of the same spatial motion pattern at different scales and under different conditions. This unified view simplifies the description of the physical world and provides a clear direction and theoretical framework for establishing a complete unified field theory.
+
+**Mathematical Connection**: The mathematical connections between various fields can be described by the different manifestations of the angular frequency $\omega$ and pitch parameter $h$ in the three-dimensional helical spacetime equation. For example, the gravitational field mainly reflects the radial component of spatial motion (related to the pitch parameter $h$), while the electromagnetic field mainly reflects the rotational component of spatial motion (related to the angular frequency $\omega$).
+
+### 2.6 Postulate of Geometric Definition of Force: The Spatial Essence of Force
+
+**Postulate Content**: All forces in physics are essentially geometric manifestations of changes in the state of spatial motion, satisfying the universal unification equation (force equation):
+
+$$\vec{F} = \frac{d\vec{P}}{dt}  \tag{2-7}$$
+
+Where $\vec{P}$ is the momentum vector.
+
+**Physical Significance**: This postulate reduces the essence of force from the traditional "interaction between objects" to "changes in the state of spatial motion," unifying the understanding of various forces. According to spatial dynamics theory, momentum $\vec{P}$ can be expressed as:
+
+$$\overrightarrow{P}=m(\overrightarrow{C}-\overrightarrow{V}) \tag{2-8}$$
+
+Where $\mathbf{V}$ is the motion speed of the object. Substituting this expression into the force definition equation, we can obtain:
+
+$$F = \frac{d\vec{P}}{dt} = \vec{C}\frac{dm}{dt} - \vec{V}\frac{dm}{dt} + m\frac{d\vec{C}}{dt} - m\frac{d\vec{V}}{dt} \tag{2-9}$$
+
+The four terms of this equation correspond to different types of forces:
+- First term $\vec{C}\frac{dm}{dt}$: Corresponding to electric field force
+- Second term $- \vec{V}\frac{dm}{dt}$: Corresponding to magnetic field force
+- Third term $m\frac{d\vec{C}}{dt}$: Corresponding to nuclear force
+- Fourth term $- m\frac{d\vec{V}}{dt}$: Corresponding to inertial force and universal gravitation
+
+This decomposition method provides a clear mathematical framework for understanding the unification of the four fundamental interactions.
 
 ## 3. Definition of Mass and Spatial Motion
 
