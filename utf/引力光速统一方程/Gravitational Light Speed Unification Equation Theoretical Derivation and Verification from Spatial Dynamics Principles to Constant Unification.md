@@ -751,33 +751,38 @@ $$Z = \frac{(6.67430 \times 10^{-11}) \times (299792458)}{2} \approx 0.0100065 \
 
 The discovery of Zhang Xiangqian constant $Z$ marks a major leap in human understanding of the essence of space-time and provides a solid mathematical foundation for the eventual establishment of unified field theory.
 
-## 11. Numerical Calculation of Zhang Xiangqian Constant and Theoretical Status of Gravitational Constant
+## 11. Theoretical Status and Physical Significance of Gravitational Constant G: A Revolutionary Transformation from Empirical to Theoretical
 
-### 11.1 Numerical Calculation of Zhang Xiangqian Constant
+### 11.1 From Fundamental Constant to Derived Quantity: A Paradigm Shift in Gravitational Theory
+As described in Chapter 10, based on the spatial dynamics theory, we have derived the gravitational-light speed unification equation:
+$$Z = \frac{G c}{2} \tag{10-4}$$
 
-Using the CODATA 2018 recommended values for the gravitational constant $G$ and the speed of light $c$:
-- $G = 6.67430 \times 10^{-11} \, \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$
-- $c = 299792458 \, \text{m} \cdot \text{s}^{-1}$
+To further simplify theoretical expressions, we introduce an auxiliary constant $K_z$, defined as:
+$$K_z = 2Z = Gc \tag{11-1}$$
 
-We can calculate the numerical value of the Zhang Xiangqian Constant $Z$:
+According to this definition, we can calculate the numerical value of $K_z$ using known high-precision experimental values:
+$$K_z = Gc = (6.67430 \times 10^{-11} \text{ m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}) \times (299792458 \text{ m} \cdot \text{s}^{-1}) \approx 0.020013 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{11-2}$$
 
-$$Z = \frac{G c}{2} = \frac{6.67430 \times 10^{-11} \times 299792458}{2} = 0.0100065 \, \text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$$
+At the same time, we can independently verify this result through the numerical value of Zhang Xiangqian constant $Z$:
+$$K_z = 2Z = 2 \times 0.0100065 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} = 0.020013 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{11-3}$$
 
-### 11.2 Definition and Calculation of Auxiliary Constant $K_z$
+The definition of this auxiliary constant preserves the intrinsic connection between the gravitational constant $G$ and the speed of light $c$, while eliminating the influence of the geometric factor 2, providing mathematical simplicity for theoretical derivations in specific scenarios.
 
-For convenience in some calculations, we also define an auxiliary constant $K_z$:
+The gravitational-light speed unification equation profoundly changes our understanding of the gravitational constant $G$. In traditional physics, $G$ is regarded as a fundamental empirical constant that cannot be explained, and why its value is $6.67430 \times 10^{-11}$ has always been an unsolved mystery in physics. Through mathematical derivation, $G$ is revealed for the first time as a derived quantity, whose value is determined by more fundamental space-time properties (through constant $Z$ and speed of light $c$).
 
-$$K_z = G c = 2Z$$
+### 11.2 Connection with Existing Physical Framework: Multi-dimensional Verification of Theoretical Compatibility
+The gravitational-light speed unification equation provides a crucial bridge between spatial dynamics theory and modern physics, achieving deep integration and mutual confirmation between theories:
 
-Using the same values, we can calculate:
+1. **Theoretical self-consistency verification**: This equation is completely derived based on the first principles of spatial dynamics and maintains perfect self-consistency with the 17 core formulas of the theory, being a natural mathematical result of the theoretical system, demonstrating the intrinsic logical consistency of the theory.
+2. **Empirical agreement**: As shown in subsequent chapters, the $G$ value calculated through this equation is highly consistent with experimentally measured values, with a relative error of approximately 0.02%.
+3. **Conceptual innovation**: This derivation breaks the traditional concept that "gravity has nothing to do with electromagnetic phenomena," and for the first time connects the gravitational constant $G$ with the speed of light $c$ through the constant $Z$, providing a mathematical foundation for the unification of forces.
 
-$$K_z = 6.67430 \times 10^{-11} \times 299792458 = 0.020013 \, \text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$$
+### 11.3 Important Contributions to Unified Field Theory
+The gravitational-light speed unification equation has a core position in Zhang Xiangqian's Unified Field Theory:
 
-### 11.3 Theoretical Status Transformation of Gravitational Constant as a Derived Quantity
-
-The gravitational light speed unification equation marks a fundamental transformation in the theoretical status of the gravitational constant $G$. In classical physics, $G$ is regarded as a basic empirical constant that cannot be derived from other constants or principles. However, in Unified Field Theory, through the gravitational light speed unification equation, $G$ becomes a derived constant that can be expressed in terms of the more fundamental Zhang Xiangqian Constant $Z$ and the speed of light $c$.
-
-This transformation has important implications for theoretical physics: it suggests that gravity may have a deeper connection with the properties of space and light than previously thought, and provides a new approach for unifying gravity with other fundamental forces.
+(1) It reveals the intrinsic connection between gravity and electromagnetic force, providing a quantitative basis for the unification of these two fundamental forces
+(2) It unifies seemingly independent physical concepts such as mass, gravity, and light speed within the theoretical framework of spatial dynamics
+(3) It provides new ideas and mathematical tools for understanding the essence of space-time and exploring quantum gravity theory
 
 ## 12. Contribution of Gravitational Light Speed Unification Equation to Unified Field Theory
 
