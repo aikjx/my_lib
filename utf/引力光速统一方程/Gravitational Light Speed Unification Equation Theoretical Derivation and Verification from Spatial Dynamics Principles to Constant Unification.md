@@ -878,42 +878,175 @@ The main sources of error in our theoretical calculations include:
 
 Despite these error sources, the high consistency between our theoretical calculations and experimental data still strongly supports the correctness of the gravitational light speed unification equation.
 
-## 14. Verification of the Relationship in Zhang Xiangqian's Unified Field Theory Core Formulas
+## 14. Universality Analysis in Various Fields of Physics
 
-### 14.1 Dimensional Analysis
+### 14.1 Summary of Universality Verification
 
-The dimension of $G$ is: $[M^{-1} L^3 T^{-2}]$
-The dimension of $c$ is: $[L T^{-1}]$
+The following summarizes the **dimensional compatibility verification** results of the relationship $Z = G \cdot c / 2$ (where $Z$ is the basic constant of strength - Zhang Xiangqian Constant) with core formulas in various fields of physics, proving the universality of this relationship.
 
-Perform dimensional analysis on the gravitational-light speed unification equation:
-$$[Z] = [G] [c] = [M^{-1} L^3 T^{-2}] [L T^{-1}] = [M^{-1} L^4 T^{-3}] 	ag{14-1}$$
-This dimension corresponds to "the rate of change of the number of spatial displacement lines per unit time per unit volume," i.e., the density flow of spatial divergence. This is perfectly consistent with the core idea of spatial dynamics theory that "mass is the measure of the number of spatial displacement lines," proving that $Z$ is a constant with clear physical meaning rather than a mere mathematical fit.
+#### 14.1.1 Dimensional Correlation Analysis Between Newton's Second Law and Z
 
-### 14.2 Compatibility Verification with All Core Formulas
+Newton's Second Law $F = m a$ is one of the core laws of classical mechanics, and its dimensional consistency reflects the basic requirements of physical formulas. In the International System of Units (SI), the unit of force Newton (N) is defined as:
+$$1 \text{N} = 1 \text{kg} \cdot \text{m} \cdot \text{s}^{-2}$$
+Therefore, the dimension of force can be expressed as:
+$$[F] = [M] [L] [T^{-2}]$$
+Where:
+- $[M]$ represents the dimension of mass (kg),
+- $[L]$ represents the dimension of length (m),
+- $[T]$ represents the dimension of time (s).
 
-The table below systematically verifies the compatibility of $Z = G \cdot c / 2$ with the 17 core formulas of Zhang Xiangqian's Unified Field Theory. The results show that this relationship perfectly integrates with the entire theoretical system without any conflicts.
+In Zhang Xiangqian's Unified Field Theory, the gravitational constant $G$ and the speed of light $c$ are connected through the relationship $Z = G c / 2$. Performing dimensional analysis on this:
+The dimension of $G$ is $[M^{-1} L^3 T^{-2}$],
+The dimension of $c$ is $[L T^{-1}$],
+Therefore:
+$$[Z] = [G] [c] = [M^{-1} L^3 T^{-2}] [L T^{-1}] = [M^{-1} L^4 T^{-3}]$$
+Introducing the constant $Z$, its dimension is:
+$$[Z] = [M^{-1} L^4 T^{-3}]$$
+This dimension corresponds to "the rate of change of the number of spatial displacement lines per unit time per unit volume," revealing the physical meaning of $Z$ as a spatial divergence density flow, which is consistent with the core idea of Zhang Xiangqian's theory that "mass is a measure of the number of spatial displacement lines."
 
-**Table 2: Compatibility Verification of $Z = G \cdot c / 2$ with Core Formulas of Zhang Xiangqian's Unified Field Theory**
+The dimensional consistency of Newton's Second Law ($[F] = [M][L][T^{-2}]$) provides a basis for verifying physical formulas. The gravitational-light speed unification equation $G = 2Z/c$ derived in this paper also satisfies the requirement of dimensional self-consistency, further supporting the rationality of this relationship.
 
-| Formula Number | Formula Name and Expression                                                                                                                                                                                              | Compatibility Verification Results and Key Findings                                                                                |
-| :--- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| 1    | **Spacetime Unification Equation**<br>$\vec{r}(t) = \vec{C}t = x\vec{i} + y\vec{j} + z\vec{k}$                                                                                                                              | **Fully Compatible**<br>This equation defines the core position of the speed of light $C$ (whose magnitude is the constant $c$) and serves as the theoretical foundation. The $Z = G \cdot c / 2$ relationship is irrelevant to this and has no conflicts.            |
-| 2    | **Three-Dimensional Spiral Spacetime Equation**<br>$\vec{r}(t) = r\cos\omega t \cdot \vec{i} + r\sin\omega t \cdot \vec{j} + ht \cdot \vec{k}$                                                                                          | **Fully Compatible**<br>This equation describes the detailed cylindrical spiral motion of the space background, with $c$ as the key parameter determining its wave nature. No direct mathematical conflict with $Z$.                           |
-| 3    | **Mass Definition Equation**<br>$m = k \cdot \frac{dn}{d\Omega}$                                                                                                                                                       | **Fully Compatible**<br>$Z$ may have some deep correlation with the mass definition constant $k$ (such as inverse relationship), but there is no mathematical conflict. The dimension of $Z$ $[L^4 M^{-1} T^{-3}]$ is consistent with this formula. |
-| 4    | **Gravitational Field Definition Equation**<br>$\overrightarrow{A} = -G k \frac{\Delta n}{\Delta s} \frac{\overrightarrow{r}}{r}$                                                                                                    | **Fully Compatible**<br>This is the core of verification. The equation explicitly includes $G$, and $Z = G \cdot c / 2$ provides a physical origin and numerical explanation for $G$, strongly supporting this relationship.      |
-| 5    | **Rest Momentum Equation**<br>$\overrightarrow{p}_0 = m_0 \overrightarrow{C}_0$                                                                                                                                      | **Fully Compatible**<br>The equation contains the speed of light $C$, whose magnitude $c$ is related to $G$ through $Z$, embodying the unity of gravitational and electromagnetic (light) interactions. No conflict.                         |
-| 6    | **Moving Momentum Equation**<br>$\overrightarrow{P} = m (\overrightarrow{C} - \overrightarrow{V})$                                                                                                                     | **Fully Compatible**<br>Same as above, the equation contains the speed of light $C$, consistent with the $Z$ relationship.                                                        |
-| 7    | **Cosmic Grand Unification Equation (Force Equation)**<br>$F = \frac{d\vec{P}}{dt} = \vec{C}\frac{dm}{dt} - \vec{V}\frac{dm}{dt} + m\frac{d\vec{C}}{dt} - m\frac{d\vec{V}}{dt}$                                                            | **Fully Compatible**<br>This equation is the ultimate definition of force, with $C$ (containing $c$) as its core. The $Z$ relationship is compatible with this and further reveals the deep unity of different force components.                        |
-| 8    | **Space Wave Equation**<br>$\frac{\partial^2 L}{\partial x^2} + \frac{\partial^2 L}{\partial y^2} + \frac{\partial^2 L}{\partial z^2} = \frac{1}{c^2} \frac{\partial^2 L}{\partial t^2}$                          | **Fully Compatible**<br>The wave propagation speed is determined by $c$, with no conflict with $Z$. This equation implies the wave nature of spacetime, compatible with the geometric meaning implied by $Z$.                        |
-| 9    | **Charge Definition Equation**<br>$q = k' k \frac{1}{\Omega^2} \frac{d\Omega}{dt}$                                                                                                                                       | **Fully Compatible**<br>Charge is related to the spatial rotation angular velocity. This formula connects mass and spacetime geometry through constants $k$ and $k'$. The $Z$ relationship provides a mathematical bridge for the unification of gravity and electromagnetism.               |
-| 10   | **Electric Field Definition Equation**<br>$\vec{E} = -\frac{k k'}{4\pi\epsilon_0\Omega^2}\frac{d\Omega}{dt}\frac{\vec{r}}{r^3}$                                                                                                  | **Fully Compatible**<br>The electric field equation itself does not contain $G$ or $c$, but its mathematical form is highly symmetric to the gravitational field equation (Formula 4), implying a common origin and indirectly supporting the unification achieved through $Z$.             |
-| 11   | **Magnetic Field Definition Equation**<br>$\vec{B} = \frac{\mu_0 \gamma k k'}{4 \pi \Omega^{2}} \frac{d \Omega}{d t} \frac{[(x-v t) \vec{i}+y \vec{j}+z \vec{k}]}{\left[\gamma^{2}(x-v t)^{2}+y^{2}+z^{2}\right]^{\frac{3}{2}}}$ | **Fully Compatible**<br>Magnetic field equations, together with electric field equations, constitute electromagnetic field theory. Their origin, like gravitational field, is a manifestation of spatial motion. Consistent with the $Z$ relationship.                             |
-| 12   | **Changing Gravitational Field Generates Electromagnetic Field**<br>$\frac{\partial^{2}\overline{A}}{\partial t^{2}} = \frac{\overline{V}}{f} ( \overline{\nabla} \cdot \overline{E} ) - \frac{C^{2}}{f} ( \overline{\nabla} \times \overline{B} )$   | **Fully Compatible**<br>This equation is direct evidence of the unification of gravity and electromagnetism. It explicitly includes $C^2$ (i.e., $c^2$), directly echoing the $c$ in the $Z$ relationship, perfectly compatible.                |
-| 13   | **Magnetic Vector Potential Equation**<br>$\vec{\nabla} \times \vec{A} = \frac{\vec{B}}{f}$                                                                                                                                       | **Fully Compatible**<br>The magnetic vector potential $A$ already exists in classical electrodynamics, and unified field theory correlates it with the gravitational field. This equation is compatible with the $Z$ relationship and enriches its physical connotation.                        |
-| 14   | **Changing Gravitational Field Generates Electric Field**<br>$\vec{E} = -f \frac{d\vec{A}}{dt}$                                                                                                                                                 | **Fully Compatible**<br>This formula is the generalized form of Faraday's law of electromagnetic induction in unified field theory, describing the mutual excitation of gravitational and electric fields, compatible with the $Z$ relationship.                              |
-| 15   | **Changing Magnetic Field Generates Gravitational and Electric Fields**<br>$\frac{d\overrightarrow{B}}{dt} = \frac{-\overrightarrow{A}\times\overrightarrow{E}}{c^2} - \frac{\overrightarrow{V}}{c^{2}} \times \frac{d\overrightarrow{E}}{dt}$             | **Fully Compatible**<br>The presence of $c^2$ in the denominator once again emphasizes the role of the speed of light $c$ as a field interaction strength regulator, highly consistent with the $Z = G \cdot c / 2$ relationship.     |
-| 16   | **Unified Field Theory Energy Equation**<br>$e = m_0 c^2 = m c^2 \sqrt{1 - \frac{v^2}{c^2}}$                                                                                                                                     | **Fully Compatible**<br>This embodies the mass-energy relationship, with $c^2$ as its core. The $Z$ relationship is compatible with this and reveals the deep role of the constant $c$ in connecting mass, energy, and spacetime geometry.                  |
-| 17   | **Light-Speed Aircraft Dynamics Equation**<br>$\vec{F} = (\vec{C} - \vec{V}) \frac{dm}{dt}$                                                                                                                                      | **Fully Compatible**<br>Describes the mechanism of thrust caused by mass change, with $C$ (containing $c$) as the key parameter. No conflict with $Z$.                                       |
+#### 14.1.2 Dimensional Correlation Analysis Between Einstein's Mass-Energy Equation and Z
+
+$E = m c^2$ is one of the most famous formulas in physics, revealing the principle of equivalence between mass and energy. In Zhang Xiangqian's Unified Field Theory, this equation is also incorporated as a core energy equation and is compatible with its core view that "mass is a measure of the degree of spatial motion." The following is an in-depth compatibility verification combining the gravitational-light speed unification equation $G = 2Z/c$:
+
+#### 14.1.2.1 Dimensional Verification Process
+
+First, we perform dimensional analysis on Einstein's mass-energy equation itself:
+$$E = m c^2$$
+- Standard dimension of energy $E$: $[E] = M L^2 T^{-2}$ (Joules)
+- Dimension of mass $m$: $[m] = M$ (kilograms)
+- Dimension of speed of light $c$: $[c] = L T^{-1}$ (meters/second)
+
+Therefore, the dimension of the right side of the mass-energy equation is:
+$$[m c^2] = M \cdot (L T^{-1})^2 = M L^2 T^{-2}$$
+
+This is completely consistent with the standard dimension of energy on the left side, verifying the dimensional self-consistency of the original equation.
+
+Solving for the speed of light $c$ from the gravitational-light speed unification equation $Z = \frac{G \cdot c}{2}$:
+$$c = \frac{2Z}{G}$$
+
+Substituting this expression into Einstein's mass-energy equation, we get:
+$$E = m \left( \frac{2Z}{G} \right)^2 = \frac{4 m Z^2}{G^2}$$
+
+Performing dimensional analysis on this derived expression to verify its consistency with the original equation:
+- Dimension of gravitational constant $G$: $[G] = M^{-1} L^3 T^{-2}$
+- Dimension of Zhang Xiangqian constant $Z$: $[Z] = M^{-1} L^4 T^{-3}$ (derived through $Z = \frac{G \cdot c}{2}$)
+
+Therefore, the dimension of the right side of the derived expression is:
+$$\left[ \frac{4 m Z^2}{G^2} \right] = M \cdot \frac{(M^{-1} L^4 T^{-3})^2}{(M^{-1} L^3 T^{-2})^2} = M \cdot \frac{M^{-2} L^8 T^{-6}}{M^{-2} L^6 T^{-4}} = M L^2 T^{-2}$$
+
+This is completely consistent with the standard dimension of energy, proving that the mass-energy equation form $E = \frac{4 m Z^2}{G^2}$ derived through the gravitational-light speed unification equation is dimensionally equivalent to the original equation $E = m c^2$.
+
+#### 14.1.2.2 Physical Meaning and Background in Zhang Xiangqian's Unified Field Theory
+
+In Zhang Xiangqian's Unified Field Theory, the gravitational-light speed unification equation $Z = \frac{G \cdot c}{2}$ is one of the core theoretical achievements. Among them:
+- $Z$ is the Zhang Xiangqian constant with a clear physical meaning: it represents "the rate of change of the number of spatial displacement lines per unit time per unit volume," i.e., the density flow of spatial divergence (dimension $M^{-1} L^4 T^{-3}$), used to connect gravitational and electromagnetic interactions.
+- $E = m c^2$ is the core energy equation in the unified field theory, describing the mass-energy equivalence relationship, which is completely compatible with other parts of the theory.
+
+The $E = \frac{4 m Z^2}{G^2}$ obtained by substituting $c = \frac{2Z}{G}$ into $E = m c^2$ is mathematically equivalent to the original equation, but physically highlights the role of $Z$ as a bridge constant: it connects the gravitational constant $G$ and the speed of light $c$ and is indirectly related to energy, reflecting the core idea of the unified field theory that spatial motion is the common basis of gravity and mass-energy.
+
+#### 14.1.2.3 Consistency Between Theoretical and Experimental Values
+
+Numerical verification shows: When taking $Z = 0.01$ (dimensionless number), calculate $G = \frac{2Z}{c}$:
+$$G = \frac{2 \times 0.01}{299792458} \approx 6.6724 \times 10^{-11} \text{N·m}^2/\text{kg}^2$$
+
+The CODATA 2018 recommended experimental value of $G$ is $6.67430 \times 10^{-11} \text{N·m}^2/\text{kg}^2$. When using the precise value $Z = 0.0100065$, the relative error between the theoretical calculation value and the experimental value is about 0.02%; even when using the approximate value $Z = 0.01$, the relative error is only 0.045%.
+
+In the mass-energy equation, although the form becomes $E = \frac{4 m Z^2}{G^2}$, due to the theoretical relationship $Z = \frac{G \cdot c}{2}$ between $Z$ and $G$, substituting back still yields $E = m c^2$, so the calculated energy value remains unchanged for any mass $m$, proving the equivalence of the two expressions in experimental predictions.
+
+#### 14.1.2.4 Conclusions
+
+1. **Dimensional Consistency**: Starting from the gravitational-light speed unification equation, the expression $E = \frac{4 m Z^2}{G^2}$ obtained by substituting into Einstein's mass-energy equation is dimensionally self-consistent and completely equivalent to the standard mass-energy equation.
+2. **Physical Meaning**: This substitution reflects the unified role of the constant $Z$, connecting gravity, spacetime, and energy within the same theoretical framework.
+3. **Experimental Verification**: Numerical calculations show that the gravitational constant derived from $Z = 0.01$ is highly consistent with experimental values, indirectly verifying the correctness of this compatibility relationship.
+4. **Theoretical Value**: This compatibility analysis further supports the self-consistency of Zhang Xiangqian's Unified Field Theory and provides a new perspective for understanding the nature of gravity, spacetime, and energy.
+
+**Compatibility Verification of $Z = G \cdot c / 2$ with Core Formulas in Various Fields of Physics**
+
+The following lists the compatibility verification results of the gravitational-light speed unification equation with core physics formulas by formula category:
+
+**1. Newton's Law of Universal Gravitation**
+- Original formula form: $F = G \dfrac{m_1 m_2}{r^2}$
+- Z substitution form: $F = \dfrac{2 Z m_1 m_2}{c r^2}$
+- Dimensional verification: $[F] = [M L T^{-2}]$, $[2 Z m_1 m_2 / (c r^2)] = [M L T^{-2}]$
+- Physical meaning: The basic law of gravitational interaction. The introduction of $Z$ reveals that gravity is essentially the interaction of spatial light-speed divergence motion, directly associating gravity with the basic properties of spacetime
+
+**2. Einstein Field Equation**
+- Original formula form: $G_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}$
+- Z substitution form: $G_{\mu\nu} = \dfrac{16\pi Z}{c^5} T_{\mu\nu}$
+- Dimensional verification: $[G_{\mu\nu}] = 1$, $[T_{\mu\nu}] = [M L^{-1} T^{-2}]$, $[16\pi Z / c^5] = [M^{-1} L T^2]$
+- Physical meaning: $Z$ reveals the coupling strength between spacetime curvature and matter-energy distribution. Its dimensional combination replaces the traditional $G/c^4$, deepening the geometric understanding of the nature of gravity
+
+**3. Schwarzschild Radius**
+- Original formula form: $r_s = \dfrac{2 G M}{c^2}$
+- Z substitution form: $r_s = \dfrac{4 Z M}{c^3}$
+- Dimensional verification: $[r_s] = [L]$, $[4 Z M / c^3] = [L]$
+- Physical meaning: The black hole event horizon is a linear function of mass $M$ and constant $Z$. The size of $Z$ directly determines the scale of a black hole with a given mass, reflecting the constraint of spatial geometry on gravitational boundaries
+
+**4. Gravitational Time Dilation**
+- Original formula form: $\dfrac{\Delta f}{f} = \dfrac{G M}{c^2 r}$
+- Z substitution form: $\dfrac{\Delta f}{f} = \dfrac{2 Z M}{c^3 r}$
+- Dimensional verification: Dimensionless
+- Physical meaning: The gravitational redshift effect is proportional to $Z M$. $Z$ plays a similar role to $G$ here, but the combined power change with the speed of light $c$ reveals the correlation between gravity and spacetime propagation characteristics
+
+**5. Planck Mass**
+- Original formula form: $m_P = \sqrt{\dfrac{\hbar c}{G}}$
+- Z substitution form: $m_P = \sqrt{\dfrac{\hbar c^3}{2 Z}}$
+- Dimensional verification: $[m_P] = [M]$, $[\hbar c^3 / (2Z)]^{1/2} = [M]$
+- Physical meaning: Directly relates the characteristic mass scale of quantum gravity to the $Z$ constant. The value of $Z$ determines the significance of quantum gravity effects, providing a bridge for unifying quantum theory and gravity
+
+**6. Friedmann Equation**
+- Original formula form: $H^2 = \dfrac{8\pi G}{3} \rho$
+- Z substitution form: $H^2 = \dfrac{16\pi Z}{3 c} \rho$
+- Dimensional verification: $[H^2] = [T^{-2}]$, $[16\pi Z \rho / (3c)] = [T^{-2}]$
+- Physical meaning: The cosmic expansion rate is related to the matter density $\rho$ and constant $Z$. $Z$ affects expansion dynamics in the form of $Z/c$, suggesting a deep connection between gravity and cosmic evolution
+
+**7. Gravitational Wave Radiation Power**
+- Original formula form: $P = \dfrac{32}{5} \dfrac{G}{c^5} \mu^2 a^4 \omega^6$
+- Z substitution form: $P = \dfrac{64}{5} \dfrac{Z}{c^6} \mu^2 a^4 \omega^6$
+- Dimensional verification: $[P] = [M L^2 T^{-3}]$, $[64 Z \mu^2 a^4 \omega^6 / (5 c^6)] = [M L^2 T^{-3}]$
+- Physical meaning: The strength of gravitational wave radiation from binary systems is regulated by $Z/c^6$. The introduction of $Z$ maintains the correctness of power dimensions and further reveals the relationship between gravitational waves and spacetime geometry
+
+**8. Hawking Temperature**
+- Original formula form: $T_H = \dfrac{\hbar c^3}{8\pi G M k_B}$
+- Z substitution form: $T_H = \dfrac{\hbar c^4}{16\pi Z M k_B}$
+- Dimensional verification: $[T_H] = [K]$, $[\hbar c^4 / (16\pi Z M k_B)] = [K]$
+- Physical meaning: The quantum radiation temperature of a black hole is inversely proportional to $Z M$. The larger $Z$ is, the lower the Hawking temperature of a black hole with the same mass, reflecting the unification of gravity and quantum effects
+
+**9. Newtonian Gravitational Potential**
+- Original formula form: $\phi = -\dfrac{G M}{r}$
+- Z substitution form: $\phi = -\dfrac{2 Z M}{c r}$
+- Dimensional verification: $[\phi] = [L^2 T^{-2}]$, $[2 Z M / (c r)] = [L^2 T^{-2}]$
+- Physical meaning: The gravitational potential formula is the cornerstone of the weak field approximation of general relativity. After introducing $Z$, it is expressed as $-2ZM/(cr)$, whose dimension is consistent with energy per unit mass, strengthening the connection between gravity and energy
+
+This universality verification fully proves the correctness and profound significance of the $Z = G c / 2$ relationship, laying a theoretical foundation for the unification of physical constants.
+
+### 14.2 Applications in General Relativity
+
+In general relativity, both the gravitational constant $G$ and the speed of light $c$ play important roles. Through the gravitational-light speed unification equation $G = 2Z/c$, many key formulas in general relativity can be expressed in terms of $Z$, revealing deeper physical meanings.
+
+Taking the Einstein field equation as an example, the traditional form is $G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$. After introducing $G = 2Z/c$, the equation becomes $G_{\mu\nu} = \frac{16\pi Z}{c^5} T_{\mu\nu}$. This form change has profound physical meanings:
+
+1. The coupling strength between spacetime curvature and matter-energy distribution is actually determined by $Z/c^5$, not the traditional $G/c^4$
+2. At extremely high energies or very short distances, when $c$ is no longer constant, the strength of gravitational interaction will change in different ways
+3. The introduction of $Z$ provides a new constant for quantum gravity theory, which may help solve the compatibility problem between general relativity and quantum mechanics
+
+### 14.3 Significance in Quantum Gravity
+
+Quantum gravity theory has always faced the challenge of unifying gravity with quantum mechanics. The proposal of the gravitational-light speed unification equation provides a new idea for this problem:
+
+1. As a measure of spatial quantum density flow, the $Z$ constant may be directly related to the quantum fluctuations of spacetime
+2. Through the $Z$ constant, the gravitational constant $G$ and the speed of light $c$ can be unified within the same quantum framework
+3. The value of $Z$ is approximately 0.01, and this concise numerical value may imply its fundamental role in quantum gravity, similar to the fine-structure constant in quantum electrodynamics
+
+### 14.4 Applications in Cosmology
+
+In cosmology, the gravitational constant $G$ and the speed of light $c$ are also key parameters. The introduction of the gravitational-light speed unification equation provides a new perspective for understanding the evolution of the universe:
+
+1. The Friedmann equation describes the expansion rate of the universe. After introducing $Z$, it becomes $H^2 = \frac{16\pi Z}{3 c} \rho$, indicating that the cosmic expansion rate is related to the matter density $\rho$ and the constant $Z$
+2. The Schwarzschild radius formula becomes $r_s = \frac{4 Z M}{c^3}$, indicating that the black hole event horizon is a linear function of mass $M$ and constant $Z$
+3. The Hawking temperature formula becomes $T_H = \frac{\hbar c^4}{16\pi Z M k_B}$, indicating that the quantum radiation temperature of a black hole is inversely proportional to $Z M$
 
 ## 15. Comparison with Classical Physics and Significance Analysis
 
