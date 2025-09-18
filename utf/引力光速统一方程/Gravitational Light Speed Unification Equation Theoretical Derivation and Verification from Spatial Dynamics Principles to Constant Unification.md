@@ -382,41 +382,47 @@ $$\oint_S \mathbf{g} \cdot d\mathbf{S} = -4\pi G \int_V \rho \, dV = -4\pi G M \
 
 where $M$ is the total mass enclosed by the closed surface $S$. This result is consistent with the conclusions of Newton's law of universal gravitation, verifying the applicability of Gauss's theorem in gravitational field.
 
-## 6. Re-derivation of Newton's Law of Universal Gravitation
+## 6 Re-derivation of Newton's Law of Universal Gravitation
 
-### 6.1 Spherical Symmetric Gravitational Field
+### 6.1 Derivation Based on Gauss's Theorem
 
-To re-derive Newton's law of universal gravitation based on spatial dynamics theory, we first consider a spherical symmetric gravitational field. For a point mass $M$ located at the origin, the gravitational field around it should be spherically symmetric, that is, the gravitational field strength at any point depends only on the distance $r$ from that point to the origin.
+Based on the application result of Gauss's theorem (5-7), we can re-derive Newton's law of universal gravitation. For a spherically symmetric gravitational field, due to symmetry, the gravitational field $\mathbf{g}$ has only a radial component, and its magnitude is the same at all points on the spherical surface. Therefore, the closed surface integral of the gravitational field can be simplified as:
 
-According to Gauss's law for gravitational fields, if we take a spherical Gaussian surface with radius $r$ centered at the origin, the gravitational flux through this surface is:
+$$\oint_S \mathbf{g} \cdot d\mathbf{S} = 4\pi r^2 g \tag{6-1}$$
 
-$$\oint_S \vec{g} \cdot d\vec{S} = -4\pi G M$$
+where $r$ is the radius of the spherical surface, and $g$ is the magnitude of the gravitational field.
 
-Due to spherical symmetry, the gravitational field strength $\vec{g}$ is parallel to the surface normal vector at every point on the Gaussian surface, and its magnitude is constant. Therefore, the left side of the equation can be simplified to:
+Combining with formula (5-7), we get:
 
-$$\oint_S \vec{g} \cdot d\vec{S} = g \cdot 4\pi r^2$$
+$$4\pi r^2 g = -4\pi G M \tag{6-2}$$
 
-### 6.2 Inverse Square Law of Gravitational Field
+Solving for the magnitude of the gravitational field:
 
-Combining the above two formulas, we can solve for the gravitational field strength:
+$$g = -\frac{G M}{r^2} \tag{6-3}$$
 
-$$g = -\frac{G M}{r^2}$$
+The negative sign indicates that the direction of the gravitational field points to the center of mass.
 
-This is the inverse square law of the gravitational field, where the negative sign indicates that the direction of the gravitational field points to the center of the mass.
+### 6.2 Calculation of Gravitational Force
 
-### 6.3 Newton's Law of Universal Gravitation
+When a mass $m$ is placed in a gravitational field, the gravitational force it experiences is:
 
-According to the definition of gravitational field strength, the gravitational force $\vec{F}$ acting on a mass $m$ in a gravitational field is:
+$$F = m g = -\frac{G M m}{r^2} \tag{6-4}$$
 
-$$\vec{F} = m \cdot \vec{g}$$
+The magnitude of this force is the well-known Newton's law of universal gravitation:
 
-Substituting the expression for gravitational field strength, we get:
+$$F = \frac{G M m}{r^2} \tag{6-5}$$
 
-$$\vec{F} = -\frac{G M m}{r^2} \hat{r}$$
+### 6.3 Symbol Conventions and Standard Form
 
-This is Newton's law of universal gravitation, where $\hat{r}$ is the unit vector pointing from the mass $m$ to the mass $M$.
+The gravitational expression derived in this section
 
-The re-derivation of Newton's law of universal gravitation based on spatial dynamics theory not only confirms the correctness of classical gravitational theory but also reveals the physical mechanism behind gravitational phenomena: gravity is an effect caused by the divergence of spatial motion.
+$$F = \frac{G M m}{r^2} \tag{6-6}$$
+
+is mathematically and physically equivalent to another standard form widely used in physics literature:
+
+$$F = G \frac{m_1 m_2}{R^2} \tag{6-7}$$
+
+To maintain consistency with the mass symbols established in subsequent theoretical derivations and to clarify the symmetry of the two interacting masses, this paper uniformly adopts the expression $F = G \frac{m_1 m_2}{R^2}$. Here, $m_1$ and $m_2$ represent the masses of the two interacting particles, and $R$ denotes the distance between the two particles. This choice conforms to the common convention of Newton's law of universal gravitation in physics literature.
 
 ## 7. Geometric Contact Model of Spatial Motion
 
