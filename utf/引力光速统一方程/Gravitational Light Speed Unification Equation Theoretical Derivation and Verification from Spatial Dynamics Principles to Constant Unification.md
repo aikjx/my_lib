@@ -300,46 +300,36 @@ Based on the spacetime identity equation, we can establish a unified measurement
 
 Through the above analysis, we have established a complete theoretical system for spatial dynamics, providing solid theoretical foundations for the subsequent derivation and verification of the gravitational-light speed unification equation.
 
-## 4. Geometric Description of Gravitational Field
+## 4 Geometric Description of Gravitational Field
+
+The geometric description of gravitational field is a key link in spatial dynamics theory. It establishes the connection between the geometric properties of spatial motion and gravitational phenomena, laying the mathematical foundation for deriving the gravitational-light speed unification equation.
 
 ### 4.1 Definition of Gravitational Field
 
 In Zhang Xiangqian's Unified Field Theory, the gravitational field is defined as the manifestation of the motion state of space itself (density of displacement lines). The gravitational field can be defined as:
-
 $$\mathbf{A} = -\left( \frac{G m}{r^3} \right) \mathbf{R} \tag{4-1}$$
-
 or equivalently:
-
 $$\mathbf{A} = -\left( \frac{n}{4\pi r^3} \right) \mathbf{R} \tag{4-2}$$
-
 where $\mathbf{R}$ is the radial vector, $r$ is the distance, and $n$ is the number of spatial displacement vectors. Newton's universal gravitation can be interpreted as an effect exhibited by objects in moving space.
 
 ### 4.2 Geometric Description of Gravitational Field
 
-According to the spatial motion postulate, space around an object with mass M diverges outward at the speed of light c. This divergent motion can be described mathematically using flux:
-
+According to the spatial motion postulate, space around an object with mass $M$ diverges outward at the speed of light $c$. This divergent motion can be described mathematically using flux:
 $$\Phi = \oint_S \mathbf{C} \cdot d\mathbf{S} \tag{4-2}$$
-
-where S is a closed surface enclosing the object, and $d\mathbf{S}$ is the area element vector of the surface.
+where $S$ is a closed surface enclosing the object, and $d\mathbf{S}$ is the area element vector of the surface.
 
 For a spherically symmetric gravitational field, due to symmetry, the vector light speed $\mathbf{C}$ has only a radial component, so the flux can be simplified to:
-
 $$\Phi = 4\pi r^2 C_r \tag{4-3}$$
-
 where $C_r$ is the radial component of the vector light speed.
 
 ### 4.3 Relationship Between Mass Density and Spatial Motion Quantity
 
 From the mass definition equation, we can naturally derive the local relationship between mass density $\rho$ and spatial displacement line density:
-
 $$\rho = k \frac{\Delta n}{\Delta s} \tag{4-4}$$
-
 Here, $\frac{\Delta n}{\Delta s}$ can be understood as the rate of change of spatial displacement lines per unit length and unit volume, which is equivalent to mass density $\rho$ through the constant $k$. This relationship establishes a local correspondence between microscopic geometric properties and macroscopic physical quantities.
 
 Substituting the above relationship into the gravitational field definition equation, we get:
-
 $$\mathbf{g} = -G \rho \frac{\mathbf{r}}{r} \tag{4-5}$$
-
 This equation describes how local mass density $\rho$ generates local gravitational field $\mathbf{g}$, laying the foundation for subsequent application of Gauss's theorem in field theory.
 
 ## 5 Proof of Gauss's Theorem
