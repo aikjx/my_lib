@@ -6,7 +6,7 @@
 
 Based on the first principles of Zhang Xiangqian's Unified Field Theory, this paper rigorously mathematically derives and physically models, for the first time, a profound quantitative relationship between the gravitational constant $G$ and the speed of light $c$, establishing the landmark Gravitational Light Speed Unification Equation:
 $$Z = \frac{Gc}{2}$$
-Here, the gravitational-light speed unification constant $Z$  is the Zhang Xiangqian Constant, whose physical meaning is the rate of change of the number of spatial displacement lines per unit time and unit volume (density flow of spatial divergence), with dimensions $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $	ext{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$).
+Here, the gravitational-light speed unification constant $Z$  is the Zhang Xiangqian Constant, whose physical meaning is the rate of change of the number of spatial displacement lines per unit time and unit volume (density flow of spatial divergence), with dimensions $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $\text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$).
 
 **Core Research Achievements**: 
 1. **High Agreement Between Theory and Experiment**: When using the precise value $Z = 0.0100065 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$ , the theoretically calculated gravitational constant is highly consistent with the CODATA 2018 recommended value, with a relative error of only 0.02%; even with the approximate value $Z = 0.01$ , the error is only 0.045%, demonstrating extremely high prediction accuracy.
@@ -14,7 +14,7 @@ Here, the gravitational-light speed unification constant $Z$  is the Zhang Xiang
 3. **Cross-disciplinary Universality Verification**: Systematic analysis shows that this equation can naturally integrate into core formulas of multiple physics fields such as general relativity (Einstein field equations, Schwarzschild radius), quantum gravity (Planck mass), cosmology (Friedmann equation), and Newtonian mechanics, demonstrating wide applicability and unity.
 
 **Scientific Significance and Innovative Value**: 
-This research breaks through the traditional cognition since Newton that "the gravitational constant $G$ is a basic empirical constant that cannot be derived," and for the first time reveals the physical origin of the gravitational constant from first principles, constructing a mathematical bridge for the unification of gravity and electromagnetic force. By defining mass as a measure of the number of spatial displacement lines and revealing that gravity originates from the geometric effect of spatial light-speed divergent motion, this theory provides a revolutionary geometric perspective for understanding the essence of spacetime, matter, and forces, which is expected to trigger profound changes in the basic physics framework. At the same time, the Zhang Xiangqian Constant $Z$ , as a key constant connecting gravitational and electromagnetic interactions, also provides a solid mathematical and physical foundation for "artificial field technology," with far-reaching significance for the future development of interstellar civilizations.
+This research breaks through the traditional cognition since Newton that "the gravitational constant $G$ is a basic empirical constant that cannot be derived," and for the first time reveals the physical origin of the gravitational constant from first principles, constructing a mathematical bridge for the unification of gravity and electromagnetic force. By defining mass as a measure of the number of spatial displacement lines and revealing that gravity originates from the geometric effect of spatial light-speed divergent motion, this theory provides a revolutionary geometric perspective for understanding the essence of spacetime, matter, and forces, which is expected to trigger profound changes in the basic physics framework. At the same time, the Zhang Xiangqian Constant $Z$ , as a key constant connecting gravitational and electromagnetic interactions, also provides a solid mathematical and physical foundation for "Artificial field technology," with far-reaching significance for the future development of interstellar civilizations.
 
 **Keywords**: Gravitational Light Speed Unification Equation; Zhang Xiangqian's Unified Field Theory; Spatial Dynamics; Gravitational Constant; Speed of Light; Zhang Xiangqian Constant; General Relativity; Quantum Gravity; Space; Matter; Constant Unification
 
@@ -1250,39 +1250,36 @@ The relationship $Z = \frac{G \cdot c}{2}$ (equation 10-5) (gravitational light 
 
 ## 17. References
 
-### Chinese References
-1. Zhang, X. Q. Unified Field Theory (Academic Edition) : Extraterrestrial Technology, 2025. Tongda Town, Lujiang County, Hefei City, Anhui Province, China.
-2. Beran, L. L., Zhu, B. J., & Zhang, X. Q. (2025). The Motion of Space: A Spiral Geometry for Unifying Constants and Predicting Physical Phenomena [M], 2025
-3. Fu, K. Analysis of the Relationship between Gravitational Constant and Speed of Light Based on Zhang Xiangqian's Unified Field Theory [EB/OL]. WeChat Official Account, 2025. https://mp.weixin.qq.com/s/93Lp5CazFLZWpx8DDGitFg.
-4. Mo, G. Z., & Zhang, X. Q. Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence [M]. 2025.
-5. Zhang, X. Q., & Xu, Y. C. Gravitational Field Generated by Electromagnetic Changes and Object Motion [M]. 2025.
-6. Lee, T. D., & Yang, C. N. Question of Parity Conservation in Weak Interactions. Physical Review [J], 1956.
-
-### English References
-7. CODATA. CODATA Recommended Values of the Fundamental Physical Constants: 2018[J]. Reviews of Modern Physics, 2019, 91(2): 025010.
-8. Dirac, P. A. M. The Cosmological Constants[J]. Nature, 1937, 139(3512): 323-323.
-9. Einstein, A. The Foundation of the General Theory of Relativity[J]. Annalen der Physik, 1916, 354(7): 769-822.
-10. Friedmann, A. Über die Krümmung des Raumes[J]. Zeitschrift für Physik, 1922, 10(1): 377-386.
-11. Guth, A. H. The Inflationary Universe: A Possible Solution to the Horizon and Flatness Problems[J]. Physical Review D, 1981, 23(2): 347-356.
-12. Hawking, S. W. Particle Creation by Black Holes[J]. Communications in Mathematical Physics, 1975, 43(3): 199-220.
-13. Hawking, S. W., & Ellis, G. F. R. The Large Scale Structure of Space-Time[M]. Cambridge: Cambridge University Press, 1973.
-14. 't Hooft, G. Dimensional Reduction in Quantum Gravity[J]. arXiv preprint gr-qc/9310026, 1993.
-15. Kerr, R. P. Gravitational Field of a Spinning Mass as an Example of Algebraically Special Metrics[J]. Physical Review Letters, 1963, 11(5): 237-238.
-16. Landau, L. D., & Lifshitz, E. M. The Classical Theory of Fields[M]. Moscow: Nauka, 1973.
-17. Maldacena, J. M. The Large N Limit of Superconformal Field Theories and Supergravity[J]. Advances in Theoretical and Mathematical Physics, 1998, 2(2): 231-252.
-18. Newman, E. T., Couch, E., Chinnapared, S., et al. Metric of a Rotating, Charged Mass[J]. Journal of Mathematical Physics, 1965, 6(6): 918-919.
-19. Newton, I. Philosophiæ Naturalis Principia Mathematica[M]. London: Royal Society, 1687.
-20. Penrose, R. The Road to Reality: A Complete Guide to the Laws of the Universe[M]. New York: Vintage Books, 2004.
-21. Planck, M. Zur Theorie des Gesetzes der Energyverteilung im Normalspectrum[J]. Verhandlungen der Deutschen Physikalischen Gesellschaft, 1900, 2(1): 237-245.
-22. Schwarzschild, K. On the Gravitational Field of a Mass Point According to Einstein's Theory[J]. Sitzungsberichte der Königlich Preussischen Akademie der Wissenschaften, 1916, 1: 189-196.
-23. Verlinde, E. P. On the Origin of Gravity and the Laws of Newton[J]. Journal of High Energy Physics, 2011, 2011(4): 1-29.
-24. Weinberg, S. Gravitation and Cosmology[M]. New York: Wiley, 1972.
-25. Wheeler, J. A. Geons[J]. Physical Review, 1955, 97(2): 511-536.
-26. Feynman, R. P., Leighton, R. B., & Sands, M. The Feynman Lectures on Physics[M]. Reading, Massachusetts: Addison-Wesley, 1964.
-27. Segre, E. Nuclei and Particles: An Introduction to Nuclear and Subnuclear Physics[M]. W. A. Benjamin, 1977.
-28. Reif, F. Fundamentals of Statistical and Thermal Physics[M]. McGraw-Hill, 1965.
-29. Landau, L. D., & Lifshitz, E. M. Fluid Mechanics[M]. Butterworth-Heinemann, 1987.
-30. Misner, C. W., Thorne, K. S., & Wheeler, J. A. Gravitation[M]. W. H. Freeman and Company, 1973.
+1. Zhang, X. Q. (2025). Unified Field Theory (Academic Edition) : Extraterrestrial Technology. Tongda Town, Lujiang County, Hefei City, Anhui Province, China.
+2. Beran, L. L., Zhu, B. J., & Zhang, X. Q. (2025). The Motion of Space: A Spiral Geometry for Unifying Constants and Predicting Physical Phenomena [M].
+3. Fu, K. (2025). Analysis of the Relationship between Gravitational Constant and Speed of Light Based on Zhang Xiangqian's Unified Field Theory [EB/OL]. WeChat Official Account. https://mp.weixin.qq.com/s/93Lp5CazFLZWpx8DDGitFg.
+4. Mo, G. Z., & Zhang, X. Q. (2025). Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence [M].
+5. Zhang, X. Q., & Xu, Y. C. (2025). Gravitational Field Generated by Electromagnetic Changes and Object Motion [M].
+6. Lee, T. D., & Yang, C. N. (1956). Question of Parity Conservation in Weak Interactions [J]. Physical Review.
+7. CODATA (2019). CODATA Recommended Values of the Fundamental Physical Constants: 2018 [J]. Reviews of Modern Physics, 91(2): 025010.
+8. Dirac, P. A. M. (1937). The Cosmological Constants [J]. Nature, 139(3512): 323-323.
+9. Einstein, A. (1916). The Foundation of the General Theory of Relativity [J]. Annalen der Physik, 354(7): 769-822.
+10. Friedmann, A. (1922). Über die Krümmung des Raumes [J]. Zeitschrift für Physik, 10(1): 377-386.
+11. Guth, A. H. (1981). The Inflationary Universe: A Possible Solution to the Horizon and Flatness Problems [J]. Physical Review D, 23(2): 347-356.
+12. Hawking, S. W. (1975). Particle Creation by Black Holes [J]. Communications in Mathematical Physics, 43(3): 199-220.
+13. Hawking, S. W., & Ellis, G. F. R. (1973). The Large Scale Structure of Space-Time [M]. Cambridge: Cambridge University Press.
+14. 't Hooft, G. (1993). Dimensional Reduction in Quantum Gravity [J]. arXiv preprint gr-qc/9310026.
+15. Kerr, R. P. (1963). Gravitational Field of a Spinning Mass as an Example of Algebraically Special Metrics [J]. Physical Review Letters, 11(5): 237-238.
+16. Landau, L. D., & Lifshitz, E. M. (1973). The Classical Theory of Fields [M]. Moscow: Nauka.
+17. Maldacena, J. M. (1998). The Large N Limit of Superconformal Field Theories and Supergravity [J]. Advances in Theoretical and Mathematical Physics, 2(2): 231-252.
+18. Newman, E. T., Couch, E., Chinnapared, S., et al. (1965). Metric of a Rotating, Charged Mass [J]. Journal of Mathematical Physics, 6(6): 918-919.
+19. Newton, I. (1687). Philosophiæ Naturalis Principia Mathematica [M]. London: Royal Society.
+20. Penrose, R. (2004). The Road to Reality: A Complete Guide to the Laws of the Universe [M]. New York: Vintage Books.
+21. Planck, M. (1900). Zur Theorie des Gesetzes der Energyverteilung im Normalspectrum [J]. Verhandlungen der Deutschen Physikalischen Gesellschaft, 2(1): 237-245.
+22. Schwarzschild, K. (1916). On the Gravitational Field of a Mass Point According to Einstein's Theory [J]. Sitzungsberichte der Königlich Preussischen Akademie der Wissenschaften, 1: 189-196.
+23. Verlinde, E. P. (2011). On the Origin of Gravity and the Laws of Newton [J]. Journal of High Energy Physics, 2011(4): 1-29.
+24. Weinberg, S. (1972). Gravitation and Cosmology [M]. New York: Wiley.
+25. Wheeler, J. A. (1955). Geons [J]. Physical Review, 97(2): 511-536.
+26. Feynman, R. P., Leighton, R. B., & Sands, M. (1964). The Feynman Lectures on Physics [M]. Reading, Massachusetts: Addison-Wesley.
+27. Segre, E. (1977). Nuclei and Particles: An Introduction to Nuclear and Subnuclear Physics [M]. W. A. Benjamin.
+28. Reif, F. (1965). Fundamentals of Statistical and Thermal Physics [M]. McGraw-Hill.
+29. Landau, L. D., & Lifshitz, E. M. (1987). Fluid Mechanics [M]. Butterworth-Heinemann.
+30. Misner, C. W., Thorne, K. S., & Wheeler, J. A. (1973). Gravitation [M]. W. H. Freeman and Company.
 
 
 <br/>  
