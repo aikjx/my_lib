@@ -296,27 +296,47 @@ where, $\hat{\mathbf{C}}$ is the unit vector of vector light speed. This express
 
 Through the detailed exposition in this chapter, we have established the basic framework of spatial dynamics theory, including the mathematical description of spatial motion, the geometric definition of mass, and the connotation of spacetime identity. These theoretical foundations lay the mathematical and physical basis for the subsequent derivation of the gravitational-light speed unification equation.
 
-## 4. Geometric Origin of Gravitational Field
+## 4. Geometric Description of Gravitational Field
 
-### 4.1 Definition of Gravitational Field Based on Spatial Divergence
+### 4.1 Definition of Gravitational Field
 
-According to Postulate 4 of spatial dynamics theory, the gravitational field is a manifestation of the divergence of spatial motion. This definition provides us with a new perspective to understand the nature of gravity.
+In Zhang Xiangqian's Unified Field Theory, the gravitational field is defined as the manifestation of the motion state of space itself (density of displacement lines). The gravitational field can be defined as:
 
-In vector analysis, divergence represents the source or sink of a vector field. In the context of spatial dynamics, the divergence of spatial velocity field represents the rate at which space is "created" or "annihilated" per unit volume. For a gravitational field, the gravitational field strength at any point is proportional to the divergence of the spatial velocity at that point:
+$$\mathbf{A} = -\left( \frac{G m}{r^3} \right) \mathbf{R} \tag{4-1}$$
 
-$$\vec{g} = -\gamma \cdot \nabla \cdot \vec{v}$$
+or equivalently:
 
-Where $\gamma$ is the proportionality constant, and the negative sign indicates that the direction of the gravitational field is opposite to the direction of spatial divergence (gravity points to the direction of spatial convergence).
+$$\mathbf{A} = -\left( \frac{n}{4\pi r^3} \right) \mathbf{R} \tag{4-2}$$
 
-### 4.2 Flux Description of Gravitational Field
+where $\mathbf{R}$ is the radial vector, $r$ is the distance, and $n$ is the number of spatial displacement vectors. Newton's universal gravitation can be interpreted as an effect exhibited by objects in moving space.
 
-Similar to electromagnetic fields, we can also describe gravitational fields using flux concepts. The gravitational flux through any closed surface is proportional to the mass enclosed by that surface:
+### 4.2 Geometric Description of Gravitational Field
 
-$$\oint_S \vec{g} \cdot d\vec{S} = -4\pi G m$$
+According to the spatial motion postulate, space around an object with mass M diverges outward at the speed of light c. This divergent motion can be described mathematically using flux:
 
-This is Gauss's law for gravitational fields, where $G$ is the gravitational constant. In Unified Field Theory, this law can be derived from the conservation of spatial motion (Postulate 5), revealing the deep connection between gravitational phenomena and spatial dynamics.
+$$\Phi = \oint_S \mathbf{C} \cdot d\mathbf{S} \tag{4-2}$$
 
-The flux description of gravitational fields further confirms the geometric nature of gravity: gravity is not a "force" transmitted through a medium, but a geometric effect caused by the motion of space itself. This understanding is similar to general relativity's view of gravity as spacetime curvature, but more profoundly reveals the dynamic mechanism behind this geometric effect.
+where S is a closed surface enclosing the object, and $d\mathbf{S}$ is the area element vector of the surface.
+
+For a spherically symmetric gravitational field, due to symmetry, the vector light speed $\mathbf{C}$ has only a radial component, so the flux can be simplified to:
+
+$$\Phi = 4\pi r^2 C_r \tag{4-3}$$
+
+where $C_r$ is the radial component of the vector light speed.
+
+### 4.3 Relationship Between Mass Density and Spatial Motion Quantity
+
+From the mass definition equation, we can naturally derive the local relationship between mass density $\rho$ and spatial displacement line density:
+
+$$\rho = k \frac{\Delta n}{\Delta s} \tag{4-4}$$
+
+Here, $\frac{\Delta n}{\Delta s}$ can be understood as the rate of change of spatial displacement lines per unit length and unit volume, which is equivalent to mass density $\rho$ through the constant $k$. This relationship establishes a local correspondence between microscopic geometric properties and macroscopic physical quantities.
+
+Substituting the above relationship into the gravitational field definition equation, we get:
+
+$$\mathbf{g} = -G \rho \frac{\mathbf{r}}{r} \tag{4-5}$$
+
+This equation describes how local mass density $\rho$ generates local gravitational field $\mathbf{g}$, laying the foundation for subsequent application of Gauss's theorem in field theory.
 
 ## 5. Application of Gauss's Theorem in Gravitational Field
 
