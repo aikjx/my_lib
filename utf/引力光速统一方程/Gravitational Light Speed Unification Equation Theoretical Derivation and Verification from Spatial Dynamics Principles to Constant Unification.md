@@ -632,16 +632,18 @@ Through symmetry analysis, we can restrict the integration range to the upper he
 
 **Approach 2: Normalization of Full-Space Integration**
 
-Another derivation method directly obtains the geometric factor 2 by integrating over the entire space and introducing a normalization constant:
+Another derivation method verifies the rationality of geometric factor 2 by integrating over the entire space and combining theoretical requirements:
 
-1. Define a normalization constant $k$ satisfying:
+1. Obtain the basic conversion ratio from three-dimensional space field to two-dimensional plane through solid angle integration:
+   $$\frac{\pi}{4}$$
+
+2. Based on the requirements of theoretical self-consistency and consistency with Newton's law of universal gravitation, the geometric factor must equal 2. Therefore, a normalization constant $k$ is introduced to satisfy:
    $$2 = k \times \frac{\pi}{4}$$
 
-2. Solving for $k$:
+3. Solving for the normalization constant:
    $$k = \frac{8}{\pi}$$
 
-3. Substituting back for verification:
-   $$\text{Geometric Factor} = \frac{\pi}{4} \times \frac{8}{\pi} = 2$$
+4. This normalization constant reflects the transformation relationship between three-dimensional space fields and two-dimensional interaction planes, ensuring that theoretical predictions are consistent with observed results
 
 #### 9.4.4.3 Physical Significance and Mathematical Necessity of the Geometric Factor
 
@@ -675,23 +677,15 @@ Despite the successful derivation of geometric factor 2 through isotropic integr
 
 Through rigorous isotropic integration (SINX integration) derivation, we conclude that geometric factor 2 represents the natural mathematical relationship between spherically symmetric fields in three-dimensional space and two-dimensional interaction planes. This result not only provides a solid mathematical foundation for the gravitational light speed unification equation G=2Z/c but also reveals the fundamental properties of gravitational interactions in terms of spatial symmetry. The universality and precision of geometric factor 2 suggest that spatial dynamics theory may have uncovered certain essential features of gravity, offering important mathematical tools and physical insights for further exploration of unified field theory.
 
-According to theoretical requirements, the geometric factor must equal 2, so we can establish the equation:
+According to theoretical requirements for consistency with observational results and Newton's law of universal gravitation, the geometric factor must equal 2. Therefore, we establish the equation:
 $$2 = \frac{\pi}{4} \times \text{Normalization Constant}$$
 
 Solving this equation gives the normalization constant:
 $$\text{Normalization Constant} = \frac{2 \times 4}{\pi} = \frac{8}{\pi}$$
 
-Although this derivation process is concise, it carries profound physical implications:
-1. Obtaining the fundamental ratio $\frac{\pi}{4}$ through solid angle integration
-2. Requiring the geometric factor to equal 2 for consistency with observational results and Newton's law of universal gravitation
-3. Naturally deriving that the normalization constant must be $\frac{8}{\pi}$ through simple algebraic operations
+This normalization constant reflects the fundamental transformation relationship between three-dimensional spatial fields and two-dimensional interaction planes.
 
-From a physical perspective, this normalization constant reflects the transformation relationship between three-dimensional spatial fields and two-dimensional interaction planes, ensuring the consistency in form and numerical value between gravitational formulas derived from theoretical models and the widely verified classical gravitational theory.
-
-After substituting the normalization constant, the geometric factor is calculated as:
-$$\text{Geometric Factor} = \frac{\pi}{4} \times \frac{8}{\pi} = 2$$
-
-This mathematical derivation clearly proves that the introduced geometric integral factor is 2. This result is consistent with the geometric factors used in nuclear physics and statistical physics when calculating the rate of isotropic flow through a plane.
+For a more comprehensive physical interpretation and detailed derivation within the framework of unified field theory, please refer to Section 9.4.5 which presents a complete theoretical model based on Zhang Xiangqian's Unified Field Theory principles.
 
 #### 9.4.5 Derivation of Geometric Factor 2 Based on Zhang Xiangqian's Unified Field Theory
 
