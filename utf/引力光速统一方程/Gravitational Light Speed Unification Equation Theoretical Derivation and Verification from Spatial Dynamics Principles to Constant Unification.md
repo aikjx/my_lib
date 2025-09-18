@@ -1,4 +1,4 @@
-# Gravity-Light Speed Unification Equation: Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification
+# Gravitational Light Speed Unification Equation Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification
 
 ## Abstract
 
