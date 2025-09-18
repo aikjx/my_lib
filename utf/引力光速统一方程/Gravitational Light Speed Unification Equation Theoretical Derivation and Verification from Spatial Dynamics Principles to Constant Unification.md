@@ -92,9 +92,9 @@ The core research objectives of this paper are:
 
 This research not only provides a new perspective for understanding the nature of gravity but also offers important clues for exploring the grand unification of physics, promising to bring new insights to the field of theoretical physics.
 
-## 2. Basic Postulates of Spatial Dynamics Theory
+## 2 Basic Postulates of Spatial Dynamics Theory
 
-Spatial dynamics theory is the core framework of Zhang Xiangqian's Unified Field Theory, aiming to unify fundamental interactions such as gravity and electromagnetic force, and reveal the essential connections between spacetime, matter, and forces. This theory breaks through the limitation of traditional physics viewing space as a static background, and for the first time elevates space to a physical entity with intrinsic dynamic properties, providing a new perspective for understanding the basic laws of the universe.
+Spatial dynamics theory is the core framework of Zhang Xiangqian's Unified Field Theory, aiming to unify fundamental interactions such as gravity and electromagnetism, and reveal the essential connections between spacetime, matter, and forces. This theory breaks through the limitation of traditional physics viewing space as a static background, and for the first time elevates space to a physical entity with intrinsic dynamic properties, providing a new perspective for understanding the basic laws of the universe.
 
 The entire system of spatial dynamics theory is built upon the following six **logically self-consistent core postulates**, which together form a conceptually clear theoretical framework, providing a solid foundation for subsequent mathematical derivations and physical verifications:
 
@@ -177,6 +177,14 @@ $$\overrightarrow{P}=m(\overrightarrow{C}-\overrightarrow{V}) \tag{2-8}$$
 Where $\mathbf{V}$ is the motion speed of the object. Substituting this expression into the force definition equation, we can obtain:
 
 $$F = \frac{d\vec{P}}{dt} = \vec{C}\frac{dm}{dt} - \vec{V}\frac{dm}{dt} + m\frac{d\vec{C}}{dt} - m\frac{d\vec{V}}{dt} \tag{2-9}$$
+
+These four terms correspond to different types of forces:
+- First term $\vec{C}\frac{dm}{dt}$: Corresponding to electric field force
+- Second term $-\vec{V}\frac{dm}{dt}$: Corresponding to magnetic field force
+- Third term $m\frac{d\vec{C}}{dt}$: Corresponding to nuclear force
+- Fourth term $-m\frac{d\vec{V}}{dt}$: Corresponding to inertial force and gravitational force
+
+This decomposition provides a clear mathematical framework for understanding the unification of the four fundamental interactions.
 
 The four terms of this equation correspond to different types of forces:
 - First term $\vec{C}\frac{dm}{dt}$: Corresponding to electric field force
