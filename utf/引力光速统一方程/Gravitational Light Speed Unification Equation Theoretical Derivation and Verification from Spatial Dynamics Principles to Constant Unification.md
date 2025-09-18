@@ -466,33 +466,35 @@ $$N = \frac{n_1 n_2 \cdot 4\pi R^2}{c} = \frac{(\frac{m_1}{k})(\frac{m_2}{k}) \c
 
 This result indicates that the number of contact points between two objects is proportional to the product of their masses, proportional to the square of the distance, and inversely proportional to the speed of light.
 
-## 8. Relationship Between Mass Intensity and Number of Channels
+## 8 Dynamic Derivation of Gravitational Interaction Force
 
-### 8.1 Definition of Mass Intensity
+Based on the geometric contact model of spatial motion, we can further derive a quantitative expression for the gravitational interaction force.
 
-Mass intensity is a physical quantity describing the distribution of mass in space, defined as the mass per unit area. For an object with mass $m$ and surface area $S$, its mass intensity $I_m$ is:
+### 8.1 Relationship Between Mass Intensity and Number of Channels
 
-$$I_m = \frac{m}{S}$$
+According to Zhang Xiangqian's Unified Field Theory, the mass of an object can be expressed as the total number of spatial displacement lines passing through its surface per unit time:
 
-In the context of spatial dynamics, mass intensity can be understood as the density of spatial displacement lines on the surface of an object.
+$$m = k \oint_S n \cdot dS = k \cdot 4\pi r^2 \cdot c \tag{8-1}$$
 
-### 8.2 Relationship Between Mass Intensity and Number of Channels
+This relationship indicates that the mass of an object is proportional to the product of its surface area and the speed of light.
 
-In Unified Field Theory, channels refer to the paths through which spatial displacement lines propagate. The number of channels $N_c$ between two objects is related to their mass intensities and the distance between them. For two spherical objects with radii $R_1$ and $R_2$ respectively, the number of channels between them can be expressed as:
+### 8.2 Contribution of Mass Intensity
 
-$$N_c = \frac{4\pi R_1^2 R_2^2}{r^2} \cdot I_{m1} I_{m2}$$
+According to the mass definition equation, mass $m$ measures the intensity of spatial divergence, so gravitational force $F$ is proportional to $m_1 m_2$:
 
-Where $r$ is the distance between the centers of the two objects, and $I_{m1}$ and $I_{m2}$ are the mass intensities of the two objects, respectively.
+$$F \propto m_1 m_2 \tag{8-2}$$
 
-### 8.3 Mathematical Expression of Channel Number
+### 8.3 Inverse Relationship with Number of Channels
 
-Substituting the definition of mass intensity into the above formula, we get:
+To avoid double counting, the force per unit channel is inversely proportional to the number of interacting channels (i.e., the number of contact points $N_s$):
 
-$$N_c = \frac{4\pi m_1 m_2}{r^2} \cdot \frac{1}{4\pi R_1^2} \cdot \frac{1}{4\pi R_2^2} \cdot 4\pi R_1^2 R_2^2 = \frac{m_1 m_2}{r^2}$$
+$$F \propto \frac{1}{N_s} \propto \frac{1}{R^2 c^2} \tag{8-3}$$
 
-This shows that the number of channels between two objects is proportional to the product of their masses and inversely proportional to the square of the distance between them, which is consistent with the form of Newton's law of universal gravitation.
+### 8.4 Dynamic Correction for Time Flow
 
-The relationship between mass intensity and number of channels further confirms that gravitational interactions are determined by the geometric properties of spatial motion.
+Gravitational interaction is a continuous process. The effective number of interactions per unit time is proportional to the fundamental rate of spatial motion—the speed of light $c$:
+
+$$F \propto \frac{m_1 m_2}{R^2 c^2} \cdot c = \frac{m_1 m_2}{R^2 c} \tag{8-4}$$
 
 ## 9. Derivation and Physical Significance of Geometric Factor 2
 
