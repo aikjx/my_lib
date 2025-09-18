@@ -1104,41 +1104,53 @@ Zhang Xiangqian's Unified Field Theory differs significantly from other historic
 
 Through rigorous mathematical derivation and physical modeling, this paper achieves the following main conclusions:
 
-1. **Establishment of Gravitational Light Speed Unification Equation**: For the first time, we reveal the profound quantitative relationship between the gravitational constant $G$ and the speed of light $c$, and establish the gravitational light speed unification equation $Z = Gc/2$, where $Z$ is the Zhang Xiangqian Constant.
+1. **Establishment of Gravitational Light Speed Unification Equation**: For the first time, we establish a quantitative relationship between the gravitational constant $G$ and the speed of light $c$ from first principles, deriving the gravitational light speed unification equation $Z = \frac{G \cdot c}{2}$, where $Z$ is the Zhang Xiangqian Constant.
 
-2. **Redefinition of Gravitational Constant**: We transform the gravitational constant $G$ from a basic empirical constant to a derived constant that can be expressed in terms of the more fundamental Zhang Xiangqian Constant $Z$ and the speed of light $c$: $G = 2Z/c$.
+2. **Redefinition of Gravitational Constant**: We transform the gravitational constant $G$ from a basic empirical constant to a derived constant that can be expressed in terms of the more fundamental Zhang Xiangqian Constant $Z$ and the speed of light $c$: $G = \frac{2Z}{c}$.
 
-3. **High Agreement Between Theory and Experiment**: The theoretically calculated values are highly consistent with the CODATA 2018 recommended values, with a relative error of only 0.02%, demonstrating the high accuracy of the theory.
+3. **High Agreement Between Theory and Experiment**: When using the precise value $Z = 0.0100065$, the theoretically calculated value of $G$ shows remarkable agreement with the CODATA 2018 recommended value, with a relative error of only about 0.02%, providing strong empirical support for the theory.
 
-4. **Unification of Physical Concepts**: We unify concepts such as mass, gravity, and the properties of light from the perspective of spatial dynamics, providing a new framework for understanding the nature of the universe.
+4. **Unification of Physical Concepts**: We unify concepts such as mass, gravity, and light from the perspective of spatial dynamics, providing a new framework for understanding the nature of the universe.
 
 ### 16.2 Major Significance
 
-The gravitational light speed unification equation has the following major significances:
+This research, which for the first time establishes a quantitative relationship between the gravitational constant $G$ and the speed of light $c$ from first principles, has the following major significances for the development of physics:
 
-1. **Theoretical Breakthrough**: It breaks through the traditional cognition since Newton that "the gravitational constant $G$ is a basic empirical constant that cannot be derived," and reveals the physical origin of the gravitational constant from first principles.
+1. **First Theoretical Explanation and Prediction of the Gravitational Constant $G$**: Breaking through the traditional paradigm that "$G$ is a basic empirical constant that can only be measured experimentally and not calculated theoretically," we reveal the physical origin of $G$ from first principles, laying a theoretical foundation for the unification of fundamental constants.
 
-2. **Promotion of Unified Field Theory**: It provides an important mathematical foundation for the development of Unified Field Theory, promoting the integration of gravity with other fundamental forces.
+2. **Building a Mathematical Bridge for the Unification of Gravitation and Electromagnetism**: The gravitational light speed unification equation quantitatively relates the strength of gravitational interaction ($G$) with the fundamental speed of electromagnetic interaction ($c$) in a concise mathematical form, confirming that gravitation and electromagnetic interaction originate from the same spacetime motion mechanism, providing key theoretical support for the unification of the four fundamental interactions.
 
-3. **Revolutionary Understanding of Spacetime and Matter**: It provides a revolutionary geometric perspective for understanding the essence of spacetime, matter, and forces, which is expected to trigger profound changes in the basic physics framework.
+3. **Revolutionizing Understanding of the Nature of Spacetime, Matter, and Forces**: By defining mass as a measure of the number of spatial displacement lines ($M = k n$) and revealing that gravity arises from the interaction of spatial divergent motion, we provide a completely new geometric perspective for understanding the nature of the physical world, which is expected to trigger profound changes in the basic physics framework.
 
-4. **Technological Implications**: The Zhang Xiangqian Constant $Z$ as a key constant connecting gravitational and electromagnetic interactions provides a solid mathematical and physical foundation for "artificial field technology," which has far-reaching significance for the future development of interstellar civilizations.
+4. **Demonstrating the Scientific Rigor of High Consistency Between Theoretical Predictions and Experiments**: The remarkable agreement (with a relative error of about 0.02%) between the theoretically calculated values and high-precision experimental measurements when using the precise value $Z = 0.0100065$ provides strong empirical support for Zhang Xiangqian's Unified Field Theory, demonstrating its innovative value in scientific exploration.
 
 ### 16.3 Future Research Directions
 
-Based on the research results of this paper, we propose the following future research directions:
+Based on the research results of this paper and combined with the theoretical framework of Zhang Xiangqian's Unified Field Theory, future research directions include:
 
-1. **Further Experimental Verification**: Conduct more precise experimental measurements to verify the gravitational light speed unification equation and determine the value of the Zhang Xiangqian Constant $Z$ more accurately.
+1. **Precise Theoretical and Experimental Determination of the Zhang Xiangqian Constant $Z$**: Deriving the precise expression and numerical value of $Z$ from first principles of spacetime quantum geometry; designing precise experiments (such as measuring gravitational responses induced by electromagnetic perturbations) to directly verify the existence of $Z$ and determine its value.
 
-2. **Exploration of Quantum Gravity**: Based on the gravitational light speed unification equation, explore the quantum properties of gravity and strive to establish a complete quantum gravity theory.
+2. **Development of Cosmological Models Based on Spatial Light-Speed Helical Divergence**: Systematically constructing cosmological models, re-examining fundamental issues such as cosmic expansion dynamics and structure formation, and exploring their consistency with astronomical observation data.
 
-3. **Unification of the Four Fundamental Forces**: Further develop Unified Field Theory to achieve the grand goal of unifying the four fundamental forces.
+3. **Breakthroughs in Quantum Gravity Theory**: Combining this theory with quantum mechanics, developing mathematical languages for spacetime quantum geometry, solving the problem of gravitational field quantization, and exploring the physical meaning of $Z$ at the Planck scale.
 
-4. **Development of Artificial Field Technology**: Based on the theoretical framework of Unified Field Theory and the Zhang Xiangqian Constant $Z$, explore the possibility of developing "artificial field technology" and its applications in aerospace, energy, communication, and other fields.
+4. **Construction of a Unified Theory of Fundamental Constants**: Deeply exploring the quantitative relationships between $Z$ and other fundamental constants (such as the fine-structure constant $\alpha$, Planck constant $h$, etc.), constructing a complete unified theory of physical constants.
+
+5. **Experimental Verification and Application Exploration of Artificial Field Technology**: Focusing on exploring the implementation path of "artificial field scanning" technology (achieving mass elimination or gravitational shielding by changing the local space motion state), and its revolutionary application prospects in energy, propulsion (such as light-speed spacecraft), materials, and other fields.
+
+6. **Theoretical Mathematical Foundation**: Further improving the mathematical formulation of the theory, establishing more rigorous geometric language and dynamic equations, and enhancing dialogue ability and verification possibilities with the mainstream scientific community.
 
 ### 16.4 Final Conclusion
 
-The gravitational light speed unification equation $Z = Gc/2$ is a milestone achievement in the field of theoretical physics. It not only reveals the profound quantitative relationship between the gravitational constant and the speed of light but also provides a new perspective for us to understand the nature of the universe. With the further development and verification of this theory, we are expected to achieve more breakthroughs in the fields of fundamental physics and applied technology.
+The relationship $Z = \frac{G \cdot c}{2}$ (gravitational light speed unification equation) is the core mathematical expression of Zhang Xiangqian's Unified Field Theory, where the Zhang Xiangqian Constant $Z$ has the dimension $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $\text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$). This equation not only mathematically connects gravitation and electromagnetic interaction but also reveals the unity of spacetime, matter, and forces from the physical essence—gravity is not an action at a distance but a geometric effect originating from the light-speed divergent motion of space itself, achieving a revolutionary leap from empirical constants to theoretically derived quantities.
+
+**Core Innovations and Values of Zhang Xiangqian's Unified Field Theory**:
+
+- **Unified Framework**: Explaining physical phenomena from macroscopic to microscopic with a single image of "space light-speed motion," breaking the boundary between gravity and electromagnetism in classical physics
+- **Conceptual Innovation**: Providing geometric new definitions for basic concepts such as time, mass, and force, deeply integrating physical quantities with spatial geometric properties
+- **Explanation of Constancy of Light Speed**: For the first time providing a mechanistic explanation for "why the speed of light is constant" (the speed of light is the motion speed of space itself), deepening the understanding of relativity
+- **Subversive Technological Prediction**: Deriving future technologies such as artificial field scanning and light-speed spacecraft, providing theoretical possibilities for human civilization to move from the Earth era to the interstellar era
+- **Breakthrough in Constant Unification**: Through the gravitational light speed unification equation, deriving the theoretical expression of the gravitational constant G from first principles for the first time, laying the foundation for the unification of physical constants
 
 ## 17. References
 
