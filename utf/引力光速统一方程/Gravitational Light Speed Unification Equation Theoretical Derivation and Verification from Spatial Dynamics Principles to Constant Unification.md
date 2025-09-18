@@ -424,37 +424,47 @@ $$F = G \frac{m_1 m_2}{R^2} \tag{6-7}$$
 
 To maintain consistency with the mass symbols established in subsequent theoretical derivations and to clarify the symmetry of the two interacting masses, this paper uniformly adopts the expression $F = G \frac{m_1 m_2}{R^2}$. Here, $m_1$ and $m_2$ represent the masses of the two interacting particles, and $R$ denotes the distance between the two particles. This choice conforms to the common convention of Newton's law of universal gravitation in physics literature.
 
-## 7. Geometric Contact Model of Spatial Motion
+## 7 Geometric Contact Model of Spatial Motion
 
-### 7.1 Basic Concepts of Geometric Contact Model
+### 7.1 Physical Picture
 
-In order to further reveal the physical mechanism of gravitational interactions, we propose a geometric contact model of spatial motion. This model assumes that gravitational interactions occur through the direct contact of spatial displacement lines, and the strength of the interaction is determined by the number of contact points between the spatial displacement lines of the two objects.
+Based on the postulate of spatial motion, we establish a geometric contact model for gravitational interactions: consider two stationary masses $m_1$ and $m_2$ separated by a distance $R$. According to the theory of spatial dynamics, each mass causes the surrounding space to diverge at the speed of light $c$, forming the so-called "spatial divergence field". The spatial divergence fields of the two masses interact in space, and this interaction can be understood as occurring along the line connecting their centers of mass, and is mainly distributed on an imaginary plane perpendicular to this line.
 
-For two objects with masses $m_1$ and $m_2$ respectively, the number of spatial displacement lines they each possess is proportional to their masses. When these spatial displacement lines come into contact, they produce gravitational interactions. The number of contact points $N_c$ can be expressed as:
+This model embodies the geometric idea of spatial dynamics theory. It transforms the abstract gravitational interaction into a concretizable spatial motion contact process, laying a physical foundation for subsequent mathematical derivations.
 
-$$N_c = k \cdot \frac{m_1 m_2}{r^2}$$
+### 7.2 Geometric Dynamic Analysis of the Number of Contact Points
 
-Where $r$ is the distance between the two objects, and $k$ is the proportionality constant.
+The derivation of the number of contact points needs to be analyzed from both geometric and dynamic perspectives:
 
-### 7.2 Connection with Newton's Law of Universal Gravitation
+**Scale contribution in the connecting line direction**: Along the direction connecting the centers of mass, the "rate" of spatial divergence is related to the speed of light $c$, so the scale contribution along this direction is proportional to $R \cdot c$.
 
-According to the geometric contact model, the gravitational force between two objects is proportional to the number of contact points between their spatial displacement lines:
+**Distribution characteristics in the perpendicular direction**: On the two-dimensional contact surface perpendicular to the connecting line, the contact points are distributed two-dimensionally, so the total number of contact points $N_s$ is proportional to $(R \cdot c) \times (R \cdot c) = R^2 c^2$.
 
-$$F \propto N_c$$
+Combining the above two points, we get:
 
-Combining with the expression for the number of contact points, we get:
+$$N_s \propto R^2 c^2 \tag{7-1}$$
 
-$$F \propto \frac{m_1 m_2}{r^2}$$
+This relationship originates from the speed and geometric distribution characteristics of spatial divergence motion and serves as the basis for subsequent derivations.
 
-This is exactly the form of Newton's law of universal gravitation, which confirms the rationality of the geometric contact model.
+### 7.3 Analysis of the Number of Contact Points
 
-### 7.3 Dynamic Derivation Basis of Gravitational Interaction Force
+In the geometric contact model of spatial motion, the number of contact points between two objects can be expressed as:
 
-The dynamic derivation of gravitational interaction force based on the geometric contact model requires considering the momentum exchange between spatial displacement lines. When spatial displacement lines from different objects come into contact, they exchange momentum, resulting in gravitational forces.
+$$N = \frac{n_1 n_2 \cdot 4\pi R^2}{c} \tag{7-2}$$
 
-According to the principle of conservation of momentum (which is a manifestation of the conservation of spatial motion in Postulate 5), the rate of momentum exchange between spatial displacement lines is equal to the gravitational force between the objects.
+Where $4\pi R^2$ is the spherical surface area centered on the line connecting the centers of the two objects, and the denominator $c$ is used to ensure dimensional consistency.
 
-The geometric contact model provides us with an intuitive physical picture to understand gravitational interactions, which is helpful for revealing the essential connection between gravity and other fundamental forces.
+According to the mass definition equation (3-6): $M = k \cdot n$
+
+We can solve for the spatial displacement line density per unit solid angle: $n = \frac{M}{k}$
+
+For two masses $m_1$ and $m_2$, their spatial displacement line densities are respectively: $n_1 = \frac{m_1}{k}$ and $n_2 = \frac{m_2}{k}$
+
+Substituting into the contact point number formula (7-2):
+
+$$N = \frac{n_1 n_2 \cdot 4\pi R^2}{c} = \frac{(\frac{m_1}{k})(\frac{m_2}{k}) \cdot 4\pi R^2}{c} = \frac{m_1 m_2}{k^2} \cdot \frac{4\pi R^2}{c} \tag{7-3}$$
+
+This result indicates that the number of contact points between two objects is proportional to the product of their masses, proportional to the square of the distance, and inversely proportional to the speed of light.
 
 ## 8. Relationship Between Mass Intensity and Number of Channels
 
