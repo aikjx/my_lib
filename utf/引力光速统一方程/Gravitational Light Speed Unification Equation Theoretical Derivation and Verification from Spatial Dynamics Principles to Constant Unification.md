@@ -40,15 +40,57 @@ This research breaks through the traditional cognition since Newton that "the gr
 16. [Conclusions and Prospects](#16-conclusions-and-prospects)
 17. [References](#17-references)
 
-## 1. Introduction: Historical Evolution of Gravitational Theories and Innovation of Unified Field Theory
+## 1. Introduction
 
-Since Newton proposed the law of universal gravitation in 1687, the study of gravity has been one of the core issues in physics. Newton's theory successfully explains macroscopic gravitational phenomena, but it cannot explain the origin of gravity and the nature of the gravitational constant $G$. In 1915, Einstein proposed the general theory of relativity, which views gravity as the curvature of spacetime caused by mass, energy, and momentum, and successfully explained phenomena such as the precession of Mercury's perihelion and gravitational redshift. However, general relativity still cannot unify gravity with other fundamental forces, nor can it explain the quantization of gravity.
+### 1.1 Historical Evolution of Gravitational Theories and Scientific Significance of Unified Field Theory
 
-The development of modern physics has exposed the deep contradictions between quantum mechanics and general relativity. To achieve the grand goal of "unifying the four fundamental forces" (gravity, electromagnetic force, strong nuclear force, and weak nuclear force), physicists have proposed various theories, such as superstring theory, loop quantum gravity, etc., but these theories still face insurmountable difficulties in experimental verification and theoretical self-consistency.
+Gravity, as the most fundamental and profound interaction in nature, has spanned the centuries-long development of physics, with its research progress deeply reflecting the deepening of humanity's understanding of the essence of nature.
 
-Zhang Xiangqian's Unified Field Theory, proposed in the 1980s, provides a new approach to understanding the nature of the universe from the perspective of spatial dynamics. This theory holds that all physical phenomena in the universe are manifestations of the different motion states of space itself. Space is not an empty container, but a substance that can move, deform, and transmit information. The motion of matter is actually the result of the motion of space pushing matter, and all forces in nature are essentially the interactions caused by the motion of space.
+In 1687, Newton proposed the law of universal gravitation in his "Mathematical Principles of Natural Philosophy," quantifying gravitational interaction for the first time with a mathematical formula:
 
-The most revolutionary idea of Unified Field Theory is to redefine mass, charge, energy, momentum, etc., from the perspective of spatial geometry, and establish a unified mathematical framework for the four fundamental forces. This paper, based on the basic principles of Unified Field Theory, focuses on exploring the intrinsic relationship between the gravitational constant $G$ and the speed of light $c$, and attempts to reveal the physical origin of the gravitational constant from first principles.
+$$F = G \frac{m_1 m_2}{R^2} \tag{1-1}$$
+
+This elegantly simple inverse-square law successfully explained numerous astronomical observations such as planetary motion and tides. However, Newton himself remained skeptical about the nature of gravity, viewing its action-at-a-distance as an "incomprehensible mysterious force." Most crucially, **the gravitational constant $G$ in Newton's theory is merely an empirical parameter, and why its value is so small (approximately on the order of $10^{-11}$) remains an unsolved mystery in physics**.
+
+In 1915, Einstein published the general theory of relativity, completely revolutionizing humanity's understanding of gravity—gravity was no longer viewed as action-at-a-distance but interpreted as a geometric effect of spacetime curvature. The Einstein field equation profoundly revealed the relationship between matter-energy and spacetime geometry:
+
+$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} \tag{1-2}$$
+
+Despite the tremendous success of general relativity at macroscopic scales, its incompatibility with quantum mechanics and its inability to unify with electromagnetic, strong nuclear, and weak nuclear forces remain among the greatest challenges facing modern physics. Einstein devoted his later years to unified field theory research, attempting to establish a unified theory describing all fundamental interactions, but ultimately did not succeed. Notably, in the Einstein field equation, the gravitational constant $G$ and the speed of light $c$ are still two seemingly independent fundamental constants, and their deep connection has yet to be revealed.
+
+Since Einstein, countless physicists have made unremitting efforts to achieve the unification of forces—from the extra-dimensional attempts of Kaluza-Klein theory, to Weyl's exploration of gauge invariance, and to modern frontier theories such as superstring theory and loop quantum gravity. However, the problem of unifying gravity and electromagnetic force has never been satisfactorily resolved. This predicament not only reflects the limitations of our understanding of the essence of nature but also underscores the urgency of establishing a more complete theoretical system.
+
+### 1.2 Innovative Ideas and Theoretical Breakthroughs of Zhang Xiangqian's Unified Field Theory
+
+Zhang Xiangqian's Unified Field Theory provides new possibilities for the path to unification in physics with its unique perspective and innovative concepts. The core revolutionary idea of this theory lies in: **space is not a passive, static background stage, but a physical entity with intrinsic dynamic properties**. This concept completely subverts the traditional view since Newton that regards space as an "absolute container," elevating space to an active role participating in physical processes.
+
+Key innovations of Zhang Xiangqian's Unified Field Theory include:
+
+1. **Dynamic Nature of Spatial Motion**: The theory proposes that the space around any object in the universe is always diverging in a cylindrical helical motion at the speed of light $c$. This hypothesis provides a completely new physical picture for understanding fundamental interactions such as gravity and electromagnetic force—the essence of force is the effect produced by changes in the state of spatial motion.
+
+2. **Geometric Definition of Mass**: Mass is no longer viewed as "the amount of matter contained in an object" but redefined as a measure of the degree of light-speed divergent motion of the surrounding space. This definition achieves the unification of mass with spatial geometric properties, laying a conceptual foundation for the unification of gravity and electromagnetic force.
+
+3. **Mechanistic Explanation for the Constancy of Light Speed**: The theory provides a mechanistic explanation for "why the speed of light is constant"—light speed is the movement speed of space itself, not merely the propagation speed of electromagnetic waves. This explanation transforms the constancy of light speed from a "fundamental assumption" to a "natural result of spatial properties," deepening our understanding of the essence of spacetime.
+
+4. **Geometric Origin of Charge**: The theory proposes a completely new explanation for the essence of charge, suggesting that charge $q$ is "the rate of change of unit solid angle" ($q \propto d\Omega/dt$), "mass in motion," and a product of剧烈 changes in spatial solid angle. This explanation provides new ideas for the unification of electromagnetic and gravitational phenomena, suggesting they may share a common geometric origin.
+
+### 1.3 Scientific Status and Research Objectives of the Gravitational-Light Speed Unification Equation
+
+Within the theoretical framework of Zhang Xiangqian's Unified Field Theory, this paper, through rigorous mathematical derivation, reveals for the first time the quantitative relationship between the gravitational constant $G$ and the speed of light $c$ from first principles, deriving the Gravitational-Light Speed Unification Equation.
+
+The core research objectives of this paper are:
+
+1. **Revealing the Theoretical Origin of the Gravitational Constant**: Breaking through the limitation of traditional physics that regards the gravitational constant $G$ as a fundamental experimentally measured value, theoretically deriving the mathematical expression of $G$, and explaining the physical origin of its numerical characteristics.
+
+2. **Establishing a Mathematical Bridge Between Gravity and Electromagnetic Force**: Through the quantitative relationship between $G$ and $c$, providing a key mathematical foundation for the unification of gravity and electromagnetic force, and exploring the unity of fundamental interactions in nature.
+
+3. **Verifying the Self-Consistency of Zhang Xiangqian's Unified Field Theory**: Systematically verifying the intrinsic consistency between the Gravitational-Light Speed Unification Equation and the core formulas of Zhang Xiangqian's Unified Field Theory, further testing the logical rigor and physical rationality of this theory.
+
+4. **Expanding the Application Scope of Unified Field Theory**: Exploring the universality of the Gravitational-Light Speed Unification Equation in multiple physics fields such as general relativity, quantum gravity, and cosmology, providing new perspectives and tools for theoretical research in these fields.
+
+5. **Providing a Theoretical Foundation for Future Technologies**: Providing a solid mathematical and physical foundation for frontier technologies such as "artificial field technology," and exploring its potential applications in energy, aerospace, materials science, and other fields.
+
+This research not only provides a new perspective for understanding the nature of gravity but also offers important clues for exploring the grand unification of physics, which is expected to bring new insights to the field of theoretical physics.
 
 ## 2. Basic Postulates of Spatial Dynamics Theory
 
