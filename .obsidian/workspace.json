@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "utf/引力光速统一方程/Gravitational Light Speed Unification Equation Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification.md",
-                "mode": "source",
+                "file": "utf/统一场论核心公式/张祥前统一场论17个核心重要公式方程.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Gravitational Light Speed Unification Equation Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification"
+              "title": "张祥前统一场论17个核心重要公式方程"
             }
           }
         ]
@@ -186,10 +186,19 @@
   },
   "active": "ae905018e9ddedf3",
   "lastOpenFiles": [
-    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
-    "utf/引力光速统一方程/引力光速统一方程从空间动力学原理到常数统一的理论推导与验证.md",
-    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
+    "utf/统一场论核心公式/核心公式索引.md",
+    "utf/张祥前统一场论可视化/项目总览.md",
+    "utf/统一场论核心公式/核心公式关联关系.md",
+    "utf/统一场论核心公式/项目结构说明.md",
+    "utf/统一场论核心公式/项目完成报告.md",
+    "utf/统一场论核心公式/项目完成总结.md",
+    "utf/统一场论核心公式/项目总览.md",
+    "utf/统一场论核心公式/张祥前统一场论17个核心重要公式方程.md",
     "utf/引力光速统一方程/Gravitational Light Speed Unification Equation Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification.md",
+    "utf/引力光速统一方程/code/Z误差.py",
+    "utf/引力光速统一方程/引力光速统一方程从空间动力学原理到常数统一的理论推导与验证.md",
+    "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
+    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
     "utf/引力光速统一方程/replace_9_4_4_5.ps1",
     "utf/统一场论核心公式/01-时空同一化方程/_tmp_39052_16ee3e039deb98feb22cbd0550ccb196",
     "utf/引力光速统一方程/temp_9_4_4_5_english.md",
@@ -209,18 +218,10 @@
     "utf/引力光速统一方程/temp_chapter15.md",
     "utf/引力光速统一方程/temp_chapter14.md",
     "utf/引力光速统一方程/Gravity-Light Speed Unification Equation - Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification.md",
-    "utf/引力光速统一方程/Gravity-Light Speed Unification Equation Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification.md",
-    "utf/引力光速统一方程/引力光速统一方程 - 从空间动力学原理到常数统一的理论推导与验证.md",
-    "utf/引力光速统一方程/README.md",
-    "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
     "utf/引力光速统一方程/Gravity-Light Speed Unification Equation",
     "utf/统一场论核心公式/01-时空同一化方程/_tmp_30952_7dd91cc79324ee88e8f83f22f6c24906",
-    "utf/引力光速统一方程/引力光速的关系/论文分析与修复报告.md",
-    "utf/引力光速统一方程/引力光速的关系/分析与修复/论文分析与修复报告.md",
-    "utf/引力光速统一方程/引力光速的关系/分析与修复/引力光速统一方程论文_综合优化版.md",
     "utf/引力光速统一方程/引力光速的关系/分析与修复",
     "utf/引力光速统一方程/引力光速的关系/论文分析与优化建议",
-    "utf/引力光速统一方程/引力光速的关系/引力光速统一方程论文.tex",
     "几何因子问题全面分析.png",
     "geometric_correction_factor_2_animation.svg",
     "complete_error_analysis.png",
