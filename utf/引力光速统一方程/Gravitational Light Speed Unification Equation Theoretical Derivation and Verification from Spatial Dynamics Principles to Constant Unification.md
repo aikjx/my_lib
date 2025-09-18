@@ -1,6 +1,6 @@
 # Gravitational Light Speed Unification Equation: Theoretical Derivation and Verification from Spatial Dynamics Principles to Constant Unification
 
-Authors: Guozi Mo, Xiangqian Zhang
+**Authors:** Guozi Mo, Xiangqian Zhang
 
 ## Abstract
 
@@ -1002,11 +1002,11 @@ Introducing the constant $Z$, its dimension is:
 $$[Z] = [M^{-1} L^4 T^{-3}]$$
 This dimension corresponds to "the rate of change of the number of spatial displacement lines per unit time per unit volume," revealing the physical meaning of $Z$ as a spatial divergence density flow, which is consistent with the core idea of Zhang Xiangqian's theory that "mass is a measure of the number of spatial displacement lines."
 
-The dimensional consistency of Newton's Second Law ($[F] = [M][L][T^{-2}]$) provides a basis for verifying physical formulas. The gravitational-light speed unification equation $G = 2Z/c$ derived in this paper also satisfies the requirement of dimensional self-consistency, further supporting the rationality of this relationship.
+The dimensional consistency of Newton's Second Law ($[F] = [M][L][T^{-2}]$) provides a basis for verifying physical formulas. The gravitational-light speed unification equation $G = 2Z/c$ (equation 10-5) derived in this paper also satisfies the requirement of dimensional self-consistency, further supporting the rationality of this relationship.
 
 #### 14.1.2 Dimensional Correlation Analysis Between Einstein's Mass-Energy Equation and Z
 
-$E = m c^2$ is one of the most famous formulas in physics, revealing the principle of equivalence between mass and energy. In Zhang Xiangqian's Unified Field Theory, this equation is also incorporated as a core energy equation and is compatible with its core view that "mass is a measure of the degree of spatial motion." The following is an in-depth compatibility verification combining the gravitational-light speed unification equation $G = 2Z/c$:
+$E = m c^2$ is one of the most famous formulas in physics, revealing the principle of equivalence between mass and energy. In Zhang Xiangqian's Unified Field Theory, this equation is also incorporated as a core energy equation and is compatible with its core view that "mass is a measure of the degree of spatial motion." The following is an in-depth compatibility verification combining the gravitational-light speed unification equation $G = 2Z/c$ (equation 10-5):
 
 #### 14.1.2.1 Dimensional Verification Process
 
@@ -1021,7 +1021,7 @@ $$[m c^2] = M \cdot (L T^{-1})^2 = M L^2 T^{-2}$$
 
 This is completely consistent with the standard dimension of energy on the left side, verifying the dimensional self-consistency of the original equation.
 
-Solving for the speed of light $c$ from the gravitational-light speed unification equation $Z = \frac{G \cdot c}{2}$:
+Solving for the speed of light $c$ from the gravitational-light speed unification equation $Z = \frac{G \cdot c}{2}$ (equation 10-5):
 $$c = \frac{2Z}{G}$$
 
 Substituting this expression into Einstein's mass-energy equation, we get:
@@ -1118,7 +1118,7 @@ The following lists the compatibility verification results of the gravitational-
 - Dimensional verification: $[\phi] = [L^2 T^{-2}]$, $[2 Z M / (c r)] = [L^2 T^{-2}]$
 - Physical meaning: The gravitational potential formula is the cornerstone of the weak field approximation of general relativity. After introducing $Z$, it is expressed as $-2ZM/(cr)$, whose dimension is consistent with energy per unit mass, strengthening the connection between gravity and energy
 
-This universality verification fully proves the correctness and profound significance of the $Z = G c / 2$ relationship, laying a theoretical foundation for the unification of physical constants.
+This universality verification fully proves the correctness and profound significance of the $Z = G c / 2$ (equation 10-5) relationship, laying a theoretical foundation for the unification of physical constants.
 
 ### 14.2 Applications in General Relativity
 
@@ -1171,7 +1171,7 @@ When using the precise value $Z = 0.0100065$ (equation 10-9), the relative error
 **1. Gravitational Constant G**
 - Classical physics (Newton/Einstein): A fundamental, non-derivable empirical constant. Why its value is $6.67430\times 10^{-11}$ remains an unsolved mystery
 - Zhang Xiangqian's Unified Field Theory: A derivable constant composed of more fundamental constants (c, Z)
-- This paper's bridging role: Derived $G = 2Z/c$, providing a theoretical origin for the numerical value of $G$ for the first time
+- This paper's bridging role: Derived $G = 2Z/c$ (equation 10-5), providing a theoretical origin for the numerical value of $G$ for the first time
 
 **2. Speed of Light c**
 - Classical physics (Newton/Einstein): A fundamental constant of electromagnetic phenomena, with no direct relation to gravitational phenomena
@@ -1240,7 +1240,7 @@ Based on the research results of this paper and combined with the theoretical fr
 
 ### 16.4 Final Conclusion
 
-The relationship $Z = \frac{G \cdot c}{2}$ (gravitational light speed unification equation) is the core mathematical expression of Zhang Xiangqian's Unified Field Theory, where the Zhang Xiangqian Constant $Z$ has the dimension $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $\text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$). This equation not only mathematically connects gravitation and electromagnetic interaction but also reveals the unity of spacetime, matter, and forces from the physical essence—gravity is not an action at a distance but a geometric effect originating from the light-speed divergent motion of space itself, achieving a revolutionary leap from empirical constants to theoretically derived quantities.
+The relationship $Z = \frac{G \cdot c}{2}$ (equation 10-5) (gravitational light speed unification equation) is the core mathematical expression of Zhang Xiangqian's Unified Field Theory, where the Zhang Xiangqian Constant $Z$ (equation 10-9) has the dimension $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $\text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$). This equation not only mathematically connects gravitation and electromagnetic interaction but also reveals the unity of spacetime, matter, and forces from the physical essence—gravity is not an action at a distance but a geometric effect originating from the light-speed divergent motion of space itself, achieving a revolutionary leap from empirical constants to theoretically derived quantities.
 
 **Core Innovations and Values of Zhang Xiangqian's Unified Field Theory**:
 
@@ -1253,8 +1253,8 @@ The relationship $Z = \frac{G \cdot c}{2}$ (gravitational light speed unificatio
 ## 17. References
 
 ### Chinese References
-1. Zhang, X. Q. (2025). Unified Field Theory (Academic Edition) : Extraterrestrial Technology. Tongda Town, Lujiang County, Hefei City, Anhui Province, China.
-2. Zhang, X. Q., & Zhu, B. J. The Work of Zhu Benjiang is Very Important, Hope Everyone Pays Attention [EB/OL]. WeChat Official Account, 2025. https://mp.weixin.qq.com/s/NWnndFxNEE5OYgQXR3qk0w.
+1. Zhang, X. Q. Unified Field Theory (Academic Edition) : Extraterrestrial Technology, 2025. Tongda Town, Lujiang County, Hefei City, Anhui Province, China.
+2. Beran, L. L., Zhu, B. J., & Zhang, X. Q. (2025). The Motion of Space: A Spiral Geometry for Unifying Constants and Predicting Physical Phenomena [M], 2025
 3. Fu, K. Analysis of the Relationship between Gravitational Constant and Speed of Light Based on Zhang Xiangqian's Unified Field Theory [EB/OL]. WeChat Official Account, 2025. https://mp.weixin.qq.com/s/93Lp5CazFLZWpx8DDGitFg.
 4. Mo, G. Z., & Zhang, X. Q. Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence [M]. 2025.
 5. Zhang, X. Q., & Xu, Y. C. Gravitational Field Generated by Electromagnetic Changes and Object Motion [M]. 2025.
@@ -1285,6 +1285,14 @@ The relationship $Z = \frac{G \cdot c}{2}$ (gravitational light speed unificatio
 28. Reif, F. Fundamentals of Statistical and Thermal Physics[M]. McGraw-Hill, 1965.
 29. Landau, L. D., & Lifshitz, E. M. Fluid Mechanics[M]. Butterworth-Heinemann, 1987.
 30. Misner, C. W., Thorne, K. S., & Wheeler, J. A. Gravitation[M]. W. H. Freeman and Company, 1973.
+
+
+<br/>  
+<br/>    
+<br/>  
+<br/>    
+<br/>  
+<br/>    
 
 ## Acknowledgements
 
