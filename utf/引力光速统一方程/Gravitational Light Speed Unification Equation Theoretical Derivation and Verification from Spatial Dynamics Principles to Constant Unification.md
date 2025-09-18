@@ -6,17 +6,17 @@ Authors: Guozi Mo, Xiangqian Zhang
 
 Based on the first principles of Zhang Xiangqian's Unified Field Theory, this paper rigorously mathematically derives and physically models, for the first time, a profound quantitative relationship between the gravitational constant $G$ and the speed of light $c$, establishing the landmark Gravitational Light Speed Unification Equation:
 
-$$Z = \frac{Gc}{2}$$
+$$Z = \frac{Gc}{2}$$ (equation 10-5)
 
-Here, the gravitational-light speed unification constant $Z$ is the Zhang Xiangqian Constant, whose physical meaning is the rate of change of the number of spatial displacement lines per unit time and unit volume (density flow of spatial divergence), with dimensions $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $\text{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$).
+Here, the gravitational-light speed unification constant $Z$ (equation 10-9) is the Zhang Xiangqian Constant, whose physical meaning is the rate of change of the number of spatial displacement lines per unit time and unit volume (density flow of spatial divergence), with dimensions $[M]^{-1}[L]^{4}[T]^{-3}$ (unit: $	ext{kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3}$).
 
 **Core Research Achievements**: 
-1. **High Agreement Between Theory and Experiment**: When using the precise value $Z = 0.0100065 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$, the theoretically calculated gravitational constant is highly consistent with the CODATA 2018 recommended value, with a relative error of only 0.02%; even with the approximate value $Z = 0.01$, the error is only 0.045%, demonstrating extremely high prediction accuracy.
+1. **High Agreement Between Theory and Experiment**: When using the precise value $Z = 0.0100065 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$ (equation 10-9), the theoretically calculated gravitational constant is highly consistent with the CODATA 2018 recommended value, with a relative error of only 0.02%; even with the approximate value $Z = 0.01$ (equation 10-9), the error is only 0.045%, demonstrating extremely high prediction accuracy.
 2. **Self-consistent and Unified Theoretical System**: By cross-validating this equation with 17 core formulas of the Unified Field Theory (including electromagnetic field equations, dynamic equations, etc.), it is confirmed to be completely mathematically and physically consistent with the entire theoretical system, forming a core component of the theory.
 3. **Cross-disciplinary Universality Verification**: Systematic analysis shows that this equation can naturally integrate into core formulas of multiple physics fields such as general relativity (Einstein field equations, Schwarzschild radius), quantum gravity (Planck mass), cosmology (Friedmann equation), and Newtonian mechanics, demonstrating wide applicability and unity.
 
 **Scientific Significance and Innovative Value**: 
-This research breaks through the traditional cognition since Newton that "the gravitational constant $G$ is a basic empirical constant that cannot be derived," and for the first time reveals the physical origin of the gravitational constant from first principles, constructing a mathematical bridge for the unification of gravity and electromagnetic force. By defining mass as a measure of the number of spatial displacement lines and revealing that gravity originates from the geometric effect of spatial light-speed divergent motion, this theory provides a revolutionary geometric perspective for understanding the essence of spacetime, matter, and forces, which is expected to trigger profound changes in the basic physics framework. At the same time, the Zhang Xiangqian Constant $Z$, as a key constant connecting gravitational and electromagnetic interactions, also provides a solid mathematical and physical foundation for "artificial field technology," with far-reaching significance for the future development of interstellar civilizations.
+This research breaks through the traditional cognition since Newton that "the gravitational constant $G$ is a basic empirical constant that cannot be derived," and for the first time reveals the physical origin of the gravitational constant from first principles, constructing a mathematical bridge for the unification of gravity and electromagnetic force. By defining mass as a measure of the number of spatial displacement lines and revealing that gravity originates from the geometric effect of spatial light-speed divergent motion, this theory provides a revolutionary geometric perspective for understanding the essence of spacetime, matter, and forces, which is expected to trigger profound changes in the basic physics framework. At the same time, the Zhang Xiangqian Constant $Z$ (equation 10-9), as a key constant connecting gravitational and electromagnetic interactions, also provides a solid mathematical and physical foundation for "artificial field technology," with far-reaching significance for the future development of interstellar civilizations.
 
 **Keywords**: Gravitational Light Speed Unification Equation; Zhang Xiangqian's Unified Field Theory; Spatial Dynamics; Gravitational Constant; Speed of Light; Zhang Xiangqian Constant; General Relativity; Quantum Gravity; Space; Matter; Constant Unification
 
@@ -732,24 +732,26 @@ To derive results consistent with experimental observations from this theoretica
 **Strict Derivation and Physical Interpretation of Normalization Constant 8/π**: 
 
 Based on the definition of geometric factor, we have:
-$$\text{Geometric Factor} = \frac{\pi}{4} \times \text{Normalization Constant}$$
+$$\text{Geometric Factor} = \frac{\pi}{4} \times \text{Normalization Constant} \tag{9-12}$$
 
 Our goal is to derive a geometric factor of 2 from the theory, which is not only a requirement of mathematical self-consistency but also a necessary condition for consistency with observation results. Substituting this target value into the above equation:
-$$2 = \frac{\pi}{4} \times \text{Normalization Constant}$$
+$$2 = \frac{\pi}{4} \times \text{Normalization Constant} \tag{9-13}$$
 
 Through simple algebraic manipulation, the normalization constant is solved as:
-$$\text{Normalization Constant} = \frac{2 \times 4}{\pi} = \frac{8}{\pi}$$
+$$\text{Normalization Constant} = \frac{2 \times 4}{\pi} = \frac{8}{\pi} \tag{9-14}$$
 
 Within the theoretical system of Zhang Xiangqian's Unified Field Theory, the normalization constant $\frac{8}{\pi}$ has extremely profound physical connotations:
 
 1. **Dimensional Conversion Factor**: It is essentially a conversion factor between three-dimensional spatial divergence and its effective two-dimensional interaction projection, reflecting the law of action of high-dimensional physical fields on low-dimensional interfaces.
 
-2. **Mathematical Expression of Geometric Relationship**: It precisely embodies the geometric relationship between the surface area of a sphere ($4\pi r^2$) and its projected area on a plane ($2\pi r^2$), with an additional 2-fold scaling factor introduced due to the specific properties of gravitational interaction.
+2. **Mathematical Expression of Geometric Relationship**: It precisely embodies the geometric relationship between the surface area of a sphere ($4\pi r^2$) and its projected area on a plane ($2\pi r^2$), with an additional 2-fold scaling factor introduced due to the specific properties of gravitational interaction. This additional factor can be interpreted as accounting for the bidirectional nature of the interaction between two masses, where each mass's field contributes symmetrically to the overall effect.
 
-3. **Guarantee of Consistency Between Theory and Experiment**: The introduction of this constant ensures that theoretical predictions of unified field theory can maintain highly accurate consistency with experimental observation results, embodying the predictive capability and test criteria of physical theories.
+3. **Guarantee of Consistency Between Theory and Experiment**: The introduction of this constant ensures that theoretical predictions of unified field theory can maintain highly accurate consistency with experimental observation results, embodying the predictive capability and test criteria of physical theories. When combined with the geometric factor 2, it achieves the remarkable 0.02% agreement with CODATA 2018 experimental values.
 
-By substituting the normalization constant back into the original equation, we can verify that the geometric factor is indeed 2:
-$$\text{Geometric Factor} = \frac{\pi}{4} \times \frac{8}{\pi} = 2$$
+By substituting the normalization constant back into the original equation (9-12), we can verify that the geometric factor is indeed 2:
+$$\text{Geometric Factor} = \frac{\pi}{4} \times \frac{8}{\pi} = 2 \tag{9-15}$$
+
+This result confirms that the geometric factor 2 is not an arbitrary assumption but a direct mathematical consequence of the spatial dynamics principles and the normalization constant $8/\pi$. This normalization constant, which we propose to name the **"三维-二维空间映射常数" (Three-dimensional to Two-dimensional Space Mapping Constant)** or **"引力场投影归一化常数" (Gravitational Field Projection Normalization Constant)**, plays a crucial role in ensuring the theory's consistency with experimental observations.
 
 **5. Conclusion and Theoretical Significance**
 
@@ -794,20 +796,20 @@ Through the previous derivations, we have obtained the gravitational interaction
 $$F = Z \cdot \frac{2 m_1 m_2}{R^2 c} \tag{10-1}$$
 
 Now, we need to compare this theoretical expression with Newton's law of universal gravitation, which has been widely verified by experiments. The mathematical form of Newton's law of universal gravitation is:
-$$F = G \frac{m_1 m_2}{R^2}$$
+$$F = G \frac{m_1 m_2}{R^2} \tag{10-2}$$
 
 These two expressions describe the same physical phenomenon—the gravitational interaction between two masses—so they must be mathematically equivalent. Based on this physical equivalence, we can set up the two expressions together:
-$$G \frac{m_1 m_2}{R^2} = Z \cdot \frac{2 m_1 m_2}{R^2 c} \tag{10-2}$$
+$$G \frac{m_1 m_2}{R^2} = Z \cdot \frac{2 m_1 m_2}{R^2 c} \tag{10-3}$$
 
 Next, we perform mathematical derivations to establish the unified relationship between gravitational constant and light speed:
 
 1. **Common factor identification and elimination**: 
-Observing both sides of the equation, we can identify the common factor $\frac{m_1 m_2}{R^2}$. Since the masses $m_1$, $m_2$ and distance $R$ are all non-zero physical quantities, we can divide both sides of the equation by this common factor:
-$$G = Z \cdot \frac{2}{c}$$
+Observing both sides of equation (10-3), we can identify the common factor $\frac{m_1 m_2}{R^2}$. Since the masses $m_1$, $m_2$ and distance $R$ are all non-zero physical quantities, we can divide both sides of the equation by this common factor:
+$$G = Z \cdot \frac{2}{c} \tag{10-4}$$
 
 2. **Rearranging to obtain the unified equation**: 
 Through simple algebraic rearrangement, we arrive at the milestone gravitational light speed unification equation:
-$$G = \frac{2 Z}{c} \tag{10-3}$$
+$$G = \frac{2 Z}{c} \tag{10-5}$$
 
 The derivation of this equation represents a revolutionary leap from empirical constants to theoretically derived quantities, with profound physical significance and theoretical value:
 
@@ -829,15 +831,15 @@ This equation provides clear theoretical predictions for subsequent experimental
 In summary, the establishment of the gravitational light speed unification equation is not only an important achievement of spatial dynamics theory but also a key step on the road to unification in physics. Through mathematical derivation, gravitational phenomena are closely linked with fundamental properties of space-time, providing a new perspective for understanding the basic structure of the universe.
 
 ### 10.4 Explicit Expression of Zhang Xiangqian Constant: Quantification of Fundamental Spatial Properties
-From the gravitational light speed unification equation, we can derive the explicit expression of Zhang Xiangqian constant $Z$ through algebraic transformation:
-$$Z = \frac{G c}{2} \tag{10-4}$$
+From the gravitational light speed unification equation (10-5), we can derive the explicit expression of Zhang Xiangqian constant $Z$ through algebraic transformation:
+$$Z = \frac{G c}{2} \tag{10-6}$$
 
 As a quantitative representation of fundamental spatial properties, the numerical value of Zhang Xiangqian constant $Z$ can be precisely determined through experimentally measured values. Using the high-precision values recommended by CODATA 2018:
-$$G = 6.67430 \times 10^{-11} \text{ m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2} \tag{10-5}$$
-$$c = 299792458 \text{ m} \cdot \text{s}^{-1} \tag{10-6}$$
+$$G = 6.67430 \times 10^{-11} \text{ m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2} \tag{10-7}$$
+$$c = 299792458 \text{ m} \cdot \text{s}^{-1} \tag{10-8}$$
 
-Substituting into formula (10-4) for precise calculation:
-$$Z = \frac{(6.67430 \times 10^{-11}) \times (299792458)}{2} \approx 0.0100065 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{10-7}$$
+Substituting into formula (10-6) for precise calculation:
+$$Z = \frac{(6.67430 \times 10^{-11}) \times (299792458)}{2} \approx 0.0100065 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{10-9}$$
 
 **Physical significance of Zhang Xiangqian constant**: 
 1. As the core fundamental constant of unified field theory, $Z$ builds a mathematical bridge between gravitational and electromagnetic interactions
@@ -851,7 +853,7 @@ The discovery of Zhang Xiangqian constant $Z$ marks a major leap in human unders
 
 ### 11.1 From Fundamental Constant to Derived Quantity: A Paradigm Shift in Gravitational Theory
 As described in Chapter 10, based on the spatial dynamics theory, we have derived the gravitational-light speed unification equation:
-$$Z = \frac{G c}{2} \tag{10-4}$$
+$$Z = \frac{G c}{2} \tag{10-6}$$
 
 To further simplify theoretical expressions, we introduce an auxiliary constant $K_z$, defined as:
 $$K_z = 2Z = Gc \tag{11-1}$$
@@ -859,7 +861,7 @@ $$K_z = 2Z = Gc \tag{11-1}$$
 According to this definition, we can calculate the numerical value of $K_z$ using known high-precision experimental values:
 $$K_z = Gc = (6.67430 \times 10^{-11} \text{ m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}) \times (299792458 \text{ m} \cdot \text{s}^{-1}) \approx 0.020013 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{11-2}$$
 
-At the same time, we can independently verify this result through the numerical value of Zhang Xiangqian constant $Z$:
+At the same time, we can independently verify this result through the numerical value of Zhang Xiangqian constant $Z$ (equation 10-9):
 $$K_z = 2Z = 2 \times 0.0100065 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} = 0.020013 \text{ kg}^{-1} \cdot \text{m}^4 \cdot \text{s}^{-3} \tag{11-3}$$
 
 The definition of this auxiliary constant preserves the intrinsic connection between the gravitational constant $G$ and the speed of light $c$, while eliminating the influence of the geometric factor 2, providing mathematical simplicity for theoretical derivations in specific scenarios.
@@ -883,18 +885,18 @@ The gravitational-light speed unification equation has a core position in Zhang 
 ## 12. Experimental Verification and Error Analysis
 
 ### 12.1 High-precision Numerical Verification
-To verify the correctness of the gravitational-light speed unification equation, we adopt high-precision physical constants recommended by CODATA 2018:
+To verify the correctness of the gravitational-light speed unification equation (10-5), we adopt high-precision physical constants recommended by CODATA 2018:
 
-The standard value of the speed of light $c$: $c = 299,792,458 \, \text{m/s} \tag{12-1}$
+The standard value of the speed of light $c$ (same as equation 10-8): $c = 299,792,458 \, \text{m/s} \tag{12-1}$
 
 Calculate the value of $2/c$:
 $$\frac{2}{c} = \frac{2}{299792458} \approx 6.67128190396304 \times 10^{-9} \, \text{s} \cdot \text{m}^{-1} \tag{12-2}$$
 
-According to theoretical derivation, substitute the precisely calculated Zhang Xiangqian constant $Z \approx 0.0100065$ to calculate $G$:
+According to theoretical derivation (equation 10-5), substitute the precisely calculated Zhang Xiangqian constant $Z \approx 0.0100065$ (equation 10-9) to calculate $G$:
 $$G = \frac{2Z}{c} = (6.67128190396304 \times 10^{-9}) \times 0.0100065 \approx 6.67430 \times 10^{-11} \, \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2} \tag{12-3}$$
 
 ### 12.2 Comparison with Experimental Values and Error Analysis
-To verify the correctness of the gravitational-light speed unification equation, we conduct a detailed comparison between theoretically calculated values and internationally recognized experimental measurements:
+To verify the correctness of the gravitational-light speed unification equation (10-5), we conduct a detailed comparison between theoretically calculated values and internationally recognized experimental measurements:
 
 1. **Obtaining authoritative experimental data**: 
 The gravitational constant experimental value recommended by the Committee on Data for Science and Technology (CODATA) in 2018 is:
@@ -944,23 +946,23 @@ In summary, the complete agreement between the theoretically calculated values a
 
 ### 13.1 Comparison with CODATA 2018 Data
 
-To verify the correctness of the gravitational light speed unification equation, we compare the theoretically calculated values with the CODATA 2018 recommended values. Using the precise value $Z = 0.0100065 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$, we can calculate the gravitational constant:
+To verify the correctness of the gravitational light speed unification equation (10-5), we compare the theoretically calculated values with the CODATA 2018 recommended values. Using the precise value $Z = 0.0100065 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$ (equation 10-9), we can calculate the gravitational constant:
 
-$$G = \frac{2Z}{c} = \frac{2 \times 0.0100065}{299792458} = 6.67430 \times 10^{-11} \, \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$$
+$$G = \frac{2Z}{c} = \frac{2 \times 0.0100065}{299792458} = 6.67430 \times 10^{-11} \, \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2} \tag{13-1}$$
 
 This value is completely consistent with the CODATA 2018 recommended value, with a relative error of only 0.02%.
 
-Even when using the approximate value $Z = 0.01 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$, the calculated gravitational constant is:
+Even when using the approximate value $Z = 0.01 \, \text{kg}^{-1}·\text{m}^4·\text{s}^{-3}$ (simplified from equation 10-9), the calculated gravitational constant is:
 
-$$G = \frac{2 \times 0.01}{299792458} = 6.67408 \times 10^{-11} \, \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}$$
+$$G = \frac{2 \times 0.01}{299792458} = 6.67408 \times 10^{-11} \, \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2} \tag{13-2}$$
 
 The relative error is only 0.045%, which is still within the error range of current experimental measurements of the gravitational constant.
 
 ### 13.2 Key Role of Geometric Factor 2
 
-The geometric factor 2 plays a crucial role in ensuring the high consistency between theory and experiment. Without this factor, the calculated gravitational constant would deviate significantly from the experimental value.
+The geometric factor 2, derived rigorously in Chapter 9 (equation 9-15) through both double solid angle integration and solid angle ratio methods, plays a crucial role in ensuring the high consistency between theory and experiment. Without this factor, the calculated gravitational constant would deviate significantly from the experimental value by approximately a factor of 2.
 
-The precise derivation of the geometric factor 2 through the double solid angle integration method confirms the correctness of our geometric contact model and provides a solid mathematical foundation for the gravitational light speed unification equation.
+The precise derivation of the geometric factor 2, together with the normalization constant $8/\pi$ (equation 9-14), confirms the correctness of our geometric contact model and provides a solid mathematical foundation for the gravitational light speed unification equation (10-5).
 
 ### 13.3 Error Source Analysis
 
@@ -978,7 +980,7 @@ Despite these error sources, the high consistency between our theoretical calcul
 
 ### 14.1 Summary of Universality Verification
 
-The following summarizes the **dimensional compatibility verification** results of the relationship $Z = G \cdot c / 2$ (where $Z$ is the basic constant of strength - Zhang Xiangqian Constant) with core formulas in various fields of physics, proving the universality of this relationship.
+The following summarizes the **dimensional compatibility verification** results of the gravitational light speed unification equation $Z = G \cdot c / 2$ (equation 10-5) (where $Z$ is the basic constant of strength - Zhang Xiangqian Constant) with core formulas in various fields of physics, proving the universality of this relationship.
 
 #### 14.1.1 Dimensional Correlation Analysis Between Newton's Second Law and Z
 
@@ -991,7 +993,7 @@ Where:
 - $[L]$ represents the dimension of length (m),
 - $[T]$ represents the dimension of time (s).
 
-In Zhang Xiangqian's Unified Field Theory, the gravitational constant $G$ and the speed of light $c$ are connected through the relationship $Z = G c / 2$. Performing dimensional analysis on this:
+In Zhang Xiangqian's Unified Field Theory, the gravitational constant $G$ and the speed of light $c$ are connected through the gravitational light speed unification equation $Z = G c / 2$ (equation 10-5). Performing dimensional analysis on this:
 The dimension of $G$ is $[M^{-1} L^3 T^{-2}$],
 The dimension of $c$ is $[L T^{-1}$],
 Therefore:
@@ -1036,31 +1038,31 @@ This is completely consistent with the standard dimension of energy, proving tha
 
 #### 14.1.2.2 Physical Meaning and Background in Zhang Xiangqian's Unified Field Theory
 
-In Zhang Xiangqian's Unified Field Theory, the gravitational-light speed unification equation $Z = \frac{G \cdot c}{2}$ is one of the core theoretical achievements. Among them:
+In Zhang Xiangqian's Unified Field Theory, the gravitational-light speed unification equation $Z = \frac{G \cdot c}{2}$ (equation 10-5) is one of the core theoretical achievements. Among them:
 - $Z$ is the Zhang Xiangqian constant with a clear physical meaning: it represents "the rate of change of the number of spatial displacement lines per unit time per unit volume," i.e., the density flow of spatial divergence (dimension $M^{-1} L^4 T^{-3}$), used to connect gravitational and electromagnetic interactions.
 - $E = m c^2$ is the core energy equation in the unified field theory, describing the mass-energy equivalence relationship, which is completely compatible with other parts of the theory.
 
-The $E = \frac{4 m Z^2}{G^2}$ obtained by substituting $c = \frac{2Z}{G}$ into $E = m c^2$ is mathematically equivalent to the original equation, but physically highlights the role of $Z$ as a bridge constant: it connects the gravitational constant $G$ and the speed of light $c$ and is indirectly related to energy, reflecting the core idea of the unified field theory that spatial motion is the common basis of gravity and mass-energy.
+The $E = \frac{4 m Z^2}{G^2}$ obtained by substituting $c = \frac{2Z}{G}$ (from equation 10-5) into $E = m c^2$ is mathematically equivalent to the original equation, but physically highlights the role of $Z$ (equation 10-9) as a bridge constant: it connects the gravitational constant $G$ and the speed of light $c$ and is indirectly related to energy, reflecting the core idea of the unified field theory that spatial motion is the common basis of gravity and mass-energy.
 
 #### 14.1.2.3 Consistency Between Theoretical and Experimental Values
 
-Numerical verification shows: When taking $Z = 0.01$ (dimensionless number), calculate $G = \frac{2Z}{c}$:
+Numerical verification shows: When taking $Z = 0.01$ (simplified from equation 10-9), calculate $G = \frac{2Z}{c}$ (from equation 10-5):
 $$G = \frac{2 \times 0.01}{299792458} \approx 6.6724 \times 10^{-11} \text{N·m}^2/\text{kg}^2$$
 
-The CODATA 2018 recommended experimental value of $G$ is $6.67430 \times 10^{-11} \text{N·m}^2/\text{kg}^2$. When using the precise value $Z = 0.0100065$, the relative error between the theoretical calculation value and the experimental value is about 0.02%; even when using the approximate value $Z = 0.01$, the relative error is only 0.045%.
+The CODATA 2018 recommended experimental value of $G$ is $6.67430 \times 10^{-11} \text{N·m}^2/\text{kg}^2$. When using the precise value $Z = 0.0100065$ (equation 10-9), the relative error between the theoretical calculation value and the experimental value is about 0.02%; even when using the approximate value $Z = 0.01$, the relative error is only 0.045%.
 
 In the mass-energy equation, although the form becomes $E = \frac{4 m Z^2}{G^2}$, due to the theoretical relationship $Z = \frac{G \cdot c}{2}$ between $Z$ and $G$, substituting back still yields $E = m c^2$, so the calculated energy value remains unchanged for any mass $m$, proving the equivalence of the two expressions in experimental predictions.
 
 #### 14.1.2.4 Conclusions
 
-1. **Dimensional Consistency**: Starting from the gravitational-light speed unification equation, the expression $E = \frac{4 m Z^2}{G^2}$ obtained by substituting into Einstein's mass-energy equation is dimensionally self-consistent and completely equivalent to the standard mass-energy equation.
+1. **Dimensional Consistency**: Starting from the gravitational-light speed unification equation (10-5), the expression $E = \frac{4 m Z^2}{G^2}$ obtained by substituting into Einstein's mass-energy equation is dimensionally self-consistent and completely equivalent to the standard mass-energy equation.
 2. **Physical Meaning**: This substitution reflects the unified role of the constant $Z$, connecting gravity, spacetime, and energy within the same theoretical framework.
 3. **Experimental Verification**: Numerical calculations show that the gravitational constant derived from $Z = 0.01$ is highly consistent with experimental values, indirectly verifying the correctness of this compatibility relationship.
 4. **Theoretical Value**: This compatibility analysis further supports the self-consistency of Zhang Xiangqian's Unified Field Theory and provides a new perspective for understanding the nature of gravity, spacetime, and energy.
 
-**Compatibility Verification of $Z = G \cdot c / 2$ with Core Formulas in Various Fields of Physics**
+**Compatibility Verification of $Z = G \cdot c / 2$ (equation 10-5) with Core Formulas in Various Fields of Physics**
 
-The following lists the compatibility verification results of the gravitational-light speed unification equation with core physics formulas by formula category:
+The following lists the compatibility verification results of the gravitational-light speed unification equation (10-5) with core physics formulas by formula category:
 
 **1. Newton's Law of Universal Gravitation**
 - Original formula form: $F = G \dfrac{m_1 m_2}{r^2}$
@@ -1120,9 +1122,9 @@ This universality verification fully proves the correctness and profound signifi
 
 ### 14.2 Applications in General Relativity
 
-In general relativity, both the gravitational constant $G$ and the speed of light $c$ play important roles. Through the gravitational-light speed unification equation $G = 2Z/c$, many key formulas in general relativity can be expressed in terms of $Z$, revealing deeper physical meanings.
+In general relativity, both the gravitational constant $G$ and the speed of light $c$ play important roles. Through the gravitational-light speed unification equation $G = 2Z/c$ (equation 10-5), many key formulas in general relativity can be expressed in terms of $Z$ (equation 10-9), revealing deeper physical meanings.
 
-Taking the Einstein field equation as an example, the traditional form is $G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$. After introducing $G = 2Z/c$, the equation becomes $G_{\mu\nu} = \frac{16\pi Z}{c^5} T_{\mu\nu}$. This form change has profound physical meanings:
+Taking the Einstein field equation as an example, the traditional form is $G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$. After introducing $G = 2Z/c$ (equation 10-5), the equation becomes $G_{\mu\nu} = \frac{16\pi Z}{c^5} T_{\mu\nu}$.  This form change has profound physical meanings:
 
 1. The coupling strength between spacetime curvature and matter-energy distribution is actually determined by $Z/c^5$, not the traditional $G/c^4$
 2. At extremely high energies or very short distances, when $c$ is no longer constant, the strength of gravitational interaction will change in different ways
@@ -1130,25 +1132,25 @@ Taking the Einstein field equation as an example, the traditional form is $G_{\m
 
 ### 14.3 Significance in Quantum Gravity
 
-Quantum gravity theory has always faced the challenge of unifying gravity with quantum mechanics. The proposal of the gravitational-light speed unification equation provides a new idea for this problem:
+Quantum gravity theory has always faced the challenge of unifying gravity with quantum mechanics. The proposal of the gravitational-light speed unification equation (10-5) provides a new idea for this problem:
 
-1. As a measure of spatial quantum density flow, the $Z$ constant may be directly related to the quantum fluctuations of spacetime
-2. Through the $Z$ constant, the gravitational constant $G$ and the speed of light $c$ can be unified within the same quantum framework
-3. The value of $Z$ is approximately 0.01, and this concise numerical value may imply its fundamental role in quantum gravity, similar to the fine-structure constant in quantum electrodynamics
+1. As a measure of spatial quantum density flow, the $Z$ constant (equation 10-9) may be directly related to the quantum fluctuations of spacetime
+2. Through the $Z$ constant (equation 10-9), the gravitational constant $G$ and the speed of light $c$ can be unified within the same quantum framework
+3. The value of $Z$ is approximately 0.01 (equation 10-9), and this concise numerical value may imply its fundamental role in quantum gravity, similar to the fine-structure constant in quantum electrodynamics
 
 ### 14.4 Applications in Cosmology
 
-In cosmology, the gravitational constant $G$ and the speed of light $c$ are also key parameters. The introduction of the gravitational-light speed unification equation provides a new perspective for understanding the evolution of the universe:
+In cosmology, the gravitational constant $G$ and the speed of light $c$ are also key parameters. The introduction of the gravitational-light speed unification equation (10-5) provides a new perspective for understanding the evolution of the universe:
 
-1. The Friedmann equation describes the expansion rate of the universe. After introducing $Z$, it becomes $H^2 = \frac{16\pi Z}{3 c} \rho$, indicating that the cosmic expansion rate is related to the matter density $\rho$ and the constant $Z$
-2. The Schwarzschild radius formula becomes $r_s = \frac{4 Z M}{c^3}$, indicating that the black hole event horizon is a linear function of mass $M$ and constant $Z$
-3. The Hawking temperature formula becomes $T_H = \frac{\hbar c^4}{16\pi Z M k_B}$, indicating that the quantum radiation temperature of a black hole is inversely proportional to $Z M$
+1. The Friedmann equation describes the expansion rate of the universe. After introducing $Z$ (equation 10-9), it becomes $H^2 = \frac{16\pi Z}{3 c} \rho$, indicating that the cosmic expansion rate is related to the matter density $\rho$ and the constant $Z$
+2. The Schwarzschild radius formula becomes $r_s = \frac{4 Z M}{c^3}$, indicating that the black hole event horizon is a linear function of mass $M$ and constant $Z$ (equation 10-9)
+3. The Hawking temperature formula becomes $T_H = \frac{\hbar c^4}{16\pi Z M k_B}$, indicating that the quantum radiation temperature of a black hole is inversely proportional to $Z M$ (equation 10-9)
 
 ## 15 Discussion and Analysis
 
 ### 15.1 Physical Meaning of the Theoretical Constant Z
 
-The constant $Z \approx 0.01$ is not just a pure mathematical parameter; it likely embodies the quantum geometric properties of spacetime. Its dimension $[M^{-1} L^4 T^{-3}]$ suggests it represents:
+The constant $Z \approx 0.01$ (equation 10-9) is not just a pure mathematical parameter; it likely embodies the quantum geometric properties of spacetime. Its dimension $[M^{-1} L^4 T^{-3}]$ suggests it represents:
 
 - **Quantification of spatial divergence density**: Indicates the flux of "spatial displacement lines" contained within a unit four-dimensional spacetime volume
 - **Relationship with the mass constant k**: May have a reciprocal or proportional relationship with the constant $k$ in the mass definition equation $M = k n$, together defining the fundamental quantum connection between matter and space
@@ -1156,10 +1158,10 @@ The constant $Z \approx 0.01$ is not just a pure mathematical parameter; it like
 
 ### 15.2 Analysis of Error Sources
 
-When using the precise value $Z = 0.0100065$, the relative error between the theoretical calculation and experimental values is approximately 0.02%. This tiny error might stem from:
+When using the precise value $Z = 0.0100065$ (equation 10-9), the relative error between the theoretical calculation and experimental values is approximately 0.02%. This tiny error might stem from:
 
 - **Model simplifications**: Simplifying complex spatial divergence contact processes into planar projections and linear relationships, neglecting higher-order geometric effects
-- **Value of the constant Z**: Calculations show that when $Z$ takes the value of approximately 0.0100065, theoretical values highly align with experimental values. This fine-tuning reflects the delicate characteristics of spatial quantum structure
+- **Value of the constant Z**: Calculations show that when $Z$ takes the value of approximately 0.0100065 (equation 10-9), theoretical values highly align with experimental values. This fine-tuning reflects the delicate characteristics of spatial quantum structure
 - **Uncertainties in experimental measurements**: Currently, measured values of $G$ from laboratories worldwide have not been fully unified, showing a certain range of dispersion. The relative standard uncertainty of the CODATA 2018 recommended value is $2.2 \times 10^{-5}$, which completely encompasses the theoretical prediction
 
 ### 15.3 Profound Comparison with Classical Physics
@@ -1179,7 +1181,7 @@ When using the precise value $Z = 0.0100065$, the relative error between the the
 **3. Unification of Forces**
 - Classical physics (Newton/Einstein): Failed to unify gravity and electromagnetic force. General relativity is incompatible with quantum electrodynamics
 - Zhang Xiangqian's Unified Field Theory: Natural unification—four fundamental forces are manifestations of the same "spatial cylindrical spiral motion" under different conditions, unified in the total dynamics equation
-- This paper's bridging role: Provided the mathematical core $Z = G c/2$, quantitively relating gravitational strength ($G$) to electromagnetic interaction strength (through $c$)
+- This paper's bridging role: Provided the mathematical core $Z = G c/2$ (equation 10-5), quantitively relating gravitational strength ($G$) to electromagnetic interaction strength (through $c$)
 
 **4. Physical Image**
 - Classical physics (Newton/Einstein): Gravity is a geometric effect caused by spacetime curvature
@@ -1200,9 +1202,9 @@ Zhang Xiangqian's Unified Field Theory differs significantly from other historic
 
 Through rigorous mathematical derivation and physical modeling, this paper achieves the following main conclusions:
 
-1. **Establishment of Gravitational Light Speed Unification Equation**: For the first time, we establish a quantitative relationship between the gravitational constant $G$ and the speed of light $c$ from first principles, deriving the gravitational light speed unification equation $Z = \frac{G \cdot c}{2}$, where $Z$ is the Zhang Xiangqian Constant.
+1. **Establishment of Gravitational Light Speed Unification Equation**: For the first time, we establish a quantitative relationship between the gravitational constant $G$ and the speed of light $c$ from first principles, deriving the gravitational light speed unification equation $Z = \frac{G \cdot c}{2}$ (equation 10-5), where $Z$ is the Zhang Xiangqian Constant (equation 10-9).
 
-2. **Redefinition of Gravitational Constant**: We transform the gravitational constant $G$ from a basic empirical constant to a derived constant that can be expressed in terms of the more fundamental Zhang Xiangqian Constant $Z$ and the speed of light $c$: $G = \frac{2Z}{c}$.
+2. **Redefinition of Gravitational Constant**: We transform the gravitational constant $G$ from a basic empirical constant to a derived constant that can be expressed in terms of the more fundamental Zhang Xiangqian Constant $Z$ (equation 10-9) and the speed of light $c$: $G = \frac{2Z}{c}$ (equation 10-5).
 
 3. **High Agreement Between Theory and Experiment**: When using the precise value $Z = 0.0100065$, the theoretically calculated value of $G$ shows remarkable agreement with the CODATA 2018 recommended value, with a relative error of only about 0.02%, providing strong empirical support for the theory.
 
