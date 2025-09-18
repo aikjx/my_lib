@@ -338,53 +338,49 @@ $$\mathbf{g} = -G \rho \frac{\mathbf{r}}{r} \tag{4-5}$$
 
 This equation describes how local mass density $\rho$ generates local gravitational field $\mathbf{g}$, laying the foundation for subsequent application of Gauss's theorem in field theory.
 
-## 5. Application of Gauss's Theorem in Gravitational Field
+## 5 Proof of Gauss's Theorem
 
-### 5.1 Mathematical Form of Gauss's Theorem in Gravitational Field
+### 5.1 Theorem Statement
 
-Gauss's theorem, also known as the divergence theorem, establishes the relationship between volume integrals and surface integrals. In gravitational field theory, Gauss's theorem can be expressed as:
+Gauss's theorem is an important theorem in vector analysis that converts the closed surface integral of a vector field into the volume integral of the divergence of that vector field:
 
-$$\oint_S \vec{g} \cdot d\vec{S} = \int_V \nabla \cdot \vec{g} \cdot dV$$
+$$\oint_S \mathbf{F} \cdot d\mathbf{S} = \int_V \nabla \cdot \mathbf{F} \, dV \tag{5-1}$$
 
-Combining with the gravitational flux formula we proposed earlier:
+where $S$ is a closed surface enclosing volume $V$, and $\mathbf{F}$ is any vector field.
 
-$$\oint_S \vec{g} \cdot d\vec{S} = -4\pi G m$$
+### 5.2 Mathematical Proof
 
-We can obtain:
+To prove Gauss's theorem, we start from the definition of divergence:
 
-$$\int_V \nabla \cdot \vec{g} \cdot dV = -4\pi G m$$
+$$\nabla \cdot \mathbf{F} = \lim_{\Delta V \to 0} \frac{\oint_{\Delta S} \mathbf{F} \cdot d\mathbf{S}}{\Delta V} \tag{5-2}$$
 
-### 5.2 Differential Form of Gravitational Field Equation
+where $\Delta V$ is a volume element, and $\Delta S$ is the closed surface enclosing this volume element.
 
-If we consider the mass $m$ as the volume integral of mass density $\rho_m$, then:
+Dividing the entire volume $V$ into countless volume elements $\Delta V_i$, we have:
 
-$$m = \int_V \rho_m \cdot dV$$
+$$\int_V \nabla \cdot \mathbf{F} \, dV = \sum_i \int_{\Delta V_i} \nabla \cdot \mathbf{F} \, dV \approx \sum_i \oint_{\Delta S_i} \mathbf{F} \cdot d\mathbf{S} \tag{5-3}$$
 
-Substituting into the above formula, we get:
+On the interfaces between volume elements, the surface integrals of adjacent volume elements cancel each other out, leaving only the surface integral over the entire closed surface $S$:
 
-$$\int_V \nabla \cdot \vec{g} \cdot dV = -4\pi G \int_V \rho_m \cdot dV$$
+$$\sum_i \oint_{\Delta S_i} \mathbf{F} \cdot d\mathbf{S} = \oint_S \mathbf{F} \cdot d\mathbf{S} \tag{5-4}$$
 
-Since this equation holds for any volume $V$, the integrands must be equal:
+As the size of the volume elements approaches zero, the approximate equality becomes an equality, thus proving Gauss's theorem.
 
-$$\nabla \cdot \vec{g} = -4\pi G \rho_m$$
+### 5.3 Application in Gravitational Field
 
-This is the differential form of the gravitational field equation, which describes the relationship between the divergence of the gravitational field and the mass density at that point.
+In gravitational field, the vector field $\mathbf{F}$ is the gravitational field $\mathbf{g}$. According to Gauss's theorem, the closed surface integral of the gravitational field is equal to the volume integral of the divergence of that gravitational field:
 
-### 5.3 Connection with Spatial Dynamics
+$$\oint_S \mathbf{g} \cdot d\mathbf{S} = \int_V \nabla \cdot \mathbf{g} \, dV \tag{5-5}$$
 
-According to the definition of gravitational field in spatial dynamics (Postulate 4):
+Combining with the divergence formula of gravitational field (4-5), we obtain:
 
-$$\vec{g} = -\gamma \cdot \nabla \cdot \vec{v}$$
+$$\nabla \cdot \mathbf{g} = -4\pi G \rho \tag{5-6}$$
 
-Taking the divergence on both sides, we get:
+Substituting the above equation into Gauss's theorem, we get:
 
-$$\nabla \cdot \vec{g} = -\gamma \cdot \nabla \cdot (\nabla \cdot \vec{v})$$
+$$\oint_S \mathbf{g} \cdot d\mathbf{S} = -4\pi G \int_V \rho \, dV = -4\pi G M \tag{5-7}$$
 
-Combining with the differential form of the gravitational field equation, we can establish the relationship between mass density and the double divergence of spatial velocity:
-
-$$\rho_m = \frac{\gamma}{4\pi G} \cdot \nabla \cdot (\nabla \cdot \vec{v})$$
-
-This formula reveals the deep connection between mass density and spatial motion, further verifying the correctness of the geometric definition of mass in Unified Field Theory.
+where $M$ is the total mass enclosed by the closed surface $S$. This result is consistent with the conclusions of Newton's law of universal gravitation, verifying the applicability of Gauss's theorem in gravitational field.
 
 ## 6. Re-derivation of Newton's Law of Universal Gravitation
 
