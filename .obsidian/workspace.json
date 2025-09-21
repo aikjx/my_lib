@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "utf/引力光速统一方程/引力光速的关系/9.4 几何因子2的多方法严谨推导与物理验证.md",
+                "file": "utf/引力光速统一方程/引力光速的关系/9.4 优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "9.4 几何因子2的多方法严谨推导与物理验证"
+              "title": "9.4 优化"
             }
           }
         ]
@@ -186,11 +186,17 @@
   },
   "active": "ae905018e9ddedf3",
   "lastOpenFiles": [
+    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
+    "utf/统一场论核心公式/张祥前统一场论核心公式LaTeX可视化.html",
+    "utf/统一场论核心公式/张祥前统一场论17个核心重要公式方程.md",
+    "utf/统一场论核心公式/项目总览.md",
+    "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子_规范格式.md",
+    "utf/引力光速统一方程/引力光速的关系/calculate_g_value.py",
     "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子.md",
+    "utf/引力光速统一方程/引力光速的关系/9.4 几何因子2的多方法严谨推导与物理验证.md",
     "utf/引力光速统一方程/code/test_geometric_factor.py",
     "分析与验证报告：张祥前统一场论中几何因子2的推导与物理意义.md",
     "utf/引力光速统一方程/引力光速的关系/9.4 几何因子2的多方法严谨推导与物理验证（完整版）.md",
-    "utf/引力光速统一方程/引力光速的关系/9.4 几何因子2的多方法严谨推导与物理验证.md",
     "utf/引力光速统一方程/引力光速的关系/9.4 优化.md",
     "utf/引力光速统一方程/引力光速的关系/9.4 优化版本2.md",
     "utf/引力光速统一方程/引力光速的关系/9.4 一些总结.md.md",
@@ -216,12 +222,6 @@
     "utf/引力光速统一方程/code/verify_g_approx_error.py",
     "utf/引力光速统一方程/code/z_verification_precision.py",
     "utf/引力光速统一方程/code/Z近似误差计算.py",
-    "z_value_correction_report.md",
-    "detailed_z_verification.py",
-    "verify_z_calculation.py",
-    "utf/引力光速统一方程/统一场论框架下万有引力常数与光速的涌现性及其量子力学本质.md",
-    "utf/统一场论核心公式/张祥前统一场论17个核心重要公式方程.md",
-    "utf/统一场论核心公式/核心公式索引.md",
     "几何因子问题全面分析.png",
     "geometric_correction_factor_2_animation.svg",
     "complete_error_analysis.png",

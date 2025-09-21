@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张祥前统一场论 - 核心公式LaTeX可视化</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #00ffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+            width: 300px;
+            max-width: 90%;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            border-color: #00ffff;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .search-box::placeholder {
+            color: #999;
+        }
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .formula-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .formula-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ffff;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .formula-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .formula-card:hover::before {
+            opacity: 1;
+        }
+
+        .formula-index {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .formula-title {
+            font-size: 1.5em;
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .formula-latex {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border-left: 4px solid #00ffff;
+            font-size: 1.3em;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .formula-description {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #cccccc;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #999;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .formula-section {
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            color: #ffff00;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+        }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 255, 255, 0.6);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .formula-grid {
+                grid-template-columns: 1fr;
+                padding: 20px 15px;
+            }
+            
+            .formula-card {
+                padding: 20px 15px;
+            }
+            
+            .formula-latex {
+                font-size: 1.1em;
+                padding: 15px;
+            }
+            
+            .nav-controls {
+                gap: 10px;
+            }
+            
+            .control-btn {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .formula-card {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .formula-card:nth-child(2) { animation-delay: 0.1s; }
+        .formula-card:nth-child(3) { animation-delay: 0.2s; }
+        .formula-card:nth-child(4) { animation-delay: 0.3s; }
+        .formula-card:nth-child(5) { animation-delay: 0.4s; }
+        .formula-card:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>张祥前统一场论</h1>
+        <p>核心公式LaTeX可视化系统</p>
+        <div class="search-container">
+            <input type="text" id="formulaSearch" class="search-box" placeholder="搜索公式名称或关键词...">
+        </div>
+        <div class="nav-controls">
+            <button class="control-btn" onclick="viewAllFormulas()">查看全部</button>
+            <button class="control-btn" onclick="viewBasicTheory()">基础理论层</button>
+            <button class="control-btn" onclick="viewMatterDefinition()">物质定义层</button>
+            <button class="control-btn" onclick="viewDynamics()">动力学层</button>
+            <button class="control-btn" onclick="viewFieldTheory()">场论层</button>
+            <button class="control-btn" onclick="viewEnergyApplications()">能量应用层</button>
+        </div>
+    </div>
+
+    <div class="formula-section">
+        <h2 class="section-title" id="basic-theory">基础理论层</h2>
+        <div class="formula-grid">
+            <div class="formula-card" data-category="basic-theory">
+                <div class="formula-index">1</div>
+                <h3 class="formula-title">时空同一化方程</h3>
+                <div class="formula-latex">
+                    $$\vec{r}(t) = \vec{C}t = x\vec{i} + y\vec{j} + z\vec{k}$$
+                </div>
+                <div class="formula-description">
+                    描述空间和时间的统一关系，表明空间是时间的函数。此方程揭示了空间和时间本质上是同一事物的不同表现形式，空间的存在和运动与时间密切相关。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="basic-theory">
+                <div class="formula-index">2</div>
+                <h3 class="formula-title">三维螺旋时空方程</h3>
+                <div class="formula-latex">
+                    $$\vec{r}(t) = r\cos\omega t \cdot \vec{i} + r\sin\omega t \cdot \vec{j} + ht \cdot \vec{k}$$
+                </div>
+                <div class="formula-description">
+                    揭示物体在时空中的螺旋运动规律。此方程描述了物质粒子在三维空间中的运动轨迹，结合了圆周运动和直线运动，形成螺旋式前进的时空结构。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formula-section">
+        <h2 class="section-title" id="matter-definition">物质定义层</h2>
+        <div class="formula-grid">
+            <div class="formula-card" data-category="matter-definition">
+                <div class="formula-index">3</div>
+                <h3 class="formula-title">质量定义方程</h3>
+                <div class="formula-latex">
+                    $$m = k \cdot \frac{dn}{d\Omega}$$
+                </div>
+                <div class="formula-description">
+                    从空间几何角度定义质量，与空间运动量有关。此方程表明质量本质上是空间运动量的一种表现形式，揭示了质量的几何起源。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="matter-definition">
+                <div class="formula-index">4</div>
+                <h3 class="formula-title">引力场定义方程</h3>
+                <div class="formula-latex">
+                    $$\overrightarrow{A} = -Gk\frac{\Delta n}{\Delta s}\frac{\overrightarrow{r}}{r}$$
+                </div>
+                <div class="formula-description">
+                    定义引力场为空间运动量的变化率。此方程表明引力场是由空间的某种运动量变化所产生的，揭示了引力的几何本质。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formula-section">
+        <h2 class="section-title" id="dynamics">动力学层</h2>
+        <div class="formula-grid">
+            <div class="formula-card" data-category="dynamics">
+                <div class="formula-index">5</div>
+                <h3 class="formula-title">静止动量方程</h3>
+                <div class="formula-latex">
+                    $$\overrightarrow{p}_{0} = m_{0}\overrightarrow{C}_{0}$$
+                </div>
+                <div class="formula-description">
+                    描述静止物体的动量，与光速相关。此方程表明即使物体静止，也具有与光速相关的动量，体现了物质与时空的内在联系。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="dynamics">
+                <div class="formula-index">6</div>
+                <h3 class="formula-title">运动动量方程</h3>
+                <div class="formula-latex">
+                    $$\overrightarrow{P} = m(\overrightarrow{C} - \overrightarrow{V})$$
+                </div>
+                <div class="formula-description">
+                    描述运动物体的动量，考虑了速度对动量的影响。此方程是牛顿动量公式的扩展，将动量与物体在时空中的运动状态联系起来。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="dynamics">
+                <div class="formula-index">7</div>
+                <h3 class="formula-title">宇宙大统一方程（力方程）</h3>
+                <div class="formula-latex">
+                    $$F = \frac{d\vec{P}}{dt} = \vec{C}\frac{dm}{dt} - \vec{V}\frac{dm}{dt} + m\frac{d\vec{C}}{dt} - m\frac{d\vec{V}}{dt}$$
+                </div>
+                <div class="formula-description">
+                    统一描述各种力的本质，揭示力与动量变化的关系。此方程是统一场论的核心方程之一，试图将电场力、磁场力、核力和万有引力统一在同一个数学框架下。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formula-section">
+        <h2 class="section-title" id="field-theory">波动与场论层</h2>
+        <div class="formula-grid">
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">8</div>
+                <h3 class="formula-title">空间波动方程</h3>
+                <div class="formula-latex">
+                    $$\frac{\partial^2 L}{\partial x^2} + \frac{\partial^2 L}{\partial y^2} + \frac{\partial^2 L}{\partial z^2} = \frac{1}{c^2} \frac{\partial^2 L}{\partial t^2}$$
+                </div>
+                <div class="formula-description">
+                    描述空间波动的传播规律。此方程表明空间本身具有波动性，类似于电磁波的传播方程，但描述的是空间本身的波动性质。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">9</div>
+                <h3 class="formula-title">电荷定义方程</h3>
+                <div class="formula-latex">
+                    $$q = k^{\prime}k\frac{1}{\Omega^{2}}\frac{d\Omega}{dt}$$
+                </div>
+                <div class="formula-description">
+                    从空间几何角度定义电荷，与空间旋转运动有关。此方程试图将电荷解释为空间某种旋转运动的表现形式，揭示电荷的几何本质。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">10</div>
+                <h3 class="formula-title">电场定义方程</h3>
+                <div class="formula-latex">
+                    $$\vec{E} = -\frac{kk^{\prime}}{4\pi\epsilon_0\Omega^2}\frac{d\Omega}{dt}\frac{\vec{r}}{r^3}$$
+                </div>
+                <div class="formula-description">
+                    定义电场为空间旋转运动的变化率。此方程表明电场是由空间旋转运动的变化所产生的，将电场与空间的几何性质联系起来。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">11</div>
+                <h3 class="formula-title">磁场定义方程</h3>
+                <div class="formula-latex">
+                    $$\vec{B} = \frac{\mu_{0} \gamma k k^{\prime}}{4 \pi \Omega^{2}} \frac{d \Omega}{d t} \frac{[(x-v t) \vec{i}+y \vec{j}+z \vec{k}]}{\left[\gamma^{2}(x-v t)^{2}+y^{2}+z^{2}\right]^{\frac{3}{2}}}$$
+                </div>
+                <div class="formula-description">
+                    定义磁场为运动电荷产生的空间效应。此方程是磁场的几何定义，将磁场描述为运动电荷在空间中产生的一种几何效应。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">12</div>
+                <h3 class="formula-title">变化的引力场产生电磁场</h3>
+                <div class="formula-latex">
+                    $$\frac{\partial^{2}\overline{A}}{\partial t^{2}} = \frac{\overline{V}}{f}\left(\overline{\nabla}\cdot\overline{E}\right) - \frac{C^{2}}{f}\left(\overline{\nabla}\times\overline{B}\right)$$
+                </div>
+                <div class="formula-description">
+                    揭示引力场与电磁场的相互转化关系。此方程表明变化的引力场可以产生电磁场，体现了不同类型场之间的统一关系。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">13</div>
+                <h3 class="formula-title">磁矢势方程</h3>
+                <div class="formula-latex">
+                    $$\vec{\nabla} \times \vec{A} = \frac{\vec{B}}{f}$$
+                </div>
+                <div class="formula-description">
+                    描述磁矢势与磁场的关系。此方程是对传统电磁学中磁矢势概念的扩展，将其与统一场论中的几何因子联系起来。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">14</div>
+                <h3 class="formula-title">变化的引力场产生电场</h3>
+                <div class="formula-latex">
+                    $$\vec{E} = -f\frac{d\vec{A}}{dt}$$
+                </div>
+                <div class="formula-description">
+                    揭示引力场变化如何产生电场。此方程是引力场与电场统一关系的具体数学表达，表明引力场的变化可以直接产生电场。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="field-theory">
+                <div class="formula-index">15</div>
+                <h3 class="formula-title">变化的磁场产生引力场和电场</h3>
+                <div class="formula-latex">
+                    $$\frac{d\overrightarrow{B}}{dt} = \frac{-\overrightarrow{A}\times\overrightarrow{E}}{c^2} - \frac{\overrightarrow{V}}{c^{2}}\times\frac{d\overrightarrow{E}}{dt}$$
+                </div>
+                <div class="formula-description">
+                    揭示磁场变化如何产生引力场和电场。此方程展示了磁场变化与引力场、电场之间的相互作用关系，是统一场论中场相互转化的重要表现。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formula-section">
+        <h2 class="section-title" id="energy-applications">能量与应用层</h2>
+        <div class="formula-grid">
+            <div class="formula-card" data-category="energy-applications">
+                <div class="formula-index">16</div>
+                <h3 class="formula-title">统一场论能量方程</h3>
+                <div class="formula-latex">
+                    $$e = m_0 c^2 = mc^2\sqrt{1 - \frac{v^2}{c^2}}$$
+                </div>
+                <div class="formula-description">
+                    描述能量与质量、速度的关系，是相对论能量方程的扩展。此方程将爱因斯坦的质能方程纳入统一场论框架，并赋予其新的几何意义。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="energy-applications">
+                <div class="formula-index">17</div>
+                <h3 class="formula-title">光速飞行器动力学方程</h3>
+                <div class="formula-latex">
+                    $$\vec{F} = (\vec{C} - \vec{V})\frac{dm}{dt}$$
+                </div>
+                <div class="formula-description">
+                    为超光速飞行提供理论基础。此方程描述了在统一场论框架下，物体如何通过改变质量来实现接近或超越光速的运动。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="energy-applications">
+                <div class="formula-index">18</div>
+                <h3 class="formula-title">空间波动通解</h3>
+                <div class="formula-latex">
+                    $$L(r,t) = f(t-r/c) + g(t+r/c)$$
+                </div>
+                <div class="formula-description">
+                    空间波动方程的通解形式。此方程表示空间波动可以分解为沿径向向外传播的波和向内传播的波，反映了空间波动的基本性质。
+                </div>
+            </div>
+
+            <div class="formula-card" data-category="energy-applications">
+                <div class="formula-index">19</div>
+                <h3 class="formula-title">引力光速统一方程</h3>
+                <div class="formula-latex">
+                    $$Z = Gc/2$$
+                </div>
+                <div class="formula-description">
+                    揭示万有引力常数与光速的内在联系。此方程是统一场论中最重要的结果之一，表明万有引力常数G和光速c之间存在着深刻的内在联系，可能是连接宏观和微观世界的桥梁。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+
+    <div class="footer">
+        <p>© 2023 张祥前统一场论研究 - LaTeX公式可视化系统</p>
+    </div>
+
+    <script>
+        // 搜索功能
+        const searchBox = document.getElementById('formulaSearch');
+        const formulaCards = document.querySelectorAll('.formula-card');
+        const sections = document.querySelectorAll('.formula-section');
+        
+        searchBox.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            formulaCards.forEach(card => {
+                const title = card.querySelector('.formula-title').textContent.toLowerCase();
+                const description = card.querySelector('.formula-description').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        // 分类查看功能
+        function viewAllFormulas() {
+            formulaCards.forEach(card => {
+                card.style.display = 'block';
+            });
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+        }
+        
+        function viewBasicTheory() {
+            showCategory('basic-theory');
+        }
+        
+        function viewMatterDefinition() {
+            showCategory('matter-definition');
+        }
+        
+        function viewDynamics() {
+            showCategory('dynamics');
+        }
+        
+        function viewFieldTheory() {
+            showCategory('field-theory');
+        }
+        
+        function viewEnergyApplications() {
+            showCategory('energy-applications');
+        }
+        
+        function showCategory(category) {
+            sections.forEach(section => {
+                if (section.id === category) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+        
+        // 滚动到顶部按钮
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // 确保MathJax渲染所有公式
+        window.addEventListener('load', function() {
+            if (window.MathJax) {
+                setTimeout(() => {
+                    MathJax.typesetPromise();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
