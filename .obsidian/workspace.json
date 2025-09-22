@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子_规范格式.md",
+                "file": "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "张祥前统一场论几何因子_规范格式"
+              "title": "引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证"
             }
           }
         ]
@@ -186,8 +186,11 @@
   },
   "active": "ae905018e9ddedf3",
   "lastOpenFiles": [
-    "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子_规范格式_修复版.md",
     "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子_规范格式.md",
+    "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
+    "geometric_factor_verification_results.png",
+    "verify_geometric_factor.py",
+    "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子_规范格式_修复版.md",
     "utf/引力光速统一方程/引力光速的关系/几何因子2：三维空间到二维平面投影的普适几何常数.md",
     "几何因子2验证结果可视化.png",
     "utf/引力光速统一方程/引力光速的关系/几何因子2推导验证测试.py",
@@ -198,7 +201,6 @@
     "投影效率可视化.png",
     "utf/引力光速统一方程/几何因子积分验证.py",
     "utf/引力光速统一方程/引力光速的关系/张祥前统一场论几何因子.md",
-    "utf/引力光速统一方程/引力光速统一方程：从空间动力学原理到常数统一的理论推导与验证.md",
     "utf/引力光速统一方程/引力光速的关系/9.4 优化.md",
     "utf/引力光速统一方程/引力光速的关系/9.4 章节排版.md",
     "utf/引力光速统一方程/优化建议：几何因子2推导的问题与改进.md",
@@ -221,9 +223,7 @@
     "utf/引力光速统一方程/基于张祥前统一场论的引力常数G与光速c关系推导及理论验证引力光速统一方程.md",
     "utf/引力光速统一方程/引力光速的关系/分析与修复/整合后的引力光速统一方程论文.md",
     "utf/引力光速统一方程/整理后的几何因子2推导部分.md",
-    "utf/引力光速统一方程/Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence.md",
     "utf/引力光速统一方程/update_chapter11.py",
-    "utf/引力光速统一方程/replace_chapters.py",
     "几何因子问题全面分析.png",
     "geometric_correction_factor_2_animation.svg",
     "complete_error_analysis.png",
@@ -231,7 +231,6 @@
     "geometric_factor_summary.png",
     "几何因子推导总结.png",
     "几何因子数学总结.png",
-    "张祥前统一场论_几何因子推导.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
