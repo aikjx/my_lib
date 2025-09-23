@@ -1,4 +1,5 @@
 
+
 # Emergence of the Gravitational Constant and the Speed of Light within the Framework of Unified Field Theory and Their Quantum Mechanical Essence
 <br/>
 
@@ -422,7 +423,7 @@ We thank Professor Zhang Xiangqian for proposing the unified field theory which 
 
 [4] Rovelli, C. (2004). _Quantum Gravity_. Cambridge University Press.
 
-[5] Smolin, L. (极01). _Three Roads to Quantum Gravity_. Basic Books.
+[5] Smolin, L. (2001). _Three Roads to Quantum Gravity_. Basic Books.
 
 [6] Wheeler, J. A. (1990). _A Journey into Gravity and Spacetime_. Scientific American Library.
 
@@ -443,4 +444,3 @@ We thank Professor Zhang Xiangqian for proposing the unified field theory which 
 [14] Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005). Reconstructing the universe. _Physical Review D_, **72**(6), 064014.
 
 [15] Verlinde, E. P. (2011). On the origin of gravity and the laws of Newton. _Journal of High Energy Physics_, **2011**(4), 29.
-
